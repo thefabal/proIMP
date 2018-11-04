@@ -187,6 +187,12 @@ namespace proIMP {
                         dbCommand.CommandText = "CREATE VIEW stockflow_list AS SELECT t1.stock_id, t1.stock_type, t1.stock_date, CASE WHEN t2.supplier_id IS NULL THEN t3.customer_name ELSE t2.supplier_name END AS stock_name, t1.stock_desc, CASE WHEN t3.product_price IS NULL THEN 0 ELSE t3.product_price END AS product_price, CASE WHEN t3.product_count IS NULL THEN 0 ELSE t3.product_count END AS product_count, CASE WHEN t3.product_sum IS NULL THEN 0 ELSE CASE WHEN t1.stock_type = 1 THEN t3.product_sum ELSE ABS( t3.product_sum ) END END AS product_sum FROM stock AS t1 LEFT JOIN supplier AS t2 ON t1.stock_supplier = t2.supplier_id AND t1.stock_type = 1 LEFT JOIN customer AS t3 ON t1.stock_supplier = t3.customer_id AND t1.stock_type = 2 LEFT JOIN( SELECT sflow_sid AS sflow_sid, COUNT(1) AS product_count, SUM(sflow_quantity) AS product_sum, SUM(sflow_quantity * sflow_price) AS product_price FROM stock_flow GROUP BY sflow_sid) AS t3 ON t1.stock_id = t3.sflow_sid";
                         dbCommand.ExecuteNonQuery();
 
+                        dbCommand.CommandText = "CREATE VIEW report_product_count AS SELECT t2.product_id, t2.product_name, t4.category_name, SUM(CASE WHEN t5.stock_type = 1 THEN t1.sflow_quantity ELSE 0 END) AS product_quantity_in, SUM(CASE WHEN t5.stock_type = 2 THEN t1.sflow_quantity ELSE 0 END) AS product_quantity_out FROM stock_flow AS t1 INNER JOIN product AS t2 ON t2.product_id = t1.sflow_productid INNER JOIN warehouse AS t3 ON t1.sflow_warehouseid = t3.warehouse_id INNER JOIN category AS t4 ON t2.product_catid = t4.category_id INNER JOIN stock AS t5 ON t1.sflow_sid = t5.stock_id GROUP BY t2.product_id, t2.product_name, t4.category_name";
+                        dbCommand.ExecuteNonQuery();
+
+                        dbCommand.CommandText = "CREATE VIEW report_product_flow AS SELECT t4.stock_date, t2.product_id, t2.product_name, t2.product_unit, t3.category_id, t3.category_name, t1.sflow_warehouseid AS warehouse_id, CASE WHEN t4.stock_type = 1 THEN t1.sflow_quantity ELSE 0 END AS product_quantity_in, CASE WHEN t4.stock_type = 2 THEN t1.sflow_quantity ELSE 0 END AS product_quantity_out FROM stock_flow AS t1 INNER JOIN product AS t2 ON t2.product_id = t1.sflow_productid INNER JOIN category AS t3 ON t2.product_catid = t3.category_id INNER JOIN stock AS t4 ON t1.sflow_sid = t4.stock_id";
+                        dbCommand.ExecuteNonQuery();
+
                         dbCommand.Transaction.Commit();
 
                         frmMain.checkDB();
