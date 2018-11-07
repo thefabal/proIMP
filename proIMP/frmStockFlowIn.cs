@@ -146,10 +146,10 @@ namespace proIMP {
                         dbCommand.ExecuteNonQuery();
 
                         dbCommand.CommandText = "SELECT last_insert_rowid()";
-                        string strStockID = ( (long)dbCommand.ExecuteScalar() ).ToString();
+                        string stock_id = ( (long)dbCommand.ExecuteScalar() ).ToString();
 
                         for( int i = 0; i < lvStockProductList.Items.Count; i++ ) {
-                            dbCommand.CommandText = "INSERT INTO stock_flow (sflow_id, sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price) VALUES(NULL, '" + strStockID + "', '" + lvStockProductList.Items[ i ].SubItems[ 0 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 2 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 5 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 6 ].Text + "')";
+                            dbCommand.CommandText = "INSERT INTO stock_flow (sflow_id, sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price) VALUES(NULL, '" + stock_id + "', '" + lvStockProductList.Items[ i ].SubItems[ 0 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 1 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 5 ].Text + "', '" + lvStockProductList.Items[ i ].SubItems[ 6 ].Text + "')";
                             dbCommand.ExecuteNonQuery();
                         }
 
@@ -167,6 +167,7 @@ namespace proIMP {
                             strSQL += lvStockProductList.Items[ i ].SubItems[ 1 ].Text + ",";
                         }
                     }
+
                     if( strSQL.Length > 0 ) {
                         this.dbCommand.CommandText = "DELETE FROM stock_flow WHERE sflow_id IN(" + strSQL.Substring( 0, strSQL.Length - 1 ) + ") AND sflow_sid = '" + strStockFlowID + "'";
                         this.dbCommand.ExecuteNonQuery();

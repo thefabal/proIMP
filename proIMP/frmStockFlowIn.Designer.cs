@@ -155,12 +155,13 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(161, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 15;
-            this.label9.Text = "Warehose";
+            this.label9.Text = "Warehouse";
             // 
             // cbStockProductWarehouse
             // 
+            this.cbStockProductWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStockProductWarehouse.FormattingEnabled = true;
             this.cbStockProductWarehouse.Location = new System.Drawing.Point(164, 45);
             this.cbStockProductWarehouse.Name = "cbStockProductWarehouse";

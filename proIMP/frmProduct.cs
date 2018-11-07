@@ -149,7 +149,11 @@ namespace proIMP {
             if( ofdImage.ShowDialog() == DialogResult.OK ) {
                 strProductImage = ofdImage.FileName;
 
-                pbProductImage.Image = Image.FromFile( strProductImage );
+                try {
+                    pbProductImage.Image = Image.FromFile( strProductImage );
+                } catch(Exception ex) {
+                    MessageBox.Show( "Error on reading product image.\r\n\r\n" + ex.Message );
+                }
             }
         }
 

@@ -404,9 +404,9 @@
             this.pnlMenuReport.Controls.Add(this.btnReportProductCount);
             this.pnlMenuReport.Controls.Add(this.btnReportProductFlow);
             this.pnlMenuReport.Controls.Add(this.btnReports);
-            this.pnlMenuReport.Location = new System.Drawing.Point(4, 197);
+            this.pnlMenuReport.Location = new System.Drawing.Point(4, 244);
             this.pnlMenuReport.Name = "pnlMenuReport";
-            this.pnlMenuReport.Size = new System.Drawing.Size(186, 97);
+            this.pnlMenuReport.Size = new System.Drawing.Size(186, 47);
             this.pnlMenuReport.TabIndex = 2;
             // 
             // btnReportProductCount
@@ -447,9 +447,9 @@
             this.pnlMenuStock.Controls.Add(this.btnStockOut);
             this.pnlMenuStock.Controls.Add(this.btnStockIn);
             this.pnlMenuStock.Controls.Add(this.btnStock);
-            this.pnlMenuStock.Location = new System.Drawing.Point(3, 106);
+            this.pnlMenuStock.Location = new System.Drawing.Point(3, 195);
             this.pnlMenuStock.Name = "pnlMenuStock";
-            this.pnlMenuStock.Size = new System.Drawing.Size(186, 83);
+            this.pnlMenuStock.Size = new System.Drawing.Size(186, 39);
             this.pnlMenuStock.TabIndex = 1;
             // 
             // btnStockOut
@@ -494,7 +494,7 @@
             this.pnlMenuProduct.Controls.Add(this.btnProduct);
             this.pnlMenuProduct.Location = new System.Drawing.Point(3, 3);
             this.pnlMenuProduct.Name = "pnlMenuProduct";
-            this.pnlMenuProduct.Size = new System.Drawing.Size(186, 95);
+            this.pnlMenuProduct.Size = new System.Drawing.Size(186, 186);
             this.pnlMenuProduct.TabIndex = 0;
             // 
             // btnCategory
@@ -818,7 +818,7 @@
             // 
             this.cbReport_2OpenReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbReport_2OpenReport.AutoSize = true;
-            this.cbReport_2OpenReport.Location = new System.Drawing.Point(236, 409);
+            this.cbReport_2OpenReport.Location = new System.Drawing.Point(241, 409);
             this.cbReport_2OpenReport.Name = "cbReport_2OpenReport";
             this.cbReport_2OpenReport.Size = new System.Drawing.Size(132, 17);
             this.cbReport_2OpenReport.TabIndex = 23;
@@ -827,7 +827,8 @@
             // 
             // lvReport_2
             // 
-            this.lvReport_2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lvReport_2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvReport_2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader33,
@@ -840,7 +841,7 @@
             this.lvReport_2.Location = new System.Drawing.Point(0, 0);
             this.lvReport_2.MultiSelect = false;
             this.lvReport_2.Name = "lvReport_2";
-            this.lvReport_2.Size = new System.Drawing.Size(495, 393);
+            this.lvReport_2.Size = new System.Drawing.Size(498, 393);
             this.lvReport_2.TabIndex = 22;
             this.lvReport_2.UseCompatibleStateImageBehavior = false;
             this.lvReport_2.View = System.Windows.Forms.View.Details;
@@ -878,7 +879,7 @@
             // btnReport_2Export
             // 
             this.btnReport_2Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReport_2Export.Location = new System.Drawing.Point(374, 405);
+            this.btnReport_2Export.Location = new System.Drawing.Point(377, 405);
             this.btnReport_2Export.Name = "btnReport_2Export";
             this.btnReport_2Export.Size = new System.Drawing.Size(121, 23);
             this.btnReport_2Export.TabIndex = 21;
@@ -1101,7 +1102,7 @@
             this.lvReport_1.Location = new System.Drawing.Point(0, 0);
             this.lvReport_1.MultiSelect = false;
             this.lvReport_1.Name = "lvReport_1";
-            this.lvReport_1.Size = new System.Drawing.Size(495, 393);
+            this.lvReport_1.Size = new System.Drawing.Size(498, 393);
             this.lvReport_1.TabIndex = 26;
             this.lvReport_1.UseCompatibleStateImageBehavior = false;
             this.lvReport_1.View = System.Windows.Forms.View.Details;
@@ -1151,7 +1152,7 @@
             // cbReport_1OpenReport
             // 
             this.cbReport_1OpenReport.AutoSize = true;
-            this.cbReport_1OpenReport.Location = new System.Drawing.Point(233, 409);
+            this.cbReport_1OpenReport.Location = new System.Drawing.Point(238, 409);
             this.cbReport_1OpenReport.Name = "cbReport_1OpenReport";
             this.cbReport_1OpenReport.Size = new System.Drawing.Size(132, 17);
             this.cbReport_1OpenReport.TabIndex = 25;
@@ -1160,7 +1161,7 @@
             // 
             // btnReport_1Export
             // 
-            this.btnReport_1Export.Location = new System.Drawing.Point(371, 405);
+            this.btnReport_1Export.Location = new System.Drawing.Point(374, 405);
             this.btnReport_1Export.Name = "btnReport_1Export";
             this.btnReport_1Export.Size = new System.Drawing.Size(121, 23);
             this.btnReport_1Export.TabIndex = 24;
