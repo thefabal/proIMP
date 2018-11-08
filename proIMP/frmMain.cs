@@ -697,7 +697,7 @@ namespace proIMP {
             stockflow.strStockFlowID = strStockFlowID;
             stockflow.strStockID = string.Empty;
             if( stockflow.ShowDialog() == DialogResult.OK ) {
-                getStockFlowProductList();
+                
             }
         }
 
