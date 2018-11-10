@@ -210,22 +210,25 @@ namespace proIMP {
         }
 
         private void btnDatabaseCheck_Click( object sender, EventArgs e ) {
-            SQLiteCommand dbCommand = new SQLiteCommand("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN('sqlite_sequence')", frmMain.sqlCon);
+            SQLiteCommand dbCommand = new SQLiteCommand( "SELECT type, name FROM sqlite_master WHERE type IN('table','view') AND name NOT IN('sqlite_sequence') ORDER BY type, name", frmMain.sqlCon);
             SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-            List<string> tableList = new List<string>( new string[] { "category", "customer", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } );
+            Dictionary<string, List<string>> db_content = new Dictionary<string, List<string>> {
+                { "table", new List<string>( new string[ ] { "category", "customer", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } ) },
+                { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) }
+            };
 
             while( dbReader.Read() ) {
-                if( tableList.Contains( dbReader[ "name" ].ToString() ) == false ) {
+                if( db_content[ dbReader[ "type" ].ToString() ].Contains( dbReader[ "name" ].ToString() ) == false ) { 
                     MessageBox.Show( "There is a problem with DB. Please create it again." );
 
                     return;
                 } else {
-                    tableList.RemoveAt( tableList.IndexOf( dbReader[ "name" ].ToString() ) );
+                    db_content[ dbReader[ "type" ].ToString() ].RemoveAt( db_content[ dbReader[ "type" ].ToString() ].IndexOf( dbReader[ "name" ].ToString() ) );
                 }
             }
 
-            if( tableList.Count != 0 ) {
+            if( db_content[ "table" ].Count != 0 || db_content[ "view" ].Count != 0 ) {
                 MessageBox.Show( "There is a problem with DB. Please create it again." );
 
                 return;
