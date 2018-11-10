@@ -163,12 +163,13 @@ namespace proIMP {
         }
 
         private void btnDatabaseCheck_Click( object sender, EventArgs e ) {
-            SQLiteCommand dbCommand = new SQLiteCommand( "SELECT type, name FROM sqlite_master WHERE type IN('table','view') AND name NOT IN('sqlite_sequence') ORDER BY type, name", frmMain.sqlCon);
+            SQLiteCommand dbCommand = new SQLiteCommand( "SELECT type, name FROM sqlite_master WHERE type IN('table','view','trigger') AND name NOT IN('sqlite_sequence') ORDER BY type, name", frmMain.sqlCon);
             SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
             Dictionary<string, List<string>> db_content = new Dictionary<string, List<string>> {
                 { "table", new List<string>( new string[ ] { "category", "customer", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } ) },
-                { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) }
+                { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) },
+                {"trigger", new List<string>( new string[ ] { "stock_afterdelete" } ) }
             };
 
             while( dbReader.Read() ) {
