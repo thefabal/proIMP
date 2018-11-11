@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>Tüm kategoriler</value>
+  </data>
+  <data name="AllCustomers" xml:space="preserve">
+    <value>Tüm müşteriler</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>Tüm ürünler</value>
+  </data>
+  <data name="AllSuppliers" xml:space="preserve">
+    <value>Tüm tedarikçiler</value>
+  </data>
+  <data name="btnCategory" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="btnCustomer" xml:space="preserve">
+    <value>Müşteriler</value>
+  </data>
+  <data name="btnProduct" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="btnProductAdd" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnProductDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="btnProductEdit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="btnProductFilter" xml:space="preserve">
+    <value>Filtrele</value>
+  </data>
+  <data name="btnProductFilterClear" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="btnReportProductCount" xml:space="preserve">
+    <value>Ürün Adetleri</value>
+  </data>
+  <data name="btnReportProductFlow" xml:space="preserve">
+    <value>Ürün Hareketleri</value>
+  </data>
+  <data name="btnReports" xml:space="preserve">
+    <value>Raporlar</value>
+  </data>
+  <data name="btnReport_1Export" xml:space="preserve">
+    <value>Excel Olarak Çıkar</value>
+  </data>
+  <data name="btnReport_1Run" xml:space="preserve">
+    <value>Çalıştır</value>
+  </data>
+  <data name="btnStock" xml:space="preserve">
+    <value>Envanter</value>
+  </data>
+  <data name="btnStockFlowAdd" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnStockFlowDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="btnStockFlowEdit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="btnStockIn" xml:space="preserve">
+    <value>Stok Girişi</value>
+  </data>
+  <data name="btnStockOut" xml:space="preserve">
+    <value>Stok Çıkışı</value>
+  </data>
+  <data name="btnStockProductAdd" xml:space="preserve">
+    <value>Ekle</value>
+  </data>
+  <data name="btnStockProductDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="btnStockProductEdit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="btnSupplier" xml:space="preserve">
+    <value>Tedarikçiler</value>
+  </data>
+  <data name="btnWarehouse" xml:space="preserve">
+    <value>Depolar</value>
+  </data>
+  <data name="cbReport_1FlowIn" xml:space="preserve">
+    <value>Ürün Girişi</value>
+  </data>
+  <data name="cbReport_1FlowOut" xml:space="preserve">
+    <value>Ürün Satışı</value>
+  </data>
+  <data name="cbReport_1OpenReport" xml:space="preserve">
+    <value>Aktarılan Raporu Aç</value>
+  </data>
+  <data name="chReport_1Supplier" xml:space="preserve">
+    <value>Tedarikçi / Müşteri</value>
+  </data>
+  <data name="chReport_2TotalStock" xml:space="preserve">
+    <value>Mevcut Stok</value>
+  </data>
+  <data name="dbAllIsFine" xml:space="preserve">
+    <value>Herşey kontrol edildi ve program kullanıma hazır.</value>
+  </data>
+  <data name="dbConnectionError" xml:space="preserve">
+    <value>Veritabanına bağlanılamadı.\r\n\r\nLütfen ayarlar menüsünden veritabanı dosyasını seçiniz.</value>
+  </data>
+  <data name="dbTableError" xml:space="preserve">
+    <value>Veritabanında hatalar bulunmaktadır. Bazı tablolar bulunamadı.</value>
+  </data>
+  <data name="deleteProductToolStripMenuItem" xml:space="preserve">
+    <value>Ürünü Sil</value>
+  </data>
+  <data name="editProductToolStripMenuItem" xml:space="preserve">
+    <value>Ürünü Düzenle</value>
+  </data>
+  <data name="englishToolStripMenuItem" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="gbProductInfo" xml:space="preserve">
+    <value>Ürün Bilgisi</value>
+  </data>
+  <data name="helpToolStripMenuItem" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="languageToolStripMenuItem" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="lblGrandTotalPrice" xml:space="preserve">
+    <value>Genel Toplam</value>
+  </data>
+  <data name="lblProductBarcode" xml:space="preserve">
+    <value>Ürün Barkodu</value>
+  </data>
+  <data name="lblProductDesc" xml:space="preserve">
+    <value>Ürün Açıklaması</value>
+  </data>
+  <data name="lblProductUnit" xml:space="preserve">
+    <value>Ürün Birimi</value>
+  </data>
+  <data name="lblReportDate" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="lblReport_1StockFlowType" xml:space="preserve">
+    <value>Ürün Hareket Tipi</value>
+  </data>
+  <data name="lblTotalCategory" xml:space="preserve">
+    <value>Toplam Kategori</value>
+  </data>
+  <data name="lblTotalCustomer" xml:space="preserve">
+    <value>Toplam Müşteri</value>
+  </data>
+  <data name="lblTotalProduct" xml:space="preserve">
+    <value>Toplam Ürün</value>
+  </data>
+  <data name="lblTotalSupplier" xml:space="preserve">
+    <value>Toplam Tedarikçi</value>
+  </data>
+  <data name="lblTotalWarehouse" xml:space="preserve">
+    <value>Toplam Depo</value>
+  </data>
+  <data name="mainForm_Text" xml:space="preserve">
+    <value>proGEDIA Envanter Yönetimi</value>
+  </data>
+  <data name="plProductCategory" xml:space="preserve">
+    <value>Ürün Kategorisi</value>
+  </data>
+  <data name="plProductID" xml:space="preserve">
+    <value>Ürün ID</value>
+  </data>
+  <data name="plProductName" xml:space="preserve">
+    <value>Ürün Adı</value>
+  </data>
+  <data name="plProductPrice" xml:space="preserve">
+    <value>Ürün Fiyatı</value>
+  </data>
+  <data name="plProductStock" xml:space="preserve">
+    <value>Stok Adeti</value>
+  </data>
+  <data name="preferencesToolStripMenuItem" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="reportExported" xml:space="preserve">
+    <value>Rapor aktarıldı.</value>
+  </data>
+  <data name="stockFlowDate" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="stockFlowDescription" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="stockFlowQuantity" xml:space="preserve">
+    <value>Adet (Toplam / Ürün)</value>
+  </data>
+  <data name="stockFlowStockTypeIn" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="stockFlowStockTypeOut" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="stockFlowSupplier" xml:space="preserve">
+    <value>Tedarikçi</value>
+  </data>
+  <data name="stockFlowTotalPrice" xml:space="preserve">
+    <value>Toplam Ücret</value>
+  </data>
+  <data name="stockFlowType" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="stockProductPrice" xml:space="preserve">
+    <value>Birim Fiyat</value>
+  </data>
+  <data name="stockProductQuantity" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="stockProductTotalPrice" xml:space="preserve">
+    <value>Toplam Fiyat</value>
+  </data>
+  <data name="stockProductUnit" xml:space="preserve">
+    <value>Birim</value>
+  </data>
+  <data name="tbCountCategory" xml:space="preserve">
+    <value>Kayıtlı kategori bulunmamaktadır. Lütfen öncelikle kategori ekleyiniz.</value>
+  </data>
+  <data name="tbCountCustomer" xml:space="preserve">
+    <value>Kayıtlı müşteri bulunmamaktadır. Lütfen öncelikle, ürün çıkışı gerçekleştirebilmek için müşteri ekleyiniz.</value>
+  </data>
+  <data name="tbCountProduct" xml:space="preserve">
+    <value>Kayıtlı ürün bulunmamaktadır. Lütfen öncelikle ürün ekleyiniz.</value>
+  </data>
+  <data name="tbCountSupplier" xml:space="preserve">
+    <value>Kayıtlı tedarikçi bulunmamaktadır. Lütfen öncelikle tedarikçi ekleyiniz.</value>
+  </data>
+  <data name="tbCountWarehouse" xml:space="preserve">
+    <value>Kayıtlı depo bulunmamaktadır. Lütfen öncelikle depo ekleyiniz.</value>
+  </data>
+  <data name="turkishToolStripMenuItem" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="unitGram" xml:space="preserve">
+    <value>Gram</value>
+  </data>
+  <data name="unitMeter" xml:space="preserve">
+    <value>Metre</value>
+  </data>
+  <data name="unitPiece" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="unknownError" xml:space="preserve">
+    <value>Bilinmeyen bir hata oluştu.</value>
+  </data>
+</root>

@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>All categories</value>
+  </data>
+  <data name="AllCustomers" xml:space="preserve">
+    <value>All customers</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>All products</value>
+  </data>
+  <data name="AllSuppliers" xml:space="preserve">
+    <value>All suppliers</value>
+  </data>
+  <data name="btnCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="btnCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="btnProduct" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="btnProductAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnProductDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnProductEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnProductFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="btnProductFilterClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnReportProductCount" xml:space="preserve">
+    <value>Product Count</value>
+  </data>
+  <data name="btnReportProductFlow" xml:space="preserve">
+    <value>Product Flow</value>
+  </data>
+  <data name="btnReports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="btnReport_1Export" xml:space="preserve">
+    <value>Export as Excel</value>
+  </data>
+  <data name="btnReport_1Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="btnStock" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="btnStockFlowAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnStockFlowDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnStockFlowEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnStockIn" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="btnStockOut" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
+  <data name="btnStockProductAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnStockProductDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnStockProductEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="btnWarehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="cbReport_1FlowIn" xml:space="preserve">
+    <value>Flow In</value>
+  </data>
+  <data name="cbReport_1FlowOut" xml:space="preserve">
+    <value>Flow Out</value>
+  </data>
+  <data name="cbReport_1OpenReport" xml:space="preserve">
+    <value>Open Exported Report</value>
+  </data>
+  <data name="chReport_1Supplier" xml:space="preserve">
+    <value>Supplier / Customer</value>
+  </data>
+  <data name="chReport_2TotalStock" xml:space="preserve">
+    <value>Total Stock</value>
+  </data>
+  <data name="dbAllIsFine" xml:space="preserve">
+    <value>All is fine and ready to use.</value>
+  </data>
+  <data name="dbConnectionError" xml:space="preserve">
+    <value>Could not connect to database.\r\n\r\nPlease select database file from settings menu.</value>
+  </data>
+  <data name="dbTableError" xml:space="preserve">
+    <value>There is error on database. Some tables could not found.</value>
+  </data>
+  <data name="deleteProductToolStripMenuItem" xml:space="preserve">
+    <value>Delete Product</value>
+  </data>
+  <data name="editProductToolStripMenuItem" xml:space="preserve">
+    <value>Edit Product</value>
+  </data>
+  <data name="englishToolStripMenuItem" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="gbProductInfo" xml:space="preserve">
+    <value>Product Info</value>
+  </data>
+  <data name="helpToolStripMenuItem" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="languageToolStripMenuItem" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblGrandTotalPrice" xml:space="preserve">
+    <value>Grand Total Price</value>
+  </data>
+  <data name="lblProductBarcode" xml:space="preserve">
+    <value>Product Barcode</value>
+  </data>
+  <data name="lblProductDesc" xml:space="preserve">
+    <value>Product Desc.</value>
+  </data>
+  <data name="lblProductUnit" xml:space="preserve">
+    <value>Product Unit</value>
+  </data>
+  <data name="lblReportDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lblReport_1StockFlowType" xml:space="preserve">
+    <value>Stock Flow Type</value>
+  </data>
+  <data name="lblTotalCategory" xml:space="preserve">
+    <value>Total Category</value>
+  </data>
+  <data name="lblTotalCustomer" xml:space="preserve">
+    <value>Total Customer</value>
+  </data>
+  <data name="lblTotalProduct" xml:space="preserve">
+    <value>Total Product</value>
+  </data>
+  <data name="lblTotalSupplier" xml:space="preserve">
+    <value>Total Supplier</value>
+  </data>
+  <data name="lblTotalWarehouse" xml:space="preserve">
+    <value>Total Warehouse</value>
+  </data>
+  <data name="mainForm_Text" xml:space="preserve">
+    <value>proGEDIA Inventory Management</value>
+  </data>
+  <data name="plProductCategory" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="plProductID" xml:space="preserve">
+    <value>Product ID</value>
+  </data>
+  <data name="plProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="plProductPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="plProductStock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="preferencesToolStripMenuItem" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="reportExported" xml:space="preserve">
+    <value>Report exported</value>
+  </data>
+  <data name="stockFlowDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="stockFlowDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="stockFlowQuantity" xml:space="preserve">
+    <value>Quantity (Total / Product)</value>
+  </data>
+  <data name="stockFlowStockTypeIn" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="stockFlowStockTypeOut" xml:space="preserve">
+    <value>Out</value>
+  </data>
+  <data name="stockFlowSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="stockFlowTotalPrice" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="stockFlowType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="stockProductPrice" xml:space="preserve">
+    <value>Quantity Price</value>
+  </data>
+  <data name="stockProductQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="stockProductTotalPrice" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="stockProductUnit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="tbCountCategory" xml:space="preserve">
+    <value>You do not have any category. You have to add category first.</value>
+  </data>
+  <data name="tbCountCustomer" xml:space="preserve">
+    <value>You do not have any customer. You need to add customer first to stock out product.</value>
+  </data>
+  <data name="tbCountProduct" xml:space="preserve">
+    <value>You do not have any product. You have to add product first.</value>
+  </data>
+  <data name="tbCountSupplier" xml:space="preserve">
+    <value>You do not have any supplier. You have to add supplier first.</value>
+  </data>
+  <data name="tbCountWarehouse" xml:space="preserve">
+    <value>You do not have any warehouse. You have to add warehouse first.</value>
+  </data>
+  <data name="turkishToolStripMenuItem" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="unitGram" xml:space="preserve">
+    <value>Gram</value>
+  </data>
+  <data name="unitMeter" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="unitPiece" xml:space="preserve">
+    <value>Piece</value>
+  </data>
+  <data name="unknownError" xml:space="preserve">
+    <value>An unknown error occured.</value>
+  </data>
+</root>

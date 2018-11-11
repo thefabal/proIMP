@@ -169,7 +169,7 @@ namespace proIMP {
             Dictionary<string, List<string>> db_content = new Dictionary<string, List<string>> {
                 { "table", new List<string>( new string[ ] { "category", "customer", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } ) },
                 { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) },
-                {"trigger", new List<string>( new string[ ] { "stock_afterdelete" } ) }
+                { "trigger", new List<string>( new string[ ] { "stock_afterdelete" } ) }
             };
 
             while( dbReader.Read() ) {

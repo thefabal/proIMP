@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 
+// Multilanguage support
+using System.Globalization;
+using System.Resources;
+
 //SQLite
 using System.Data.SQLite;
 
@@ -27,6 +31,9 @@ namespace proIMP {
     public partial class frmMain : Form {
         public static SQLiteConnection sqlCon;
 
+        public ResourceManager resMan;
+        public CultureInfo culInfo;
+
         /**
          * forms
         **/
@@ -39,7 +46,6 @@ namespace proIMP {
         public static frmStockFlowOut stockout = new frmStockFlowOut();
         public static frmSupplier supplier = new frmSupplier();
         public static frmWarehouse warehouse = new frmWarehouse();
-
         public static frmPreferences preferences;
 
         public static settings setting = new settings();
@@ -48,6 +54,7 @@ namespace proIMP {
          *  
         **/
         private string sortedColumn = string.Empty;
+
         /**
          * -1: do not sort
          *  0: int
@@ -83,8 +90,20 @@ namespace proIMP {
                 }
             }
 
+            if( setting.language.Length == 0 ) {
+                CultureInfo ci = CultureInfo.InstalledUICulture;
+
+                if( ci.Name == "tr-TR" ) {
+                    setting.language = "tr";
+                } else {
+                    setting.language = "en";
+                }
+            }
+
+            switchLanguage();
+
             if( connectDB() == false ) {
-                MessageBox.Show( "Could not connect to database.\r\n\r\nPlease select database file from settings menu." );
+                MessageBox.Show( resMan.GetString( "dbConnectionError", culInfo ) );
             }
             checkDB();
 
@@ -102,12 +121,168 @@ namespace proIMP {
 
             string strSettings = serializer.Serialize( new {
                 setting.productOrder,
+                setting.language,
                 setting.database
             } );
 
-            System.IO.File.WriteAllText( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json", strSettings );
+            File.WriteAllText( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json", strSettings );
         }
-        
+
+        private void switchLanguage( ) {
+            if( setting.language == "tr" ) {
+                culInfo = CultureInfo.CreateSpecificCulture( "tr" );
+                turkishToolStripMenuItem.Checked = true;
+                englishToolStripMenuItem.Checked = false;
+            } else {
+                culInfo = CultureInfo.CreateSpecificCulture( "en" );
+                turkishToolStripMenuItem.Checked = false;
+                englishToolStripMenuItem.Checked = true;
+            }
+
+            resMan = new ResourceManager( "proIMP.Resource.Res", typeof( frmMain ).Assembly );
+
+            Text = resMan.GetString( "mainForm_Text", culInfo );
+
+            /**
+             * Main Left Menu
+             **/
+            btnProduct.Text = resMan.GetString( "btnProduct", culInfo );
+            btnWarehouse.Text = resMan.GetString( "btnWarehouse", culInfo );
+            btnSupplier.Text = resMan.GetString( "btnSupplier", culInfo );
+            btnCustomer.Text = resMan.GetString( "btnCustomer", culInfo );
+            btnCategory.Text = resMan.GetString( "btnCategory", culInfo );
+            btnStock.Text = resMan.GetString( "btnStock", culInfo );
+            btnStockIn.Text = resMan.GetString( "btnStockIn", culInfo );
+            btnStockOut.Text = resMan.GetString( "btnStockOut", culInfo );
+            btnReports.Text = resMan.GetString( "btnReports", culInfo );
+            btnReportProductFlow.Text = resMan.GetString( "btnReportProductFlow", culInfo );
+            btnReportProductCount.Text = resMan.GetString( "btnReportProductCount", culInfo );
+
+            /**
+             * Menu Strip
+             **/
+            productToolStripMenuItem.Text = btnProduct.Text;
+            warehouseToolStripMenuItem.Text = btnWarehouse.Text;
+            supplierToolStripMenuItem.Text = btnSupplier.Text;
+            customerToolStripMenuItem.Text = btnCustomer.Text;
+            categoryToolStripMenuItem.Text = btnCategory.Text;
+            stockToolStripMenuItem.Text = btnStock.Text;
+            stockInToolStripMenuItem.Text = btnStockIn.Text;
+            stockOutToolStripMenuItem.Text = btnStockOut.Text;
+            reportsToolStripMenuItem.Text = btnReports.Text;
+            stockFlowToolStripMenuItem.Text = btnReportProductFlow.Text;
+            productCountToolStripMenuItem.Text = btnReportProductCount.Text;
+            helpToolStripMenuItem.Text = resMan.GetString( "helpToolStripMenuItem", culInfo );
+            languageToolStripMenuItem.Text = resMan.GetString( "languageToolStripMenuItem", culInfo );
+            englishToolStripMenuItem.Text = resMan.GetString( "englishToolStripMenuItem", culInfo );
+            turkishToolStripMenuItem.Text = resMan.GetString( "turkishToolStripMenuItem", culInfo );
+            preferencesToolStripMenuItem.Text = resMan.GetString( "preferencesToolStripMenuItem", culInfo );
+            helpToolStripMenuItem1.Text = helpToolStripMenuItem.Text;
+            aboutToolStripMenuItem.Text = resMan.GetString( "aboutToolStripMenuItem", culInfo );
+
+            /**
+             * Count
+             **/
+            lblTotalProduct.Text = resMan.GetString( "lblTotalProduct", culInfo );
+            lblTotalCategory.Text = resMan.GetString( "lblTotalCategory", culInfo );
+            lblTotalCustomer.Text = resMan.GetString( "lblTotalCustomer", culInfo );
+            lblTotalSupplier.Text = resMan.GetString( "lblTotalSupplier", culInfo );
+            lblTotalWarehouse.Text = resMan.GetString( "lblTotalWarehouse", culInfo );
+
+            btnProductFilter.Text = resMan.GetString( "btnProductFilter", culInfo );
+            btnProductFilterClear.Text = resMan.GetString( "btnProductFilterClear", culInfo );
+
+            plProductName.Text = resMan.GetString( "plProductName", culInfo );
+            plProductID.Text = resMan.GetString( "plProductID", culInfo );
+            plProductCategory.Text = resMan.GetString( "plProductCategory", culInfo );
+            plProductStock.Text = resMan.GetString( "plProductStock", culInfo );
+            plProductPrice.Text = resMan.GetString( "plProductPrice", culInfo );
+
+            /**
+             * Product Info
+             **/
+            lblProductID.Text = plProductName.Text;
+            lblProductName.Text = plProductName.Text;
+            lblProductCategory.Text = plProductCategory.Text;
+            lblProductDesc.Text = resMan.GetString( "lblProductDesc", culInfo );
+            lblProductUnit.Text = resMan.GetString( "lblProductUnit", culInfo );
+            lblProductBarcode.Text = resMan.GetString( "lblProductBarcode", culInfo );
+
+            btnProductAdd.Text = resMan.GetString( "btnProductAdd", culInfo );
+            btnProductEdit.Text = resMan.GetString( "btnProductEdit", culInfo );
+            btnProductDelete.Text = resMan.GetString( "btnProductDelete", culInfo );
+
+            editProductToolStripMenuItem.Text = resMan.GetString( "editProductToolStripMenuItem", culInfo );
+            deleteProductToolStripMenuItem.Text = resMan.GetString( "deleteProductToolStripMenuItem", culInfo );
+
+            gbProductInfo.Text = resMan.GetString( "gbProductInfo", culInfo );
+
+            /**
+             * Stock Flow
+             **/
+            stockFlowType.Text = resMan.GetString( "stockFlowType", culInfo );
+            stockFlowDate.Text = resMan.GetString( "stockFlowDate", culInfo );
+            stockFlowSupplier.Text = resMan.GetString( "stockFlowSupplier", culInfo );
+            stockFlowDescription.Text = resMan.GetString( "stockFlowDescription", culInfo );
+            stockFlowQuantity.Text = resMan.GetString( "stockFlowQuantity", culInfo );
+            stockFlowTotalPrice.Text = resMan.GetString( "stockFlowTotalPrice", culInfo );
+
+            btnStockFlowAdd.Text = resMan.GetString( "btnStockFlowAdd", culInfo );
+            addStockInToolStripMenuItem.Text = btnStockIn.Text;
+            stockOutToolStripMenuItem1.Text = btnStockOut.Text;
+            btnStockFlowEdit.Text = resMan.GetString( "btnStockFlowEdit", culInfo );
+            btnStockFlowDelete.Text = resMan.GetString( "btnStockFlowDelete", culInfo );
+
+            stockProductName.Text = plProductName.Text;
+            stockProductUnit.Text = resMan.GetString( "stockProductUnit", culInfo );
+            stockProductQuantity.Text = resMan.GetString( "stockProductQuantity", culInfo );
+            stockProductPrice.Text = resMan.GetString( "stockProductPrice", culInfo );
+            stockProductTotalPrice.Text = resMan.GetString( "stockProductTotalPrice", culInfo );
+
+            btnStockProductAdd.Text = resMan.GetString( "btnStockProductAdd", culInfo );
+            btnStockProductEdit.Text = resMan.GetString( "btnStockProductEdit", culInfo );
+            btnStockProductDelete.Text = resMan.GetString( "btnStockProductDelete", culInfo );
+
+            lblGrandTotalPrice.Text = resMan.GetString( "lblGrandTotalPrice", culInfo );
+
+            lblReport_1Date.Text = resMan.GetString( "lblReportDate", culInfo );
+            lblReport_1Category.Text = btnCategory.Text;
+            lblReport_1Product.Text = btnProduct.Text;
+            lblReport_1Supplier.Text = btnSupplier.Text;
+            btnReport_1Customer.Text = btnCustomer.Text;
+            lblReport_1StockFlowType.Text = resMan.GetString( "lblReport_1StockFlowType", culInfo );
+            cbReport_1FlowIn.Text = resMan.GetString( "cbReport_1FlowIn", culInfo );
+            cbReport_1FlowOut.Text = resMan.GetString( "cbReport_1FlowOut", culInfo );
+            btnReport_1Run.Text = resMan.GetString( "btnReport_1Run", culInfo );
+
+            chReport_1Date.Text = lblReport_1Date.Text;
+            chReport_1Supplier.Text = resMan.GetString( "chReport_1Supplier", culInfo );
+            chReport_1Product.Text = btnProduct.Text;
+            chReport_1Unit.Text = stockProductUnit.Text;
+            chReport_1Quantity.Text = stockProductQuantity.Text;
+            chReport_1Price.Text = stockProductPrice.Text;
+            chReport_1TotalPrice.Text = stockProductTotalPrice.Text;
+
+            btnReport_1Export.Text = resMan.GetString( "btnReport_1Export", culInfo );
+            cbReport_1OpenReport.Text = resMan.GetString( "cbReport_1OpenReport", culInfo );
+
+            lblReport_2Date.Text = lblReport_1Date.Text;
+            lblReport_2Category.Text = btnCategory.Text;
+            lblReport_2Product.Text = btnProduct.Text;
+            lblReport_2Warehouse.Text = btnWarehouse.Text;
+            btnReport_2Run.Text = btnReport_1Run.Text;
+
+            chReport_2Product.Text = btnProduct.Text;
+            chReport_2Category.Text = btnCategory.Text;
+            chReport_2Unit.Text = stockProductUnit.Text;
+            chReport_2StockIn.Text = btnStockIn.Text;
+            chReport_2StockOut.Text = btnStockOut.Text;
+            chReport_2TotalStock.Text = resMan.GetString( "chReport_2TotalStock", culInfo );
+
+            btnReport_2Export.Text = btnReport_1Export.Text;
+            cbReport_2OpenReport.Text = cbReport_1OpenReport.Text;
+        }
+
         /**
          * Menu Strip
          **/
@@ -116,6 +291,23 @@ namespace proIMP {
          * Menu Strip
          * Events
         **/
+        private void languageToolStripMenuItem_Click( object sender, EventArgs e ) {
+            switch( ( (ToolStripMenuItem)sender ).Name ) {
+                case "turkishToolStripMenuItem":
+                    setting.language = "tr";
+                    break;
+
+                case "englishToolStripMenuItem":
+                    setting.language = "en";
+                    break;
+
+                default:
+                    return;
+            }
+
+            switchLanguage();
+        }
+
         private void preferencesToolStripMenuItem_Click( object sender, EventArgs e ) {
             if( preferences.ShowDialog() == DialogResult.OK ) {
 
@@ -217,7 +409,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_1Category.Items.Clear();
-                cbReport_1Category.Items.Add( new CategoryItem( "-1", "All categories" ) );
+                cbReport_1Category.Items.Add( new CategoryItem( "-1", resMan.GetString( "AllCategories", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_1Category.Items.Add( new CategoryItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString() ) );
                 }
@@ -232,7 +424,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_1Supplier.Items.Clear();
-                cbReport_1Supplier.Items.Add( new SupplierItem( "-1", "All suppliers" ) );
+                cbReport_1Supplier.Items.Add( new SupplierItem( "-1", resMan.GetString( "AllSuppliers", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_1Supplier.Items.Add( new SupplierItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString() ) );
                 }
@@ -247,7 +439,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_1Customer.Items.Clear();
-                cbReport_1Customer.Items.Add( new SupplierItem( "-1", "All customers" ) );
+                cbReport_1Customer.Items.Add( new SupplierItem( "-1", resMan.GetString( "AllCustomers", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_1Customer.Items.Add( new SupplierItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString() ) );
                 }
@@ -262,7 +454,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_1Product.Items.Clear();
-                cbReport_1Product.Items.Add( new ProductItem( "-1", "All products", "Piece" ) );
+                cbReport_1Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitPiece", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_1Product.Items.Add( new ProductItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString(), dbReader[ 2 ].ToString() ) );
                 }
@@ -393,12 +585,12 @@ namespace proIMP {
                 SQLiteCommand dbCommand = new SQLiteCommand( "SELECT t1.product_id, t1.product_name, t2.category_name, t1.product_desc, t1.product_unit, t1.product_barcode, t1.product_imageid, t3.image_binary FROM product AS t1 LEFT JOIN category AS t2 ON t1.product_catid = t2.category_id LEFT JOIN image AS t3 ON t1.product_imageid = t3.image_id WHERE t1.product_id = '" + lvProductList.SelectedItems[ 0 ].SubItems[ 1 ].Text + "'", sqlCon );
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
                 while( dbReader.Read() ) {
-                    lblProductID.Text = dbReader[ "product_id" ].ToString();
-                    lblProductName.Text = dbReader[ "product_name" ].ToString();
-                    lblProductCategory.Text = dbReader[ "category_name" ].ToString();
-                    lblProductDesc.Text = dbReader[ "product_desc" ].ToString();
-                    lblProductUnit.Text = dbReader[ "product_unit" ].ToString();
-                    lblProductBarcode.Text = dbReader[ "product_barcode" ].ToString();
+                    lblProductIDT.Text = ": " + dbReader[ "product_id" ].ToString();
+                    lblProductNameT.Text = ": " + dbReader[ "product_name" ].ToString();
+                    lblProductCategoryT.Text = ": " + dbReader[ "category_name" ].ToString();
+                    lblProductDescT.Text = ": " + dbReader[ "product_desc" ].ToString();
+                    lblProductUnitT.Text = ": " + dbReader[ "product_unit" ].ToString();
+                    lblProductBarcodeT.Text = ": " + dbReader[ "product_barcode" ].ToString();
 
                     if( dbReader[ "product_imageid" ].ToString().Length != 0 ) {
                         pbProductImage.Visible = true;
@@ -408,12 +600,12 @@ namespace proIMP {
                     }
                 }
             } else {
-                lblProductID.Text = "";
-                lblProductName.Text = "";
-                lblProductCategory.Text = "";
-                lblProductDesc.Text = "";
-                lblProductUnit.Text = "";
-                lblProductBarcode.Text = "";
+                lblProductIDT.Text = ": ";
+                lblProductNameT.Text = ": ";
+                lblProductCategoryT.Text = ": ";
+                lblProductDescT.Text = ": ";
+                lblProductUnitT.Text = ": ";
+                lblProductBarcodeT.Text = ": ";
                 pbProductImage.Visible = false;
             }
         }
@@ -500,7 +692,7 @@ namespace proIMP {
                 lvProductList.ItemChecked += new ItemCheckedEventHandler( lvProductList_ItemChecked );
                 lvProductList_ItemChecked( this, new ItemCheckedEventArgs( new ListViewItem() ) );
             } catch {
-                MessageBox.Show( "An unknown error occured." );
+                MessageBox.Show( resMan.GetString( "unknownError", culInfo ) );
             }
         }
 
@@ -550,7 +742,7 @@ namespace proIMP {
                     dTotalPrice = dQuantity * dPrice;
                     dGrandPrice += dTotalPrice;
 
-                    ListViewItem lvi = new ListViewItem( new string[ ] { dbReader[ "product_name" ].ToString(), dbReader[ "sflow_id" ].ToString(), dbReader[ "product_unit" ].ToString(), dQuantity.ToString( "0.000" ), dPrice.ToString( "0.000" ), dTotalPrice.ToString( "0.000" ) } );
+                    ListViewItem lvi = new ListViewItem( new string[ ] { dbReader[ "product_name" ].ToString(), dbReader[ "sflow_id" ].ToString(), resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo ), dQuantity.ToString( "0.000" ), dPrice.ToString( "0.000" ), dTotalPrice.ToString( "0.000" ) } );
 
                     lvStockProductList.Items.Add( lvi );
                 }
@@ -651,7 +843,7 @@ namespace proIMP {
                 lvStockFlow.ItemChecked -= new ItemCheckedEventHandler( lvStockFlow_ItemChecked );
                 while( dbReader.Read() ) {
                     ListViewItem lvi = new ListViewItem( new string[ ] {
-                        ( dbReader[ "stock_type" ].ToString() == "1" )?( "In" ):( "Out" ),
+                        ( dbReader[ "stock_type" ].ToString() == "1" )?( resMan.GetString( "stockFlowStockTypeIn", culInfo ) ):( resMan.GetString( "stockFlowStockTypeOut", culInfo ) ),
                         dbReader[ "stock_id" ].ToString(),
                         ( (DateTime)dbReader[ "stock_date" ] ).ToString("dd.MM.yyyy"),
                         dbReader[ "stock_name" ].ToString(),
@@ -666,7 +858,7 @@ namespace proIMP {
                 lvStockFlow.ItemChecked += new ItemCheckedEventHandler( lvStockFlow_ItemChecked );
                 lvStockFlow_ItemChecked( this, new ItemCheckedEventArgs( new ListViewItem() ) );
             } catch {
-                MessageBox.Show( "An unknown error occured." );
+                MessageBox.Show( resMan.GetString( "unknownError", culInfo ) );
             }
         }
 
@@ -770,7 +962,7 @@ namespace proIMP {
                         dbReader[ "stock_date" ].ToString().Substring(0, 10),
                         dbReader[ "supplier_name" ].ToString(),
                         dbReader[ "product_name" ].ToString(),
-                        dbReader[ "product_unit" ].ToString(),
+                        resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo ),
                         ( dbReader[ "sflow_quantity" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() ).ToString( "0.000" ) ) :( "" ),
                         ( dbReader[ "sflow_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_price" ].ToString() ).ToString( "0.000" ) ) :( "" ),
                         ( dbReader[ "total_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "total_price" ].ToString() ).ToString( "0.000" ) ) :( "" )
@@ -779,7 +971,7 @@ namespace proIMP {
                     lvReport_1.Items.Add( lvi );
                 }
             } catch {
-                MessageBox.Show( "An unknown error occured." );
+                MessageBox.Show( resMan.GetString( "unknownError", culInfo ) );
             }
         }
 
@@ -837,7 +1029,7 @@ namespace proIMP {
             ExcelPackage ExcelFile = new ExcelPackage();
             ExcelWorksheet worksheet = ExcelFile.Workbook.Worksheets.Add( "Sheet1" );
 
-            string[ ] strHeader = { "Date", "Supplier / Customer Name", "Product Name", "Unit", "Quantity", "Price", "Total Price" };
+            string[ ] strHeader = { resMan.GetString( "lblReportDate", culInfo ), resMan.GetString( "chReport_1Supplier", culInfo ), resMan.GetString( "plProductName", culInfo ), resMan.GetString( "stockProductUnit", culInfo ), resMan.GetString( "stockProductQuantity", culInfo ), resMan.GetString( "plProductPrice", culInfo ), resMan.GetString( "stockFlowTotalPrice", culInfo ) };
             int[ ] iColumnWidth = { 75, 150, 300, 64, 70, 70, 70 };
 
             for( int i = 0; i < strHeader.Length; i++ ) {
@@ -863,7 +1055,7 @@ namespace proIMP {
 
             for( int i = 0; i < lvReport_1.Items.Count; i++ ) {
                 worksheet.Cells[ i + 2, 1 ].Value = Convert.ToDateTime( lvReport_1.Items[ i ].SubItems[ 1 ].Text );
-                worksheet.Cells[ i + 2, 1 ].Style.Numberformat.Format = System.Globalization.DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                worksheet.Cells[ i + 2, 1 ].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
 
                 worksheet.Cells[ i + 2, 2 ].Value = lvReport_1.Items[ i ].SubItems[ 2 ].Text;
                 worksheet.Cells[ i + 2, 3 ].Value = lvReport_1.Items[ i ].SubItems[ 3 ].Text;
@@ -885,7 +1077,7 @@ namespace proIMP {
             worksheet.Cells[ "E2:G" + ( lvReport_1.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.000";
 
             worksheet.Cells[ "E" + ( lvReport_1.Items.Count + 2 ) + ":F" + ( lvReport_1.Items.Count + 2 ) ].Merge = true;
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Value = "Total Price : ";
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Value = resMan.GetString( "lblGrandTotalPrice", culInfo ) + " : ";
             worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Style.Font.Bold = true;
             worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
             worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Value = dTotalPrice;
@@ -903,7 +1095,7 @@ namespace proIMP {
             if( cbReport_1OpenReport.Checked == true ) {
                 System.Diagnostics.Process.Start( strReportFile );
             } else {
-                MessageBox.Show( "Report exported" );
+                MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
             }
         }
 
@@ -1061,7 +1253,7 @@ namespace proIMP {
                     tbCountWarehouse.Text = dbReader[ "cnt" ].ToString();
 
                     if( tbCountWarehouse.Text == "0" ) {
-                        lblMessage.Text = "You do not have any warehouse. You have to add warehouse first.";
+                        lblMessage.Text = resMan.GetString( "tbCountWarehouse", culInfo );
 
                         dbReader.Close();
 
@@ -1077,7 +1269,7 @@ namespace proIMP {
                     tbCountSupplier.Text = dbReader[ "cnt" ].ToString();
 
                     if( tbCountSupplier.Text == "0" ) {
-                        lblMessage.Text = "You do not have any supplier. You have to add supplier first.";
+                        lblMessage.Text = resMan.GetString( "tbCountSupplier", culInfo );
 
                         dbReader.Close();
 
@@ -1093,7 +1285,7 @@ namespace proIMP {
                     tbCountCategory.Text = dbReader[ "cnt" ].ToString();
 
                     if( tbCountCategory.Text == "0" ) {
-                        lblMessage.Text = "You do not have any category. You have to add category first.";
+                        lblMessage.Text = resMan.GetString( "tbCountCategory", culInfo );
 
                         dbReader.Close();
 
@@ -1109,7 +1301,7 @@ namespace proIMP {
                     tbCountProduct.Text = dbReader[ "cnt" ].ToString();
 
                     if( tbCountProduct.Text == "0" ) {
-                        lblMessage.Text = "You do not have any product. You have to add product first.";
+                        lblMessage.Text = resMan.GetString( "tbCountProduct", culInfo );
 
                         dbReader.Close();
 
@@ -1125,7 +1317,7 @@ namespace proIMP {
                     tbCountCustomer.Text = dbReader[ "cnt" ].ToString();
 
                     if( tbCountCustomer.Text == "0" ) {
-                        lblMessage.Text = "You do not have any customer. You need to add customer first to stock out product.";
+                        lblMessage.Text = resMan.GetString( "tbCountCustomer", culInfo );
 
                         dbReader.Close();
 
@@ -1138,10 +1330,10 @@ namespace proIMP {
                 getStockFlowList();
                 getStockFlowProductList();
             } catch {
-                lblMessage.Text = "There is error on database. Some tables could not found.";
+                lblMessage.Text = resMan.GetString( "dbTableError", culInfo );
             }
 
-            lblMessage.Text = "All is fine and ready to use.";
+            lblMessage.Text = resMan.GetString( "dbAllIsFine", culInfo );
 
             return true;
         }
@@ -1243,6 +1435,7 @@ namespace proIMP {
     public class settings {
         public int productOrder { get; set; } = 0;
 
+        public string language { get; set; } = "en";
         public string database { get; set; } = Path.GetDirectoryName( Application.ExecutablePath ) + "\\db\\database.sqlite";
     }
 
