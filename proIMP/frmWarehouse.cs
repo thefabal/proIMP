@@ -12,9 +12,12 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmWarehouse : Form {
-        public frmWarehouse() {
+        public frmMain frmMain;
+
+        public frmWarehouse(frmMain frmMain) {
             InitializeComponent();
 
+            this.frmMain = frmMain;
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
         }
 
@@ -26,7 +29,23 @@ namespace proIMP {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
 
+            switchLanguage();
             getWarehouseList();
+        }
+
+        private void switchLanguage( ) {
+            Text = frmMain.resMan.GetString( "frmWarehouse_Text", frmMain.culInfo );
+            lblWarehouseID.Text = frmMain.resMan.GetString( "lblWarehouseID", frmMain.culInfo ) + " :";
+            lblWarehouseName.Text = frmMain.resMan.GetString( "lblWarehouseName", frmMain.culInfo ) + " :";
+            lblWarehouseDesc.Text = frmMain.resMan.GetString( "lblWarehouseDesc", frmMain.culInfo ) + " :";
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+            btnClear.Text = frmMain.resMan.GetString( "btnClear", frmMain.culInfo );
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnEdit.Text = frmMain.resMan.GetString( "btnEdit", frmMain.culInfo );
+            btnDelete.Text = frmMain.resMan.GetString( "btnDelete", frmMain.culInfo );
+
+            chWarehouseName.Text = frmMain.resMan.GetString( "chWarehouseName", frmMain.culInfo );
+            chWarehouseDescription.Text = frmMain.resMan.GetString( "chWarehouseDescription", frmMain.culInfo );
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
@@ -40,12 +59,12 @@ namespace proIMP {
                     }
                     dbCommand.ExecuteNonQuery();
                 } catch {
-                    MessageBox.Show( "Could not save warehouse to database. Please try again." );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveWarehouse", frmMain.culInfo ) );
 
                     return;
                 }
 
-                this.DialogResult = DialogResult.OK;
+                getWarehouseList();
             }
         }
 

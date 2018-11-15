@@ -45,7 +45,7 @@ namespace proIMP {
         public static frmStockFlowIn stockin = new frmStockFlowIn();
         public static frmStockFlowOut stockout = new frmStockFlowOut();
         public static frmSupplier supplier = new frmSupplier();
-        public static frmWarehouse warehouse = new frmWarehouse();
+        public static frmWarehouse warehouse;
         public static frmPreferences preferences;
 
         public static settings setting = new settings();
@@ -71,8 +71,10 @@ namespace proIMP {
 
         public frmMain() {
             InitializeComponent();
+
             this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
 
+            warehouse = new frmWarehouse( this );
             preferences = new frmPreferences( this );
         }
 
@@ -190,7 +192,7 @@ namespace proIMP {
             lblTotalWarehouse.Text = resMan.GetString( "lblTotalWarehouse", culInfo );
 
             btnProductFilter.Text = resMan.GetString( "btnProductFilter", culInfo );
-            btnProductFilterClear.Text = resMan.GetString( "btnProductFilterClear", culInfo );
+            btnProductFilterClear.Text = resMan.GetString( "btnClear", culInfo );
 
             plProductName.Text = resMan.GetString( "plProductName", culInfo );
             plProductID.Text = resMan.GetString( "plProductID", culInfo );
@@ -208,9 +210,9 @@ namespace proIMP {
             lblProductUnit.Text = resMan.GetString( "lblProductUnit", culInfo );
             lblProductBarcode.Text = resMan.GetString( "lblProductBarcode", culInfo );
 
-            btnProductAdd.Text = resMan.GetString( "btnProductAdd", culInfo );
-            btnProductEdit.Text = resMan.GetString( "btnProductEdit", culInfo );
-            btnProductDelete.Text = resMan.GetString( "btnProductDelete", culInfo );
+            btnProductAdd.Text = resMan.GetString( "btnAdd", culInfo );
+            btnProductEdit.Text = resMan.GetString( "btnEdit", culInfo );
+            btnProductDelete.Text = resMan.GetString( "btnDelete", culInfo );
 
             editProductToolStripMenuItem.Text = resMan.GetString( "editProductToolStripMenuItem", culInfo );
             deleteProductToolStripMenuItem.Text = resMan.GetString( "deleteProductToolStripMenuItem", culInfo );
@@ -227,11 +229,11 @@ namespace proIMP {
             stockFlowQuantity.Text = resMan.GetString( "stockFlowQuantity", culInfo );
             stockFlowTotalPrice.Text = resMan.GetString( "stockFlowTotalPrice", culInfo );
 
-            btnStockFlowAdd.Text = resMan.GetString( "btnStockFlowAdd", culInfo );
+            btnStockFlowAdd.Text = resMan.GetString( "btnAdd", culInfo );
             addStockInToolStripMenuItem.Text = btnStockIn.Text;
             stockOutToolStripMenuItem1.Text = btnStockOut.Text;
-            btnStockFlowEdit.Text = resMan.GetString( "btnStockFlowEdit", culInfo );
-            btnStockFlowDelete.Text = resMan.GetString( "btnStockFlowDelete", culInfo );
+            btnStockFlowEdit.Text = resMan.GetString( "btnEdit", culInfo );
+            btnStockFlowDelete.Text = resMan.GetString( "btnDelete", culInfo );
 
             stockProductName.Text = plProductName.Text;
             stockProductUnit.Text = resMan.GetString( "stockProductUnit", culInfo );
@@ -239,8 +241,8 @@ namespace proIMP {
             stockProductPrice.Text = resMan.GetString( "stockProductPrice", culInfo );
             stockProductTotalPrice.Text = resMan.GetString( "stockProductTotalPrice", culInfo );
 
-            btnStockProductAdd.Text = resMan.GetString( "btnStockProductAdd", culInfo );
-            btnStockProductEdit.Text = resMan.GetString( "btnStockProductEdit", culInfo );
+            btnStockProductAdd.Text = resMan.GetString( "btnAdd", culInfo );
+            btnStockProductEdit.Text = resMan.GetString( "btnEdit", culInfo );
             btnStockProductDelete.Text = resMan.GetString( "btnStockProductDelete", culInfo );
 
             lblGrandTotalPrice.Text = resMan.GetString( "lblGrandTotalPrice", culInfo );

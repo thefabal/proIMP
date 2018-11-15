@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblWarehouseID = new System.Windows.Forms.Label();
+            this.lblWarehouseName = new System.Windows.Forms.Label();
+            this.lblWarehouseDesc = new System.Windows.Forms.Label();
             this.tbWarehouseID = new System.Windows.Forms.TextBox();
             this.tbWarehouseName = new System.Windows.Forms.TextBox();
             this.tbWarehouseDesc = new System.Windows.Forms.TextBox();
@@ -42,9 +42,9 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lvWarehouse = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWarehouseID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWarehouseName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWarehouseDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsWarehouse = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,32 +53,32 @@
             this.cmsWarehouse.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblWarehouseID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Warehouse ID :";
+            this.lblWarehouseID.AutoSize = true;
+            this.lblWarehouseID.Location = new System.Drawing.Point(6, 21);
+            this.lblWarehouseID.Name = "lblWarehouseID";
+            this.lblWarehouseID.Size = new System.Drawing.Size(82, 13);
+            this.lblWarehouseID.TabIndex = 0;
+            this.lblWarehouseID.Text = "Warehouse ID :";
             // 
-            // label2
+            // lblWarehouseName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Warehouse Name :";
+            this.lblWarehouseName.AutoSize = true;
+            this.lblWarehouseName.Location = new System.Drawing.Point(6, 47);
+            this.lblWarehouseName.Name = "lblWarehouseName";
+            this.lblWarehouseName.Size = new System.Drawing.Size(99, 13);
+            this.lblWarehouseName.TabIndex = 1;
+            this.lblWarehouseName.Text = "Warehouse Name :";
             // 
-            // label3
+            // lblWarehouseDesc
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Warehouse Desc. :";
+            this.lblWarehouseDesc.AutoSize = true;
+            this.lblWarehouseDesc.Location = new System.Drawing.Point(6, 73);
+            this.lblWarehouseDesc.Name = "lblWarehouseDesc";
+            this.lblWarehouseDesc.Size = new System.Drawing.Size(99, 13);
+            this.lblWarehouseDesc.TabIndex = 2;
+            this.lblWarehouseDesc.Text = "Warehouse Desc. :";
             // 
             // tbWarehouseID
             // 
@@ -95,7 +95,7 @@
             this.tbWarehouseName.Location = new System.Drawing.Point(111, 44);
             this.tbWarehouseName.Name = "tbWarehouseName";
             this.tbWarehouseName.Size = new System.Drawing.Size(142, 20);
-            this.tbWarehouseName.TabIndex = 0;
+            this.tbWarehouseName.TabIndex = 1;
             // 
             // tbWarehouseDesc
             // 
@@ -103,14 +103,14 @@
             this.tbWarehouseDesc.Multiline = true;
             this.tbWarehouseDesc.Name = "tbWarehouseDesc";
             this.tbWarehouseDesc.Size = new System.Drawing.Size(142, 46);
-            this.tbWarehouseDesc.TabIndex = 1;
+            this.tbWarehouseDesc.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(259, 18);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(104, 29);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -121,7 +121,7 @@
             this.btnCancel.Location = new System.Drawing.Point(259, 88);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 29);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -129,18 +129,18 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnClear);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblWarehouseID);
+            this.groupBox1.Controls.Add(this.lblWarehouseDesc);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.tbWarehouseID);
             this.groupBox1.Controls.Add(this.tbWarehouseDesc);
             this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblWarehouseName);
             this.groupBox1.Controls.Add(this.tbWarehouseName);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(369, 132);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Warehouse Info";
             // 
@@ -149,7 +149,7 @@
             this.btnClear.Location = new System.Drawing.Point(259, 53);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(104, 29);
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -162,7 +162,7 @@
             this.groupBox2.Location = new System.Drawing.Point(13, 151);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(369, 173);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Warehouse List";
             // 
@@ -171,7 +171,7 @@
             this.btnEdit.Location = new System.Drawing.Point(149, 137);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(104, 29);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -181,7 +181,7 @@
             this.btnDelete.Location = new System.Drawing.Point(259, 137);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(104, 29);
-            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -189,9 +189,9 @@
             // lvWarehouse
             // 
             this.lvWarehouse.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.chWarehouseID,
+            this.chWarehouseName,
+            this.chWarehouseDescription});
             this.lvWarehouse.ContextMenuStrip = this.cmsWarehouse;
             this.lvWarehouse.FullRowSelect = true;
             this.lvWarehouse.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -199,26 +199,26 @@
             this.lvWarehouse.MultiSelect = false;
             this.lvWarehouse.Name = "lvWarehouse";
             this.lvWarehouse.Size = new System.Drawing.Size(354, 112);
-            this.lvWarehouse.TabIndex = 0;
+            this.lvWarehouse.TabIndex = 6;
             this.lvWarehouse.UseCompatibleStateImageBehavior = false;
             this.lvWarehouse.View = System.Windows.Forms.View.Details;
             this.lvWarehouse.SelectedIndexChanged += new System.EventHandler(this.lvWarehouse_SelectedIndexChanged);
             this.lvWarehouse.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvWarehouse_MouseDoubleClick);
             // 
-            // columnHeader1
+            // chWarehouseID
             // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 0;
+            this.chWarehouseID.Text = "ID";
+            this.chWarehouseID.Width = 0;
             // 
-            // columnHeader2
+            // chWarehouseName
             // 
-            this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 140;
+            this.chWarehouseName.Text = "Name";
+            this.chWarehouseName.Width = 140;
             // 
-            // columnHeader3
+            // chWarehouseDescription
             // 
-            this.columnHeader3.Text = "Description";
-            this.columnHeader3.Width = 180;
+            this.chWarehouseDescription.Text = "Description";
+            this.chWarehouseDescription.Width = 180;
             // 
             // cmsWarehouse
             // 
@@ -258,7 +258,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Warehouse";
+            this.Text = "Warehouse Management";
             this.Load += new System.EventHandler(this.frmWarehouse_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -270,9 +270,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblWarehouseID;
+        private System.Windows.Forms.Label lblWarehouseName;
+        private System.Windows.Forms.Label lblWarehouseDesc;
         private System.Windows.Forms.TextBox tbWarehouseID;
         private System.Windows.Forms.TextBox tbWarehouseName;
         private System.Windows.Forms.TextBox tbWarehouseDesc;
@@ -281,9 +281,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lvWarehouse;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader chWarehouseID;
+        private System.Windows.Forms.ColumnHeader chWarehouseName;
+        private System.Windows.Forms.ColumnHeader chWarehouseDescription;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ContextMenuStrip cmsWarehouse;

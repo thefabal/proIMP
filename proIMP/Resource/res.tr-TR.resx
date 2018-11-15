@@ -141,20 +141,11 @@
   <data name="btnProduct" xml:space="preserve">
     <value>Ürünler</value>
   </data>
-  <data name="btnProductAdd" xml:space="preserve">
+  <data name="btnAdd" xml:space="preserve">
     <value>Ekle</value>
-  </data>
-  <data name="btnProductDelete" xml:space="preserve">
-    <value>Sil</value>
-  </data>
-  <data name="btnProductEdit" xml:space="preserve">
-    <value>Düzenle</value>
   </data>
   <data name="btnProductFilter" xml:space="preserve">
     <value>Filtrele</value>
-  </data>
-  <data name="btnProductFilterClear" xml:space="preserve">
-    <value>Temizle</value>
   </data>
   <data name="btnReportProductCount" xml:space="preserve">
     <value>Ürün Adetleri</value>
@@ -174,13 +165,7 @@
   <data name="btnStock" xml:space="preserve">
     <value>Envanter</value>
   </data>
-  <data name="btnStockFlowAdd" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="btnStockFlowDelete" xml:space="preserve">
-    <value>Sil</value>
-  </data>
-  <data name="btnStockFlowEdit" xml:space="preserve">
+  <data name="btnEdit" xml:space="preserve">
     <value>Düzenle</value>
   </data>
   <data name="btnStockIn" xml:space="preserve">
@@ -189,14 +174,8 @@
   <data name="btnStockOut" xml:space="preserve">
     <value>Stok Çıkışı</value>
   </data>
-  <data name="btnStockProductAdd" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
   <data name="btnStockProductDelete" xml:space="preserve">
     <value>Sil</value>
-  </data>
-  <data name="btnStockProductEdit" xml:space="preserve">
-    <value>Düzenle</value>
   </data>
   <data name="btnSupplier" xml:space="preserve">
     <value>Tedarikçiler</value>
@@ -368,5 +347,38 @@
   </data>
   <data name="unknownError" xml:space="preserve">
     <value>Bilinmeyen bir hata oluştu.</value>
+  </data>
+  <data name="frmWarehouse_Text" xml:space="preserve">
+    <value>Depo Yönetimi</value>
+  </data>
+  <data name="lblWarehouseDesc" xml:space="preserve">
+    <value>Depo Açıklama</value>
+  </data>
+  <data name="lblWarehouseID" xml:space="preserve">
+    <value>Depo No</value>
+  </data>
+  <data name="lblWarehouseName" xml:space="preserve">
+    <value>Depo Adı</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Vazgeç</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="chWarehouseDescription" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="chWarehouseName" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="couldNotSaveWarehouse" xml:space="preserve">
+    <value>Depo veritabanına kaydedilemedi. Lütfen tekrar deneyiniz.</value>
   </data>
 </root>
