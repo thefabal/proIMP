@@ -12,9 +12,12 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmSupplier : Form {
-        public frmSupplier() {
+        public frmMain frmMain;
+
+        public frmSupplier( frmMain frmMain ) {
             InitializeComponent();
 
+            this.frmMain = frmMain;
             this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
         }
 
@@ -26,7 +29,25 @@ namespace proIMP {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
 
+            switchLanguage();
             getSupplierList();
+        }
+
+        private void switchLanguage( ) {
+            this.Text = frmMain.resMan.GetString( "frmSupplier_Text", frmMain.culInfo );
+            gbSupplierInfo.Text = frmMain.resMan.GetString( "gbSupplierInfo", frmMain.culInfo );
+            gbSupplierList.Text = frmMain.resMan.GetString( "gbSupplierList", frmMain.culInfo );
+            lblSupplierID.Text = frmMain.resMan.GetString( "lblSupplierID", frmMain.culInfo ) + " :";
+            lblSupplierName.Text = frmMain.resMan.GetString( "lblSupplierName", frmMain.culInfo ) + " :";
+            lblSupplierDesc.Text = frmMain.resMan.GetString( "lblSupplierDesc", frmMain.culInfo ) + " :";
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+            btnClear.Text = frmMain.resMan.GetString( "btnClear", frmMain.culInfo );
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnEdit.Text = frmMain.resMan.GetString( "btnEdit", frmMain.culInfo );
+            btnDelete.Text = frmMain.resMan.GetString( "btnDelete", frmMain.culInfo );
+
+            chSupplierName.Text = frmMain.resMan.GetString( "chName", frmMain.culInfo );
+            chSupplierDesc.Text = frmMain.resMan.GetString( "chDescription", frmMain.culInfo );
         }
 
         private void btnSave_Click( object sender, EventArgs e ) {
@@ -40,12 +61,12 @@ namespace proIMP {
                     }
                     dbCommand.ExecuteNonQuery();
                 } catch {
-                    MessageBox.Show( "Could not save supplier to database. Please try again." );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveSupplier", frmMain.culInfo ) );
 
                     return;
                 }
 
-                this.DialogResult = DialogResult.OK;
+                getSupplierList();
             }
         }
 
@@ -115,7 +136,7 @@ namespace proIMP {
 
             lvSupplier.Items.Clear();
             while (dbReader.Read()) {
-                ListViewItem lvi = new ListViewItem(new string[] { dbReader[0].ToString(), dbReader[1].ToString(), dbReader[2].ToString() });
+                ListViewItem lvi = new ListViewItem( new string[] { dbReader[0].ToString(), dbReader[1].ToString(), dbReader[2].ToString() } );
 
                 lvSupplier.Items.Add(lvi);
             }

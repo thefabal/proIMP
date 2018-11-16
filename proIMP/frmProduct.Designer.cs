@@ -29,21 +29,21 @@
             this.msChangeImage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProductDesc = new System.Windows.Forms.Label();
             this.tbProductBarcode = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProductBarcode = new System.Windows.Forms.Label();
+            this.lblProductUnit = new System.Windows.Forms.Label();
             this.tbProductDesc = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.cbProductCategory = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblProductCategory = new System.Windows.Forms.Label();
             this.tbProductName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.cbProductUnit = new System.Windows.Forms.ComboBox();
             this.tbProductID = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblProductID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.msChangeImage.SuspendLayout();
             this.SuspendLayout();
@@ -81,14 +81,14 @@
             this.deleteToolStripMenuItem.Text = "Delete Image";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // label2
+            // lblProductDesc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Product Desc. :";
+            this.lblProductDesc.AutoSize = true;
+            this.lblProductDesc.Location = new System.Drawing.Point(198, 94);
+            this.lblProductDesc.Name = "lblProductDesc";
+            this.lblProductDesc.Size = new System.Drawing.Size(81, 13);
+            this.lblProductDesc.TabIndex = 36;
+            this.lblProductDesc.Text = "Product Desc. :";
             // 
             // tbProductBarcode
             // 
@@ -97,23 +97,23 @@
             this.tbProductBarcode.Size = new System.Drawing.Size(155, 20);
             this.tbProductBarcode.TabIndex = 6;
             // 
-            // label5
+            // lblProductBarcode
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(198, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Product Barcode :";
+            this.lblProductBarcode.AutoSize = true;
+            this.lblProductBarcode.Location = new System.Drawing.Point(198, 173);
+            this.lblProductBarcode.Name = "lblProductBarcode";
+            this.lblProductBarcode.Size = new System.Drawing.Size(93, 13);
+            this.lblProductBarcode.TabIndex = 34;
+            this.lblProductBarcode.Text = "Product Barcode :";
             // 
-            // label4
+            // lblProductUnit
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(198, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Product Unit :";
+            this.lblProductUnit.AutoSize = true;
+            this.lblProductUnit.Location = new System.Drawing.Point(198, 146);
+            this.lblProductUnit.Name = "lblProductUnit";
+            this.lblProductUnit.Size = new System.Drawing.Size(72, 13);
+            this.lblProductUnit.TabIndex = 32;
+            this.lblProductUnit.Text = "Product Unit :";
             // 
             // tbProductDesc
             // 
@@ -169,14 +169,14 @@
             this.cbProductCategory.Size = new System.Drawing.Size(126, 21);
             this.cbProductCategory.TabIndex = 2;
             // 
-            // label3
+            // lblProductCategory
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Product Category :";
+            this.lblProductCategory.AutoSize = true;
+            this.lblProductCategory.Location = new System.Drawing.Point(198, 67);
+            this.lblProductCategory.Name = "lblProductCategory";
+            this.lblProductCategory.Size = new System.Drawing.Size(95, 13);
+            this.lblProductCategory.TabIndex = 26;
+            this.lblProductCategory.Text = "Product Category :";
             // 
             // tbProductName
             // 
@@ -185,23 +185,19 @@
             this.tbProductName.Size = new System.Drawing.Size(155, 20);
             this.tbProductName.TabIndex = 1;
             // 
-            // label1
+            // lblProductName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(198, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Product Name :";
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(198, 41);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(81, 13);
+            this.lblProductName.TabIndex = 24;
+            this.lblProductName.Text = "Product Name :";
             // 
             // cbProductUnit
             // 
             this.cbProductUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProductUnit.FormattingEnabled = true;
-            this.cbProductUnit.Items.AddRange(new object[] {
-            "Piece",
-            "Gram",
-            "Meter"});
             this.cbProductUnit.Location = new System.Drawing.Point(301, 143);
             this.cbProductUnit.Name = "cbProductUnit";
             this.cbProductUnit.Size = new System.Drawing.Size(155, 21);
@@ -217,14 +213,14 @@
             this.tbProductID.TabIndex = 39;
             this.tbProductID.TabStop = false;
             // 
-            // label6
+            // lblProductID
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(198, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Product ID :";
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(198, 15);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(64, 13);
+            this.lblProductID.TabIndex = 38;
+            this.lblProductID.Text = "Product ID :";
             // 
             // frmProduct
             // 
@@ -233,21 +229,21 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(466, 232);
             this.Controls.Add(this.tbProductID);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblProductID);
             this.Controls.Add(this.pbProductImage);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblProductDesc);
             this.Controls.Add(this.tbProductBarcode);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblProductBarcode);
             this.Controls.Add(this.cbProductUnit);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblProductUnit);
             this.Controls.Add(this.tbProductDesc);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCategoryAdd);
             this.Controls.Add(this.cbProductCategory);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblProductCategory);
             this.Controls.Add(this.tbProductName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProductName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -267,23 +263,23 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pbProductImage;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProductDesc;
         private System.Windows.Forms.TextBox tbProductBarcode;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProductBarcode;
+        private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.TextBox tbProductDesc;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCategoryAdd;
         private System.Windows.Forms.ComboBox cbProductCategory;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblProductCategory;
         private System.Windows.Forms.TextBox tbProductName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.ComboBox cbProductUnit;
         private System.Windows.Forms.ContextMenuStrip msChangeImage;
         private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.TextBox tbProductID;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblProductID;
     }
 }

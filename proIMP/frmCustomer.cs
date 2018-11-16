@@ -12,9 +12,12 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmCustomer:Form {
-        public frmCustomer() {
+        public frmMain frmMain;
+
+        public frmCustomer( frmMain frmMain ) {
             InitializeComponent();
 
+            this.frmMain = frmMain;
             this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
         }
 
@@ -26,7 +29,25 @@ namespace proIMP {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
 
+            switchLanguage();
             getCustomerList();
+        }
+
+        private void switchLanguage( ) {
+            this.Text = frmMain.resMan.GetString( "frmCustomer_Text", frmMain.culInfo );
+            gbCustomerInfo.Text = frmMain.resMan.GetString( "gbCustomerInfo", frmMain.culInfo );
+            gbCustomerList.Text = frmMain.resMan.GetString( "gbCustomerList", frmMain.culInfo );
+            lblCustomerID.Text = frmMain.resMan.GetString( "lblCustomerID", frmMain.culInfo ) + " :";
+            lblCustomerName.Text = frmMain.resMan.GetString( "lblCustomerName", frmMain.culInfo ) + " :";
+            lblCustomerDesc.Text = frmMain.resMan.GetString( "lblCustomerDesc", frmMain.culInfo ) + " :";
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+            btnClear.Text = frmMain.resMan.GetString( "btnClear", frmMain.culInfo );
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnEdit.Text = frmMain.resMan.GetString( "btnEdit", frmMain.culInfo );
+            btnDelete.Text = frmMain.resMan.GetString( "btnDelete", frmMain.culInfo );
+
+            chCustomerName.Text = frmMain.resMan.GetString( "chName", frmMain.culInfo );
+            chCustomerDesc.Text = frmMain.resMan.GetString( "chDescription", frmMain.culInfo );
         }
 
         private void btnSave_Click( object sender, EventArgs e ) {
@@ -40,12 +61,10 @@ namespace proIMP {
                     }
                     dbCommand.ExecuteNonQuery();
                 } catch {
-                    MessageBox.Show( "Could not save customer to database. Please try again." );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveCustomer", frmMain.culInfo ) );
 
                     return;
                 }
-
-                this.DialogResult = DialogResult.OK;
             }
         }
 

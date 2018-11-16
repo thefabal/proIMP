@@ -12,11 +12,14 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmCategory:Form {
+        public frmMain frmMain;
+
         private long lastID = -1;
 
-        public frmCategory() {
+        public frmCategory( frmMain frmMain ) {
             InitializeComponent();
 
+            this.frmMain = frmMain;
             this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
         }
 
@@ -30,7 +33,25 @@ namespace proIMP {
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
 
+            switchLanguage();
             getCategoryList();
+        }
+
+        private void switchLanguage( ) {
+            this.Text = frmMain.resMan.GetString( "frmCategory_Text", frmMain.culInfo );
+            gbCategoryInfo.Text = frmMain.resMan.GetString( "gbCategoryInfo", frmMain.culInfo );
+            gbCategoryList.Text = frmMain.resMan.GetString( "gbCategoryList", frmMain.culInfo );
+            lblCategoryID.Text = frmMain.resMan.GetString( "lblCategoryID", frmMain.culInfo ) + " :";
+            lblCategoryName.Text = frmMain.resMan.GetString( "lblCategoryName", frmMain.culInfo ) + " :";
+            lblCategoryDesc.Text = frmMain.resMan.GetString( "lblCategoryDesc", frmMain.culInfo ) + " :";
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+            btnClear.Text = frmMain.resMan.GetString( "btnClear", frmMain.culInfo );
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnEdit.Text = frmMain.resMan.GetString( "btnEdit", frmMain.culInfo );
+            btnDelete.Text = frmMain.resMan.GetString( "btnDelete", frmMain.culInfo );
+
+            chCategoryName.Text = frmMain.resMan.GetString( "chName", frmMain.culInfo );
+            chCategoryDesc.Text = frmMain.resMan.GetString( "chDescription", frmMain.culInfo );
         }
 
         private void btnSave_Click( object sender, EventArgs e ) {
@@ -48,7 +69,7 @@ namespace proIMP {
 
                     lastID = (long)dbCommand.ExecuteScalar();
                 } catch {
-                    MessageBox.Show( "Could not save warehouse to database. Please try again." );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveCategory", frmMain.culInfo ) );
 
                     return;
                 }

@@ -16,17 +16,23 @@ using System.Security.Cryptography;
 
 namespace proIMP {
     public partial class frmProduct:Form {
+        public frmMain frmMain;
+
         public string strProductID = string.Empty;
         public string lastID = string.Empty;
 
         private string strProductImageID = string.Empty;
         private string strProductImage = string.Empty;
 
-        public frmProduct() {
+        public frmProduct( frmMain frmMain ) {
             InitializeComponent();
+
+            this.frmMain = frmMain;
+            this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
         }
 
         private void frmProduct_Load( object sender, EventArgs e ) {
+            switchLanguage();
             getListCategory();
 
             strProductImage = string.Empty;
@@ -40,7 +46,11 @@ namespace proIMP {
                 tbProductDesc.Text = string.Empty;
                 cbProductUnit.SelectedIndex = -1;
                 tbProductBarcode.Text = string.Empty;
-                pbProductImage.Image = Properties.Resources.noimage_en;
+                if( frmMain.setting.language == "tr" ) {
+                    pbProductImage.Image = Properties.Resources.noimage_tr;
+                } else {
+                    pbProductImage.Image = Properties.Resources.noimage_en;
+                }
             } else {
                 tbProductID.Text = strProductID;
 
@@ -62,6 +72,34 @@ namespace proIMP {
                     }
                 }
             }
+        }
+
+        private void switchLanguage( ) {
+            if( frmMain.setting.language == "tr" ) {
+                pbProductImage.Image = Properties.Resources.noimage_tr;
+            } else {
+                pbProductImage.Image = Properties.Resources.noimage_en;
+            }
+
+            this.Text = frmMain.resMan.GetString( "frmProduct_Text", frmMain.culInfo );
+
+            lblProductID.Text = frmMain.resMan.GetString( "lblProductID", frmMain.culInfo ) + " :";
+            lblProductName.Text = frmMain.resMan.GetString( "lblProductName", frmMain.culInfo ) + " :";
+            lblProductCategory.Text = frmMain.resMan.GetString( "lblProductCategory", frmMain.culInfo ) + " :";
+            lblProductDesc.Text = frmMain.resMan.GetString( "lblProductDesc", frmMain.culInfo ) + " :";
+            lblProductUnit.Text = frmMain.resMan.GetString( "lblProductUnit", frmMain.culInfo ) + " :";
+            lblProductBarcode.Text = frmMain.resMan.GetString( "lblProductBarcode", frmMain.culInfo ) + " :";
+
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+
+            changeToolStripMenuItem.Text = frmMain.resMan.GetString( "changeToolStripMenuItem", frmMain.culInfo );
+            deleteToolStripMenuItem.Text = frmMain.resMan.GetString( "deleteToolStripMenuItem", frmMain.culInfo );
+
+            cbProductUnit.Items.Clear();
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitGram", frmMain.culInfo ) );
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitMeter", frmMain.culInfo ) );
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitPiece", frmMain.culInfo ) );
         }
 
         private void btnSave_Click( object sender, EventArgs e ) {
@@ -109,7 +147,7 @@ namespace proIMP {
                     dbCommand.Transaction.Commit();
                 } catch {
                     dbCommand.Transaction.Rollback();
-                    MessageBox.Show( "Could not save product to database. Please try again." );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveProduct", frmMain.culInfo ) );
 
                     return;
                 }
@@ -143,7 +181,7 @@ namespace proIMP {
                 CheckPathExists = true,
                 DefaultExt = "png",
                 Filter = "Image Files (*.bmp, *.jpg, *.gif, *.png, *.tiff)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF",
-                Title = "Search for image files"
+                Title = frmMain.resMan.GetString( "searchImage", frmMain.culInfo )
             };
 
             if( ofdImage.ShowDialog() == DialogResult.OK ) {
@@ -152,13 +190,17 @@ namespace proIMP {
                 try {
                     pbProductImage.Image = Image.FromFile( strProductImage );
                 } catch(Exception ex) {
-                    MessageBox.Show( "Error on reading product image.\r\n\r\n" + ex.Message );
+                    MessageBox.Show( frmMain.resMan.GetString( "couldNoReadImage", frmMain.culInfo ) + "\r\n\r\n" + ex.Message );
                 }
             }
         }
 
         private void deleteToolStripMenuItem_Click( object sender, EventArgs e ) {
-            pbProductImage.Image = Properties.Resources.noimage_en;
+            if( frmMain.setting.language == "tr" ) {
+                pbProductImage.Image = Properties.Resources.noimage_tr;
+            } else {
+                pbProductImage.Image = Properties.Resources.noimage_en;
+            }
         }
 
         private void getListCategory() {

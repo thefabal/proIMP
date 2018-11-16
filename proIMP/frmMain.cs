@@ -38,13 +38,13 @@ namespace proIMP {
          * forms
         **/
         public static frmAbout about = new frmAbout();
-        public static frmCategory category = new frmCategory();
-        public static frmCustomer customer = new frmCustomer();
-        public static frmProduct product = new frmProduct();
+        public static frmCategory category;
+        public static frmCustomer customer;
+        public static frmProduct product;
         public static frmStockFlowProduct stockflow = new frmStockFlowProduct();
         public static frmStockFlowIn stockin = new frmStockFlowIn();
         public static frmStockFlowOut stockout = new frmStockFlowOut();
-        public static frmSupplier supplier = new frmSupplier();
+        public static frmSupplier supplier;
         public static frmWarehouse warehouse;
         public static frmPreferences preferences;
 
@@ -75,6 +75,10 @@ namespace proIMP {
             this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
 
             warehouse = new frmWarehouse( this );
+            supplier = new frmSupplier( this );
+            customer = new frmCustomer( this );
+            category = new frmCategory( this );
+            product = new frmProduct( this );
             preferences = new frmPreferences( this );
         }
 

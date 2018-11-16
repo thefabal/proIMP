@@ -14,11 +14,11 @@ namespace proIMP {
     public partial class frmWarehouse : Form {
         public frmMain frmMain;
 
-        public frmWarehouse(frmMain frmMain) {
+        public frmWarehouse( frmMain frmMain ) {
             InitializeComponent();
 
             this.frmMain = frmMain;
-            this.MinimumSize = new Size(this.Size.Width, this.Size.Height);
+            this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
         }
 
         private void frmWarehouse_Load(object sender, EventArgs e) {
@@ -34,7 +34,9 @@ namespace proIMP {
         }
 
         private void switchLanguage( ) {
-            Text = frmMain.resMan.GetString( "frmWarehouse_Text", frmMain.culInfo );
+            this.Text = frmMain.resMan.GetString( "frmWarehouse_Text", frmMain.culInfo );
+            gbWarehouseInfo.Text = frmMain.resMan.GetString( "gbWarehouseInfo", frmMain.culInfo );
+            gbWarehouseList.Text = frmMain.resMan.GetString( "gbWarehouseList", frmMain.culInfo );
             lblWarehouseID.Text = frmMain.resMan.GetString( "lblWarehouseID", frmMain.culInfo ) + " :";
             lblWarehouseName.Text = frmMain.resMan.GetString( "lblWarehouseName", frmMain.culInfo ) + " :";
             lblWarehouseDesc.Text = frmMain.resMan.GetString( "lblWarehouseDesc", frmMain.culInfo ) + " :";
@@ -44,8 +46,8 @@ namespace proIMP {
             btnEdit.Text = frmMain.resMan.GetString( "btnEdit", frmMain.culInfo );
             btnDelete.Text = frmMain.resMan.GetString( "btnDelete", frmMain.culInfo );
 
-            chWarehouseName.Text = frmMain.resMan.GetString( "chWarehouseName", frmMain.culInfo );
-            chWarehouseDescription.Text = frmMain.resMan.GetString( "chWarehouseDescription", frmMain.culInfo );
+            chWarehouseName.Text = frmMain.resMan.GetString( "chName", frmMain.culInfo );
+            chWarehouseDesc.Text = frmMain.resMan.GetString( "chDescription", frmMain.culInfo );
         }
 
         private void btnSave_Click(object sender, EventArgs e) {

@@ -372,13 +372,109 @@
   <data name="btnSave" xml:space="preserve">
     <value>Kaydet</value>
   </data>
-  <data name="chWarehouseDescription" xml:space="preserve">
+  <data name="chDescription" xml:space="preserve">
     <value>Açıklama</value>
   </data>
-  <data name="chWarehouseName" xml:space="preserve">
+  <data name="chName" xml:space="preserve">
     <value>İsim</value>
   </data>
+  <data name="couldNotSaveSupplier" xml:space="preserve">
+    <value>Tedarikçi veritabanına kaydedilemedi. Lütfen veritabanını kontrol edeniz.</value>
+  </data>
   <data name="couldNotSaveWarehouse" xml:space="preserve">
-    <value>Depo veritabanına kaydedilemedi. Lütfen tekrar deneyiniz.</value>
+    <value>Depo veritabanına kaydedilemedi. Lütfen veritabanını kontrol edeniz.</value>
+  </data>
+  <data name="frmSupplier_Text" xml:space="preserve">
+    <value>Tedarikçi Yönetimi</value>
+  </data>
+  <data name="gbWarehouseInfo" xml:space="preserve">
+    <value>Depo Bilgisi</value>
+  </data>
+  <data name="lblSupplierDesc" xml:space="preserve">
+    <value>Tedarikçi Açıklama</value>
+  </data>
+  <data name="lblSupplierID" xml:space="preserve">
+    <value>Tedarikçi No</value>
+  </data>
+  <data name="lblSupplierName" xml:space="preserve">
+    <value>Tedarikçi Adı</value>
+  </data>
+  <data name="changeToolStripMenuItem" xml:space="preserve">
+    <value>Resmi Değiştir</value>
+  </data>
+  <data name="couldNoReadImage" xml:space="preserve">
+    <value>Resim dosyası okunamadı.</value>
+  </data>
+  <data name="couldNotSaveCategory" xml:space="preserve">
+    <value>Kategori veritabanına kaydedilemedi. Lütfen veritabanını kontrol edeniz.</value>
+  </data>
+  <data name="couldNotSaveCustomer" xml:space="preserve">
+    <value>Müşteri veritabanına kaydedilemedi. Lütfen veritabanını kontrol edeniz.</value>
+  </data>
+  <data name="couldNotSaveProduct" xml:space="preserve">
+    <value>Ürün veritabanına kaydedilemedi. Lütfen veritabanını kontrol edeniz.</value>
+  </data>
+  <data name="deleteToolStripMenuItem" xml:space="preserve">
+    <value>Resmi Sil</value>
+  </data>
+  <data name="frmCategory_Text" xml:space="preserve">
+    <value>Kategori Yönetimi</value>
+  </data>
+  <data name="frmCustomer_Text" xml:space="preserve">
+    <value>Müşteri Yönetimi</value>
+  </data>
+  <data name="frmProduct_Text" xml:space="preserve">
+    <value>Ürün / Ekle Düzenle</value>
+  </data>
+  <data name="gbCategoryInfo" xml:space="preserve">
+    <value>Kategori Bilgisi</value>
+  </data>
+  <data name="gbCategoryList" xml:space="preserve">
+    <value>Kategori Listesi</value>
+  </data>
+  <data name="gbCustomerInfo" xml:space="preserve">
+    <value>Müşteri Bilgisi</value>
+  </data>
+  <data name="gbCustomerList" xml:space="preserve">
+    <value>Müşteri Listesi</value>
+  </data>
+  <data name="gbSupplierInfo" xml:space="preserve">
+    <value>Tedarikçi Bilgisi</value>
+  </data>
+  <data name="gbSupplierList" xml:space="preserve">
+    <value>Tedarikçi Listesi</value>
+  </data>
+  <data name="gbWarehouseList" xml:space="preserve">
+    <value>Depo Listesi</value>
+  </data>
+  <data name="lblCategoryDesc" xml:space="preserve">
+    <value>Kategori Açıklama</value>
+  </data>
+  <data name="lblCategoryID" xml:space="preserve">
+    <value>Kategori No</value>
+  </data>
+  <data name="lblCategoryName" xml:space="preserve">
+    <value>Kategori Adı</value>
+  </data>
+  <data name="lblCustomerDesc" xml:space="preserve">
+    <value>Müşteri Açıklama</value>
+  </data>
+  <data name="lblCustomerID" xml:space="preserve">
+    <value>Müşteri ID</value>
+  </data>
+  <data name="lblCustomerName" xml:space="preserve">
+    <value>Müşteri Adı</value>
+  </data>
+  <data name="lblProductCategory" xml:space="preserve">
+    <value>Ürün Kategorisi</value>
+  </data>
+  <data name="lblProductID" xml:space="preserve">
+    <value>Ürün No</value>
+  </data>
+  <data name="lblProductName" xml:space="preserve">
+    <value>Ürün Adı</value>
+  </data>
+  <data name="searchImage" xml:space="preserve">
+    <value>Resim dosyası ara</value>
   </data>
 </root>

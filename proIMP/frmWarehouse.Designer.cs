@@ -36,20 +36,20 @@
             this.tbWarehouseDesc = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbWarehouseInfo = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbWarehouseList = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lvWarehouse = new System.Windows.Forms.ListView();
             this.chWarehouseID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chWarehouseName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chWarehouseDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chWarehouseDesc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsWarehouse = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbWarehouseInfo.SuspendLayout();
+            this.gbWarehouseList.SuspendLayout();
             this.cmsWarehouse.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,23 +126,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // groupBox1
+            // gbWarehouseInfo
             // 
-            this.groupBox1.Controls.Add(this.btnClear);
-            this.groupBox1.Controls.Add(this.lblWarehouseID);
-            this.groupBox1.Controls.Add(this.lblWarehouseDesc);
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.tbWarehouseID);
-            this.groupBox1.Controls.Add(this.tbWarehouseDesc);
-            this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.lblWarehouseName);
-            this.groupBox1.Controls.Add(this.tbWarehouseName);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 132);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Warehouse Info";
+            this.gbWarehouseInfo.Controls.Add(this.btnClear);
+            this.gbWarehouseInfo.Controls.Add(this.lblWarehouseID);
+            this.gbWarehouseInfo.Controls.Add(this.lblWarehouseDesc);
+            this.gbWarehouseInfo.Controls.Add(this.btnCancel);
+            this.gbWarehouseInfo.Controls.Add(this.tbWarehouseID);
+            this.gbWarehouseInfo.Controls.Add(this.tbWarehouseDesc);
+            this.gbWarehouseInfo.Controls.Add(this.btnSave);
+            this.gbWarehouseInfo.Controls.Add(this.lblWarehouseName);
+            this.gbWarehouseInfo.Controls.Add(this.tbWarehouseName);
+            this.gbWarehouseInfo.Location = new System.Drawing.Point(13, 13);
+            this.gbWarehouseInfo.Name = "gbWarehouseInfo";
+            this.gbWarehouseInfo.Size = new System.Drawing.Size(369, 132);
+            this.gbWarehouseInfo.TabIndex = 0;
+            this.gbWarehouseInfo.TabStop = false;
+            this.gbWarehouseInfo.Text = "Warehouse Info";
             // 
             // btnClear
             // 
@@ -154,17 +154,17 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // groupBox2
+            // gbWarehouseList
             // 
-            this.groupBox2.Controls.Add(this.btnEdit);
-            this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.lvWarehouse);
-            this.groupBox2.Location = new System.Drawing.Point(13, 151);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 173);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Warehouse List";
+            this.gbWarehouseList.Controls.Add(this.btnEdit);
+            this.gbWarehouseList.Controls.Add(this.btnDelete);
+            this.gbWarehouseList.Controls.Add(this.lvWarehouse);
+            this.gbWarehouseList.Location = new System.Drawing.Point(13, 151);
+            this.gbWarehouseList.Name = "gbWarehouseList";
+            this.gbWarehouseList.Size = new System.Drawing.Size(369, 173);
+            this.gbWarehouseList.TabIndex = 1;
+            this.gbWarehouseList.TabStop = false;
+            this.gbWarehouseList.Text = "Warehouse List";
             // 
             // btnEdit
             // 
@@ -191,7 +191,7 @@
             this.lvWarehouse.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chWarehouseID,
             this.chWarehouseName,
-            this.chWarehouseDescription});
+            this.chWarehouseDesc});
             this.lvWarehouse.ContextMenuStrip = this.cmsWarehouse;
             this.lvWarehouse.FullRowSelect = true;
             this.lvWarehouse.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -215,10 +215,10 @@
             this.chWarehouseName.Text = "Name";
             this.chWarehouseName.Width = 140;
             // 
-            // chWarehouseDescription
+            // chWarehouseDesc
             // 
-            this.chWarehouseDescription.Text = "Description";
-            this.chWarehouseDescription.Width = 180;
+            this.chWarehouseDesc.Text = "Description";
+            this.chWarehouseDesc.Width = 180;
             // 
             // cmsWarehouse
             // 
@@ -245,12 +245,11 @@
             // 
             // frmWarehouse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(394, 336);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbWarehouseList);
+            this.Controls.Add(this.gbWarehouseInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -260,9 +259,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Warehouse Management";
             this.Load += new System.EventHandler(this.frmWarehouse_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.gbWarehouseInfo.ResumeLayout(false);
+            this.gbWarehouseInfo.PerformLayout();
+            this.gbWarehouseList.ResumeLayout(false);
             this.cmsWarehouse.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -278,12 +277,12 @@
         private System.Windows.Forms.TextBox tbWarehouseDesc;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbWarehouseInfo;
+        private System.Windows.Forms.GroupBox gbWarehouseList;
         private System.Windows.Forms.ListView lvWarehouse;
         private System.Windows.Forms.ColumnHeader chWarehouseID;
         private System.Windows.Forms.ColumnHeader chWarehouseName;
-        private System.Windows.Forms.ColumnHeader chWarehouseDescription;
+        private System.Windows.Forms.ColumnHeader chWarehouseDesc;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ContextMenuStrip cmsWarehouse;

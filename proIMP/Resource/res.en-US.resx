@@ -372,13 +372,109 @@
   <data name="btnSave" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="chWarehouseDescription" xml:space="preserve">
+  <data name="chDescription" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="chWarehouseName" xml:space="preserve">
+  <data name="chName" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="couldNotSaveSupplier" xml:space="preserve">
+    <value>Could not save supplier to database. Please check database.</value>
+  </data>
   <data name="couldNotSaveWarehouse" xml:space="preserve">
-    <value>Could not save warehouse to database. Please try again.</value>
+    <value>Could not save warehouse to database. Please check database.</value>
+  </data>
+  <data name="frmSupplier_Text" xml:space="preserve">
+    <value>Supplier Management</value>
+  </data>
+  <data name="gbWarehouseInfo" xml:space="preserve">
+    <value>Warehouse Info</value>
+  </data>
+  <data name="lblSupplierDesc" xml:space="preserve">
+    <value>Supplier Desc.</value>
+  </data>
+  <data name="lblSupplierID" xml:space="preserve">
+    <value>Supplier ID</value>
+  </data>
+  <data name="lblSupplierName" xml:space="preserve">
+    <value>Supplier Name</value>
+  </data>
+  <data name="changeToolStripMenuItem" xml:space="preserve">
+    <value>Change Image</value>
+  </data>
+  <data name="couldNoReadImage" xml:space="preserve">
+    <value>Error on reading product image.</value>
+  </data>
+  <data name="couldNotSaveCategory" xml:space="preserve">
+    <value>Could not save category to database. Please check database.</value>
+  </data>
+  <data name="couldNotSaveCustomer" xml:space="preserve">
+    <value>Could not save customer to database. Please check database.</value>
+  </data>
+  <data name="couldNotSaveProduct" xml:space="preserve">
+    <value>Could not save supplier to product. Please check database.</value>
+  </data>
+  <data name="deleteToolStripMenuItem" xml:space="preserve">
+    <value>Delete Image</value>
+  </data>
+  <data name="frmCategory_Text" xml:space="preserve">
+    <value>Category Management</value>
+  </data>
+  <data name="frmCustomer_Text" xml:space="preserve">
+    <value>Customer Management</value>
+  </data>
+  <data name="frmProduct_Text" xml:space="preserve">
+    <value>Add / Edit Product</value>
+  </data>
+  <data name="gbCategoryInfo" xml:space="preserve">
+    <value>Category Info</value>
+  </data>
+  <data name="gbCategoryList" xml:space="preserve">
+    <value>Category List</value>
+  </data>
+  <data name="gbCustomerInfo" xml:space="preserve">
+    <value>Customer Info</value>
+  </data>
+  <data name="gbCustomerList" xml:space="preserve">
+    <value>Customer List</value>
+  </data>
+  <data name="gbSupplierInfo" xml:space="preserve">
+    <value>Supplier Info</value>
+  </data>
+  <data name="gbSupplierList" xml:space="preserve">
+    <value>Supplier List</value>
+  </data>
+  <data name="gbWarehouseList" xml:space="preserve">
+    <value>Warehouse List</value>
+  </data>
+  <data name="lblCategoryDesc" xml:space="preserve">
+    <value>Category Desc</value>
+  </data>
+  <data name="lblCategoryID" xml:space="preserve">
+    <value>Category ID</value>
+  </data>
+  <data name="lblCategoryName" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="lblCustomerDesc" xml:space="preserve">
+    <value>Customer Desc</value>
+  </data>
+  <data name="lblCustomerID" xml:space="preserve">
+    <value>Customer ID</value>
+  </data>
+  <data name="lblCustomerName" xml:space="preserve">
+    <value>Customer Name</value>
+  </data>
+  <data name="lblProductCategory" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="lblProductID" xml:space="preserve">
+    <value>Product ID</value>
+  </data>
+  <data name="lblProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="searchImage" xml:space="preserve">
+    <value>Search for image files</value>
   </data>
 </root>
