@@ -37,7 +37,7 @@ namespace proIMP {
         /**
          * forms
         **/
-        public static frmAbout about = new frmAbout();
+        public static frmAbout about;
         public static frmCategory category;
         public static frmCustomer customer;
         public static frmProduct product;
@@ -79,6 +79,7 @@ namespace proIMP {
             customer = new frmCustomer( this );
             category = new frmCategory( this );
             product = new frmProduct( this );
+            about = new frmAbout( this );
             preferences = new frmPreferences( this );
         }
 
@@ -483,7 +484,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_2Category.Items.Clear();
-                cbReport_2Category.Items.Add( new CategoryItem( "-1", "All categories" ) );
+                cbReport_2Category.Items.Add( new CategoryItem( "-1", resMan.GetString( "AllCategories", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_2Category.Items.Add( new CategoryItem( dbReader.GetInt64( 0 ).ToString(), dbReader.GetString( 1 ) ) );
                 }
@@ -498,7 +499,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_2Product.Items.Clear();
-                cbReport_2Product.Items.Add( new ProductItem( "-1", "All products", "Piece" ) );
+                cbReport_2Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitPiece", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_2Product.Items.Add( new ProductItem( dbReader.GetInt64( 0 ).ToString(), dbReader.GetString( 1 ), dbReader.GetString( 2 ) ) );
                 }
@@ -513,7 +514,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_2Warehouse.Items.Clear();
-                cbReport_2Warehouse.Items.Add( new WarehouseItem( "-1", "All warehouses" ) );
+                cbReport_2Warehouse.Items.Add( new WarehouseItem( "-1", resMan.GetString( "allWarehouses", culInfo ) ) );
                 while( dbReader.Read() ) {
                     cbReport_2Warehouse.Items.Add( new WarehouseItem( dbReader.GetInt64( 0 ).ToString(), dbReader.GetString( 1 ) ) );
                 }

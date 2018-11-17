@@ -27,12 +27,12 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.lblLicence = new System.Windows.Forms.Label();
             this.lblBuildTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblBuildTimeText = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAboutHomePage = new System.Windows.Forms.Label();
+            this.lblAboutAuthor = new System.Windows.Forms.Label();
             this.labelURL = new System.Windows.Forms.LinkLabel();
-            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblProgramName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,15 +68,15 @@
             this.lblBuildTime.TabIndex = 18;
             this.lblBuildTime.Text = "label5";
             // 
-            // label4
+            // lblBuildTimeText
             // 
-            this.label4.AutoSize = true;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(167, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Build time :";
+            this.lblBuildTimeText.AutoSize = true;
+            this.lblBuildTimeText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblBuildTimeText.Location = new System.Drawing.Point(167, 92);
+            this.lblBuildTimeText.Name = "lblBuildTimeText";
+            this.lblBuildTimeText.Size = new System.Drawing.Size(58, 13);
+            this.lblBuildTimeText.TabIndex = 17;
+            this.lblBuildTimeText.Text = "Build time :";
             // 
             // label3
             // 
@@ -88,25 +88,25 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "proGEDIA Team";
             // 
-            // label2
+            // lblAboutHomePage
             // 
-            this.label2.AutoSize = true;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(167, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Home Page :";
+            this.lblAboutHomePage.AutoSize = true;
+            this.lblAboutHomePage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblAboutHomePage.Location = new System.Drawing.Point(167, 72);
+            this.lblAboutHomePage.Name = "lblAboutHomePage";
+            this.lblAboutHomePage.Size = new System.Drawing.Size(65, 13);
+            this.lblAboutHomePage.TabIndex = 15;
+            this.lblAboutHomePage.Text = "Homepage :";
             // 
-            // label1
+            // lblAboutAuthor
             // 
-            this.label1.AutoSize = true;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(167, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Author : ";
+            this.lblAboutAuthor.AutoSize = true;
+            this.lblAboutAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblAboutAuthor.Location = new System.Drawing.Point(167, 52);
+            this.lblAboutAuthor.Name = "lblAboutAuthor";
+            this.lblAboutAuthor.Size = new System.Drawing.Size(47, 13);
+            this.lblAboutAuthor.TabIndex = 14;
+            this.lblAboutAuthor.Text = "Author : ";
             // 
             // labelURL
             // 
@@ -125,16 +125,16 @@
             this.labelURL.VisitedLinkColor = System.Drawing.Color.Blue;
             this.labelURL.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelURL_LinkClicked);
             // 
-            // lblProductName
+            // lblProgramName
             // 
-            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblProductName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblProductName.Location = new System.Drawing.Point(167, 12);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(214, 20);
-            this.lblProductName.TabIndex = 12;
-            this.lblProductName.Text = "proGEDIA Inventory Manager";
-            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProgramName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblProgramName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblProgramName.Location = new System.Drawing.Point(167, 12);
+            this.lblProgramName.Name = "lblProgramName";
+            this.lblProgramName.Size = new System.Drawing.Size(214, 20);
+            this.lblProgramName.TabIndex = 12;
+            this.lblProgramName.Text = "proGEDIA Inventory Manager";
+            this.lblProgramName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -149,18 +149,17 @@
             // 
             // frmAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(393, 189);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblLicence);
             this.Controls.Add(this.lblBuildTime);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblBuildTimeText);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAboutHomePage);
+            this.Controls.Add(this.lblAboutAuthor);
             this.Controls.Add(this.labelURL);
-            this.Controls.Add(this.lblProductName);
+            this.Controls.Add(this.lblProgramName);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -182,12 +181,12 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label lblLicence;
         private System.Windows.Forms.Label lblBuildTime;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblBuildTimeText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAboutHomePage;
+        private System.Windows.Forms.Label lblAboutAuthor;
         private System.Windows.Forms.LinkLabel labelURL;
-        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblProgramName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

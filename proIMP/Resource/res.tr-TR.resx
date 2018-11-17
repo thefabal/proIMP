@@ -477,4 +477,94 @@
   <data name="searchImage" xml:space="preserve">
     <value>Resim dosyası ara</value>
   </data>
+  <data name="allWarehouses" xml:space="preserve">
+    <value>Tüm Depolar</value>
+  </data>
+  <data name="btnBrowse" xml:space="preserve">
+    <value>Seç...</value>
+  </data>
+  <data name="btnCheck" xml:space="preserve">
+    <value>Kontrol Et</value>
+  </data>
+  <data name="btnClean" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="cbProductOrderCategory" xml:space="preserve">
+    <value>Kategori ve ürün ismine göre</value>
+  </data>
+  <data name="cbProductOrderProduct" xml:space="preserve">
+    <value>Ürün ismi ve kategoriye göre</value>
+  </data>
+  <data name="errorCouldNotConnectDB" xml:space="preserve">
+    <value>Veritabanına bağlantı kurulamadı. Lütfen doğru dosyayı seçtiğinizden emin olunuz.</value>
+  </data>
+  <data name="errorCreatingDB" xml:space="preserve">
+    <value>Veritabanı oluşturulurken bilinmeyen bir hata ile karşılaşıldı.</value>
+  </data>
+  <data name="errorExistingDB" xml:space="preserve">
+    <value>Mevcut bir dosyayı seçtiniz. Lütfen mevcut olmayan bir dosyayı seçiniz.</value>
+  </data>
+  <data name="errorNonExistingDB" xml:space="preserve">
+    <value>Seçmiş olduğunuz dosya bulunmamaktadır. Lütfen mevcut bir veritabanı seçiniz.</value>
+  </data>
+  <data name="frmAbout_Text" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="frmPreferences_Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="gbDatabase" xml:space="preserve">
+    <value>Veritabanı</value>
+  </data>
+  <data name="gbVisual" xml:space="preserve">
+    <value>Görsel</value>
+  </data>
+  <data name="infoDatabaseCleaned" xml:space="preserve">
+    <value>Veritabanı temizlendi. Toplam {0} gereksiz girdi silindi.</value>
+  </data>
+  <data name="lblAboutAuthor" xml:space="preserve">
+    <value>Yazar</value>
+  </data>
+  <data name="lblAboutHomePage" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="lblBuildTimeText" xml:space="preserve">
+    <value>Derleme Zamanı</value>
+  </data>
+  <data name="lblCheckDatabase" xml:space="preserve">
+    <value>Veritabanını kontrol et (tablolar, indisler ve tanımlı görüntüler)</value>
+  </data>
+  <data name="lblCleanDatabase" xml:space="preserve">
+    <value>Gereksiz veritabanı girdilerini temizle</value>
+  </data>
+  <data name="lblExistingDatabase" xml:space="preserve">
+    <value>Mevcut bir veritabanına değiştir</value>
+  </data>
+  <data name="lblLicence" xml:space="preserve">
+    <value>Ticari kullanım harici ücretsizdir</value>
+  </data>
+  <data name="lblNewDatabase" xml:space="preserve">
+    <value>Yeni bir veritabanı oluştur</value>
+  </data>
+  <data name="lblShortProduct" xml:space="preserve">
+    <value>Ürünleri sıralama ölçütü</value>
+  </data>
+  <data name="nodeVisualGeneral" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="noProblemCheckDB" xml:space="preserve">
+    <value>Veritabanında her hangi bir problem tespit edilememiştir.</value>
+  </data>
+  <data name="problemCheckDB" xml:space="preserve">
+    <value>Veritabanında problem tespit edildi. Lütfen veritabanını tekrardan oluşturunuz.</value>
+  </data>
+  <data name="selectExistingDB" xml:space="preserve">
+    <value>Lütfen mevcut bir veritabanını seçiniz</value>
+  </data>
+  <data name="selectNonExistingDB" xml:space="preserve">
+    <value>Lütfen veritabanı için mevcut olmayan bir dosya seçiniz</value>
+  </data>
 </root>

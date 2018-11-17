@@ -155,8 +155,8 @@
             this.tbCountWarehouse = new System.Windows.Forms.TextBox();
             this.lblTotalWarehouse = new System.Windows.Forms.Label();
             this.pnlReport = new System.Windows.Forms.Panel();
-            this.pnlReport_1 = new System.Windows.Forms.Panel();
             this.pnlReport_2 = new System.Windows.Forms.Panel();
+            this.pnlReport_1 = new System.Windows.Forms.Panel();
             this.pnlStock = new System.Windows.Forms.Panel();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.btnProductFilterClear = new System.Windows.Forms.Button();
@@ -216,8 +216,8 @@
             this.pnlMenuStock.SuspendLayout();
             this.pnlMenuProduct.SuspendLayout();
             this.pnlReport.SuspendLayout();
-            this.pnlReport_1.SuspendLayout();
             this.pnlReport_2.SuspendLayout();
+            this.pnlReport_1.SuspendLayout();
             this.pnlStock.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             this.gbProductInfo.SuspendLayout();
@@ -1123,17 +1123,17 @@
             resources.ApplyResources(this.pnlReport, "pnlReport");
             this.pnlReport.Name = "pnlReport";
             // 
-            // pnlReport_1
-            // 
-            this.pnlReport_1.Controls.Add(this.scReport_1);
-            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
-            this.pnlReport_1.Name = "pnlReport_1";
-            // 
             // pnlReport_2
             // 
             this.pnlReport_2.Controls.Add(this.scReport_2);
             resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
             this.pnlReport_2.Name = "pnlReport_2";
+            // 
+            // pnlReport_1
+            // 
+            this.pnlReport_1.Controls.Add(this.scReport_1);
+            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
+            this.pnlReport_1.Name = "pnlReport_1";
             // 
             // pnlStock
             // 
@@ -1404,8 +1404,8 @@
             this.pnlMenuStock.ResumeLayout(false);
             this.pnlMenuProduct.ResumeLayout(false);
             this.pnlReport.ResumeLayout(false);
-            this.pnlReport_1.ResumeLayout(false);
             this.pnlReport_2.ResumeLayout(false);
+            this.pnlReport_1.ResumeLayout(false);
             this.pnlStock.ResumeLayout(false);
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();

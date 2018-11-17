@@ -477,4 +477,94 @@
   <data name="searchImage" xml:space="preserve">
     <value>Search for image files</value>
   </data>
+  <data name="allWarehouses" xml:space="preserve">
+    <value>All Warehouses</value>
+  </data>
+  <data name="btnBrowse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="btnCheck" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="btnClean" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="btnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="cbProductOrderCategory" xml:space="preserve">
+    <value>Category and product name</value>
+  </data>
+  <data name="cbProductOrderProduct" xml:space="preserve">
+    <value>Product name and category</value>
+  </data>
+  <data name="errorCouldNotConnectDB" xml:space="preserve">
+    <value>Could not connect to new database. Please make sure you selected right file.</value>
+  </data>
+  <data name="errorCreatingDB" xml:space="preserve">
+    <value>An unknown error occured while creating database entries.</value>
+  </data>
+  <data name="errorExistingDB" xml:space="preserve">
+    <value>You have selected an existing file. Please select a non-existing file.</value>
+  </data>
+  <data name="errorNonExistingDB" xml:space="preserve">
+    <value>You have selected a non-existing file. Please select an existing file.</value>
+  </data>
+  <data name="frmAbout_Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="frmPreferences_Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="gbDatabase" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="gbVisual" xml:space="preserve">
+    <value>Visual</value>
+  </data>
+  <data name="infoDatabaseCleaned" xml:space="preserve">
+    <value>Database cleaned. Total {0} unnecessary entry deleted.</value>
+  </data>
+  <data name="lblAboutAuthor" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="lblAboutHomePage" xml:space="preserve">
+    <value>Homepage</value>
+  </data>
+  <data name="lblBuildTimeText" xml:space="preserve">
+    <value>Build Time</value>
+  </data>
+  <data name="lblCheckDatabase" xml:space="preserve">
+    <value>Check database (Tables, indexes and triggers)</value>
+  </data>
+  <data name="lblCleanDatabase" xml:space="preserve">
+    <value>Clean database for unnecessary entries</value>
+  </data>
+  <data name="lblExistingDatabase" xml:space="preserve">
+    <value>Change to an existing database</value>
+  </data>
+  <data name="lblLicence" xml:space="preserve">
+    <value>Freely use for non-commercial purpose</value>
+  </data>
+  <data name="lblNewDatabase" xml:space="preserve">
+    <value>Create a new database</value>
+  </data>
+  <data name="lblShortProduct" xml:space="preserve">
+    <value>Short product by</value>
+  </data>
+  <data name="nodeVisualGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="noProblemCheckDB" xml:space="preserve">
+    <value>Database is solid without any problem.</value>
+  </data>
+  <data name="problemCheckDB" xml:space="preserve">
+    <value>There is a problem with DB. Please create it again.</value>
+  </data>
+  <data name="selectExistingDB" xml:space="preserve">
+    <value>Please select an existing database</value>
+  </data>
+  <data name="selectNonExistingDB" xml:space="preserve">
+    <value>Please create a new file for database</value>
+  </data>
 </root>
