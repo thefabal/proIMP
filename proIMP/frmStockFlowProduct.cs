@@ -13,15 +13,18 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmStockFlowProduct:Form {
+        public frmMain frmMain;
         public string strStockID = string.Empty;
         public string strStockFlowID = string.Empty;
         public string strStockType = string.Empty;
 
-        public frmStockFlowProduct() {
+        public frmStockFlowProduct( frmMain frmMain ) {
+            this.frmMain = frmMain;
             InitializeComponent();
         }
 
         private void frmStockFlowProduct_Load( object sender, EventArgs e ) {
+            switchLanguage();
             getWarehouseList();
             getProductList();
 
@@ -58,6 +61,18 @@ namespace proIMP {
             }
         }
 
+        private void switchLanguage( ) {
+            this.Text = frmMain.resMan.GetString( "frmStockFlowProduct_Text", frmMain.culInfo );
+
+            lblProductUnit.Text = frmMain.resMan.GetString( "lblProductUnit", frmMain.culInfo ) + " :";
+            lblProductWarehouse.Text = frmMain.resMan.GetString( "lblProductWarehouse", frmMain.culInfo ) + " :";
+            lblProductQuantity.Text = frmMain.resMan.GetString( "lblProductQuantity", frmMain.culInfo ) + " :";
+            lblProductPrice.Text = frmMain.resMan.GetString( "lblProductPrice", frmMain.culInfo );
+
+            btnCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+        }
+
         private void cbStockProductID_SelectedIndexChanged( object sender, EventArgs e ) {
             if( cbStockProductID.SelectedIndex == -1 ) {
                 tbStockProductUnit.Text = "";
@@ -83,40 +98,56 @@ namespace proIMP {
 
         private void btnSave_Click( object sender, EventArgs e ) {
             if( cbStockProductID.SelectedIndex != -1 ) {
-                if( tbStockProductQuantity.Text != string.Empty && tbStockProductPrice.Text != string.Empty ) {
-                    double dQuantity = Convert.ToDouble( tbStockProductQuantity.Text );
-                    double dPrice = Convert.ToDouble( tbStockProductPrice.Text );
+                double dQuantity = 0;
+                double dPrice = 0;
 
-                    if( strStockType == "2" ) {
-                        dQuantity *= -1;
+                try {
+                    dQuantity = Convert.ToDouble( tbStockProductQuantity.Text );
+                } catch {
+                    MessageBox.Show( frmMain.resMan.GetString( "errorOnProductQuantity", frmMain.culInfo ) );
+
+                    tbStockProductQuantity.Focus();
+
+                    return;
+                }
+
+                try {
+                    dPrice = Convert.ToDouble( tbStockProductPrice.Text );
+                } catch {
+                    MessageBox.Show( frmMain.resMan.GetString( "errorOnProductPrice", frmMain.culInfo ) );
+
+                    tbStockProductPrice.Focus();
+
+                    return;
+                }
+
+                if( strStockType == "2" ) {
+                    dQuantity *= -1;
+                }
+
+                if( strStockFlowID == string.Empty && strStockID != string.Empty ) {
+                    try {
+                        SQLiteCommand dbCommand = new SQLiteCommand( "INSERT INTO stock_flow (sflow_id, sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price) VALUES(NULL, '" + strStockID + "', '" + ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID + "', '" + ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID + "', '" + dQuantity.ToString( "0.000" ) + "', '" + dPrice.ToString( "0.000" ) + "')", frmMain.sqlCon );
+                        dbCommand.ExecuteNonQuery();
+                    } catch {
+                        MessageBox.Show( frmMain.resMan.GetString( "unknownError", frmMain.culInfo ) );
+
+                        return;
                     }
+                } else if( strStockFlowID != string.Empty ) {
+                    try {
+                        SQLiteCommand dbCommand = new SQLiteCommand( "UPDATE stock_flow SET sflow_productid = '" + ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID + "', sflow_warehouseid = '" + ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID + "', sflow_quantity = '" + dQuantity.ToString( "0.000" ) + "', sflow_price = '" + dPrice.ToString( "0.000" ) + "' WHERE sflow_id = '" + strStockFlowID + "'", frmMain.sqlCon );
+                        dbCommand.ExecuteNonQuery();
+                    } catch {
+                        MessageBox.Show( frmMain.resMan.GetString( "unknownError", frmMain.culInfo ) );
 
-                    if( strStockFlowID == string.Empty && strStockID != string.Empty ) {
-                        try {
-                            SQLiteCommand dbCommand = new SQLiteCommand("INSERT INTO stock_flow (sflow_id, sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price) VALUES(NULL, '" + strStockID + "', '" + ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID + "', '" + ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID + "', '" + dQuantity.ToString("0.000") + "', '" + dPrice.ToString("0.000") + "')", frmMain.sqlCon);
-                            dbCommand.ExecuteNonQuery();
-                        } catch {
-                            MessageBox.Show( "Could not save product in stock movement. Please try again." );
-
-                            return;
-                        }
-                    } else if( strStockFlowID != string.Empty ) {
-                        try {
-                            SQLiteCommand dbCommand = new SQLiteCommand("UPDATE stock_flow SET sflow_productid = '" +  ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID + "', sflow_warehouseid = '" + ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID + "', sflow_quantity = '" + dQuantity.ToString("0.000") + "', sflow_price = '" + dPrice.ToString("0.000") + "' WHERE sflow_id = '" + strStockFlowID + "'", frmMain.sqlCon );
-                            dbCommand.ExecuteNonQuery();
-                        } catch {
-                            MessageBox.Show( "Could not save product in stock movement. Please try again." );
-
-                            return;
-                        }
-                    } else {
                         return;
                     }
                 } else {
                     return;
                 }
 
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }
         }
 

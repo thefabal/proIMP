@@ -28,13 +28,13 @@
             this.tbStockProductQuantity = new System.Windows.Forms.TextBox();
             this.tbStockProductUnit = new System.Windows.Forms.TextBox();
             this.cbStockProductID = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblProductUnit = new System.Windows.Forms.Label();
+            this.lblProductQuantity = new System.Windows.Forms.Label();
+            this.lblProductPrice = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProductWarehouse = new System.Windows.Forms.Label();
             this.cbStockProductWarehouse = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -75,32 +75,32 @@
             this.cbStockProductID.TabIndex = 0;
             this.cbStockProductID.SelectedIndexChanged += new System.EventHandler(this.cbStockProductID_SelectedIndexChanged);
             // 
-            // label1
+            // lblProductUnit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Product Unit :";
+            this.lblProductUnit.AutoSize = true;
+            this.lblProductUnit.Location = new System.Drawing.Point(12, 42);
+            this.lblProductUnit.Name = "lblProductUnit";
+            this.lblProductUnit.Size = new System.Drawing.Size(72, 13);
+            this.lblProductUnit.TabIndex = 11;
+            this.lblProductUnit.Text = "Product Unit :";
             // 
-            // label2
+            // lblProductQuantity
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Product Quantity :";
+            this.lblProductQuantity.AutoSize = true;
+            this.lblProductQuantity.Location = new System.Drawing.Point(12, 95);
+            this.lblProductQuantity.Name = "lblProductQuantity";
+            this.lblProductQuantity.Size = new System.Drawing.Size(92, 13);
+            this.lblProductQuantity.TabIndex = 12;
+            this.lblProductQuantity.Text = "Product Quantity :";
             // 
-            // label3
+            // lblProductPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Product Price :";
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(12, 121);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(77, 13);
+            this.lblProductPrice.TabIndex = 13;
+            this.lblProductPrice.Text = "Product Price :";
             // 
             // btnCancel
             // 
@@ -140,17 +140,18 @@
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
             this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
-            // label4
+            // lblProductWarehouse
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Product Warehouse :";
+            this.lblProductWarehouse.AutoSize = true;
+            this.lblProductWarehouse.Location = new System.Drawing.Point(12, 68);
+            this.lblProductWarehouse.Name = "lblProductWarehouse";
+            this.lblProductWarehouse.Size = new System.Drawing.Size(108, 13);
+            this.lblProductWarehouse.TabIndex = 35;
+            this.lblProductWarehouse.Text = "Product Warehouse :";
             // 
             // cbStockProductWarehouse
             // 
+            this.cbStockProductWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStockProductWarehouse.FormattingEnabled = true;
             this.cbStockProductWarehouse.Location = new System.Drawing.Point(130, 65);
             this.cbStockProductWarehouse.Name = "cbStockProductWarehouse";
@@ -163,13 +164,13 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(240, 178);
             this.Controls.Add(this.cbStockProductWarehouse);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblProductWarehouse);
             this.Controls.Add(this.btnCategoryAdd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProductPrice);
+            this.Controls.Add(this.lblProductQuantity);
+            this.Controls.Add(this.lblProductUnit);
             this.Controls.Add(this.tbStockProductPrice);
             this.Controls.Add(this.tbStockProductQuantity);
             this.Controls.Add(this.tbStockProductUnit);
@@ -194,13 +195,13 @@
         private System.Windows.Forms.TextBox tbStockProductQuantity;
         private System.Windows.Forms.TextBox tbStockProductUnit;
         private System.Windows.Forms.ComboBox cbStockProductID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblProductUnit;
+        private System.Windows.Forms.Label lblProductQuantity;
+        private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCategoryAdd;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProductWarehouse;
         private System.Windows.Forms.ComboBox cbStockProductWarehouse;
     }
 }

@@ -25,35 +25,35 @@
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbStockDesc = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.dtpStockDate = new System.Windows.Forms.DateTimePicker();
             this.cbStockSupplier = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblWarehouse = new System.Windows.Forms.Label();
             this.cbStockProductWarehouse = new System.Windows.Forms.ComboBox();
             this.lblProductListNote = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblGrandTotalPrice = new System.Windows.Forms.Label();
             this.tbStockGrandTotal = new System.Windows.Forms.TextBox();
             this.btnProductAdd = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProductPrice = new System.Windows.Forms.Label();
             this.tbStockProductPrice = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProductQuantity = new System.Windows.Forms.Label();
+            this.lblProductUnit = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.tbStockProductQuantity = new System.Windows.Forms.TextBox();
             this.tbStockProductUnit = new System.Windows.Forms.TextBox();
             this.cbStockProductID = new System.Windows.Forms.ComboBox();
             this.lvStockProductList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductFlowID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductWarehouseID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductWarehouse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductUnit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductTotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnStockCancel = new System.Windows.Forms.Button();
             this.btnStockSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -63,11 +63,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbStockDesc);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.lblDescription);
             this.groupBox1.Controls.Add(this.dtpStockDate);
             this.groupBox1.Controls.Add(this.cbStockSupplier);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblDate);
+            this.groupBox1.Controls.Add(this.lblSupplier);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(654, 128);
@@ -82,14 +82,14 @@
             this.tbStockDesc.Size = new System.Drawing.Size(200, 46);
             this.tbStockDesc.TabIndex = 3;
             // 
-            // label7
+            // lblDescription
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 79);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Description :";
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(6, 79);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(66, 13);
+            this.lblDescription.TabIndex = 4;
+            this.lblDescription.Text = "Description :";
             // 
             // dtpStockDate
             // 
@@ -109,37 +109,37 @@
             this.cbStockSupplier.Size = new System.Drawing.Size(200, 21);
             this.cbStockSupplier.TabIndex = 2;
             // 
-            // label6
+            // lblDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Date :";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(6, 29);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(36, 13);
+            this.lblDate.TabIndex = 1;
+            this.lblDate.Text = "Date :";
             // 
-            // label5
+            // lblSupplier
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Supplier :";
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(6, 52);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(51, 13);
+            this.lblSupplier.TabIndex = 0;
+            this.lblSupplier.Text = "Supplier :";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lblWarehouse);
             this.groupBox2.Controls.Add(this.cbStockProductWarehouse);
             this.groupBox2.Controls.Add(this.lblProductListNote);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.lblGrandTotalPrice);
             this.groupBox2.Controls.Add(this.tbStockGrandTotal);
             this.groupBox2.Controls.Add(this.btnProductAdd);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lblProductPrice);
             this.groupBox2.Controls.Add(this.tbStockProductPrice);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.lblProductQuantity);
+            this.groupBox2.Controls.Add(this.lblProductUnit);
+            this.groupBox2.Controls.Add(this.lblProductName);
             this.groupBox2.Controls.Add(this.tbStockProductQuantity);
             this.groupBox2.Controls.Add(this.tbStockProductUnit);
             this.groupBox2.Controls.Add(this.cbStockProductID);
@@ -150,14 +150,14 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // label9
+            // lblWarehouse
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(161, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Warehouse";
+            this.lblWarehouse.AutoSize = true;
+            this.lblWarehouse.Location = new System.Drawing.Point(161, 29);
+            this.lblWarehouse.Name = "lblWarehouse";
+            this.lblWarehouse.Size = new System.Drawing.Size(62, 13);
+            this.lblWarehouse.TabIndex = 15;
+            this.lblWarehouse.Text = "Warehouse";
             // 
             // cbStockProductWarehouse
             // 
@@ -177,14 +177,14 @@
             this.lblProductListNote.TabIndex = 13;
             this.lblProductListNote.Text = "* Selected items will be deleted when form saved.";
             // 
-            // label8
+            // lblGrandTotalPrice
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(439, 225);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Grand Total Price :";
+            this.lblGrandTotalPrice.AutoSize = true;
+            this.lblGrandTotalPrice.Location = new System.Drawing.Point(439, 225);
+            this.lblGrandTotalPrice.Name = "lblGrandTotalPrice";
+            this.lblGrandTotalPrice.Size = new System.Drawing.Size(96, 13);
+            this.lblGrandTotalPrice.TabIndex = 12;
+            this.lblGrandTotalPrice.Text = "Grand Total Price :";
             // 
             // tbStockGrandTotal
             // 
@@ -206,14 +206,14 @@
             this.btnProductAdd.UseVisualStyleBackColor = true;
             this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
-            // label4
+            // lblProductPrice
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(449, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Product Price";
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(449, 29);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(71, 13);
+            this.lblProductPrice.TabIndex = 9;
+            this.lblProductPrice.Text = "Product Price";
             // 
             // tbStockProductPrice
             // 
@@ -223,32 +223,32 @@
             this.tbStockProductPrice.TabIndex = 7;
             this.tbStockProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheckForNumeric_KeyPress);
             // 
-            // label3
+            // lblProductQuantity
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Product Quantity";
+            this.lblProductQuantity.AutoSize = true;
+            this.lblProductQuantity.Location = new System.Drawing.Point(353, 29);
+            this.lblProductQuantity.Name = "lblProductQuantity";
+            this.lblProductQuantity.Size = new System.Drawing.Size(86, 13);
+            this.lblProductQuantity.TabIndex = 7;
+            this.lblProductQuantity.Text = "Product Quantity";
             // 
-            // label1
+            // lblProductUnit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Product Unit";
+            this.lblProductUnit.AutoSize = true;
+            this.lblProductUnit.Location = new System.Drawing.Point(257, 29);
+            this.lblProductUnit.Name = "lblProductUnit";
+            this.lblProductUnit.Size = new System.Drawing.Size(66, 13);
+            this.lblProductUnit.TabIndex = 6;
+            this.lblProductUnit.Text = "Product Unit";
             // 
-            // label2
+            // lblProductName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Product Name";
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(6, 29);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(75, 13);
+            this.lblProductName.TabIndex = 5;
+            this.lblProductName.Text = "Product Name";
             // 
             // tbStockProductQuantity
             // 
@@ -282,14 +282,14 @@
             // lvStockProductList
             // 
             this.lvStockProductList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader8,
-            this.columnHeader7,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.chProductFlowID,
+            this.chProductName,
+            this.chProductWarehouseID,
+            this.chProductWarehouse,
+            this.chProductUnit,
+            this.chProductQuantity,
+            this.chProductPrice,
+            this.chProductTotalPrice});
             this.lvStockProductList.FullRowSelect = true;
             this.lvStockProductList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvStockProductList.Location = new System.Drawing.Point(6, 82);
@@ -301,51 +301,51 @@
             this.lvStockProductList.UseCompatibleStateImageBehavior = false;
             this.lvStockProductList.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // chProductFlowID
             // 
-            this.columnHeader1.Text = "FlowID";
-            this.columnHeader1.Width = 0;
+            this.chProductFlowID.Text = "FlowID";
+            this.chProductFlowID.Width = 0;
             // 
-            // columnHeader2
+            // chProductName
             // 
-            this.columnHeader2.Text = "Product Name";
-            this.columnHeader2.Width = 153;
+            this.chProductName.Text = "Product Name";
+            this.chProductName.Width = 153;
             // 
-            // columnHeader8
+            // chProductWarehouseID
             // 
-            this.columnHeader8.DisplayIndex = 7;
-            this.columnHeader8.Text = "WarehouseID";
-            this.columnHeader8.Width = 0;
+            this.chProductWarehouseID.DisplayIndex = 7;
+            this.chProductWarehouseID.Text = "WarehouseID";
+            this.chProductWarehouseID.Width = 0;
             // 
-            // columnHeader7
+            // chProductWarehouse
             // 
-            this.columnHeader7.DisplayIndex = 2;
-            this.columnHeader7.Text = "Warehouse";
-            this.columnHeader7.Width = 96;
+            this.chProductWarehouse.DisplayIndex = 2;
+            this.chProductWarehouse.Text = "Warehouse";
+            this.chProductWarehouse.Width = 96;
             // 
-            // columnHeader3
+            // chProductUnit
             // 
-            this.columnHeader3.DisplayIndex = 3;
-            this.columnHeader3.Text = "Product Unit";
-            this.columnHeader3.Width = 96;
+            this.chProductUnit.DisplayIndex = 3;
+            this.chProductUnit.Text = "Product Unit";
+            this.chProductUnit.Width = 96;
             // 
-            // columnHeader4
+            // chProductQuantity
             // 
-            this.columnHeader4.DisplayIndex = 4;
-            this.columnHeader4.Text = "Product Quantity";
-            this.columnHeader4.Width = 96;
+            this.chProductQuantity.DisplayIndex = 4;
+            this.chProductQuantity.Text = "Product Quantity";
+            this.chProductQuantity.Width = 96;
             // 
-            // columnHeader5
+            // chProductPrice
             // 
-            this.columnHeader5.DisplayIndex = 5;
-            this.columnHeader5.Text = "Product Price";
-            this.columnHeader5.Width = 96;
+            this.chProductPrice.DisplayIndex = 5;
+            this.chProductPrice.Text = "Product Price";
+            this.chProductPrice.Width = 96;
             // 
-            // columnHeader6
+            // chProductTotalPrice
             // 
-            this.columnHeader6.DisplayIndex = 6;
-            this.columnHeader6.Text = "Total Price";
-            this.columnHeader6.Width = 96;
+            this.chProductTotalPrice.DisplayIndex = 6;
+            this.chProductTotalPrice.Text = "Total Price";
+            this.chProductTotalPrice.Width = 96;
             // 
             // btnStockCancel
             // 
@@ -400,35 +400,35 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnProductAdd;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProductPrice;
         private System.Windows.Forms.TextBox tbStockProductPrice;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProductQuantity;
+        private System.Windows.Forms.Label lblProductUnit;
+        private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.TextBox tbStockProductQuantity;
         private System.Windows.Forms.TextBox tbStockProductUnit;
         private System.Windows.Forms.ComboBox cbStockProductID;
         private System.Windows.Forms.ListView lvStockProductList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader chProductFlowID;
+        private System.Windows.Forms.ColumnHeader chProductName;
+        private System.Windows.Forms.ColumnHeader chProductUnit;
+        private System.Windows.Forms.ColumnHeader chProductQuantity;
+        private System.Windows.Forms.ColumnHeader chProductPrice;
+        private System.Windows.Forms.ColumnHeader chProductTotalPrice;
         private System.Windows.Forms.TextBox tbStockDesc;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.DateTimePicker dtpStockDate;
         private System.Windows.Forms.ComboBox cbStockSupplier;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblSupplier;
         private System.Windows.Forms.TextBox tbStockGrandTotal;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGrandTotalPrice;
         private System.Windows.Forms.Button btnStockCancel;
         private System.Windows.Forms.Button btnStockSave;
         private System.Windows.Forms.Label lblProductListNote;
         private System.Windows.Forms.ComboBox cbStockProductWarehouse;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Label lblWarehouse;
+        private System.Windows.Forms.ColumnHeader chProductWarehouse;
+        private System.Windows.Forms.ColumnHeader chProductWarehouseID;
     }
 }

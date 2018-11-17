@@ -41,9 +41,9 @@ namespace proIMP {
         public static frmCategory category;
         public static frmCustomer customer;
         public static frmProduct product;
-        public static frmStockFlowProduct stockflow = new frmStockFlowProduct();
-        public static frmStockFlowIn stockin = new frmStockFlowIn();
-        public static frmStockFlowOut stockout = new frmStockFlowOut();
+        public static frmStockFlowProduct stockflow;
+        public static frmStockFlowIn stockin;
+        public static frmStockFlowOut stockout;
         public static frmSupplier supplier;
         public static frmWarehouse warehouse;
         public static frmPreferences preferences;
@@ -79,6 +79,9 @@ namespace proIMP {
             customer = new frmCustomer( this );
             category = new frmCategory( this );
             product = new frmProduct( this );
+            stockin = new frmStockFlowIn( this );
+            stockout = new frmStockFlowOut( this );
+            stockflow = new frmStockFlowProduct( this );
             about = new frmAbout( this );
             preferences = new frmPreferences( this );
         }
@@ -232,7 +235,7 @@ namespace proIMP {
             stockFlowSupplier.Text = resMan.GetString( "stockFlowSupplier", culInfo );
             stockFlowDescription.Text = resMan.GetString( "stockFlowDescription", culInfo );
             stockFlowQuantity.Text = resMan.GetString( "stockFlowQuantity", culInfo );
-            stockFlowTotalPrice.Text = resMan.GetString( "stockFlowTotalPrice", culInfo );
+            stockFlowTotalPrice.Text = resMan.GetString( "stockTotalPrice", culInfo );
 
             btnStockFlowAdd.Text = resMan.GetString( "btnAdd", culInfo );
             addStockInToolStripMenuItem.Text = btnStockIn.Text;
@@ -244,7 +247,7 @@ namespace proIMP {
             stockProductUnit.Text = resMan.GetString( "stockProductUnit", culInfo );
             stockProductQuantity.Text = resMan.GetString( "stockProductQuantity", culInfo );
             stockProductPrice.Text = resMan.GetString( "stockProductPrice", culInfo );
-            stockProductTotalPrice.Text = resMan.GetString( "stockProductTotalPrice", culInfo );
+            stockProductTotalPrice.Text = resMan.GetString( "stockTotalPrice", culInfo );
 
             btnStockProductAdd.Text = resMan.GetString( "btnAdd", culInfo );
             btnStockProductEdit.Text = resMan.GetString( "btnEdit", culInfo );

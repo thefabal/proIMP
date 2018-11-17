@@ -13,15 +13,19 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmStockFlowOut:Form {
+        public frmMain frmMain;
         public string strStockFlowID = string.Empty;
 
         private SQLiteCommand dbCommand = new SQLiteCommand();
 
-        public frmStockFlowOut() {
+        public frmStockFlowOut( frmMain frmMain ) {
+            this.frmMain = frmMain;
             InitializeComponent();
         }
 
         private void frmStockFlowOut_Load( object sender, EventArgs e ) {
+            switchLanguage();
+
             getCustomerList();
             getProductList();
             getWarehouseList();
@@ -72,7 +76,7 @@ namespace proIMP {
                         dTotalPrice = dQuantity * dPrice;
                         dGrandPrice += dTotalPrice;
 
-                        ListViewItem lvi = new ListViewItem(new string[] { dbReader[ "sflow_id" ].ToString(), dbReader[ "product_name" ].ToString(), dbReader[ "warehouse_id" ].ToString(), dbReader[ "warehouse_name" ].ToString(), dbReader[ "product_unit" ].ToString(), dQuantity.ToString("0.000"), dPrice.ToString("0.000"), dTotalPrice.ToString( "0.000" ) });
+                        ListViewItem lvi = new ListViewItem(new string[] { dbReader[ "sflow_id" ].ToString(), dbReader[ "product_name" ].ToString(), dbReader[ "warehouse_id" ].ToString(), dbReader[ "warehouse_name" ].ToString(), frmMain.resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), frmMain.culInfo ), dQuantity.ToString("0.000"), dPrice.ToString("0.000"), dTotalPrice.ToString( "0.000" ) });
 
                         lvStockProductList.Items.Add( lvi );
                     }
@@ -85,13 +89,36 @@ namespace proIMP {
             }
         }
 
+        private void switchLanguage( ) {
+            this.Text = frmMain.resMan.GetString( "frmStockFlowOut_Text", frmMain.culInfo );
+
+            lblDate.Text = frmMain.resMan.GetString( "lblDate", frmMain.culInfo ) + " :";
+            lblCustomer.Text = frmMain.resMan.GetString( "lblCustomer", frmMain.culInfo ) + " :";
+            lblDescription.Text = frmMain.resMan.GetString( "lblDescription", frmMain.culInfo ) + " :";
+            lblProductName.Text = frmMain.resMan.GetString( "lblProductName", frmMain.culInfo );
+            lblWarehouse.Text = frmMain.resMan.GetString( "lblWarehouse", frmMain.culInfo );
+            lblProductUnit.Text = frmMain.resMan.GetString( "lblProductUnit", frmMain.culInfo );
+            lblProductQuantity.Text = frmMain.resMan.GetString( "lblProductQuantity", frmMain.culInfo );
+            lblProductPrice.Text = frmMain.resMan.GetString( "lblProductPrice", frmMain.culInfo );
+            btnProductAdd.Text = frmMain.resMan.GetString( "btnAdd", frmMain.culInfo );
+            chProductName.Text = lblProductName.Text;
+            chProductWarehouse.Text = lblWarehouse.Text;
+            chProductUnit.Text = lblProductUnit.Text;
+            chProductQuantity.Text = lblProductQuantity.Text;
+            chProductPrice.Text = lblProductPrice.Text;
+            chProductTotalPrice.Text = frmMain.resMan.GetString( "stockTotalPrice", frmMain.culInfo );
+            lblProductListNote.Text = frmMain.resMan.GetString( "lblProductListNote", frmMain.culInfo );
+            lblGrandTotalPrice.Text = frmMain.resMan.GetString( "lblGrandTotalPrice", frmMain.culInfo );
+
+            btnStockCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnStockSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
+        }
+
         private void frmStockFlowOut_FormClosing( object sender, FormClosingEventArgs e ) {
             if( e.CloseReason == CloseReason.UserClosing ) {
                 if( strStockFlowID != string.Empty ) {
                     this.dbCommand.Transaction.Rollback();
                 }
-            } else {
-
             }
         }
 
@@ -104,12 +131,44 @@ namespace proIMP {
         }
 
         private void btnProductAdd_Click( object sender, EventArgs e ) {
+            double dQuantity = 0;
+            double dPrice = 0;
+
             try {
-                double dQuantity = Convert.ToDouble(tbStockProductQuantity.Text);
-                double dPrice = Convert.ToDouble(tbStockProductPrice.Text);
+                dQuantity = Convert.ToDouble( tbStockProductQuantity.Text );
+            } catch {
+                MessageBox.Show( frmMain.resMan.GetString( "errorOnProductQuantity", frmMain.culInfo ) );
+
+                tbStockProductQuantity.Focus();
+
+                return;
+            }
+
+            try {
+                dPrice = Convert.ToDouble( tbStockProductPrice.Text );
+            } catch {
+                MessageBox.Show( frmMain.resMan.GetString( "errorOnProductPrice", frmMain.culInfo ) );
+
+                tbStockProductPrice.Focus();
+
+                return;
+            }
+
+            try {
                 double dTotalPrice = dQuantity * dPrice;
 
-                ListViewItem lvi = new ListViewItem(new string[] { ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID, ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductName, ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID, ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseName, tbStockProductUnit.Text, dQuantity.ToString( "0.000" ), dPrice.ToString( "0.000" ), dTotalPrice.ToString( "0.000" ) });
+                ListViewItem lvi = new ListViewItem(
+                    new string[] {
+                        ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductID,
+                        ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductName,
+                        ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseID,
+                        ( (WarehouseItem)cbStockProductWarehouse.Items[ cbStockProductWarehouse.SelectedIndex ] ).WarehouseName,
+                        tbStockProductUnit.Text,
+                        dQuantity.ToString( "0.000" ),
+                        dPrice.ToString( "0.000" ),
+                        dTotalPrice.ToString( "0.000" )
+                    }
+                );
 
                 lvStockProductList.Items.Add( lvi );
 
@@ -127,9 +186,7 @@ namespace proIMP {
 
                 cbStockProductID.Focus();
             } catch {
-                MessageBox.Show( "You should enter double value as Product Quantity and Product Price." );
-
-                tbStockProductQuantity.Focus();
+                MessageBox.Show( frmMain.resMan.GetString( "unknownError", frmMain.culInfo ) );
             }
         }
 
@@ -156,7 +213,7 @@ namespace proIMP {
                         dbCommand.Transaction.Commit();
                     } catch {
                         dbCommand.Transaction.Rollback();
-                        MessageBox.Show( "Could not save stock movement to database. Please try again." );
+                        MessageBox.Show( frmMain.resMan.GetString( "unknownError", frmMain.culInfo ) );
 
                         return;
                     }
@@ -167,18 +224,19 @@ namespace proIMP {
                             strSQL += lvStockProductList.Items[ i ].SubItems[ 1 ].Text + ",";
                         }
                     }
+
                     if( strSQL.Length > 0 ) {
-                        this.dbCommand.CommandText = "DELETE FROM stock_flow WHERE sflow_id IN(" + strSQL.Substring( 0, strSQL.Length - 1 ) + ") AND sflow_sid = '" + strStockFlowID + "'";
-                        this.dbCommand.ExecuteNonQuery();
+                        dbCommand.CommandText = "DELETE FROM stock_flow WHERE sflow_id IN(" + strSQL.Substring( 0, strSQL.Length - 1 ) + ") AND sflow_sid = '" + strStockFlowID + "'";
+                        dbCommand.ExecuteNonQuery();
                     }
 
-                    this.dbCommand.CommandText = "UPDATE stock SET stock_date = '" + dtpStockDate.Value.ToString( "yyyy-MM-dd" ) + "', stock_supplier = '" + ( (SupplierItem)cbStockCustomer.SelectedItem ).SupplierID + "', stock_desc = '" + tbStockDesc.Text.Replace( "'", "''" ) + "' WHERE stock_id = '" + strStockFlowID + "'";
-                    this.dbCommand.ExecuteNonQuery();
+                    dbCommand.CommandText = "UPDATE stock SET stock_date = '" + dtpStockDate.Value.ToString( "yyyy-MM-dd" ) + "', stock_supplier = '" + ( (SupplierItem)cbStockCustomer.SelectedItem ).SupplierID + "', stock_desc = '" + tbStockDesc.Text.Replace( "'", "''" ) + "' WHERE stock_id = '" + strStockFlowID + "'";
+                    dbCommand.ExecuteNonQuery();
 
-                    this.dbCommand.Transaction.Commit();
+                    dbCommand.Transaction.Commit();
                 }
 
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }
         }
 
@@ -199,10 +257,10 @@ namespace proIMP {
 
         private void btnStockCancel_Click( object sender, EventArgs e ) {
             if( strStockFlowID != string.Empty ) {
-                this.dbCommand.Transaction.Rollback();
+                dbCommand.Transaction.Rollback();
             }
 
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         private void getCustomerList() {

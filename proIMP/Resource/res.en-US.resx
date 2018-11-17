@@ -300,7 +300,7 @@
   <data name="stockFlowSupplier" xml:space="preserve">
     <value>Supplier</value>
   </data>
-  <data name="stockFlowTotalPrice" xml:space="preserve">
+  <data name="stockTotalPrice" xml:space="preserve">
     <value>Total Price</value>
   </data>
   <data name="stockFlowType" xml:space="preserve">
@@ -311,9 +311,6 @@
   </data>
   <data name="stockProductQuantity" xml:space="preserve">
     <value>Quantity</value>
-  </data>
-  <data name="stockProductTotalPrice" xml:space="preserve">
-    <value>Total Price</value>
   </data>
   <data name="stockProductUnit" xml:space="preserve">
     <value>Unit</value>
@@ -566,5 +563,47 @@
   </data>
   <data name="selectNonExistingDB" xml:space="preserve">
     <value>Please create a new file for database</value>
+  </data>
+  <data name="errorOnProductPrice" xml:space="preserve">
+    <value>Please enter correct value for Product Price</value>
+  </data>
+  <data name="errorOnProductQuantity" xml:space="preserve">
+    <value>Please enter correct value for Product Quantity</value>
+  </data>
+  <data name="frmStockFlowIn_Text" xml:space="preserve">
+    <value>Stock Flow In</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblProductListNote" xml:space="preserve">
+    <value>* Selected items will be deleted when form saved.</value>
+  </data>
+  <data name="lblProductPrice" xml:space="preserve">
+    <value>Product Price</value>
+  </data>
+  <data name="lblProductQuantity" xml:space="preserve">
+    <value>Product Quantity</value>
+  </data>
+  <data name="lblSupplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="lblWarehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="frmStockFlowOut_Text" xml:space="preserve">
+    <value>Stock Flow Out</value>
+  </data>
+  <data name="frmStockFlowProduct_Text" xml:space="preserve">
+    <value>Stock Flow Product</value>
+  </data>
+  <data name="lblCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="lblProductWarehouse" xml:space="preserve">
+    <value>Product Warehouse</value>
   </data>
 </root>

@@ -300,9 +300,6 @@
   <data name="stockFlowSupplier" xml:space="preserve">
     <value>Tedarikçi</value>
   </data>
-  <data name="stockFlowTotalPrice" xml:space="preserve">
-    <value>Toplam Ücret</value>
-  </data>
   <data name="stockFlowType" xml:space="preserve">
     <value>Tip</value>
   </data>
@@ -312,7 +309,7 @@
   <data name="stockProductQuantity" xml:space="preserve">
     <value>Adet</value>
   </data>
-  <data name="stockProductTotalPrice" xml:space="preserve">
+  <data name="stockTotalPrice" xml:space="preserve">
     <value>Toplam Fiyat</value>
   </data>
   <data name="stockProductUnit" xml:space="preserve">
@@ -566,5 +563,47 @@
   </data>
   <data name="selectNonExistingDB" xml:space="preserve">
     <value>Lütfen veritabanı için mevcut olmayan bir dosya seçiniz</value>
+  </data>
+  <data name="errorOnProductPrice" xml:space="preserve">
+    <value>Ürün fiyatı olarak lütfen doğru değer giriniz.</value>
+  </data>
+  <data name="errorOnProductQuantity" xml:space="preserve">
+    <value>Ürün adeti olarak lütfen doğru değer giriniz.</value>
+  </data>
+  <data name="frmStockFlowIn_Text" xml:space="preserve">
+    <value>Stok Ürün Girişi</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="lblProductListNote" xml:space="preserve">
+    <value>* Sayfa kaydedildiğinde seçili ürünler silinecektir.</value>
+  </data>
+  <data name="lblProductPrice" xml:space="preserve">
+    <value>Ürün Fiyatı</value>
+  </data>
+  <data name="lblProductQuantity" xml:space="preserve">
+    <value>Ürün Adeti</value>
+  </data>
+  <data name="lblSupplier" xml:space="preserve">
+    <value>Tedarikçi</value>
+  </data>
+  <data name="lblWarehouse" xml:space="preserve">
+    <value>Depo</value>
+  </data>
+  <data name="frmStockFlowOut_Text" xml:space="preserve">
+    <value>Stok Ürün Çıkış</value>
+  </data>
+  <data name="frmStockFlowProduct_Text" xml:space="preserve">
+    <value>Stok Hareketi Ürün</value>
+  </data>
+  <data name="lblCustomer" xml:space="preserve">
+    <value>Müşteri</value>
+  </data>
+  <data name="lblProductWarehouse" xml:space="preserve">
+    <value>Ürün Deposu</value>
   </data>
 </root>
