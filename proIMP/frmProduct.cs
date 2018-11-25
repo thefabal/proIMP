@@ -62,7 +62,19 @@ namespace proIMP {
                     tbProductBarcode.Text = dbReader[ "product_barcode" ].ToString();
 
                     cbProductCategory.SelectedIndex = cbProductCategory.FindStringExact( dbReader[ "category_name" ].ToString() );
-                    cbProductUnit.SelectedIndex = cbProductUnit.FindStringExact( dbReader[ "product_unit" ].ToString() );
+                    switch( dbReader[ "product_unit" ].ToString() ) {
+                        case "G":
+                            cbProductUnit.SelectedIndex = 0;
+                            break;
+
+                        case "M":
+                            cbProductUnit.SelectedIndex = 1;
+                            break;
+
+                        case "P":
+                            cbProductUnit.SelectedIndex = 2;
+                            break;
+                    }
 
                     strProductImageID = dbReader[ "product_imageid" ].ToString();
                     if( strProductImageID.Length == 0 ) {
@@ -134,14 +146,34 @@ namespace proIMP {
                         }
                     }
 
+                    string product_unit = string.Empty;
+                    switch( cbProductUnit.SelectedIndex ) {
+                        case 0:
+                            product_unit = "G";
+                            break;
+
+                        case 1:
+                            product_unit = "M";
+                            break;
+
+                        case 2:
+                            product_unit = "P";
+                            break;
+
+                        default:
+                            MessageBox.Show( frmMain.resMan.GetString( "errorProductUnit", frmMain.culInfo ) );
+
+                            return;
+                    }
+
                     if( tbProductID.Text.Length == 0 ) {
-                        dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + tbProductName.Text.Replace( "'", "''" ) + "', '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', '" + tbProductDesc.Text.Replace( "'", "''" ) + "', '" + cbProductUnit.SelectedItem.ToString() + "', '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', '" + strProductImageID + "')";
+                        dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + tbProductName.Text.Replace( "'", "''" ) + "', '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', '" + tbProductDesc.Text.Replace( "'", "''" ) + "', '" + product_unit + "', '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', '" + strProductImageID + "')";
                         dbCommand.ExecuteNonQuery();
 
                         dbCommand.CommandText = "SELECT last_insert_rowid()";
                         lastID = ( (long)dbCommand.ExecuteScalar() ).ToString();
                     } else {
-                        dbCommand.CommandText = "UPDATE product SET product_name = '" + tbProductName.Text.Replace( "'", "''" ) + "', product_catid = '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', product_desc = '" + tbProductDesc.Text.Replace( "'", "''" ) + "', product_unit = '" + cbProductUnit.SelectedItem.ToString() + "', product_barcode = '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', product_imageid = '" + strProductImageID + "' WHERE product_id = '" + tbProductID.Text + "'";
+                        dbCommand.CommandText = "UPDATE product SET product_name = '" + tbProductName.Text.Replace( "'", "''" ) + "', product_catid = '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', product_desc = '" + tbProductDesc.Text.Replace( "'", "''" ) + "', product_unit = '" + product_unit + "', product_barcode = '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', product_imageid = '" + strProductImageID + "' WHERE product_id = '" + tbProductID.Text + "'";
                         dbCommand.ExecuteNonQuery();
                     }
                     dbCommand.Transaction.Commit();

@@ -333,13 +333,13 @@
   <data name="turkishToolStripMenuItem" xml:space="preserve">
     <value>Türkçe</value>
   </data>
-  <data name="unitGram" xml:space="preserve">
+  <data name="unitG" xml:space="preserve">
     <value>Gram</value>
   </data>
-  <data name="unitMeter" xml:space="preserve">
+  <data name="unitM" xml:space="preserve">
     <value>Meter</value>
   </data>
-  <data name="unitPiece" xml:space="preserve">
+  <data name="unitP" xml:space="preserve">
     <value>Piece</value>
   </data>
   <data name="unknownError" xml:space="preserve">
@@ -605,5 +605,8 @@
   </data>
   <data name="lblProductWarehouse" xml:space="preserve">
     <value>Product Warehouse</value>
+  </data>
+  <data name="errorProductUnit" xml:space="preserve">
+    <value>Please select a valid product unit</value>
   </data>
 </root>

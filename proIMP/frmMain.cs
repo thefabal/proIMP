@@ -66,13 +66,8 @@ namespace proIMP {
         private Type[] sortStock = new Type[] { typeof( string ), null, typeof( DateTime ), typeof( string ), typeof( string ), typeof( string ), typeof( double ), null };
         private Type[] sortStockProduct = new Type[] { typeof( string ), typeof( int ), typeof( string ), typeof( double ), typeof( double ), typeof( double )};
 
-        public static char chrDecimalSep = ( Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")?(','):('.');
-        public static char chrThousndSep = ( Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")?('.'):(',');
-
         public frmMain() {
             InitializeComponent();
-
-            this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
 
             warehouse = new frmWarehouse( this );
             supplier = new frmSupplier( this );
@@ -84,6 +79,8 @@ namespace proIMP {
             stockflow = new frmStockFlowProduct( this );
             about = new frmAbout( this );
             preferences = new frmPreferences( this );
+
+            this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
         }
 
         private void frmMain_Load( object sender, EventArgs e ) {
@@ -101,9 +98,7 @@ namespace proIMP {
             }
 
             if( setting.language.Length == 0 ) {
-                CultureInfo ci = CultureInfo.InstalledUICulture;
-
-                if( ci.Name == "tr-TR" ) {
+                if( CultureInfo.InstalledUICulture.Name == "tr-TR" ) {
                     setting.language = "tr";
                 } else {
                     setting.language = "en";
@@ -123,17 +118,11 @@ namespace proIMP {
             pnlMenuStock.Location = new Point( pnlMenuStock.Location.X, pnlMenuProduct.Location.Y + pnlMenuProduct.Height + 6 );
             pnlMenuReport.Location = new Point( pnlMenuReport.Location.X, pnlMenuStock.Location.Y + pnlMenuStock.Height + 6 );
 
-            btnProduct_Click( (object)btnProduct, null );
+            btnProduct_Click( btnProduct, null );
         }
 
         private void frmMain_FormClosing( object sender, FormClosingEventArgs e ) {
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-
-            string strSettings = serializer.Serialize( new {
-                setting.productOrder,
-                setting.language,
-                setting.database
-            } );
+            string strSettings = (new JavaScriptSerializer()).Serialize( setting );
 
             File.WriteAllText( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json", strSettings );
         }

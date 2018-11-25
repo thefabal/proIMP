@@ -935,9 +935,9 @@
             // 
             // scMain.Panel2
             // 
+            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             this.scMain.Panel2.Controls.Add(this.pnlReport);
             this.scMain.Panel2.Controls.Add(this.pnlStock);
-            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             // 
             // pnlMenuLeft
             // 

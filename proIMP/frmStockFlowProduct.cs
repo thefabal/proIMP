@@ -48,7 +48,7 @@ namespace proIMP {
                 SQLiteCommand dbCommand = new SQLiteCommand("SELECT t1.sflow_id, t3.stock_type, t1.sflow_productid, t2.product_name, t2.product_unit, t4.warehouse_id, t4.warehouse_name, ABS(t1.sflow_quantity) AS sflow_quantity, t1.sflow_price FROM stock_flow AS t1 LEFT JOIN product AS t2 ON t1.sflow_productid = t2.product_id LEFT JOIN stock AS t3 ON t1.sflow_sid = t3.stock_id LEFT JOIN warehouse AS t4 ON t1.sflow_warehouseid = t4.warehouse_id WHERE t1.sflow_id = '" + strStockFlowID + "'", frmMain.sqlCon);
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
                 if( dbReader.Read() ) {
-                    tbStockProductUnit.Text = dbReader[ "product_unit" ].ToString();
+                    tbStockProductUnit.Text = frmMain.resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), frmMain.culInfo );
                     tbStockProductQuantity.Text = dbReader[ "sflow_quantity" ].ToString();
                     tbStockProductPrice.Text = dbReader[ "sflow_price" ].ToString();
 
@@ -83,7 +83,7 @@ namespace proIMP {
 
         private void tbStockProductQuantity_KeyPress( object sender, KeyPressEventArgs e ) {
             if( (int)e.KeyChar < 48 || (int)e.KeyChar > 57 ) {
-                if( e.KeyChar == frmMain.chrThousndSep ) {
+                if( e.KeyChar == Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator[ 0 ] ) {
                     ( (TextBox)sender ).Text += Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
                     ( (TextBox)sender ).SelectionStart = ( (TextBox)sender ).Text.Length;
                     ( (TextBox)sender ).SelectionLength = 0;

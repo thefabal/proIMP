@@ -242,7 +242,7 @@ namespace proIMP {
 
         private void tbCheckForNumeric_KeyPress( object sender, KeyPressEventArgs e ) {
             if( (int)e.KeyChar < 48 || (int)e.KeyChar > 57 ) {
-                if( e.KeyChar == frmMain.chrThousndSep ) {
+                if( e.KeyChar == Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator[ 0 ] ) {
                     ( (TextBox)sender ).Text += Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
                     ( (TextBox)sender ).SelectionStart = ( (TextBox)sender ).Text.Length;
                     ( (TextBox)sender ).SelectionLength = 0;
