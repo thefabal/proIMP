@@ -396,6 +396,7 @@ namespace proIMP {
         private void btnReport_Click( object sender, EventArgs e ) {
             menuAccordion( ( (Button)sender ).Parent.Name );
 
+            btnReportProductFlow_Click( sender, e );
             pnlReport.BringToFront();
             pnlReport_1.BringToFront();
         }
@@ -453,9 +454,9 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_1Product.Items.Clear();
-                cbReport_1Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitPiece", culInfo ) ) );
+                cbReport_1Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitP", culInfo ) ) );
                 while( dbReader.Read() ) {
-                    cbReport_1Product.Items.Add( new ProductItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString(), dbReader[ 2 ].ToString() ) );
+                    cbReport_1Product.Items.Add( new ProductItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString(), resMan.GetString( "unit" + dbReader[ 2 ].ToString(), culInfo ) ) );
                 }
                 dbReader.Close();
                 cbReport_1Product.SelectedIndex = 0;
@@ -464,7 +465,6 @@ namespace proIMP {
             }
 
             pnlReport.BringToFront();
-            btnReport_1Run_Click( null, null );
             pnlReport_1.BringToFront();
         }
 
@@ -491,9 +491,9 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 cbReport_2Product.Items.Clear();
-                cbReport_2Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitPiece", culInfo ) ) );
+                cbReport_2Product.Items.Add( new ProductItem( "-1", resMan.GetString( "AllProducts", culInfo ), resMan.GetString( "unitP", culInfo ) ) );
                 while( dbReader.Read() ) {
-                    cbReport_2Product.Items.Add( new ProductItem( dbReader.GetInt64( 0 ).ToString(), dbReader.GetString( 1 ), dbReader.GetString( 2 ) ) );
+                    cbReport_2Product.Items.Add( new ProductItem( dbReader.GetInt64( 0 ).ToString(), dbReader.GetString( 1 ), resMan.GetString( "unit" + dbReader[ 2 ].ToString(), culInfo ) ) );
                 }
                 dbReader.Close();
                 cbReport_2Product.SelectedIndex = 0;
@@ -905,7 +905,6 @@ namespace proIMP {
          * Report Page 
          * Events
          **/
-
         private void btnReport_1Run_Click( object sender, EventArgs e ) {
             string strSQL = string.Empty;
 
@@ -915,22 +914,22 @@ namespace proIMP {
             strSQL += " stock_date BETWEEN '" + dtReport_1From.Value.ToString( "yyyy-MM-dd" ) + "' AND '" + dtReport_1To.Value.ToString( "yyyy-MM-dd" ) + "'";
 
             /* Product category filter */
-            if( cbReport_1Category.SelectedIndex != 0 ) {
+            if( cbReport_1Category.SelectedIndex > 0 ) {
                 strSQL += " AND product_catid = " + ( (CategoryItem)cbReport_1Category.SelectedItem ).CategoryID;
             }
 
             /* Product filter */
-            if( cbReport_1Product.SelectedIndex != 0 ) {
+            if( cbReport_1Product.SelectedIndex > 0 ) {
                 strSQL += " AND product_id = " + ( (ProductItem)cbReport_1Product.SelectedItem ).ProductID;
             }
 
             /* Supplier filter */
-            if( cbReport_1Supplier.SelectedIndex != 0 ) {
+            if( cbReport_1Supplier.SelectedIndex > 0 ) {
                 strSQL += " AND stock_type = 1 AND supplier_id = " + ( (SupplierItem)cbReport_1Supplier.SelectedItem ).SupplierID;
             }
 
             /* Customer filter */
-            if( cbReport_1Customer.SelectedIndex != 0 ) {
+            if( cbReport_1Customer.SelectedIndex > 0 ) {
                 strSQL += " AND stock_type = 2 AND supplier_id = " + ( (SupplierItem)cbReport_1Customer.SelectedItem ).SupplierID;
             }
 
@@ -1107,17 +1106,17 @@ namespace proIMP {
             SQL += " WHERE stock_date BETWEEN '" + dtReport_2From.Value.ToString( "yyyy-MM-dd" ) + "' AND '" + dtReport_2To.Value.ToString( "yyyy-MM-dd" ) + "'";
 
             /* Product category filter */
-            if( cbReport_2Category.SelectedIndex != 0 ) {
+            if( cbReport_2Category.SelectedIndex > 0 ) {
                 SQL += " AND category_id = " + ( (CategoryItem)cbReport_2Category.SelectedItem ).CategoryID;
             }
 
             /* Product filter */
-            if( cbReport_2Product.SelectedIndex != 0 ) {
+            if( cbReport_2Product.SelectedIndex > 0 ) {
                 SQL += " AND product_id = " + ( (ProductItem)cbReport_2Product.SelectedItem ).ProductID;
             }
 
             /* Product warehouse filter */
-            if( cbReport_2Warehouse.SelectedIndex != 0 ) {
+            if( cbReport_2Warehouse.SelectedIndex > 0 ) {
                 SQL += " AND warehouse_id = " + ( (WarehouseItem)cbReport_2Warehouse.SelectedItem ).WarehouseID;
             }
 
@@ -1143,7 +1142,7 @@ namespace proIMP {
                     ListViewItem lvi = new ListViewItem( new string[ ] {
                         dbReader.GetString( 0 ),
                         dbReader.GetString( 1 ),
-                        dbReader.GetString( 2 ),
+                        resMan.GetString( "unit" + dbReader.GetString(2), culInfo ),
                         dbReader.GetFloat( 3 ).ToString(),
                         dbReader.GetFloat( 4 ).ToString(),
                         dbReader.GetFloat( 5 ).ToString()
