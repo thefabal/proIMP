@@ -588,7 +588,7 @@ namespace proIMP {
                     lblProductNameT.Text = ": " + dbReader[ "product_name" ].ToString();
                     lblProductCategoryT.Text = ": " + dbReader[ "category_name" ].ToString();
                     lblProductDescT.Text = ": " + dbReader[ "product_desc" ].ToString();
-                    lblProductUnitT.Text = ": " + dbReader[ "product_unit" ].ToString();
+                    lblProductUnitT.Text = ": " + resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo );
                     lblProductBarcodeT.Text = ": " + dbReader[ "product_barcode" ].ToString();
 
                     if( dbReader[ "product_imageid" ].ToString().Length != 0 ) {

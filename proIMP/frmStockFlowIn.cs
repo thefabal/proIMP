@@ -126,7 +126,7 @@ namespace proIMP {
             if( cbStockProductID.SelectedIndex == -1 ) {
                 tbStockProductUnit.Text = "";
             } else {
-                tbStockProductUnit.Text = ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductUnit;
+                tbStockProductUnit.Text = frmMain.resMan.GetString( "unit" + ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductUnit, frmMain.culInfo );
             }
         }
 

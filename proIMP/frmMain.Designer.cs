@@ -185,8 +185,8 @@
             this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlReport = new System.Windows.Forms.Panel();
-            this.pnlReport_2 = new System.Windows.Forms.Panel();
             this.pnlReport_1 = new System.Windows.Forms.Panel();
+            this.pnlReport_2 = new System.Windows.Forms.Panel();
             this.pnlStock = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
@@ -220,8 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.cmsProduct.SuspendLayout();
             this.pnlReport.SuspendLayout();
-            this.pnlReport_2.SuspendLayout();
             this.pnlReport_1.SuspendLayout();
+            this.pnlReport_2.SuspendLayout();
             this.pnlStock.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -935,9 +935,9 @@
             // 
             // scMain.Panel2
             // 
+            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             this.scMain.Panel2.Controls.Add(this.pnlReport);
             this.scMain.Panel2.Controls.Add(this.pnlStock);
-            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             // 
             // pnlMenuLeft
             // 
@@ -1325,17 +1325,17 @@
             resources.ApplyResources(this.pnlReport, "pnlReport");
             this.pnlReport.Name = "pnlReport";
             // 
-            // pnlReport_2
-            // 
-            this.pnlReport_2.Controls.Add(this.scReport_2);
-            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
-            this.pnlReport_2.Name = "pnlReport_2";
-            // 
             // pnlReport_1
             // 
             this.pnlReport_1.Controls.Add(this.scReport_1);
             resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
             this.pnlReport_1.Name = "pnlReport_1";
+            // 
+            // pnlReport_2
+            // 
+            this.pnlReport_2.Controls.Add(this.scReport_2);
+            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
+            this.pnlReport_2.Name = "pnlReport_2";
             // 
             // pnlStock
             // 
@@ -1410,8 +1410,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.cmsProduct.ResumeLayout(false);
             this.pnlReport.ResumeLayout(false);
-            this.pnlReport_2.ResumeLayout(false);
             this.pnlReport_1.ResumeLayout(false);
+            this.pnlReport_2.ResumeLayout(false);
             this.pnlStock.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

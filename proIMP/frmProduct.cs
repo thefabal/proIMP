@@ -109,9 +109,9 @@ namespace proIMP {
             deleteToolStripMenuItem.Text = frmMain.resMan.GetString( "deleteToolStripMenuItem", frmMain.culInfo );
 
             cbProductUnit.Items.Clear();
-            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitGram", frmMain.culInfo ) );
-            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitMeter", frmMain.culInfo ) );
-            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitPiece", frmMain.culInfo ) );
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitG", frmMain.culInfo ) );
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitM", frmMain.culInfo ) );
+            cbProductUnit.Items.Add( frmMain.resMan.GetString( "unitP", frmMain.culInfo ) );
         }
 
         private void btnSave_Click( object sender, EventArgs e ) {
