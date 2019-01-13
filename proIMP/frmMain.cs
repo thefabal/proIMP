@@ -565,7 +565,7 @@ namespace proIMP {
         }
 
         private void btnProductFilterClear_Click( object sender, EventArgs e ) {
-            tbProductFilter.Text = "";
+            tbProductFilter.Clear();
             getProductList();
         }
 
@@ -1378,6 +1378,14 @@ namespace proIMP {
             }
 
             return sBuilder.ToString();
+        }
+
+        private void tbProductFilter_KeyDown( object sender, KeyEventArgs e ) {
+            if( e.KeyCode == Keys.Enter ) {
+                btnProductFilter_Click( this, new EventArgs() );
+            } else if( e.KeyCode == Keys.Escape ) {
+                btnProductFilterClear_Click( this, new EventArgs() );
+            }
         }
     }
 

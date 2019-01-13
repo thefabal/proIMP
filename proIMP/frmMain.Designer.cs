@@ -154,6 +154,10 @@
             this.lblTotalSupplier = new System.Windows.Forms.Label();
             this.tbCountWarehouse = new System.Windows.Forms.TextBox();
             this.lblTotalWarehouse = new System.Windows.Forms.Label();
+            this.pnlReport = new System.Windows.Forms.Panel();
+            this.pnlReport_2 = new System.Windows.Forms.Panel();
+            this.pnlReport_1 = new System.Windows.Forms.Panel();
+            this.pnlStock = new System.Windows.Forms.Panel();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.btnProductFilterClear = new System.Windows.Forms.Button();
             this.btnProductFilter = new System.Windows.Forms.Button();
@@ -184,10 +188,6 @@
             this.cmsProduct = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlReport = new System.Windows.Forms.Panel();
-            this.pnlReport_1 = new System.Windows.Forms.Panel();
-            this.pnlReport_2 = new System.Windows.Forms.Panel();
-            this.pnlStock = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -215,14 +215,14 @@
             this.pnlMenuReport.SuspendLayout();
             this.pnlMenuStock.SuspendLayout();
             this.pnlMenuProduct.SuspendLayout();
+            this.pnlReport.SuspendLayout();
+            this.pnlReport_2.SuspendLayout();
+            this.pnlReport_1.SuspendLayout();
+            this.pnlStock.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             this.gbProductInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.cmsProduct.SuspendLayout();
-            this.pnlReport.SuspendLayout();
-            this.pnlReport_1.SuspendLayout();
-            this.pnlReport_2.SuspendLayout();
-            this.pnlStock.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1116,6 +1116,31 @@
             resources.ApplyResources(this.lblTotalWarehouse, "lblTotalWarehouse");
             this.lblTotalWarehouse.Name = "lblTotalWarehouse";
             // 
+            // pnlReport
+            // 
+            this.pnlReport.Controls.Add(this.pnlReport_2);
+            this.pnlReport.Controls.Add(this.pnlReport_1);
+            resources.ApplyResources(this.pnlReport, "pnlReport");
+            this.pnlReport.Name = "pnlReport";
+            // 
+            // pnlReport_2
+            // 
+            this.pnlReport_2.Controls.Add(this.scReport_2);
+            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
+            this.pnlReport_2.Name = "pnlReport_2";
+            // 
+            // pnlReport_1
+            // 
+            this.pnlReport_1.Controls.Add(this.scReport_1);
+            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
+            this.pnlReport_1.Name = "pnlReport_1";
+            // 
+            // pnlStock
+            // 
+            this.pnlStock.Controls.Add(this.scStock);
+            resources.ApplyResources(this.pnlStock, "pnlStock");
+            this.pnlStock.Name = "pnlStock";
+            // 
             // pnlProduct
             // 
             this.pnlProduct.Controls.Add(this.btnProductFilterClear);
@@ -1147,6 +1172,7 @@
             // 
             resources.ApplyResources(this.tbProductFilter, "tbProductFilter");
             this.tbProductFilter.Name = "tbProductFilter";
+            this.tbProductFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbProductFilter_KeyDown);
             // 
             // gbProductInfo
             // 
@@ -1318,31 +1344,6 @@
             resources.ApplyResources(this.deleteProductToolStripMenuItem, "deleteProductToolStripMenuItem");
             this.deleteProductToolStripMenuItem.Click += new System.EventHandler(this.deleteProductToolStripMenuItem_Click);
             // 
-            // pnlReport
-            // 
-            this.pnlReport.Controls.Add(this.pnlReport_1);
-            this.pnlReport.Controls.Add(this.pnlReport_2);
-            resources.ApplyResources(this.pnlReport, "pnlReport");
-            this.pnlReport.Name = "pnlReport";
-            // 
-            // pnlReport_1
-            // 
-            this.pnlReport_1.Controls.Add(this.scReport_1);
-            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
-            this.pnlReport_1.Name = "pnlReport_1";
-            // 
-            // pnlReport_2
-            // 
-            this.pnlReport_2.Controls.Add(this.scReport_2);
-            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
-            this.pnlReport_2.Name = "pnlReport_2";
-            // 
-            // pnlStock
-            // 
-            this.pnlStock.Controls.Add(this.scStock);
-            resources.ApplyResources(this.pnlStock, "pnlStock");
-            this.pnlStock.Name = "pnlStock";
-            // 
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
@@ -1366,8 +1367,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.scMain);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.scMain);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "frmMain";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
@@ -1403,16 +1404,16 @@
             this.pnlMenuReport.ResumeLayout(false);
             this.pnlMenuStock.ResumeLayout(false);
             this.pnlMenuProduct.ResumeLayout(false);
+            this.pnlReport.ResumeLayout(false);
+            this.pnlReport_2.ResumeLayout(false);
+            this.pnlReport_1.ResumeLayout(false);
+            this.pnlStock.ResumeLayout(false);
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
             this.gbProductInfo.ResumeLayout(false);
             this.gbProductInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.cmsProduct.ResumeLayout(false);
-            this.pnlReport.ResumeLayout(false);
-            this.pnlReport_1.ResumeLayout(false);
-            this.pnlReport_2.ResumeLayout(false);
-            this.pnlStock.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
