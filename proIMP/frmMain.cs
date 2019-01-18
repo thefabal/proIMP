@@ -213,6 +213,7 @@ namespace proIMP {
 
             editProductToolStripMenuItem.Text = resMan.GetString( "editProductToolStripMenuItem", culInfo );
             deleteProductToolStripMenuItem.Text = resMan.GetString( "deleteProductToolStripMenuItem", culInfo );
+            duplicateProductToolStripMenuItem.Text = resMan.GetString( "duplicateProductToolStripMenuItem", culInfo );
 
             gbProductInfo.Text = resMan.GetString( "gbProductInfo", culInfo );
 
@@ -646,6 +647,50 @@ namespace proIMP {
             if( lvProductList.SelectedItems.Count > 0 ) {
                 deleteProduct( lvProductList.SelectedItems[ 0 ].SubItems[ 1 ].Text );
             }
+        }
+
+        private void duplicateProductToolStripMenuItem_Click( object sender, EventArgs e ) {
+            string product_name = string.Empty;
+            string product_catid = string.Empty;
+            string product_desc = string.Empty;
+            string product_unit = string.Empty;
+            string product_barcode = string.Empty;
+            string product_imageid = string.Empty;
+
+            SQLiteCommand dbCommand = new SQLiteCommand( sqlCon );
+            SQLiteDataReader dbReader;
+
+            dbCommand.CommandText = "SELECT product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid FROM product WHERE product_id = '" + lvProductList.SelectedItems[ 0 ].SubItems[ 1 ].Text + "'";
+            try {
+                dbReader = dbCommand.ExecuteReader();
+                if( dbReader.Read() ) {
+                    product_name = dbReader[ "product_name" ].ToString();
+                    product_catid = dbReader[ "product_catid" ].ToString();
+                    product_desc = dbReader[ "product_desc" ].ToString();
+                    product_unit = dbReader[ "product_unit" ].ToString();
+                    product_barcode = dbReader[ "product_barcode" ].ToString();
+                    product_imageid = dbReader[ "product_imageid" ].ToString();
+
+                    dbReader.Close();
+                }
+            } catch {
+                return;
+            }
+
+            string product_id = string.Empty;
+            dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + product_name.Replace( "'", "''" ) + " (1)', '" + product_catid + "', '" + product_desc.Replace( "'", "''" ) + "', '" + product_unit + "', '" + product_barcode.Replace( "'", "''" ) + "', '" + product_imageid + "')";
+            try {
+                dbCommand.ExecuteNonQuery();
+
+                dbCommand.CommandText = "SELECT last_insert_rowid()";
+                product_id = ( (long)dbCommand.ExecuteScalar() ).ToString();
+            } catch {
+                return;
+            }
+
+            editProduct( product_id );
+
+            checkDB();
         }
 
         private void cmsProduct_Opening( object sender, CancelEventArgs e ) {

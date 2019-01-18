@@ -609,4 +609,7 @@
   <data name="errorProductUnit" xml:space="preserve">
     <value>Please select a valid product unit</value>
   </data>
+  <data name="duplicateProductToolStripMenuItem" xml:space="preserve">
+    <value>Duplicate Product</value>
+  </data>
 </root>

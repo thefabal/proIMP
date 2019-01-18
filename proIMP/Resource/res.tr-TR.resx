@@ -609,4 +609,7 @@
   <data name="errorProductUnit" xml:space="preserve">
     <value>Lütfen geçerli bir ürün birimi seçiniz.</value>
   </data>
+  <data name="duplicateProductToolStripMenuItem" xml:space="preserve">
+    <value>Ürünü Yinele</value>
+  </data>
 </root>
