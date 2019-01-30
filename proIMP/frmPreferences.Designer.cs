@@ -23,10 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("General");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Visual", new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Database");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("General");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Visual", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Database");
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tvPreference = new System.Windows.Forms.TreeView();
@@ -74,15 +74,15 @@
             this.tvPreference.HideSelection = false;
             this.tvPreference.Location = new System.Drawing.Point(12, 12);
             this.tvPreference.Name = "tvPreference";
-            treeNode7.Name = "nodeVisualGeneral";
-            treeNode7.Text = "General";
-            treeNode8.Name = "nodeVisual";
-            treeNode8.Text = "Visual";
-            treeNode9.Name = "nodeDatabase";
-            treeNode9.Text = "Database";
+            treeNode1.Name = "nodeVisualGeneral";
+            treeNode1.Text = "General";
+            treeNode2.Name = "nodeVisual";
+            treeNode2.Text = "Visual";
+            treeNode3.Name = "nodeDatabase";
+            treeNode3.Text = "Database";
             this.tvPreference.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
+            treeNode2,
+            treeNode3});
             this.tvPreference.Size = new System.Drawing.Size(120, 230);
             this.tvPreference.TabIndex = 11;
             this.tvPreference.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.tvPreference_DrawNode);
@@ -227,8 +227,8 @@
             this.Controls.Add(this.tvPreference);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.gbVisual);
             this.Controls.Add(this.gbDatabase);
+            this.Controls.Add(this.gbVisual);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

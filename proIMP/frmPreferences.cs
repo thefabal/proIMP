@@ -104,6 +104,8 @@ namespace proIMP {
                     if( frmMain.connectDB() == false ) {
                         MessageBox.Show( frmMain.resMan.GetString( "errorCouldNotConnectDB", frmMain.culInfo ) );
                     }
+
+                    tbCurrentDB.Text = frmMain.setting.database;
                 }
             }
         }
@@ -121,6 +123,7 @@ namespace proIMP {
                 } else {
                     frmMain.sqlCon.Close();
                     SQLiteConnection.CreateFile( sfd.FileName );
+                    string database_old = frmMain.setting.database;
                     if( sfd.FileName.IndexOf( Path.GetDirectoryName( Application.ExecutablePath ) ) == 0 ) {
                         frmMain.setting.database = sfd.FileName.Substring( Path.GetDirectoryName( Application.ExecutablePath ).Length + 1 );
                     } else {
@@ -129,6 +132,8 @@ namespace proIMP {
 
                     frmMain.sqlCon = null;
                     if( frmMain.connectDB() == false ) {
+                        frmMain.setting.database = database_old;
+
                         return;
                     }
 
@@ -171,12 +176,14 @@ namespace proIMP {
                         }
 
                         dbCommand.Transaction.Commit();
+                        tbCurrentDB.Text = frmMain.setting.database;
 
                         frmMain.checkDB();
                     } catch( Exception ex ) {
                         dbCommand.Transaction.Rollback();
 
                         MessageBox.Show( frmMain.resMan.GetString( "errorCreatingDB", frmMain.culInfo ) + "\r\n" + ex.Message );
+                        frmMain.setting.database = database_old;
 
                         return;
                     }
