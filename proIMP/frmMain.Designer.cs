@@ -60,55 +60,6 @@
             this.stockProductQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockProductTotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.scReport_2 = new System.Windows.Forms.SplitContainer();
-            this.lblReport_2Warehouse = new System.Windows.Forms.Label();
-            this.cbReport_2Warehouse = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dtReport_2To = new System.Windows.Forms.DateTimePicker();
-            this.dtReport_2From = new System.Windows.Forms.DateTimePicker();
-            this.lblReport_2Date = new System.Windows.Forms.Label();
-            this.cbReport_2Category = new System.Windows.Forms.ComboBox();
-            this.lblReport_2Category = new System.Windows.Forms.Label();
-            this.btnReport_2Run = new System.Windows.Forms.Button();
-            this.lblReport_2Product = new System.Windows.Forms.Label();
-            this.cbReport_2Product = new System.Windows.Forms.ComboBox();
-            this.cbReport_2OpenReport = new System.Windows.Forms.CheckBox();
-            this.lvReport_2 = new System.Windows.Forms.ListView();
-            this.chReport_2Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_2Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_2Unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_2StockIn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_2StockOut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_2TotalStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnReport_2Export = new System.Windows.Forms.Button();
-            this.scReport_1 = new System.Windows.Forms.SplitContainer();
-            this.cbReport_1Category = new System.Windows.Forms.ComboBox();
-            this.lblReport_1Category = new System.Windows.Forms.Label();
-            this.btnReport_1Run = new System.Windows.Forms.Button();
-            this.cbReport_1FlowOut = new System.Windows.Forms.CheckBox();
-            this.cbReport_1FlowIn = new System.Windows.Forms.CheckBox();
-            this.lblReport_1StockFlowType = new System.Windows.Forms.Label();
-            this.cbReport_1Customer = new System.Windows.Forms.ComboBox();
-            this.btnReport_1Customer = new System.Windows.Forms.Label();
-            this.cbReport_1Supplier = new System.Windows.Forms.ComboBox();
-            this.lblReport_1Supplier = new System.Windows.Forms.Label();
-            this.lblReport_1Product = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.dtReport_1To = new System.Windows.Forms.DateTimePicker();
-            this.dtReport_1From = new System.Windows.Forms.DateTimePicker();
-            this.cbReport_1Product = new System.Windows.Forms.ComboBox();
-            this.lblReport_1Date = new System.Windows.Forms.Label();
-            this.lvReport_1 = new System.Windows.Forms.ListView();
-            this.chReport_1ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Supplier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chReport_1TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbReport_1OpenReport = new System.Windows.Forms.CheckBox();
-            this.btnReport_1Export = new System.Windows.Forms.Button();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,13 +136,62 @@
             this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlReport = new System.Windows.Forms.Panel();
-            this.pnlReport_2 = new System.Windows.Forms.Panel();
-            this.pnlReport_1 = new System.Windows.Forms.Panel();
             this.pnlStock = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlReport_2 = new System.Windows.Forms.Panel();
+            this.scReport_2 = new System.Windows.Forms.SplitContainer();
+            this.btnReport_2Export = new System.Windows.Forms.Button();
+            this.lvReport_2 = new System.Windows.Forms.ListView();
+            this.chReport_2Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_2Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_2Unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_2StockIn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_2StockOut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_2TotalStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbReport_2OpenReport = new System.Windows.Forms.CheckBox();
+            this.cbReport_2Product = new System.Windows.Forms.ComboBox();
+            this.lblReport_2Product = new System.Windows.Forms.Label();
+            this.btnReport_2Run = new System.Windows.Forms.Button();
+            this.lblReport_2Category = new System.Windows.Forms.Label();
+            this.cbReport_2Category = new System.Windows.Forms.ComboBox();
+            this.lblReport_2Date = new System.Windows.Forms.Label();
+            this.dtReport_2From = new System.Windows.Forms.DateTimePicker();
+            this.dtReport_2To = new System.Windows.Forms.DateTimePicker();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cbReport_2Warehouse = new System.Windows.Forms.ComboBox();
+            this.lblReport_2Warehouse = new System.Windows.Forms.Label();
+            this.pnlReport_1 = new System.Windows.Forms.Panel();
+            this.pnlReport = new System.Windows.Forms.Panel();
+            this.btnReport_1Export = new System.Windows.Forms.Button();
+            this.cbReport_1OpenReport = new System.Windows.Forms.CheckBox();
+            this.lvReport_1 = new System.Windows.Forms.ListView();
+            this.chReport_1ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Supplier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Product = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblReport_1Date = new System.Windows.Forms.Label();
+            this.cbReport_1Product = new System.Windows.Forms.ComboBox();
+            this.dtReport_1From = new System.Windows.Forms.DateTimePicker();
+            this.dtReport_1To = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblReport_1Product = new System.Windows.Forms.Label();
+            this.lblReport_1Supplier = new System.Windows.Forms.Label();
+            this.cbReport_1Supplier = new System.Windows.Forms.ComboBox();
+            this.btnReport_1Customer = new System.Windows.Forms.Label();
+            this.cbReport_1Customer = new System.Windows.Forms.ComboBox();
+            this.lblReport_1StockFlowType = new System.Windows.Forms.Label();
+            this.cbReport_1FlowIn = new System.Windows.Forms.CheckBox();
+            this.cbReport_1FlowOut = new System.Windows.Forms.CheckBox();
+            this.btnReport_1Run = new System.Windows.Forms.Button();
+            this.lblReport_1Category = new System.Windows.Forms.Label();
+            this.cbReport_1Category = new System.Windows.Forms.ComboBox();
+            this.scReport_1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.scStock)).BeginInit();
             this.scStock.Panel1.SuspendLayout();
             this.scStock.Panel2.SuspendLayout();
@@ -199,14 +199,6 @@
             this.groupBox1.SuspendLayout();
             this.cmsAddStockFlow.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scReport_2)).BeginInit();
-            this.scReport_2.Panel1.SuspendLayout();
-            this.scReport_2.Panel2.SuspendLayout();
-            this.scReport_2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scReport_1)).BeginInit();
-            this.scReport_1.Panel1.SuspendLayout();
-            this.scReport_1.Panel2.SuspendLayout();
-            this.scReport_1.SuspendLayout();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -220,11 +212,19 @@
             this.gbProductInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.cmsProduct.SuspendLayout();
-            this.pnlReport.SuspendLayout();
-            this.pnlReport_2.SuspendLayout();
-            this.pnlReport_1.SuspendLayout();
             this.pnlStock.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlReport_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scReport_2)).BeginInit();
+            this.scReport_2.Panel1.SuspendLayout();
+            this.scReport_2.Panel2.SuspendLayout();
+            this.scReport_2.SuspendLayout();
+            this.pnlReport_1.SuspendLayout();
+            this.pnlReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scReport_1)).BeginInit();
+            this.scReport_1.Panel1.SuspendLayout();
+            this.scReport_1.Panel2.SuspendLayout();
+            this.scReport_1.SuspendLayout();
             this.SuspendLayout();
             // 
             // scStock
@@ -441,346 +441,6 @@
             // stockProductTotalPrice
             // 
             resources.ApplyResources(this.stockProductTotalPrice, "stockProductTotalPrice");
-            // 
-            // scReport_2
-            // 
-            resources.ApplyResources(this.scReport_2, "scReport_2");
-            this.scReport_2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.scReport_2.Name = "scReport_2";
-            // 
-            // scReport_2.Panel1
-            // 
-            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Warehouse);
-            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Warehouse);
-            this.scReport_2.Panel1.Controls.Add(this.label24);
-            this.scReport_2.Panel1.Controls.Add(this.dtReport_2To);
-            this.scReport_2.Panel1.Controls.Add(this.dtReport_2From);
-            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Date);
-            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Category);
-            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Category);
-            this.scReport_2.Panel1.Controls.Add(this.btnReport_2Run);
-            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Product);
-            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Product);
-            resources.ApplyResources(this.scReport_2.Panel1, "scReport_2.Panel1");
-            // 
-            // scReport_2.Panel2
-            // 
-            this.scReport_2.Panel2.Controls.Add(this.cbReport_2OpenReport);
-            this.scReport_2.Panel2.Controls.Add(this.lvReport_2);
-            this.scReport_2.Panel2.Controls.Add(this.btnReport_2Export);
-            resources.ApplyResources(this.scReport_2.Panel2, "scReport_2.Panel2");
-            // 
-            // lblReport_2Warehouse
-            // 
-            resources.ApplyResources(this.lblReport_2Warehouse, "lblReport_2Warehouse");
-            this.lblReport_2Warehouse.Name = "lblReport_2Warehouse";
-            // 
-            // cbReport_2Warehouse
-            // 
-            this.cbReport_2Warehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_2Warehouse.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_2Warehouse, "cbReport_2Warehouse");
-            this.cbReport_2Warehouse.Name = "cbReport_2Warehouse";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
-            // 
-            // dtReport_2To
-            // 
-            resources.ApplyResources(this.dtReport_2To, "dtReport_2To");
-            this.dtReport_2To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtReport_2To.Name = "dtReport_2To";
-            // 
-            // dtReport_2From
-            // 
-            resources.ApplyResources(this.dtReport_2From, "dtReport_2From");
-            this.dtReport_2From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtReport_2From.Name = "dtReport_2From";
-            // 
-            // lblReport_2Date
-            // 
-            resources.ApplyResources(this.lblReport_2Date, "lblReport_2Date");
-            this.lblReport_2Date.Name = "lblReport_2Date";
-            // 
-            // cbReport_2Category
-            // 
-            this.cbReport_2Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_2Category.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_2Category, "cbReport_2Category");
-            this.cbReport_2Category.Name = "cbReport_2Category";
-            // 
-            // lblReport_2Category
-            // 
-            resources.ApplyResources(this.lblReport_2Category, "lblReport_2Category");
-            this.lblReport_2Category.Name = "lblReport_2Category";
-            // 
-            // btnReport_2Run
-            // 
-            resources.ApplyResources(this.btnReport_2Run, "btnReport_2Run");
-            this.btnReport_2Run.Name = "btnReport_2Run";
-            this.btnReport_2Run.UseVisualStyleBackColor = true;
-            this.btnReport_2Run.Click += new System.EventHandler(this.btnReport_2Run_Click);
-            // 
-            // lblReport_2Product
-            // 
-            resources.ApplyResources(this.lblReport_2Product, "lblReport_2Product");
-            this.lblReport_2Product.Name = "lblReport_2Product";
-            // 
-            // cbReport_2Product
-            // 
-            this.cbReport_2Product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_2Product.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_2Product, "cbReport_2Product");
-            this.cbReport_2Product.Name = "cbReport_2Product";
-            // 
-            // cbReport_2OpenReport
-            // 
-            resources.ApplyResources(this.cbReport_2OpenReport, "cbReport_2OpenReport");
-            this.cbReport_2OpenReport.Name = "cbReport_2OpenReport";
-            this.cbReport_2OpenReport.UseVisualStyleBackColor = true;
-            // 
-            // lvReport_2
-            // 
-            resources.ApplyResources(this.lvReport_2, "lvReport_2");
-            this.lvReport_2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chReport_2Product,
-            this.chReport_2Category,
-            this.chReport_2Unit,
-            this.chReport_2StockIn,
-            this.chReport_2StockOut,
-            this.chReport_2TotalStock});
-            this.lvReport_2.FullRowSelect = true;
-            this.lvReport_2.MultiSelect = false;
-            this.lvReport_2.Name = "lvReport_2";
-            this.lvReport_2.UseCompatibleStateImageBehavior = false;
-            this.lvReport_2.View = System.Windows.Forms.View.Details;
-            // 
-            // chReport_2Product
-            // 
-            resources.ApplyResources(this.chReport_2Product, "chReport_2Product");
-            // 
-            // chReport_2Category
-            // 
-            resources.ApplyResources(this.chReport_2Category, "chReport_2Category");
-            // 
-            // chReport_2Unit
-            // 
-            resources.ApplyResources(this.chReport_2Unit, "chReport_2Unit");
-            // 
-            // chReport_2StockIn
-            // 
-            resources.ApplyResources(this.chReport_2StockIn, "chReport_2StockIn");
-            // 
-            // chReport_2StockOut
-            // 
-            resources.ApplyResources(this.chReport_2StockOut, "chReport_2StockOut");
-            // 
-            // chReport_2TotalStock
-            // 
-            resources.ApplyResources(this.chReport_2TotalStock, "chReport_2TotalStock");
-            // 
-            // btnReport_2Export
-            // 
-            resources.ApplyResources(this.btnReport_2Export, "btnReport_2Export");
-            this.btnReport_2Export.Name = "btnReport_2Export";
-            this.btnReport_2Export.UseVisualStyleBackColor = true;
-            this.btnReport_2Export.Click += new System.EventHandler(this.btnReport_1Export_Click);
-            // 
-            // scReport_1
-            // 
-            resources.ApplyResources(this.scReport_1, "scReport_1");
-            this.scReport_1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.scReport_1.Name = "scReport_1";
-            // 
-            // scReport_1.Panel1
-            // 
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Category);
-            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Category);
-            this.scReport_1.Panel1.Controls.Add(this.btnReport_1Run);
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1FlowOut);
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1FlowIn);
-            this.scReport_1.Panel1.Controls.Add(this.lblReport_1StockFlowType);
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Customer);
-            this.scReport_1.Panel1.Controls.Add(this.btnReport_1Customer);
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Supplier);
-            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Supplier);
-            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Product);
-            this.scReport_1.Panel1.Controls.Add(this.label16);
-            this.scReport_1.Panel1.Controls.Add(this.dtReport_1To);
-            this.scReport_1.Panel1.Controls.Add(this.dtReport_1From);
-            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Product);
-            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Date);
-            resources.ApplyResources(this.scReport_1.Panel1, "scReport_1.Panel1");
-            // 
-            // scReport_1.Panel2
-            // 
-            this.scReport_1.Panel2.Controls.Add(this.lvReport_1);
-            this.scReport_1.Panel2.Controls.Add(this.cbReport_1OpenReport);
-            this.scReport_1.Panel2.Controls.Add(this.btnReport_1Export);
-            resources.ApplyResources(this.scReport_1.Panel2, "scReport_1.Panel2");
-            // 
-            // cbReport_1Category
-            // 
-            this.cbReport_1Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_1Category.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_1Category, "cbReport_1Category");
-            this.cbReport_1Category.Name = "cbReport_1Category";
-            this.cbReport_1Category.SelectedIndexChanged += new System.EventHandler(this.cbReport_1Category_SelectedIndexChanged);
-            // 
-            // lblReport_1Category
-            // 
-            resources.ApplyResources(this.lblReport_1Category, "lblReport_1Category");
-            this.lblReport_1Category.Name = "lblReport_1Category";
-            // 
-            // btnReport_1Run
-            // 
-            resources.ApplyResources(this.btnReport_1Run, "btnReport_1Run");
-            this.btnReport_1Run.Name = "btnReport_1Run";
-            this.btnReport_1Run.UseVisualStyleBackColor = true;
-            this.btnReport_1Run.Click += new System.EventHandler(this.btnReport_1Run_Click);
-            // 
-            // cbReport_1FlowOut
-            // 
-            resources.ApplyResources(this.cbReport_1FlowOut, "cbReport_1FlowOut");
-            this.cbReport_1FlowOut.Name = "cbReport_1FlowOut";
-            this.cbReport_1FlowOut.UseVisualStyleBackColor = true;
-            this.cbReport_1FlowOut.CheckedChanged += new System.EventHandler(this.cbReport_1FlowOut_CheckedChanged);
-            // 
-            // cbReport_1FlowIn
-            // 
-            resources.ApplyResources(this.cbReport_1FlowIn, "cbReport_1FlowIn");
-            this.cbReport_1FlowIn.Name = "cbReport_1FlowIn";
-            this.cbReport_1FlowIn.UseVisualStyleBackColor = true;
-            this.cbReport_1FlowIn.CheckedChanged += new System.EventHandler(this.cbReport_1FlowIn_CheckedChanged);
-            // 
-            // lblReport_1StockFlowType
-            // 
-            resources.ApplyResources(this.lblReport_1StockFlowType, "lblReport_1StockFlowType");
-            this.lblReport_1StockFlowType.Name = "lblReport_1StockFlowType";
-            // 
-            // cbReport_1Customer
-            // 
-            this.cbReport_1Customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_1Customer.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_1Customer, "cbReport_1Customer");
-            this.cbReport_1Customer.Name = "cbReport_1Customer";
-            // 
-            // btnReport_1Customer
-            // 
-            resources.ApplyResources(this.btnReport_1Customer, "btnReport_1Customer");
-            this.btnReport_1Customer.Name = "btnReport_1Customer";
-            // 
-            // cbReport_1Supplier
-            // 
-            this.cbReport_1Supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_1Supplier.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_1Supplier, "cbReport_1Supplier");
-            this.cbReport_1Supplier.Name = "cbReport_1Supplier";
-            // 
-            // lblReport_1Supplier
-            // 
-            resources.ApplyResources(this.lblReport_1Supplier, "lblReport_1Supplier");
-            this.lblReport_1Supplier.Name = "lblReport_1Supplier";
-            // 
-            // lblReport_1Product
-            // 
-            resources.ApplyResources(this.lblReport_1Product, "lblReport_1Product");
-            this.lblReport_1Product.Name = "lblReport_1Product";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
-            // dtReport_1To
-            // 
-            resources.ApplyResources(this.dtReport_1To, "dtReport_1To");
-            this.dtReport_1To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtReport_1To.Name = "dtReport_1To";
-            // 
-            // dtReport_1From
-            // 
-            resources.ApplyResources(this.dtReport_1From, "dtReport_1From");
-            this.dtReport_1From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtReport_1From.Name = "dtReport_1From";
-            // 
-            // cbReport_1Product
-            // 
-            this.cbReport_1Product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReport_1Product.FormattingEnabled = true;
-            resources.ApplyResources(this.cbReport_1Product, "cbReport_1Product");
-            this.cbReport_1Product.Name = "cbReport_1Product";
-            this.cbReport_1Product.SelectedIndexChanged += new System.EventHandler(this.cbReport_1Product_SelectedIndexChanged);
-            // 
-            // lblReport_1Date
-            // 
-            resources.ApplyResources(this.lblReport_1Date, "lblReport_1Date");
-            this.lblReport_1Date.Name = "lblReport_1Date";
-            // 
-            // lvReport_1
-            // 
-            resources.ApplyResources(this.lvReport_1, "lvReport_1");
-            this.lvReport_1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chReport_1ID,
-            this.chReport_1Date,
-            this.chReport_1Supplier,
-            this.chReport_1Product,
-            this.chReport_1Unit,
-            this.chReport_1Quantity,
-            this.chReport_1Price,
-            this.chReport_1TotalPrice});
-            this.lvReport_1.FullRowSelect = true;
-            this.lvReport_1.MultiSelect = false;
-            this.lvReport_1.Name = "lvReport_1";
-            this.lvReport_1.UseCompatibleStateImageBehavior = false;
-            this.lvReport_1.View = System.Windows.Forms.View.Details;
-            // 
-            // chReport_1ID
-            // 
-            resources.ApplyResources(this.chReport_1ID, "chReport_1ID");
-            // 
-            // chReport_1Date
-            // 
-            resources.ApplyResources(this.chReport_1Date, "chReport_1Date");
-            // 
-            // chReport_1Supplier
-            // 
-            resources.ApplyResources(this.chReport_1Supplier, "chReport_1Supplier");
-            // 
-            // chReport_1Product
-            // 
-            resources.ApplyResources(this.chReport_1Product, "chReport_1Product");
-            // 
-            // chReport_1Unit
-            // 
-            resources.ApplyResources(this.chReport_1Unit, "chReport_1Unit");
-            // 
-            // chReport_1Quantity
-            // 
-            resources.ApplyResources(this.chReport_1Quantity, "chReport_1Quantity");
-            // 
-            // chReport_1Price
-            // 
-            resources.ApplyResources(this.chReport_1Price, "chReport_1Price");
-            // 
-            // chReport_1TotalPrice
-            // 
-            resources.ApplyResources(this.chReport_1TotalPrice, "chReport_1TotalPrice");
-            // 
-            // cbReport_1OpenReport
-            // 
-            resources.ApplyResources(this.cbReport_1OpenReport, "cbReport_1OpenReport");
-            this.cbReport_1OpenReport.Name = "cbReport_1OpenReport";
-            this.cbReport_1OpenReport.UseVisualStyleBackColor = true;
-            // 
-            // btnReport_1Export
-            // 
-            resources.ApplyResources(this.btnReport_1Export, "btnReport_1Export");
-            this.btnReport_1Export.Name = "btnReport_1Export";
-            this.btnReport_1Export.UseVisualStyleBackColor = true;
-            this.btnReport_1Export.Click += new System.EventHandler(this.btnReport_1Export_Click);
             // 
             // mainMenu
             // 
@@ -1327,25 +987,6 @@
             resources.ApplyResources(this.duplicateProductToolStripMenuItem, "duplicateProductToolStripMenuItem");
             this.duplicateProductToolStripMenuItem.Click += new System.EventHandler(this.duplicateProductToolStripMenuItem_Click);
             // 
-            // pnlReport
-            // 
-            this.pnlReport.Controls.Add(this.pnlReport_2);
-            this.pnlReport.Controls.Add(this.pnlReport_1);
-            resources.ApplyResources(this.pnlReport, "pnlReport");
-            this.pnlReport.Name = "pnlReport";
-            // 
-            // pnlReport_2
-            // 
-            this.pnlReport_2.Controls.Add(this.scReport_2);
-            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
-            this.pnlReport_2.Name = "pnlReport_2";
-            // 
-            // pnlReport_1
-            // 
-            this.pnlReport_1.Controls.Add(this.scReport_1);
-            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
-            this.pnlReport_1.Name = "pnlReport_1";
-            // 
             // pnlStock
             // 
             this.pnlStock.Controls.Add(this.scStock);
@@ -1355,7 +996,6 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.lblMessage);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Name = "panel1";
@@ -1369,6 +1009,370 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            // 
+            // pnlReport_2
+            // 
+            this.pnlReport_2.Controls.Add(this.scReport_2);
+            resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
+            this.pnlReport_2.Name = "pnlReport_2";
+            // 
+            // scReport_2
+            // 
+            resources.ApplyResources(this.scReport_2, "scReport_2");
+            this.scReport_2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scReport_2.Name = "scReport_2";
+            // 
+            // scReport_2.Panel1
+            // 
+            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Warehouse);
+            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Warehouse);
+            this.scReport_2.Panel1.Controls.Add(this.label24);
+            this.scReport_2.Panel1.Controls.Add(this.dtReport_2To);
+            this.scReport_2.Panel1.Controls.Add(this.dtReport_2From);
+            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Date);
+            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Category);
+            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Category);
+            this.scReport_2.Panel1.Controls.Add(this.btnReport_2Run);
+            this.scReport_2.Panel1.Controls.Add(this.lblReport_2Product);
+            this.scReport_2.Panel1.Controls.Add(this.cbReport_2Product);
+            resources.ApplyResources(this.scReport_2.Panel1, "scReport_2.Panel1");
+            // 
+            // scReport_2.Panel2
+            // 
+            this.scReport_2.Panel2.Controls.Add(this.cbReport_2OpenReport);
+            this.scReport_2.Panel2.Controls.Add(this.lvReport_2);
+            this.scReport_2.Panel2.Controls.Add(this.btnReport_2Export);
+            resources.ApplyResources(this.scReport_2.Panel2, "scReport_2.Panel2");
+            // 
+            // btnReport_2Export
+            // 
+            resources.ApplyResources(this.btnReport_2Export, "btnReport_2Export");
+            this.btnReport_2Export.Name = "btnReport_2Export";
+            this.btnReport_2Export.UseVisualStyleBackColor = true;
+            this.btnReport_2Export.Click += new System.EventHandler(this.btnReport_1Export_Click);
+            // 
+            // lvReport_2
+            // 
+            this.lvReport_2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chReport_2Product,
+            this.chReport_2Category,
+            this.chReport_2Unit,
+            this.chReport_2StockIn,
+            this.chReport_2StockOut,
+            this.chReport_2TotalStock});
+            this.lvReport_2.FullRowSelect = true;
+            this.lvReport_2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvReport_2.HideSelection = false;
+            resources.ApplyResources(this.lvReport_2, "lvReport_2");
+            this.lvReport_2.MultiSelect = false;
+            this.lvReport_2.Name = "lvReport_2";
+            this.lvReport_2.UseCompatibleStateImageBehavior = false;
+            this.lvReport_2.View = System.Windows.Forms.View.Details;
+            // 
+            // chReport_2Product
+            // 
+            resources.ApplyResources(this.chReport_2Product, "chReport_2Product");
+            // 
+            // chReport_2Category
+            // 
+            resources.ApplyResources(this.chReport_2Category, "chReport_2Category");
+            // 
+            // chReport_2Unit
+            // 
+            resources.ApplyResources(this.chReport_2Unit, "chReport_2Unit");
+            // 
+            // chReport_2StockIn
+            // 
+            resources.ApplyResources(this.chReport_2StockIn, "chReport_2StockIn");
+            // 
+            // chReport_2StockOut
+            // 
+            resources.ApplyResources(this.chReport_2StockOut, "chReport_2StockOut");
+            // 
+            // chReport_2TotalStock
+            // 
+            resources.ApplyResources(this.chReport_2TotalStock, "chReport_2TotalStock");
+            // 
+            // cbReport_2OpenReport
+            // 
+            resources.ApplyResources(this.cbReport_2OpenReport, "cbReport_2OpenReport");
+            this.cbReport_2OpenReport.Name = "cbReport_2OpenReport";
+            this.cbReport_2OpenReport.UseVisualStyleBackColor = true;
+            // 
+            // cbReport_2Product
+            // 
+            this.cbReport_2Product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_2Product.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_2Product, "cbReport_2Product");
+            this.cbReport_2Product.Name = "cbReport_2Product";
+            // 
+            // lblReport_2Product
+            // 
+            resources.ApplyResources(this.lblReport_2Product, "lblReport_2Product");
+            this.lblReport_2Product.Name = "lblReport_2Product";
+            // 
+            // btnReport_2Run
+            // 
+            resources.ApplyResources(this.btnReport_2Run, "btnReport_2Run");
+            this.btnReport_2Run.Name = "btnReport_2Run";
+            this.btnReport_2Run.UseVisualStyleBackColor = true;
+            this.btnReport_2Run.Click += new System.EventHandler(this.btnReport_2Run_Click);
+            // 
+            // lblReport_2Category
+            // 
+            resources.ApplyResources(this.lblReport_2Category, "lblReport_2Category");
+            this.lblReport_2Category.Name = "lblReport_2Category";
+            // 
+            // cbReport_2Category
+            // 
+            this.cbReport_2Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_2Category.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_2Category, "cbReport_2Category");
+            this.cbReport_2Category.Name = "cbReport_2Category";
+            // 
+            // lblReport_2Date
+            // 
+            resources.ApplyResources(this.lblReport_2Date, "lblReport_2Date");
+            this.lblReport_2Date.Name = "lblReport_2Date";
+            // 
+            // dtReport_2From
+            // 
+            resources.ApplyResources(this.dtReport_2From, "dtReport_2From");
+            this.dtReport_2From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtReport_2From.Name = "dtReport_2From";
+            // 
+            // dtReport_2To
+            // 
+            resources.ApplyResources(this.dtReport_2To, "dtReport_2To");
+            this.dtReport_2To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtReport_2To.Name = "dtReport_2To";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // cbReport_2Warehouse
+            // 
+            this.cbReport_2Warehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_2Warehouse.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_2Warehouse, "cbReport_2Warehouse");
+            this.cbReport_2Warehouse.Name = "cbReport_2Warehouse";
+            // 
+            // lblReport_2Warehouse
+            // 
+            resources.ApplyResources(this.lblReport_2Warehouse, "lblReport_2Warehouse");
+            this.lblReport_2Warehouse.Name = "lblReport_2Warehouse";
+            // 
+            // pnlReport_1
+            // 
+            this.pnlReport_1.Controls.Add(this.scReport_1);
+            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
+            this.pnlReport_1.Name = "pnlReport_1";
+            // 
+            // pnlReport
+            // 
+            this.pnlReport.Controls.Add(this.pnlReport_1);
+            this.pnlReport.Controls.Add(this.pnlReport_2);
+            resources.ApplyResources(this.pnlReport, "pnlReport");
+            this.pnlReport.Name = "pnlReport";
+            // 
+            // btnReport_1Export
+            // 
+            resources.ApplyResources(this.btnReport_1Export, "btnReport_1Export");
+            this.btnReport_1Export.Name = "btnReport_1Export";
+            this.btnReport_1Export.UseVisualStyleBackColor = true;
+            this.btnReport_1Export.Click += new System.EventHandler(this.btnReport_1Export_Click);
+            // 
+            // cbReport_1OpenReport
+            // 
+            resources.ApplyResources(this.cbReport_1OpenReport, "cbReport_1OpenReport");
+            this.cbReport_1OpenReport.Name = "cbReport_1OpenReport";
+            this.cbReport_1OpenReport.UseVisualStyleBackColor = true;
+            // 
+            // lvReport_1
+            // 
+            resources.ApplyResources(this.lvReport_1, "lvReport_1");
+            this.lvReport_1.AutoArrange = false;
+            this.lvReport_1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chReport_1ID,
+            this.chReport_1Date,
+            this.chReport_1Supplier,
+            this.chReport_1Product,
+            this.chReport_1Unit,
+            this.chReport_1Quantity,
+            this.chReport_1Price,
+            this.chReport_1TotalPrice});
+            this.lvReport_1.FullRowSelect = true;
+            this.lvReport_1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvReport_1.HideSelection = false;
+            this.lvReport_1.MultiSelect = false;
+            this.lvReport_1.Name = "lvReport_1";
+            this.lvReport_1.UseCompatibleStateImageBehavior = false;
+            this.lvReport_1.View = System.Windows.Forms.View.Details;
+            // 
+            // chReport_1ID
+            // 
+            resources.ApplyResources(this.chReport_1ID, "chReport_1ID");
+            // 
+            // chReport_1Date
+            // 
+            resources.ApplyResources(this.chReport_1Date, "chReport_1Date");
+            // 
+            // chReport_1Supplier
+            // 
+            resources.ApplyResources(this.chReport_1Supplier, "chReport_1Supplier");
+            // 
+            // chReport_1Product
+            // 
+            resources.ApplyResources(this.chReport_1Product, "chReport_1Product");
+            // 
+            // chReport_1Unit
+            // 
+            resources.ApplyResources(this.chReport_1Unit, "chReport_1Unit");
+            // 
+            // chReport_1Quantity
+            // 
+            resources.ApplyResources(this.chReport_1Quantity, "chReport_1Quantity");
+            // 
+            // chReport_1Price
+            // 
+            resources.ApplyResources(this.chReport_1Price, "chReport_1Price");
+            // 
+            // chReport_1TotalPrice
+            // 
+            resources.ApplyResources(this.chReport_1TotalPrice, "chReport_1TotalPrice");
+            // 
+            // lblReport_1Date
+            // 
+            resources.ApplyResources(this.lblReport_1Date, "lblReport_1Date");
+            this.lblReport_1Date.Name = "lblReport_1Date";
+            // 
+            // cbReport_1Product
+            // 
+            this.cbReport_1Product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_1Product.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_1Product, "cbReport_1Product");
+            this.cbReport_1Product.Name = "cbReport_1Product";
+            this.cbReport_1Product.SelectedIndexChanged += new System.EventHandler(this.cbReport_1Product_SelectedIndexChanged);
+            // 
+            // dtReport_1From
+            // 
+            resources.ApplyResources(this.dtReport_1From, "dtReport_1From");
+            this.dtReport_1From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtReport_1From.Name = "dtReport_1From";
+            // 
+            // dtReport_1To
+            // 
+            resources.ApplyResources(this.dtReport_1To, "dtReport_1To");
+            this.dtReport_1To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtReport_1To.Name = "dtReport_1To";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // lblReport_1Product
+            // 
+            resources.ApplyResources(this.lblReport_1Product, "lblReport_1Product");
+            this.lblReport_1Product.Name = "lblReport_1Product";
+            // 
+            // lblReport_1Supplier
+            // 
+            resources.ApplyResources(this.lblReport_1Supplier, "lblReport_1Supplier");
+            this.lblReport_1Supplier.Name = "lblReport_1Supplier";
+            // 
+            // cbReport_1Supplier
+            // 
+            this.cbReport_1Supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_1Supplier.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_1Supplier, "cbReport_1Supplier");
+            this.cbReport_1Supplier.Name = "cbReport_1Supplier";
+            // 
+            // btnReport_1Customer
+            // 
+            resources.ApplyResources(this.btnReport_1Customer, "btnReport_1Customer");
+            this.btnReport_1Customer.Name = "btnReport_1Customer";
+            // 
+            // cbReport_1Customer
+            // 
+            this.cbReport_1Customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_1Customer.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_1Customer, "cbReport_1Customer");
+            this.cbReport_1Customer.Name = "cbReport_1Customer";
+            // 
+            // lblReport_1StockFlowType
+            // 
+            resources.ApplyResources(this.lblReport_1StockFlowType, "lblReport_1StockFlowType");
+            this.lblReport_1StockFlowType.Name = "lblReport_1StockFlowType";
+            // 
+            // cbReport_1FlowIn
+            // 
+            resources.ApplyResources(this.cbReport_1FlowIn, "cbReport_1FlowIn");
+            this.cbReport_1FlowIn.Name = "cbReport_1FlowIn";
+            this.cbReport_1FlowIn.UseVisualStyleBackColor = true;
+            this.cbReport_1FlowIn.CheckedChanged += new System.EventHandler(this.cbReport_1FlowIn_CheckedChanged);
+            // 
+            // cbReport_1FlowOut
+            // 
+            resources.ApplyResources(this.cbReport_1FlowOut, "cbReport_1FlowOut");
+            this.cbReport_1FlowOut.Name = "cbReport_1FlowOut";
+            this.cbReport_1FlowOut.UseVisualStyleBackColor = true;
+            this.cbReport_1FlowOut.CheckedChanged += new System.EventHandler(this.cbReport_1FlowOut_CheckedChanged);
+            // 
+            // btnReport_1Run
+            // 
+            resources.ApplyResources(this.btnReport_1Run, "btnReport_1Run");
+            this.btnReport_1Run.Name = "btnReport_1Run";
+            this.btnReport_1Run.UseVisualStyleBackColor = true;
+            this.btnReport_1Run.Click += new System.EventHandler(this.btnReport_1Run_Click);
+            // 
+            // lblReport_1Category
+            // 
+            resources.ApplyResources(this.lblReport_1Category, "lblReport_1Category");
+            this.lblReport_1Category.Name = "lblReport_1Category";
+            // 
+            // cbReport_1Category
+            // 
+            this.cbReport_1Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReport_1Category.FormattingEnabled = true;
+            resources.ApplyResources(this.cbReport_1Category, "cbReport_1Category");
+            this.cbReport_1Category.Name = "cbReport_1Category";
+            this.cbReport_1Category.SelectedIndexChanged += new System.EventHandler(this.cbReport_1Category_SelectedIndexChanged);
+            // 
+            // scReport_1
+            // 
+            resources.ApplyResources(this.scReport_1, "scReport_1");
+            this.scReport_1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.scReport_1.Name = "scReport_1";
+            // 
+            // scReport_1.Panel1
+            // 
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Category);
+            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Category);
+            this.scReport_1.Panel1.Controls.Add(this.btnReport_1Run);
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1FlowOut);
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1FlowIn);
+            this.scReport_1.Panel1.Controls.Add(this.lblReport_1StockFlowType);
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Customer);
+            this.scReport_1.Panel1.Controls.Add(this.btnReport_1Customer);
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Supplier);
+            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Supplier);
+            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Product);
+            this.scReport_1.Panel1.Controls.Add(this.label16);
+            this.scReport_1.Panel1.Controls.Add(this.dtReport_1To);
+            this.scReport_1.Panel1.Controls.Add(this.dtReport_1From);
+            this.scReport_1.Panel1.Controls.Add(this.cbReport_1Product);
+            this.scReport_1.Panel1.Controls.Add(this.lblReport_1Date);
+            resources.ApplyResources(this.scReport_1.Panel1, "scReport_1.Panel1");
+            // 
+            // scReport_1.Panel2
+            // 
+            this.scReport_1.Panel2.Controls.Add(this.lvReport_1);
+            this.scReport_1.Panel2.Controls.Add(this.cbReport_1OpenReport);
+            this.scReport_1.Panel2.Controls.Add(this.btnReport_1Export);
+            resources.ApplyResources(this.scReport_1.Panel2, "scReport_1.Panel2");
             // 
             // frmMain
             // 
@@ -1389,18 +1393,6 @@
             this.cmsAddStockFlow.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.scReport_2.Panel1.ResumeLayout(false);
-            this.scReport_2.Panel1.PerformLayout();
-            this.scReport_2.Panel2.ResumeLayout(false);
-            this.scReport_2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scReport_2)).EndInit();
-            this.scReport_2.ResumeLayout(false);
-            this.scReport_1.Panel1.ResumeLayout(false);
-            this.scReport_1.Panel1.PerformLayout();
-            this.scReport_1.Panel2.ResumeLayout(false);
-            this.scReport_1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scReport_1)).EndInit();
-            this.scReport_1.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.scMain.Panel1.ResumeLayout(false);
@@ -1418,12 +1410,24 @@
             this.gbProductInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.cmsProduct.ResumeLayout(false);
-            this.pnlReport.ResumeLayout(false);
-            this.pnlReport_2.ResumeLayout(false);
-            this.pnlReport_1.ResumeLayout(false);
             this.pnlStock.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlReport_2.ResumeLayout(false);
+            this.scReport_2.Panel1.ResumeLayout(false);
+            this.scReport_2.Panel1.PerformLayout();
+            this.scReport_2.Panel2.ResumeLayout(false);
+            this.scReport_2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scReport_2)).EndInit();
+            this.scReport_2.ResumeLayout(false);
+            this.pnlReport_1.ResumeLayout(false);
+            this.pnlReport.ResumeLayout(false);
+            this.scReport_1.Panel1.ResumeLayout(false);
+            this.scReport_1.Panel1.PerformLayout();
+            this.scReport_1.Panel2.ResumeLayout(false);
+            this.scReport_1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scReport_1)).EndInit();
+            this.scReport_1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1480,7 +1484,6 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Panel pnlStock;
         private System.Windows.Forms.Panel pnlProduct;
-        private System.Windows.Forms.Panel pnlReport;
         private System.Windows.Forms.Button btnProductFilterClear;
         private System.Windows.Forms.Button btnProductFilter;
         private System.Windows.Forms.TextBox tbProductFilter;
@@ -1534,8 +1537,23 @@
         private System.Windows.Forms.ColumnHeader stockProductQuantity;
         private System.Windows.Forms.ColumnHeader stockProductPrice;
         private System.Windows.Forms.ColumnHeader stockProductTotalPrice;
+        private System.Windows.Forms.Button btnStockOut;
+        private System.Windows.Forms.Button btnStockIn;
+        private System.Windows.Forms.Button btnReportProductCount;
+        private System.Windows.Forms.Button btnReportProductFlow;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turkishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem duplicateProductToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlReport;
+        private System.Windows.Forms.Panel pnlReport_1;
         private System.Windows.Forms.Panel pnlReport_2;
         private System.Windows.Forms.SplitContainer scReport_2;
+        private System.Windows.Forms.Label lblReport_2Warehouse;
+        private System.Windows.Forms.ComboBox cbReport_2Warehouse;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker dtReport_2To;
+        private System.Windows.Forms.DateTimePicker dtReport_2From;
         private System.Windows.Forms.Label lblReport_2Date;
         private System.Windows.Forms.ComboBox cbReport_2Category;
         private System.Windows.Forms.Label lblReport_2Category;
@@ -1545,12 +1563,12 @@
         private System.Windows.Forms.CheckBox cbReport_2OpenReport;
         private System.Windows.Forms.ListView lvReport_2;
         private System.Windows.Forms.ColumnHeader chReport_2Product;
+        private System.Windows.Forms.ColumnHeader chReport_2Category;
         private System.Windows.Forms.ColumnHeader chReport_2Unit;
         private System.Windows.Forms.ColumnHeader chReport_2StockIn;
         private System.Windows.Forms.ColumnHeader chReport_2StockOut;
         private System.Windows.Forms.ColumnHeader chReport_2TotalStock;
         private System.Windows.Forms.Button btnReport_2Export;
-        private System.Windows.Forms.Panel pnlReport_1;
         private System.Windows.Forms.SplitContainer scReport_1;
         private System.Windows.Forms.ComboBox cbReport_1Category;
         private System.Windows.Forms.Label lblReport_1Category;
@@ -1568,12 +1586,6 @@
         private System.Windows.Forms.DateTimePicker dtReport_1From;
         private System.Windows.Forms.ComboBox cbReport_1Product;
         private System.Windows.Forms.Label lblReport_1Date;
-        private System.Windows.Forms.Button btnStockOut;
-        private System.Windows.Forms.Button btnStockIn;
-        private System.Windows.Forms.Button btnReportProductCount;
-        private System.Windows.Forms.Button btnReportProductFlow;
-        private System.Windows.Forms.CheckBox cbReport_1OpenReport;
-        private System.Windows.Forms.Button btnReport_1Export;
         private System.Windows.Forms.ListView lvReport_1;
         private System.Windows.Forms.ColumnHeader chReport_1ID;
         private System.Windows.Forms.ColumnHeader chReport_1Date;
@@ -1583,16 +1595,8 @@
         private System.Windows.Forms.ColumnHeader chReport_1Quantity;
         private System.Windows.Forms.ColumnHeader chReport_1Price;
         private System.Windows.Forms.ColumnHeader chReport_1TotalPrice;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dtReport_2To;
-        private System.Windows.Forms.DateTimePicker dtReport_2From;
-        private System.Windows.Forms.Label lblReport_2Warehouse;
-        private System.Windows.Forms.ComboBox cbReport_2Warehouse;
-        private System.Windows.Forms.ColumnHeader chReport_2Category;
-        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem turkishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem duplicateProductToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cbReport_1OpenReport;
+        private System.Windows.Forms.Button btnReport_1Export;
     }
 }
 

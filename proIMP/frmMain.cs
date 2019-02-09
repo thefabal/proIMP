@@ -647,6 +647,8 @@ namespace proIMP {
             if( lvProductList.SelectedItems.Count > 0 ) {
                 deleteProduct( lvProductList.SelectedItems[ 0 ].SubItems[ 1 ].Text );
             }
+
+            checkDB();
         }
 
         private void duplicateProductToolStripMenuItem_Click( object sender, EventArgs e ) {
@@ -678,6 +680,7 @@ namespace proIMP {
             }
 
             string product_id = string.Empty;
+            dbCommand.Transaction = sqlCon.BeginTransaction();
             dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + product_name.Replace( "'", "''" ) + " (1)', '" + product_catid + "', '" + product_desc.Replace( "'", "''" ) + "', '" + product_unit + "', '" + product_barcode.Replace( "'", "''" ) + "', '" + product_imageid + "')";
             try {
                 dbCommand.ExecuteNonQuery();
@@ -688,7 +691,11 @@ namespace proIMP {
                 return;
             }
 
-            editProduct( product_id );
+            if( editProduct( product_id ) ) {
+                dbCommand.Transaction.Commit();
+            } else {
+                dbCommand.Transaction.Rollback();
+            }
 
             checkDB();
         }
@@ -740,10 +747,12 @@ namespace proIMP {
             }
         }
 
-        private void editProduct( string strProductID ) {
+        private bool editProduct( string strProductID ) {
             product.strProductID = strProductID;
             if( product.ShowDialog() == DialogResult.OK ) {
-
+                return true;
+            } else {
+                return false;
             }
         }
 
