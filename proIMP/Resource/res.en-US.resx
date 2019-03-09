@@ -612,4 +612,25 @@
   <data name="duplicateProductToolStripMenuItem" xml:space="preserve">
     <value>Duplicate Product</value>
   </data>
+  <data name="btnReportExchange" xml:space="preserve">
+    <value>Forex Exchange</value>
+  </data>
+  <data name="updatingCurrency" xml:space="preserve">
+    <value>Updating exchange rates...</value>
+  </data>
+  <data name="chReport_3CurrencyCode" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="chReport_3ForexBuying" xml:space="preserve">
+    <value>Forex Buying</value>
+  </data>
+  <data name="chReport_3ForexSelling" xml:space="preserve">
+    <value>Forex Selling</value>
+  </data>
+  <data name="lblReport_3Currency" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="allCurrencies" xml:space="preserve">
+    <value>All Exchanges</value>
+  </data>
 </root>

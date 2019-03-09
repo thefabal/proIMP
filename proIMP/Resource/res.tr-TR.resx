@@ -612,4 +612,25 @@
   <data name="duplicateProductToolStripMenuItem" xml:space="preserve">
     <value>Ürünü Yinele</value>
   </data>
+  <data name="btnReportExchange" xml:space="preserve">
+    <value>Döviz Kurları</value>
+  </data>
+  <data name="updatingCurrency" xml:space="preserve">
+    <value>Döviz kurları güncelleniyor...</value>
+  </data>
+  <data name="chReport_3CurrencyCode" xml:space="preserve">
+    <value>Döviz Kodu</value>
+  </data>
+  <data name="chReport_3ForexBuying" xml:space="preserve">
+    <value>Döviz Alış</value>
+  </data>
+  <data name="chReport_3ForexSelling" xml:space="preserve">
+    <value>Döviz Satış</value>
+  </data>
+  <data name="lblReport_3Currency" xml:space="preserve">
+    <value>Döviz</value>
+  </data>
+  <data name="allCurrencies" xml:space="preserve">
+    <value>Tüm dövizler</value>
+  </data>
 </root>

@@ -86,6 +86,18 @@ namespace proIMP {
         private void frmMain_Load( object sender, EventArgs e ) {
             lvProductList_SelectedIndexChanged( null, null );
 
+            lvReport_2.Location = lvReport_1.Location;
+            lvReport_3.Location = lvReport_1.Location;
+
+            lvReport_2.Size = lvReport_1.Size;
+            lvReport_3.Size = lvReport_1.Size;
+
+            btnReport_2Export.Location = btnReport_1Export.Location;
+            btnReport_3Export.Location = btnReport_1Export.Location;
+
+            cbReport_2OpenReport.Location = cbReport_1OpenReport.Location;
+            cbReport_3OpenReport.Location = cbReport_1OpenReport.Location;
+
             if( File.Exists( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json" ) ) {
                 string strSettings = File.ReadAllText( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json" );
                 if( strSettings.Length > 0 ) {
@@ -112,6 +124,19 @@ namespace proIMP {
             }
             checkDB();
 
+            DateTime today = new DateTime( DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day );
+            if( setting.exchange_update < today.AddHours( -8 ) || ( DateTime.Now > today.AddHours( 16 ) && setting.exchange_update < today.AddHours( 16 ) ) ) {
+                ssBottomCurrency.Items.Add( resMan.GetString( "updatingCurrency", culInfo ) );
+
+#if DEBUG
+                getCurrencyExchange();
+#else
+                new Thread( ( ) => { getCurrencyExchange(); } ).Start();
+#endif
+            } else {
+                showCurrenctExchange();
+            }
+
             pnlMenuProduct.Height = 29;
             pnlMenuStock.Height = 29;
             pnlMenuReport.Height = 29;
@@ -122,7 +147,11 @@ namespace proIMP {
         }
 
         private void frmMain_FormClosing( object sender, FormClosingEventArgs e ) {
-            string strSettings = (new JavaScriptSerializer()).Serialize( setting );
+            saveSettings();
+        }
+
+        private void saveSettings() {
+            string strSettings = ( new JavaScriptSerializer() ).Serialize( setting );
 
             File.WriteAllText( Path.GetDirectoryName( Application.ExecutablePath ) + "\\config.json", strSettings );
         }
@@ -156,6 +185,7 @@ namespace proIMP {
             btnReports.Text = resMan.GetString( "btnReports", culInfo );
             btnReportProductFlow.Text = resMan.GetString( "btnReportProductFlow", culInfo );
             btnReportProductCount.Text = resMan.GetString( "btnReportProductCount", culInfo );
+            btnReportExchange.Text = resMan.GetString( "btnReportExchange", culInfo );
 
             /**
              * Menu Strip
@@ -245,6 +275,9 @@ namespace proIMP {
 
             lblGrandTotalPrice.Text = resMan.GetString( "lblGrandTotalPrice", culInfo );
 
+            /**
+             *  report
+             **/
             lblReport_1Date.Text = resMan.GetString( "lblReportDate", culInfo );
             lblReport_1Category.Text = btnCategory.Text;
             lblReport_1Product.Text = btnProduct.Text;
@@ -273,7 +306,7 @@ namespace proIMP {
             btnReport_2Run.Text = btnReport_1Run.Text;
 
             chReport_2Product.Text = btnProduct.Text;
-            chReport_2Category.Text = btnCategory.Text;
+            chReport_2Category.Text = plProductCategory.Text;
             chReport_2Unit.Text = stockProductUnit.Text;
             chReport_2StockIn.Text = btnStockIn.Text;
             chReport_2StockOut.Text = btnStockOut.Text;
@@ -281,6 +314,18 @@ namespace proIMP {
 
             btnReport_2Export.Text = btnReport_1Export.Text;
             cbReport_2OpenReport.Text = cbReport_1OpenReport.Text;
+
+            lblReport_3Date.Text = lblReport_1Date.Text;
+            btnReport_3Run.Text = btnReport_1Run.Text;
+
+            btnReport_3Export.Text = btnReport_1Export.Text;
+            cbReport_3OpenReport.Text = cbReport_1OpenReport.Text;
+
+            chReport_3Date.Text = lblReport_1Date.Text;
+            lblReport_3Currency.Text = resMan.GetString( "lblReport_3Currency", culInfo );
+            chReport_3CurrencyCode.Text = resMan.GetString( "chReport_3CurrencyCode", culInfo );
+            chReport_3ForexBuying.Text = resMan.GetString( "chReport_3ForexBuying", culInfo );
+            chReport_3ForexSelling.Text = resMan.GetString( "chReport_3ForexSelling", culInfo );
         }
 
         /**
@@ -403,6 +448,7 @@ namespace proIMP {
         }
 
         private void btnReportProductFlow_Click( object sender, EventArgs e ) {
+            dtReport_1To.Value = DateTime.Now;
             dtReport_1From.Value = DateTime.Now.AddYears( -1 );
 
             try {
@@ -466,10 +512,12 @@ namespace proIMP {
             }
 
             pnlReport.BringToFront();
+            btnReport_1Run_Click( sender, e );
             pnlReport_1.BringToFront();
         }
 
         private void btnReportProductCount_Click( object sender, EventArgs e ) {
+            dtReport_2To.Value = DateTime.Now;
             dtReport_2From.Value = DateTime.Now.AddYears( -1 );
 
             try {
@@ -520,6 +568,31 @@ namespace proIMP {
             pnlReport.BringToFront();
             btnReport_2Run_Click( sender, e );
             pnlReport_2.BringToFront();
+        }
+
+        private void btnReportExchange_Click( object sender, EventArgs e ) {
+            dtReport_3To.Value = DateTime.Now;
+            dtReport_3From.Value = DateTime.Now.AddYears( -1 );
+
+            try {
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT DISTINCT currency_code FROM forex_exchange ORDER BY currency_code", frmMain.sqlCon );
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                cbReport_3Currency.Items.Clear();
+                cbReport_3Currency.Items.Add( resMan.GetString( "allCurrencies", culInfo ) );
+                while( dbReader.Read() ) {
+                    cbReport_3Currency.Items.Add( dbReader.GetString( 0 ) );
+                }
+                dbReader.Close();
+                cbReport_3Currency.SelectedIndex = 0;
+            } catch( Exception ex ) {
+                MessageBox.Show( ex.Message );
+            }
+
+
+            pnlReport.BringToFront();
+            btnReport_3Run_Click( sender, e );
+            pnlReport_3.BringToFront();
         }
 
         private void pnlMenuLeft_Resize( object sender, EventArgs e ) {
@@ -633,6 +706,8 @@ namespace proIMP {
             if( lvProductList.SelectedItems.Count > 0 ) {
                 editProduct( lvProductList.SelectedItems[ 0 ].SubItems[ 1 ].Text );
             }
+
+            checkDB();
         }
 
         private void btnProductDelete_Click( object sender, EventArgs e ) {
@@ -1221,6 +1296,189 @@ namespace proIMP {
             }
         }
 
+        private void btnReport_2Export_Click( object sender, EventArgs e ) {
+            if( lvReport_2.Items.Count == 0 ) {
+                return;
+            }
+
+            string strReportFile = string.Empty;
+            SaveFileDialog sfd = new SaveFileDialog() {
+                Filter = "Excel File|*.xlsx",
+                FileName = "ProductStockReport_" + DateTime.Now.ToString( "yyyyMMdd" ) + ".xlsx"
+            };
+
+            if( sfd.ShowDialog() == DialogResult.OK ) {
+                strReportFile = sfd.FileName;
+            } else {
+                return;
+            }
+
+            ExcelPackage ExcelFile = new ExcelPackage();
+            ExcelWorksheet worksheet = ExcelFile.Workbook.Worksheets.Add( "Sheet1" );
+
+            string[ ] strHeader = {resMan.GetString( "plProductName", culInfo ), resMan.GetString( "plProductCategory", culInfo ), resMan.GetString( "stockProductUnit", culInfo ), resMan.GetString( "btnStockIn", culInfo ), resMan.GetString( "btnStockOut", culInfo ), resMan.GetString( "chReport_2TotalStock", culInfo ) };
+            int[ ] iColumnWidth = { 300, 150, 64, 70, 70, 70 };
+
+            for( int i = 0; i < strHeader.Length; i++ ) {
+                worksheet.Column( i + 1 ).Width = 1.0 * iColumnWidth[ i ] / 7;
+
+                worksheet.Cells[ 1, i + 1 ].Value = strHeader[ i ];
+            }
+
+            ExcelRange er;
+            er = worksheet.Cells[ "A1:F1" ];
+            er.Style.Border.Top.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Left.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Right.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+
+            worksheet.Row( 1 ).Height = 30;
+            worksheet.Row( 1 ).Style.Font.Bold = true;
+            worksheet.Row( 1 ).Style.WrapText = true;
+            worksheet.Row( 1 ).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            worksheet.Row( 1 ).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+            for( int i = 0; i < lvReport_2.Items.Count; i++ ) {
+                worksheet.Cells[ i + 2, 1 ].Value = lvReport_2.Items[ i ].SubItems[ 0 ].Text;
+                worksheet.Cells[ i + 2, 2 ].Value = lvReport_2.Items[ i ].SubItems[ 1 ].Text;
+                worksheet.Cells[ i + 2, 3 ].Value = lvReport_2.Items[ i ].SubItems[ 2 ].Text;
+
+                worksheet.Cells[ i + 2, 4 ].Value = Convert.ToDouble( lvReport_2.Items[ i ].SubItems[ 3 ].Text );
+                worksheet.Cells[ i + 2, 5 ].Value = Convert.ToDouble( lvReport_2.Items[ i ].SubItems[ 4 ].Text );
+                worksheet.Cells[ i + 2, 6 ].Value = Convert.ToDouble( lvReport_2.Items[ i ].SubItems[ 5 ].Text );
+            }
+
+            er = worksheet.Cells[ "A2:F" + ( lvReport_2.Items.Count + 1 ) ];
+            er.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+            worksheet.Cells[ "D2:F" + ( lvReport_2.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.000";
+
+            ExcelFile.Workbook.Properties.Title = "Invertory";
+            ExcelFile.Workbook.Properties.Author = "Fatih \"fabal\" BALCI";
+            ExcelFile.Workbook.Properties.Comments = "proIMP report with EPlus";
+            ExcelFile.Workbook.Properties.Company = "proGEDIA";
+
+            ExcelFile.Compression = CompressionLevel.BestCompression;
+            ExcelFile.SaveAs( new FileInfo( strReportFile ) );
+
+            if( cbReport_2OpenReport.Checked == true ) {
+                System.Diagnostics.Process.Start( strReportFile );
+            } else {
+                MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
+            }
+        }
+
+        private void btnReport_3Run_Click( object sender, EventArgs e ) {
+            string SQL = string.Empty;
+
+            SQL += "SELECT currency_date, currency_code, forex_buying, forex_selling FROM forex_exchange WHERE currency_date BETWEEN '" + dtReport_3From.Value.ToString( "yyyy-MM-dd" ) + " 00:00:00' AND '" + dtReport_3To.Value.ToString( "yyyy-MM-dd" ) + " 00:00:00'";
+            if( cbReport_3Currency.SelectedIndex > 0 ) {
+                SQL += " AND currency_code = '" + (string)cbReport_3Currency.SelectedItem + "'";
+            }
+            SQL += " ORDER BY currency_date DESC, currency_code";
+
+            SQLiteCommand dbCommand = new SQLiteCommand() {
+                Connection = sqlCon,
+                CommandText = SQL
+            };
+
+            try {
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                lvReport_3.Items.Clear();
+                while( dbReader.Read() ) {
+                    ListViewItem lvi = new ListViewItem( new string[ ] {
+                        Convert.ToDateTime( dbReader.GetString( 0 ) ).ToString("dd.MM.yyyy"),
+                        dbReader.GetString( 1 ),
+                        dbReader.GetFloat( 2 ).ToString(),
+                        dbReader.GetFloat( 3 ).ToString()
+                    } );
+
+                    lvReport_3.Items.Add( lvi );
+                }
+            } catch( Exception ex ) {
+                MessageBox.Show( "An unknown error occured.\r\n\r\n" + ex.Message );
+            }
+        }
+
+        private void btnReport_3Export_Click( object sender, EventArgs e ) {
+            if( lvReport_3.Items.Count == 0 ) {
+                return;
+            }
+
+            string strReportFile = string.Empty;
+            SaveFileDialog sfd = new SaveFileDialog() {
+                Filter = "Excel File|*.xlsx",
+                FileName = "ExchangeRateReport_" + DateTime.Now.ToString( "yyyyMMdd" ) + ".xlsx"
+            };
+
+            if( sfd.ShowDialog() == DialogResult.OK ) {
+                strReportFile = sfd.FileName;
+            } else {
+                return;
+            }
+
+            ExcelPackage ExcelFile = new ExcelPackage();
+            ExcelWorksheet worksheet = ExcelFile.Workbook.Worksheets.Add( "Sheet1" );
+
+            string[ ] strHeader = { resMan.GetString( "lblReportDate", culInfo ), resMan.GetString( "lblReport_3Currency", culInfo ), resMan.GetString( "chReport_3ForexBuying", culInfo ), resMan.GetString( "chReport_3ForexSelling", culInfo ) };
+            int[ ] iColumnWidth = { 150, 70, 70, 70 };
+
+            for( int i = 0; i < strHeader.Length; i++ ) {
+                worksheet.Column( i + 1 ).Width = 1.0 * iColumnWidth[ i ] / 7;
+
+                worksheet.Cells[ 1, i + 1 ].Value = strHeader[ i ];
+            }
+
+            ExcelRange er;
+            er = worksheet.Cells[ "A1:D1" ];
+            er.Style.Border.Top.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Left.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Right.Style = ExcelBorderStyle.Medium;
+            er.Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+
+            worksheet.Row( 1 ).Height = 30;
+            worksheet.Row( 1 ).Style.Font.Bold = true;
+            worksheet.Row( 1 ).Style.WrapText = true;
+            worksheet.Row( 1 ).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            worksheet.Row( 1 ).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+
+            for( int i = 0; i < lvReport_3.Items.Count; i++ ) {
+                worksheet.Cells[ i + 2, 1 ].Value = Convert.ToDateTime( lvReport_3.Items[ i ].SubItems[ 0 ].Text );
+                worksheet.Cells[ i + 2, 1 ].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+
+                worksheet.Cells[ i + 2, 2 ].Value = lvReport_3.Items[ i ].SubItems[ 1 ].Text;
+
+                worksheet.Cells[ i + 2, 3 ].Value = Convert.ToDouble( lvReport_3.Items[ i ].SubItems[ 2 ].Text );
+                worksheet.Cells[ i + 2, 4 ].Value = Convert.ToDouble( lvReport_3.Items[ i ].SubItems[ 3 ].Text );
+            }
+
+            er = worksheet.Cells[ "A2:D" + ( lvReport_3.Items.Count + 1 ) ];
+            er.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+            er.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+
+            worksheet.Cells[ "C2:D" + ( lvReport_3.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.0000";
+
+            ExcelFile.Workbook.Properties.Title = "Invertory";
+            ExcelFile.Workbook.Properties.Author = "Fatih \"fabal\" BALCI";
+            ExcelFile.Workbook.Properties.Comments = "proIMP report with EPlus";
+            ExcelFile.Workbook.Properties.Company = "proGEDIA";
+
+            ExcelFile.Compression = CompressionLevel.BestCompression;
+            ExcelFile.SaveAs( new FileInfo( strReportFile ) );
+
+            if( cbReport_3OpenReport.Checked == true ) {
+                System.Diagnostics.Process.Start( strReportFile );
+            } else {
+                MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
+            }
+        }
+
         /**
          * Common Events
          **/
@@ -1274,6 +1532,74 @@ namespace proIMP {
             }
 
             return false;
+        }
+
+        private void saveCurrencyExchange( exchange_rates exchanges ) {
+            if( exchanges.exchanges.Length == 0 ) {
+                return;
+            } else {
+                if( ssBottomCurrency.InvokeRequired ) {
+                    ssBottomCurrency.BeginInvoke( (MethodInvoker)delegate ( ) { saveCurrencyExchange( exchanges ); } );
+                } else {
+                    SQLiteCommand dbCommand = new SQLiteCommand( sqlCon ) {
+                        CommandText = "INSERT INTO forex_exchange (currency_date, currency_code, forex_buying, forex_selling) VALUES(@currency_date, @currency_code, @forex_buying, @forex_selling)"
+                    };
+
+                    for( int i = 0; i < exchanges.exchanges.Length; i++ ) {
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@currency_date", exchanges.date ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@currency_code", exchanges.exchanges[ i ].Code ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_buying", exchanges.exchanges[ i ].ForexBuying ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_selling", exchanges.exchanges[ i ].ForexSelling ) );
+
+                        dbCommand.ExecuteNonQuery();
+                    }
+
+                    setting.exchange_update = DateTime.Now;
+                    saveSettings();
+
+                    showCurrenctExchange();
+                }
+            }
+
+            return;
+        }
+
+        private void showCurrenctExchange( ) {
+            SQLiteCommand dbCommand = new SQLiteCommand( sqlCon );
+            SQLiteDataReader dbReader;
+
+            dbCommand.CommandText = "SELECT t1.currency_code, t1.currency_date, t1.forex_buying, t1.forex_selling FROM forex_exchange AS t1 INNER JOIN (SELECT currency_code, MAX(currency_date) AS currency_date FROM forex_exchange GROUP BY currency_code) AS t2 ON t1.currency_code = t2.currency_code AND t1.currency_date = t2.currency_date";
+            dbReader = dbCommand.ExecuteReader();
+
+            ssBottomCurrency.Items.Clear();
+            while( dbReader.Read() ) {
+                ssBottomCurrency.Items.Add( dbReader[ "currency_code" ].ToString() + " : " + dbReader[ "forex_buying" ].ToString() + " TL" );
+            }
+            dbReader.Close();
+        }
+
+        private void getCurrencyExchange( ) {
+            string[ ] exchange = new string[ ] { "USD", "EUR" };
+
+            exchange_rates result = new exchange_rates {
+                exchanges = new Currency[ exchange.Length ]
+            };
+
+            System.Xml.XmlDocument document = new System.Xml.XmlDocument();
+            document.Load( "http://www.tcmb.gov.tr/kurlar/today.xml" );
+
+            result.date = Convert.ToDateTime( document.SelectSingleNode( "//Tarih_Date" ).Attributes[ "Tarih" ].Value );
+            for( int i = 0; i < exchange.Length; i++ ) {
+                result.exchanges[ i ] = new Currency() {
+                    Code = exchange[ i ],
+                    ForexBuying = Convert.ToDecimal( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteBuying" ).InnerXml ),
+                    ForexSelling = Convert.ToDecimal( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteSelling" ).InnerXml )
+                };
+            }
+
+            saveCurrencyExchange( result );
+
+            return;
         }
 
         /**
@@ -1381,11 +1707,11 @@ namespace proIMP {
                 getProductList( tbProductFilter.Text );
                 getStockFlowList();
                 getStockFlowProductList();
+
+                lblMessage.Text = resMan.GetString( "dbAllIsFine", culInfo );
             } catch {
                 lblMessage.Text = resMan.GetString( "dbTableError", culInfo );
-            }
-
-            lblMessage.Text = resMan.GetString( "dbAllIsFine", culInfo );
+            }            
 
             return true;
         }
@@ -1497,6 +1823,8 @@ namespace proIMP {
 
         public string language { get; set; } = "en";
         public string database { get; set; } = Path.GetDirectoryName( Application.ExecutablePath ) + "\\db\\database.sqlite";
+
+        public DateTime exchange_update = new DateTime( 1900, 1, 1 );
     }
 
     public class CategoryItem {
@@ -1609,5 +1937,16 @@ namespace proIMP {
         public override string ToString() {
             return productName;
         }
+    }
+
+    public class exchange_rates {
+        public DateTime date;
+        public Currency[ ] exchanges;
+    }
+
+    public class Currency {
+        public string Code { get; set; }
+        public decimal ForexBuying { get; set; }
+        public decimal ForexSelling { get; set; }
     }
 }
