@@ -31,11 +31,12 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblSupplier = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStockGrandTotal = new System.Windows.Forms.Label();
+            this.cbStockProductCurrency = new System.Windows.Forms.ComboBox();
+            this.lblProductCurrency = new System.Windows.Forms.Label();
             this.lblWarehouse = new System.Windows.Forms.Label();
             this.cbStockProductWarehouse = new System.Windows.Forms.ComboBox();
-            this.lblProductListNote = new System.Windows.Forms.Label();
             this.lblGrandTotalPrice = new System.Windows.Forms.Label();
-            this.tbStockGrandTotal = new System.Windows.Forms.TextBox();
             this.btnProductAdd = new System.Windows.Forms.Button();
             this.lblProductPrice = new System.Windows.Forms.Label();
             this.tbStockProductPrice = new System.Windows.Forms.TextBox();
@@ -46,16 +47,19 @@
             this.tbStockProductUnit = new System.Windows.Forms.TextBox();
             this.cbStockProductID = new System.Windows.Forms.ComboBox();
             this.lvStockProductList = new System.Windows.Forms.ListView();
-            this.chProductFlowID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductFlowID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductWarehouseID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductWarehouse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductUnit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductTotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductTotalLocalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnStockCancel = new System.Windows.Forms.Button();
             this.btnStockSave = new System.Windows.Forms.Button();
+            this.lblProductLocalPriceNote = new System.Windows.Forms.Label();
+            this.lblProductListNote = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -129,11 +133,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblStockGrandTotal);
+            this.groupBox2.Controls.Add(this.cbStockProductCurrency);
+            this.groupBox2.Controls.Add(this.lblProductCurrency);
             this.groupBox2.Controls.Add(this.lblWarehouse);
             this.groupBox2.Controls.Add(this.cbStockProductWarehouse);
-            this.groupBox2.Controls.Add(this.lblProductListNote);
             this.groupBox2.Controls.Add(this.lblGrandTotalPrice);
-            this.groupBox2.Controls.Add(this.tbStockGrandTotal);
             this.groupBox2.Controls.Add(this.btnProductAdd);
             this.groupBox2.Controls.Add(this.lblProductPrice);
             this.groupBox2.Controls.Add(this.tbStockProductPrice);
@@ -150,6 +155,34 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // lblStockGrandTotal
+            // 
+            this.lblStockGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockGrandTotal.Location = new System.Drawing.Point(536, 219);
+            this.lblStockGrandTotal.Name = "lblStockGrandTotal";
+            this.lblStockGrandTotal.Size = new System.Drawing.Size(94, 26);
+            this.lblStockGrandTotal.TabIndex = 17;
+            this.lblStockGrandTotal.Text = "label1";
+            this.lblStockGrandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbStockProductCurrency
+            // 
+            this.cbStockProductCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStockProductCurrency.FormattingEnabled = true;
+            this.cbStockProductCurrency.Location = new System.Drawing.Point(468, 44);
+            this.cbStockProductCurrency.Name = "cbStockProductCurrency";
+            this.cbStockProductCurrency.Size = new System.Drawing.Size(74, 21);
+            this.cbStockProductCurrency.TabIndex = 8;
+            // 
+            // lblProductCurrency
+            // 
+            this.lblProductCurrency.AutoSize = true;
+            this.lblProductCurrency.Location = new System.Drawing.Point(465, 28);
+            this.lblProductCurrency.Name = "lblProductCurrency";
+            this.lblProductCurrency.Size = new System.Drawing.Size(49, 13);
+            this.lblProductCurrency.TabIndex = 16;
+            this.lblProductCurrency.Text = "Currency";
+            // 
             // lblWarehouse
             // 
             this.lblWarehouse.AutoSize = true;
@@ -165,43 +198,24 @@
             this.cbStockProductWarehouse.FormattingEnabled = true;
             this.cbStockProductWarehouse.Location = new System.Drawing.Point(164, 45);
             this.cbStockProductWarehouse.Name = "cbStockProductWarehouse";
-            this.cbStockProductWarehouse.Size = new System.Drawing.Size(90, 21);
+            this.cbStockProductWarehouse.Size = new System.Drawing.Size(70, 21);
             this.cbStockProductWarehouse.TabIndex = 5;
-            // 
-            // lblProductListNote
-            // 
-            this.lblProductListNote.AutoSize = true;
-            this.lblProductListNote.Location = new System.Drawing.Point(3, 225);
-            this.lblProductListNote.Name = "lblProductListNote";
-            this.lblProductListNote.Size = new System.Drawing.Size(240, 13);
-            this.lblProductListNote.TabIndex = 13;
-            this.lblProductListNote.Text = "* Selected items will be deleted when form saved.";
             // 
             // lblGrandTotalPrice
             // 
             this.lblGrandTotalPrice.AutoSize = true;
-            this.lblGrandTotalPrice.Location = new System.Drawing.Point(439, 225);
+            this.lblGrandTotalPrice.Location = new System.Drawing.Point(434, 225);
             this.lblGrandTotalPrice.Name = "lblGrandTotalPrice";
             this.lblGrandTotalPrice.Size = new System.Drawing.Size(96, 13);
             this.lblGrandTotalPrice.TabIndex = 12;
             this.lblGrandTotalPrice.Text = "Grand Total Price :";
-            // 
-            // tbStockGrandTotal
-            // 
-            this.tbStockGrandTotal.BackColor = System.Drawing.SystemColors.Window;
-            this.tbStockGrandTotal.Location = new System.Drawing.Point(548, 222);
-            this.tbStockGrandTotal.Name = "tbStockGrandTotal";
-            this.tbStockGrandTotal.ReadOnly = true;
-            this.tbStockGrandTotal.Size = new System.Drawing.Size(100, 20);
-            this.tbStockGrandTotal.TabIndex = 11;
-            this.tbStockGrandTotal.TabStop = false;
             // 
             // btnProductAdd
             // 
             this.btnProductAdd.Location = new System.Drawing.Point(548, 43);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(100, 23);
-            this.btnProductAdd.TabIndex = 8;
+            this.btnProductAdd.TabIndex = 9;
             this.btnProductAdd.Text = "Add";
             this.btnProductAdd.UseVisualStyleBackColor = true;
             this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
@@ -209,37 +223,37 @@
             // lblProductPrice
             // 
             this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Location = new System.Drawing.Point(449, 29);
+            this.lblProductPrice.Location = new System.Drawing.Point(389, 29);
             this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(71, 13);
+            this.lblProductPrice.Size = new System.Drawing.Size(31, 13);
             this.lblProductPrice.TabIndex = 9;
-            this.lblProductPrice.Text = "Product Price";
+            this.lblProductPrice.Text = "Price";
             // 
             // tbStockProductPrice
             // 
-            this.tbStockProductPrice.Location = new System.Drawing.Point(452, 45);
+            this.tbStockProductPrice.Location = new System.Drawing.Point(392, 45);
             this.tbStockProductPrice.Name = "tbStockProductPrice";
-            this.tbStockProductPrice.Size = new System.Drawing.Size(90, 20);
+            this.tbStockProductPrice.Size = new System.Drawing.Size(70, 20);
             this.tbStockProductPrice.TabIndex = 7;
             this.tbStockProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheckForNumeric_KeyPress);
             // 
             // lblProductQuantity
             // 
             this.lblProductQuantity.AutoSize = true;
-            this.lblProductQuantity.Location = new System.Drawing.Point(353, 29);
+            this.lblProductQuantity.Location = new System.Drawing.Point(313, 29);
             this.lblProductQuantity.Name = "lblProductQuantity";
-            this.lblProductQuantity.Size = new System.Drawing.Size(86, 13);
+            this.lblProductQuantity.Size = new System.Drawing.Size(46, 13);
             this.lblProductQuantity.TabIndex = 7;
-            this.lblProductQuantity.Text = "Product Quantity";
+            this.lblProductQuantity.Text = "Quantity";
             // 
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.Location = new System.Drawing.Point(257, 29);
+            this.lblProductUnit.Location = new System.Drawing.Point(237, 29);
             this.lblProductUnit.Name = "lblProductUnit";
-            this.lblProductUnit.Size = new System.Drawing.Size(66, 13);
+            this.lblProductUnit.Size = new System.Drawing.Size(26, 13);
             this.lblProductUnit.TabIndex = 6;
-            this.lblProductUnit.Text = "Product Unit";
+            this.lblProductUnit.Text = "Unit";
             // 
             // lblProductName
             // 
@@ -252,19 +266,19 @@
             // 
             // tbStockProductQuantity
             // 
-            this.tbStockProductQuantity.Location = new System.Drawing.Point(356, 45);
+            this.tbStockProductQuantity.Location = new System.Drawing.Point(316, 45);
             this.tbStockProductQuantity.Name = "tbStockProductQuantity";
-            this.tbStockProductQuantity.Size = new System.Drawing.Size(90, 20);
+            this.tbStockProductQuantity.Size = new System.Drawing.Size(70, 20);
             this.tbStockProductQuantity.TabIndex = 6;
             this.tbStockProductQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCheckForNumeric_KeyPress);
             // 
             // tbStockProductUnit
             // 
             this.tbStockProductUnit.BackColor = System.Drawing.SystemColors.Window;
-            this.tbStockProductUnit.Location = new System.Drawing.Point(260, 45);
+            this.tbStockProductUnit.Location = new System.Drawing.Point(240, 45);
             this.tbStockProductUnit.Name = "tbStockProductUnit";
             this.tbStockProductUnit.ReadOnly = true;
-            this.tbStockProductUnit.Size = new System.Drawing.Size(90, 20);
+            this.tbStockProductUnit.Size = new System.Drawing.Size(70, 20);
             this.tbStockProductUnit.TabIndex = 2;
             this.tbStockProductUnit.TabStop = false;
             // 
@@ -282,70 +296,78 @@
             // lvStockProductList
             // 
             this.lvStockProductList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chProductFlowID,
             this.chProductName,
+            this.chProductFlowID,
             this.chProductWarehouseID,
             this.chProductWarehouse,
             this.chProductUnit,
             this.chProductQuantity,
             this.chProductPrice,
-            this.chProductTotalPrice});
+            this.chProductTotalPrice,
+            this.chProductTotalLocalPrice});
             this.lvStockProductList.FullRowSelect = true;
             this.lvStockProductList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvStockProductList.Location = new System.Drawing.Point(6, 82);
             this.lvStockProductList.MultiSelect = false;
             this.lvStockProductList.Name = "lvStockProductList";
+            this.lvStockProductList.OwnerDraw = true;
             this.lvStockProductList.Size = new System.Drawing.Size(642, 134);
             this.lvStockProductList.TabIndex = 0;
             this.lvStockProductList.TabStop = false;
             this.lvStockProductList.UseCompatibleStateImageBehavior = false;
             this.lvStockProductList.View = System.Windows.Forms.View.Details;
+            this.lvStockProductList.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.LvStockProductList_DrawColumnHeader);
+            this.lvStockProductList.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.LvStockProductList_DrawItem);
+            this.lvStockProductList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LvStockProductList_MouseMove);
+            // 
+            // chProductName
+            // 
+            this.chProductName.Text = "Product Name";
+            this.chProductName.Width = 150;
             // 
             // chProductFlowID
             // 
             this.chProductFlowID.Text = "FlowID";
             this.chProductFlowID.Width = 0;
             // 
-            // chProductName
-            // 
-            this.chProductName.Text = "Product Name";
-            this.chProductName.Width = 153;
-            // 
             // chProductWarehouseID
             // 
-            this.chProductWarehouseID.DisplayIndex = 7;
             this.chProductWarehouseID.Text = "WarehouseID";
             this.chProductWarehouseID.Width = 0;
             // 
             // chProductWarehouse
             // 
-            this.chProductWarehouse.DisplayIndex = 2;
             this.chProductWarehouse.Text = "Warehouse";
-            this.chProductWarehouse.Width = 96;
+            this.chProductWarehouse.Width = 75;
             // 
             // chProductUnit
             // 
-            this.chProductUnit.DisplayIndex = 3;
-            this.chProductUnit.Text = "Product Unit";
-            this.chProductUnit.Width = 96;
+            this.chProductUnit.Text = "Unit";
+            this.chProductUnit.Width = 65;
             // 
             // chProductQuantity
             // 
-            this.chProductQuantity.DisplayIndex = 4;
-            this.chProductQuantity.Text = "Product Quantity";
-            this.chProductQuantity.Width = 96;
+            this.chProductQuantity.Text = "Quantity";
+            this.chProductQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.chProductQuantity.Width = 70;
             // 
             // chProductPrice
             // 
-            this.chProductPrice.DisplayIndex = 5;
-            this.chProductPrice.Text = "Product Price";
-            this.chProductPrice.Width = 96;
+            this.chProductPrice.Text = "Price";
+            this.chProductPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.chProductPrice.Width = 80;
             // 
             // chProductTotalPrice
             // 
-            this.chProductTotalPrice.DisplayIndex = 6;
             this.chProductTotalPrice.Text = "Total Price";
-            this.chProductTotalPrice.Width = 96;
+            this.chProductTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.chProductTotalPrice.Width = 90;
+            // 
+            // chProductTotalLocalPrice
+            // 
+            this.chProductTotalLocalPrice.Text = "Total Local Price";
+            this.chProductTotalLocalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.chProductTotalLocalPrice.Width = 90;
             // 
             // btnStockCancel
             // 
@@ -353,7 +375,7 @@
             this.btnStockCancel.Location = new System.Drawing.Point(452, 400);
             this.btnStockCancel.Name = "btnStockCancel";
             this.btnStockCancel.Size = new System.Drawing.Size(104, 29);
-            this.btnStockCancel.TabIndex = 9;
+            this.btnStockCancel.TabIndex = 10;
             this.btnStockCancel.Text = "Cancel";
             this.btnStockCancel.UseVisualStyleBackColor = true;
             this.btnStockCancel.Click += new System.EventHandler(this.btnStockCancel_Click);
@@ -363,16 +385,36 @@
             this.btnStockSave.Location = new System.Drawing.Point(562, 400);
             this.btnStockSave.Name = "btnStockSave";
             this.btnStockSave.Size = new System.Drawing.Size(104, 29);
-            this.btnStockSave.TabIndex = 10;
+            this.btnStockSave.TabIndex = 11;
             this.btnStockSave.Text = "Save";
             this.btnStockSave.UseVisualStyleBackColor = true;
             this.btnStockSave.Click += new System.EventHandler(this.btnStockSave_Click);
+            // 
+            // lblProductLocalPriceNote
+            // 
+            this.lblProductLocalPriceNote.AutoSize = true;
+            this.lblProductLocalPriceNote.Location = new System.Drawing.Point(15, 416);
+            this.lblProductLocalPriceNote.Name = "lblProductLocalPriceNote";
+            this.lblProductLocalPriceNote.Size = new System.Drawing.Size(282, 13);
+            this.lblProductLocalPriceNote.TabIndex = 14;
+            this.lblProductLocalPriceNote.Text = "* Local price is calculated by using current exchange rates";
+            // 
+            // lblProductListNote
+            // 
+            this.lblProductListNote.AutoSize = true;
+            this.lblProductListNote.Location = new System.Drawing.Point(15, 400);
+            this.lblProductListNote.Name = "lblProductListNote";
+            this.lblProductListNote.Size = new System.Drawing.Size(240, 13);
+            this.lblProductListNote.TabIndex = 15;
+            this.lblProductListNote.Text = "* Selected items will be deleted when form saved.";
             // 
             // frmStockFlowIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnStockCancel;
             this.ClientSize = new System.Drawing.Size(678, 441);
+            this.Controls.Add(this.lblProductListNote);
+            this.Controls.Add(this.lblProductLocalPriceNote);
             this.Controls.Add(this.btnStockSave);
             this.Controls.Add(this.btnStockCancel);
             this.Controls.Add(this.groupBox2);
@@ -392,6 +434,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -421,14 +464,18 @@
         private System.Windows.Forms.ComboBox cbStockSupplier;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblSupplier;
-        private System.Windows.Forms.TextBox tbStockGrandTotal;
         private System.Windows.Forms.Label lblGrandTotalPrice;
         private System.Windows.Forms.Button btnStockCancel;
         private System.Windows.Forms.Button btnStockSave;
-        private System.Windows.Forms.Label lblProductListNote;
         private System.Windows.Forms.ComboBox cbStockProductWarehouse;
         private System.Windows.Forms.Label lblWarehouse;
         private System.Windows.Forms.ColumnHeader chProductWarehouse;
         private System.Windows.Forms.ColumnHeader chProductWarehouseID;
+        private System.Windows.Forms.Label lblProductCurrency;
+        private System.Windows.Forms.ComboBox cbStockProductCurrency;
+        private System.Windows.Forms.ColumnHeader chProductTotalLocalPrice;
+        private System.Windows.Forms.Label lblStockGrandTotal;
+        private System.Windows.Forms.Label lblProductLocalPriceNote;
+        private System.Windows.Forms.Label lblProductListNote;
     }
 }

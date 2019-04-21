@@ -235,7 +235,7 @@
     <value>Ürün Açıklaması</value>
   </data>
   <data name="lblProductUnit" xml:space="preserve">
-    <value>Ürün Birimi</value>
+    <value>Birim</value>
   </data>
   <data name="lblReportDate" xml:space="preserve">
     <value>Tarih</value>
@@ -583,10 +583,10 @@
     <value>* Sayfa kaydedildiğinde seçili ürünler silinecektir.</value>
   </data>
   <data name="lblProductPrice" xml:space="preserve">
-    <value>Ürün Fiyatı</value>
+    <value>Fiyat</value>
   </data>
   <data name="lblProductQuantity" xml:space="preserve">
-    <value>Ürün Adeti</value>
+    <value>Adet</value>
   </data>
   <data name="lblSupplier" xml:space="preserve">
     <value>Tedarikçi</value>
@@ -632,5 +632,14 @@
   </data>
   <data name="allCurrencies" xml:space="preserve">
     <value>Tüm dövizler</value>
+  </data>
+  <data name="lblProductCurrency" xml:space="preserve">
+    <value>Para Birimi</value>
+  </data>
+  <data name="selectCurrency" xml:space="preserve">
+    <value>Lütfen döviz cinsini seçiniz.</value>
+  </data>
+  <data name="lblProductLocalPriceNote" xml:space="preserve">
+    <value>* Yerel fiyat güncel döviz kurları kullanılarak hesaplanmıştır</value>
   </data>
 </root>

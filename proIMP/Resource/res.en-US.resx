@@ -235,7 +235,7 @@
     <value>Product Desc.</value>
   </data>
   <data name="lblProductUnit" xml:space="preserve">
-    <value>Product Unit</value>
+    <value>Unit</value>
   </data>
   <data name="lblReportDate" xml:space="preserve">
     <value>Date</value>
@@ -583,10 +583,10 @@
     <value>* Selected items will be deleted when form saved.</value>
   </data>
   <data name="lblProductPrice" xml:space="preserve">
-    <value>Product Price</value>
+    <value>Price</value>
   </data>
   <data name="lblProductQuantity" xml:space="preserve">
-    <value>Product Quantity</value>
+    <value>Quantity</value>
   </data>
   <data name="lblSupplier" xml:space="preserve">
     <value>Supplier</value>
@@ -632,5 +632,14 @@
   </data>
   <data name="allCurrencies" xml:space="preserve">
     <value>All Exchanges</value>
+  </data>
+  <data name="lblProductCurrency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="selectCurrency" xml:space="preserve">
+    <value>Please select exchange</value>
+  </data>
+  <data name="lblProductLocalPriceNote" xml:space="preserve">
+    <value>* Local price is calculated by using current exchange rates</value>
   </data>
 </root>

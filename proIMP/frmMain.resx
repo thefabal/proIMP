@@ -128,235 +128,24 @@
   <data name="scStock.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="&gt;&gt;btnStockFlowAdd.Name" xml:space="preserve">
-    <value>btnStockFlowAdd</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowAdd.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowAdd.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowEdit.Name" xml:space="preserve">
-    <value>btnStockFlowEdit</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowEdit.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowEdit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowDelete.Name" xml:space="preserve">
-    <value>btnStockFlowDelete</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowDelete.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btnStockFlowDelete.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Name" xml:space="preserve">
-    <value>lvStockFlow</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 179</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>scStock.Panel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scStock.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel1.Name" xml:space="preserve">
-    <value>scStock.Panel1</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel1.Parent" xml:space="preserve">
-    <value>scStock</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotal.Name" xml:space="preserve">
-    <value>lblGrandTotal</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotal.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductAdd.Name" xml:space="preserve">
-    <value>btnStockProductAdd</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductAdd.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductAdd.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductEdit.Name" xml:space="preserve">
-    <value>btnStockProductEdit</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductEdit.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductEdit.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductDelete.Name" xml:space="preserve">
-    <value>btnStockProductDelete</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductDelete.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;btnStockProductDelete.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotalPrice.Name" xml:space="preserve">
-    <value>lblGrandTotalPrice</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotalPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotalPrice.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;lblGrandTotalPrice.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lvStockProductList.Name" xml:space="preserve">
-    <value>lvStockProductList</value>
-  </data>
-  <data name="&gt;&gt;lvStockProductList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvStockProductList.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;lvStockProductList.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 241</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>scStock.Panel2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scStock.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel2.Name" xml:space="preserve">
-    <value>scStock.Panel2</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel2.Parent" xml:space="preserve">
-    <value>scStock</value>
-  </data>
-  <data name="&gt;&gt;scStock.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="scStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="scStock.SplitterDistance" type="System.Int32, mscorlib">
-    <value>179</value>
-  </data>
-  <data name="scStock.SplitterWidth" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="scStock.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;scStock.Name" xml:space="preserve">
-    <value>scStock</value>
-  </data>
-  <data name="&gt;&gt;scStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scStock.Parent" xml:space="preserve">
-    <value>pnlStock</value>
-  </data>
-  <data name="&gt;&gt;scStock.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnStockFlowAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <metadata name="cmsAddStockFlow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>251, 17</value>
   </metadata>
+  <data name="addStockInToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="addStockInToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="stockOutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="stockOutToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
   <data name="cmsAddStockFlow.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 48</value>
   </data>
@@ -372,6 +161,7 @@
   <data name="btnStockFlowAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 29</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnStockFlowAdd.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
@@ -389,18 +179,6 @@
   </data>
   <data name="&gt;&gt;btnStockFlowAdd.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="addStockInToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="addStockInToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stock In</value>
-  </data>
-  <data name="stockOutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
-  <data name="stockOutToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Stock Out</value>
   </data>
   <data name="btnStockFlowEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -459,27 +237,6 @@
   <data name="lvStockFlow.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="lvStockFlow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="lvStockFlow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>723, 119</value>
-  </data>
-  <data name="lvStockFlow.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Name" xml:space="preserve">
-    <value>lvStockFlow</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lvStockFlow.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="stockFlowType.Text" xml:space="preserve">
     <value>Type</value>
   </data>
@@ -502,19 +259,22 @@
     <value>Supplier</value>
   </data>
   <data name="stockFlowSupplier.Width" type="System.Int32, mscorlib">
-    <value>150</value>
+    <value>125</value>
   </data>
   <data name="stockFlowDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
   <data name="stockFlowDescription.Width" type="System.Int32, mscorlib">
-    <value>230</value>
+    <value>225</value>
   </data>
   <data name="stockFlowQuantity.Text" xml:space="preserve">
     <value>Quantity (Total / Product)</value>
   </data>
+  <data name="stockFlowQuantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
   <data name="stockFlowQuantity.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>90</value>
   </data>
   <data name="stockFlowTotalPrice.Text" xml:space="preserve">
     <value>Total Price</value>
@@ -523,12 +283,72 @@
     <value>Right</value>
   </data>
   <data name="stockFlowTotalPrice.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>115</value>
   </data>
   <data name="stockFlowStockType.Text" xml:space="preserve">
     <value>stock_type</value>
   </data>
   <data name="stockFlowStockType.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lvStockFlow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="lvStockFlow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>723, 119</value>
+  </data>
+  <data name="lvStockFlow.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Name" xml:space="preserve">
+    <value>lvStockFlow</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 179</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>scStock.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scStock.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Name" xml:space="preserve">
+    <value>scStock.Panel1</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Parent" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblGrandTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -538,10 +358,10 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="lblGrandTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 183</value>
+    <value>615, 179</value>
   </data>
   <data name="lblGrandTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
+    <value>92, 26</value>
   </data>
   <data name="lblGrandTotal.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -684,6 +504,66 @@
   <data name="lvStockProductList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="stockProductName.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="stockProductName.Text" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="stockProductName.Width" type="System.Int32, mscorlib">
+    <value>250</value>
+  </data>
+  <data name="stockProductID.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stockProductID.Text" xml:space="preserve">
+    <value>FlowID</value>
+  </data>
+  <data name="stockProductID.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stockProductUnit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="stockProductUnit.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="stockProductQuantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="stockProductQuantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductQuantity.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="stockProductPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="stockProductPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductPrice.Width" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="stockProductTotalPrice.Text" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="stockProductTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductTotalPrice.Width" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.Text" xml:space="preserve">
+    <value>Total Local Price</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
   <data name="lvStockProductList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
@@ -705,56 +585,68 @@
   <data name="&gt;&gt;lvStockProductList.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="stockProductName.DisplayIndex" type="System.Int32, mscorlib">
+  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 241</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>scStock.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scStock.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Name" xml:space="preserve">
+    <value>scStock.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Parent" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="stockProductName.Text" xml:space="preserve">
-    <value>Product Name</value>
+  <data name="scStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
   </data>
-  <data name="stockProductName.Width" type="System.Int32, mscorlib">
-    <value>275</value>
+  <data name="scStock.SplitterDistance" type="System.Int32, mscorlib">
+    <value>179</value>
   </data>
-  <data name="stockProductID.DisplayIndex" type="System.Int32, mscorlib">
+  <data name="scStock.SplitterWidth" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="scStock.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;scStock.Name" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Parent" xml:space="preserve">
+    <value>pnlStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="stockProductID.Text" xml:space="preserve">
-    <value>FlowID</value>
-  </data>
-  <data name="stockProductID.Width" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="stockProductUnit.Text" xml:space="preserve">
-    <value>Unit</value>
-  </data>
-  <data name="stockProductUnit.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="stockProductQuantity.Text" xml:space="preserve">
-    <value>Quantity</value>
-  </data>
-  <data name="stockProductQuantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="stockProductQuantity.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="stockProductPrice.Text" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="stockProductPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="stockProductPrice.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="stockProductTotalPrice.Text" xml:space="preserve">
-    <value>Total Price</value>
-  </data>
-  <data name="stockProductTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="stockProductTotalPrice.Width" type="System.Int32, mscorlib">
-    <value>85</value>
   </data>
   <data name="scReport_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1075,7 +967,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbReport_2OpenReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 395</value>
+    <value>298, 395</value>
   </data>
   <data name="cbReport_2OpenReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 17</value>
@@ -1097,6 +989,42 @@
   </data>
   <data name="&gt;&gt;cbReport_2OpenReport.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="chReport_2Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="chReport_2Product.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="chReport_2Category.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="chReport_2Category.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_2Unit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="chReport_2Unit.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="chReport_2StockIn.Text" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="chReport_2StockIn.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="chReport_2StockOut.Text" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
+  <data name="chReport_2StockOut.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="chReport_2TotalStock.Text" xml:space="preserve">
+    <value>Total Stock</value>
+  </data>
+  <data name="chReport_2TotalStock.Width" type="System.Int32, mscorlib">
+    <value>70</value>
   </data>
   <data name="lvReport_2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 6</value>
@@ -1126,7 +1054,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnReport_2Export.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 392</value>
+    <value>435, 392</value>
   </data>
   <data name="btnReport_2Export.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
@@ -1187,42 +1115,6 @@
   </data>
   <data name="&gt;&gt;scReport_2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chReport_2Product.Text" xml:space="preserve">
-    <value>Product</value>
-  </data>
-  <data name="chReport_2Product.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
-  <data name="chReport_2Category.Text" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="chReport_2Category.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="chReport_2Unit.Text" xml:space="preserve">
-    <value>Unit</value>
-  </data>
-  <data name="chReport_2Unit.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="chReport_2StockIn.Text" xml:space="preserve">
-    <value>Stock In</value>
-  </data>
-  <data name="chReport_2StockIn.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="chReport_2StockOut.Text" xml:space="preserve">
-    <value>Stock Out</value>
-  </data>
-  <data name="chReport_2StockOut.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="chReport_2TotalStock.Text" xml:space="preserve">
-    <value>Total Stock</value>
-  </data>
-  <data name="chReport_2TotalStock.Width" type="System.Int32, mscorlib">
-    <value>70</value>
   </data>
   <data name="scReport_1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1677,6 +1569,72 @@
   <data name="lvReport_1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="chReport_1ID.Text" xml:space="preserve">
+    <value>Flow ID</value>
+  </data>
+  <data name="chReport_1ID.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chReport_1Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chReport_1Date.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1Supplier.Text" xml:space="preserve">
+    <value>Supplier / Customer</value>
+  </data>
+  <data name="chReport_1Supplier.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_1Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="chReport_1Product.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="chReport_1Unit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="chReport_1Unit.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="chReport_1Quantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="chReport_1Quantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1Quantity.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="chReport_1Price.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="chReport_1Price.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1Price.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1TotalPrice.Text" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="chReport_1TotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1TotalPrice.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.Text" xml:space="preserve">
+    <value>Total Price (TL)</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <data name="lvReport_1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 6</value>
   </data>
@@ -1708,7 +1666,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbReport_1OpenReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 395</value>
+    <value>243, 394</value>
   </data>
   <data name="cbReport_1OpenReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 17</value>
@@ -1799,60 +1757,6 @@
   </data>
   <data name="&gt;&gt;scReport_1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chReport_1ID.Text" xml:space="preserve">
-    <value>Flow ID</value>
-  </data>
-  <data name="chReport_1ID.Width" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chReport_1Date.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="chReport_1Date.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="chReport_1Supplier.Text" xml:space="preserve">
-    <value>Supplier / Customer</value>
-  </data>
-  <data name="chReport_1Supplier.Width" type="System.Int32, mscorlib">
-    <value>110</value>
-  </data>
-  <data name="chReport_1Product.Text" xml:space="preserve">
-    <value>Product</value>
-  </data>
-  <data name="chReport_1Product.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
-  <data name="chReport_1Unit.Text" xml:space="preserve">
-    <value>Unit</value>
-  </data>
-  <data name="chReport_1Unit.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="chReport_1Quantity.Text" xml:space="preserve">
-    <value>Quantity</value>
-  </data>
-  <data name="chReport_1Quantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="chReport_1Quantity.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="chReport_1Price.Text" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="chReport_1Price.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="chReport_1Price.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="chReport_1TotalPrice.Text" xml:space="preserve">
-    <value>Total Price</value>
-  </data>
-  <data name="chReport_1TotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
   </data>
   <data name="scReport_3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2071,7 +1975,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbReport_3OpenReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 395</value>
+    <value>282, 396</value>
   </data>
   <data name="cbReport_3OpenReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 17</value>
@@ -2094,11 +1998,38 @@
   <data name="&gt;&gt;cbReport_3OpenReport.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lvReport_3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chReport_3Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chReport_3Date.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_3CurrencyCode.Text" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="chReport_3CurrencyCode.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_3ForexBuying.Text" xml:space="preserve">
+    <value>Forex Buying</value>
+  </data>
+  <data name="chReport_3ForexBuying.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_3ForexSelling.Text" xml:space="preserve">
+    <value>Forex Selling</value>
+  </data>
+  <data name="chReport_3ForexSelling.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <data name="lvReport_3.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 6</value>
   </data>
   <data name="lvReport_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 379</value>
+    <value>537, 379</value>
   </data>
   <data name="lvReport_3.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -2122,7 +2053,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnReport_3Export.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 392</value>
+    <value>420, 392</value>
   </data>
   <data name="btnReport_3Export.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 23</value>
@@ -2184,63 +2115,9 @@
   <data name="&gt;&gt;scReport_3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="chReport_3Date.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="chReport_3Date.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="chReport_3CurrencyCode.Text" xml:space="preserve">
-    <value>Currency Code</value>
-  </data>
-  <data name="chReport_3CurrencyCode.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="chReport_3ForexBuying.Text" xml:space="preserve">
-    <value>Forex Buying</value>
-  </data>
-  <data name="chReport_3ForexBuying.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="chReport_3ForexSelling.Text" xml:space="preserve">
-    <value>Forex Selling</value>
-  </data>
-  <data name="chReport_3ForexSelling.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
   <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 24</value>
-  </data>
-  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mainMenu.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
-    <value>mainMenu</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="productToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="productToolStripMenuItem.Text" xml:space="preserve">
-    <value>Products</value>
-  </data>
   <data name="warehouseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 22</value>
   </data>
@@ -2265,11 +2142,11 @@
   <data name="categoryToolStripMenuItem.Text" xml:space="preserve">
     <value>Category</value>
   </data>
-  <data name="stockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+  <data name="productToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
   </data>
-  <data name="stockToolStripMenuItem.Text" xml:space="preserve">
-    <value>Inventory</value>
+  <data name="productToolStripMenuItem.Text" xml:space="preserve">
+    <value>Products</value>
   </data>
   <data name="stockInToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -2283,11 +2160,11 @@
   <data name="stockOutToolStripMenuItem.Text" xml:space="preserve">
     <value>Stock Out</value>
   </data>
-  <data name="reportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+  <data name="stockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
   </data>
-  <data name="reportsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reports</value>
+  <data name="stockToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inventory</value>
   </data>
   <data name="stockFlowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -2301,17 +2178,11 @@
   <data name="productCountToolStripMenuItem.Text" xml:space="preserve">
     <value>Product Count</value>
   </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="reportsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
   </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="reportsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reports</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 22</value>
@@ -2324,6 +2195,12 @@
   </data>
   <data name="turkishToolStripMenuItem.Text" xml:space="preserve">
     <value>Turkish</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
   <data name="preferencesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 22</value>
@@ -2343,6 +2220,36 @@
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 24</value>
+  </data>
+  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="mainMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
+    <value>mainMenu</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="scMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2354,6 +2261,126 @@
   </data>
   <data name="pnlMenuLeft.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="btnReportExchange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReportExchange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 90</value>
+  </data>
+  <data name="btnReportExchange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnReportExchange.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnReportExchange.Text" xml:space="preserve">
+    <value>Forex Exchange</value>
+  </data>
+  <data name="btnReportExchange.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnReportExchange.Name" xml:space="preserve">
+    <value>btnReportExchange</value>
+  </data>
+  <data name="&gt;&gt;btnReportExchange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReportExchange.Parent" xml:space="preserve">
+    <value>pnlMenuReport</value>
+  </data>
+  <data name="&gt;&gt;btnReportExchange.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnReportProductCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 61</value>
+  </data>
+  <data name="btnReportProductCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnReportProductCount.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnReportProductCount.Text" xml:space="preserve">
+    <value>Product Count</value>
+  </data>
+  <data name="btnReportProductCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductCount.Name" xml:space="preserve">
+    <value>btnReportProductCount</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductCount.Parent" xml:space="preserve">
+    <value>pnlMenuReport</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductCount.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnReportProductFlow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 32</value>
+  </data>
+  <data name="btnReportProductFlow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnReportProductFlow.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnReportProductFlow.Text" xml:space="preserve">
+    <value>Product Flow</value>
+  </data>
+  <data name="btnReportProductFlow.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductFlow.Name" xml:space="preserve">
+    <value>btnReportProductFlow</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductFlow.Parent" xml:space="preserve">
+    <value>pnlMenuReport</value>
+  </data>
+  <data name="&gt;&gt;btnReportProductFlow.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 26</value>
+  </data>
+  <data name="btnReports.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnReports.Text" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="btnReports.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnReports.Name" xml:space="preserve">
+    <value>btnReports</value>
+  </data>
+  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReports.Parent" xml:space="preserve">
+    <value>pnlMenuReport</value>
+  </data>
+  <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlMenuReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 182</value>
+  </data>
+  <data name="pnlMenuReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 112</value>
+  </data>
+  <data name="pnlMenuReport.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;pnlMenuReport.Name" xml:space="preserve">
     <value>pnlMenuReport</value>
@@ -2367,6 +2394,96 @@
   <data name="&gt;&gt;pnlMenuReport.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnStockOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 61</value>
+  </data>
+  <data name="btnStockOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnStockOut.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnStockOut.Text" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
+  <data name="btnStockOut.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnStockOut.Name" xml:space="preserve">
+    <value>btnStockOut</value>
+  </data>
+  <data name="&gt;&gt;btnStockOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockOut.Parent" xml:space="preserve">
+    <value>pnlMenuStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockOut.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnStockIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 32</value>
+  </data>
+  <data name="btnStockIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnStockIn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnStockIn.Text" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="btnStockIn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnStockIn.Name" xml:space="preserve">
+    <value>btnStockIn</value>
+  </data>
+  <data name="&gt;&gt;btnStockIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockIn.Parent" xml:space="preserve">
+    <value>pnlMenuStock</value>
+  </data>
+  <data name="&gt;&gt;btnStockIn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 26</value>
+  </data>
+  <data name="btnStock.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnStock.Text" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="btnStock.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnStock.Name" xml:space="preserve">
+    <value>btnStock</value>
+  </data>
+  <data name="&gt;&gt;btnStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStock.Parent" xml:space="preserve">
+    <value>pnlMenuStock</value>
+  </data>
+  <data name="&gt;&gt;btnStock.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlMenuStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 79</value>
+  </data>
+  <data name="pnlMenuStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 97</value>
+  </data>
+  <data name="pnlMenuStock.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;pnlMenuStock.Name" xml:space="preserve">
     <value>pnlMenuStock</value>
   </data>
@@ -2378,6 +2495,153 @@
   </data>
   <data name="&gt;&gt;pnlMenuStock.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnCategory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 119</value>
+  </data>
+  <data name="btnCategory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnCategory.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnCategory.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="btnCategory.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnCategory.Name" xml:space="preserve">
+    <value>btnCategory</value>
+  </data>
+  <data name="&gt;&gt;btnCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCategory.Parent" xml:space="preserve">
+    <value>pnlMenuProduct</value>
+  </data>
+  <data name="&gt;&gt;btnCategory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCustomer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 90</value>
+  </data>
+  <data name="btnCustomer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnCustomer.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnCustomer.Text" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="btnCustomer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnCustomer.Name" xml:space="preserve">
+    <value>btnCustomer</value>
+  </data>
+  <data name="&gt;&gt;btnCustomer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCustomer.Parent" xml:space="preserve">
+    <value>pnlMenuProduct</value>
+  </data>
+  <data name="&gt;&gt;btnCustomer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnSupplier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 61</value>
+  </data>
+  <data name="btnSupplier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnSupplier.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnSupplier.Text" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="btnSupplier.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnSupplier.Name" xml:space="preserve">
+    <value>btnSupplier</value>
+  </data>
+  <data name="&gt;&gt;btnSupplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSupplier.Parent" xml:space="preserve">
+    <value>pnlMenuProduct</value>
+  </data>
+  <data name="&gt;&gt;btnSupplier.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnWarehouse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 32</value>
+  </data>
+  <data name="btnWarehouse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
+  </data>
+  <data name="btnWarehouse.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnWarehouse.Text" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="btnWarehouse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnWarehouse.Name" xml:space="preserve">
+    <value>btnWarehouse</value>
+  </data>
+  <data name="&gt;&gt;btnWarehouse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWarehouse.Parent" xml:space="preserve">
+    <value>pnlMenuProduct</value>
+  </data>
+  <data name="&gt;&gt;btnWarehouse.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnProduct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 26</value>
+  </data>
+  <data name="btnProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnProduct.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="btnProduct.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnProduct.Name" xml:space="preserve">
+    <value>btnProduct</value>
+  </data>
+  <data name="&gt;&gt;btnProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnProduct.Parent" xml:space="preserve">
+    <value>pnlMenuProduct</value>
+  </data>
+  <data name="&gt;&gt;btnProduct.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pnlMenuProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pnlMenuProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 69</value>
+  </data>
+  <data name="pnlMenuProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pnlMenuProduct.Name" xml:space="preserve">
     <value>pnlMenuProduct</value>
@@ -2697,819 +2961,6 @@
   <data name="&gt;&gt;scMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pnlReport_3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlReport_3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlReport_3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlReport_3.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_3.Name" xml:space="preserve">
-    <value>pnlReport_3</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_3.Parent" xml:space="preserve">
-    <value>pnlReport</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pnlReport_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlReport_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlReport_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlReport_2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_2.Name" xml:space="preserve">
-    <value>pnlReport_2</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_2.Parent" xml:space="preserve">
-    <value>pnlReport</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pnlReport_1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlReport_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlReport_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlReport_1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_1.Name" xml:space="preserve">
-    <value>pnlReport_1</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_1.Parent" xml:space="preserve">
-    <value>pnlReport</value>
-  </data>
-  <data name="&gt;&gt;pnlReport_1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pnlReport.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlReport.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pnlReport.Name" xml:space="preserve">
-    <value>pnlReport</value>
-  </data>
-  <data name="&gt;&gt;pnlReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlReport.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;pnlReport.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="pnlStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlStock.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pnlStock.Name" xml:space="preserve">
-    <value>pnlStock</value>
-  </data>
-  <data name="&gt;&gt;pnlStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlStock.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;pnlStock.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilterClear.Name" xml:space="preserve">
-    <value>btnProductFilterClear</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilterClear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilterClear.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilterClear.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilter.Name" xml:space="preserve">
-    <value>btnProductFilter</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilter.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProductFilter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbProductFilter.Name" xml:space="preserve">
-    <value>tbProductFilter</value>
-  </data>
-  <data name="&gt;&gt;tbProductFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbProductFilter.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;tbProductFilter.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Name" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnProductAdd.Name" xml:space="preserve">
-    <value>btnProductAdd</value>
-  </data>
-  <data name="&gt;&gt;btnProductAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProductAdd.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProductAdd.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnProductEdit.Name" xml:space="preserve">
-    <value>btnProductEdit</value>
-  </data>
-  <data name="&gt;&gt;btnProductEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProductEdit.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProductEdit.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnProductDelete.Name" xml:space="preserve">
-    <value>btnProductDelete</value>
-  </data>
-  <data name="&gt;&gt;btnProductDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProductDelete.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProductDelete.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lvProductList.Name" xml:space="preserve">
-    <value>lvProductList</value>
-  </data>
-  <data name="&gt;&gt;lvProductList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvProductList.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;lvProductList.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pnlProduct.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pnlProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>736, 421</value>
-  </data>
-  <data name="pnlProduct.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pnlProduct.Name" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;pnlProduct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlProduct.Parent" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;pnlProduct.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
-    <value>scMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
-    <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>937, 421</value>
-  </data>
-  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
-  <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
-    <value>scMain</value>
-  </data>
-  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Name" xml:space="preserve">
-    <value>btnReportExchange</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Name" xml:space="preserve">
-    <value>btnReportProductCount</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Name" xml:space="preserve">
-    <value>btnReportProductFlow</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Name" xml:space="preserve">
-    <value>btnReports</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pnlMenuReport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 182</value>
-  </data>
-  <data name="pnlMenuReport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 112</value>
-  </data>
-  <data name="pnlMenuReport.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuReport.Name" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuReport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuReport.Parent" xml:space="preserve">
-    <value>pnlMenuLeft</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuReport.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnReportExchange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnReportExchange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 90</value>
-  </data>
-  <data name="btnReportExchange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnReportExchange.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnReportExchange.Text" xml:space="preserve">
-    <value>Forex Exchange</value>
-  </data>
-  <data name="btnReportExchange.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Name" xml:space="preserve">
-    <value>btnReportExchange</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportExchange.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnReportProductCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 61</value>
-  </data>
-  <data name="btnReportProductCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnReportProductCount.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnReportProductCount.Text" xml:space="preserve">
-    <value>Product Count</value>
-  </data>
-  <data name="btnReportProductCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Name" xml:space="preserve">
-    <value>btnReportProductCount</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductCount.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnReportProductFlow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 32</value>
-  </data>
-  <data name="btnReportProductFlow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnReportProductFlow.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnReportProductFlow.Text" xml:space="preserve">
-    <value>Product Flow</value>
-  </data>
-  <data name="btnReportProductFlow.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Name" xml:space="preserve">
-    <value>btnReportProductFlow</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReportProductFlow.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnReports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 26</value>
-  </data>
-  <data name="btnReports.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnReports.Text" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="btnReports.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Name" xml:space="preserve">
-    <value>btnReports</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnReports.Parent" xml:space="preserve">
-    <value>pnlMenuReport</value>
-  </data>
-  <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Name" xml:space="preserve">
-    <value>btnStockOut</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Name" xml:space="preserve">
-    <value>btnStockIn</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Name" xml:space="preserve">
-    <value>btnStock</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStock.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="pnlMenuStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 79</value>
-  </data>
-  <data name="pnlMenuStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 97</value>
-  </data>
-  <data name="pnlMenuStock.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuStock.Name" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuStock.Parent" xml:space="preserve">
-    <value>pnlMenuLeft</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuStock.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnStockOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 61</value>
-  </data>
-  <data name="btnStockOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnStockOut.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnStockOut.Text" xml:space="preserve">
-    <value>Stock Out</value>
-  </data>
-  <data name="btnStockOut.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Name" xml:space="preserve">
-    <value>btnStockOut</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStockOut.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnStockIn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 32</value>
-  </data>
-  <data name="btnStockIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnStockIn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnStockIn.Text" xml:space="preserve">
-    <value>Stock In</value>
-  </data>
-  <data name="btnStockIn.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Name" xml:space="preserve">
-    <value>btnStockIn</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStockIn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnStock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 26</value>
-  </data>
-  <data name="btnStock.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnStock.Text" xml:space="preserve">
-    <value>Inventory</value>
-  </data>
-  <data name="btnStock.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Name" xml:space="preserve">
-    <value>btnStock</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnStock.Parent" xml:space="preserve">
-    <value>pnlMenuStock</value>
-  </data>
-  <data name="&gt;&gt;btnStock.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Name" xml:space="preserve">
-    <value>btnCategory</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Name" xml:space="preserve">
-    <value>btnCustomer</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Name" xml:space="preserve">
-    <value>btnSupplier</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Name" xml:space="preserve">
-    <value>btnWarehouse</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Name" xml:space="preserve">
-    <value>btnProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pnlMenuProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pnlMenuProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 69</value>
-  </data>
-  <data name="pnlMenuProduct.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuProduct.Name" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuProduct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuProduct.Parent" xml:space="preserve">
-    <value>pnlMenuLeft</value>
-  </data>
-  <data name="&gt;&gt;pnlMenuProduct.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnCategory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 119</value>
-  </data>
-  <data name="btnCategory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnCategory.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnCategory.Text" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="btnCategory.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Name" xml:space="preserve">
-    <value>btnCategory</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnCategory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCustomer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 90</value>
-  </data>
-  <data name="btnCustomer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnCustomer.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnCustomer.Text" xml:space="preserve">
-    <value>Customer</value>
-  </data>
-  <data name="btnCustomer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Name" xml:space="preserve">
-    <value>btnCustomer</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnCustomer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnSupplier.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 61</value>
-  </data>
-  <data name="btnSupplier.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnSupplier.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnSupplier.Text" xml:space="preserve">
-    <value>Supplier</value>
-  </data>
-  <data name="btnSupplier.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Name" xml:space="preserve">
-    <value>btnSupplier</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnSupplier.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnWarehouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 32</value>
-  </data>
-  <data name="btnWarehouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
-  <data name="btnWarehouse.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnWarehouse.Text" xml:space="preserve">
-    <value>Warehouse</value>
-  </data>
-  <data name="btnWarehouse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Name" xml:space="preserve">
-    <value>btnWarehouse</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnWarehouse.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnProduct.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 26</value>
-  </data>
-  <data name="btnProduct.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnProduct.Text" xml:space="preserve">
-    <value>Products</value>
-  </data>
-  <data name="btnProduct.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Name" xml:space="preserve">
-    <value>btnProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.Parent" xml:space="preserve">
-    <value>pnlMenuProduct</value>
-  </data>
-  <data name="&gt;&gt;btnProduct.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="btnProductFilterClear.Location" type="System.Drawing.Point, System.Drawing">
     <value>279, 4</value>
   </data>
@@ -3581,186 +3032,6 @@
   </data>
   <data name="gbProductInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcodeT.Name" xml:space="preserve">
-    <value>lblProductBarcodeT</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcodeT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcodeT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcodeT.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcode.Name" xml:space="preserve">
-    <value>lblProductBarcode</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcode.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductBarcode.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnitT.Name" xml:space="preserve">
-    <value>lblProductUnitT</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnitT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnitT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnitT.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnit.Name" xml:space="preserve">
-    <value>lblProductUnit</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnit.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductUnit.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblProductDescT.Name" xml:space="preserve">
-    <value>lblProductDescT</value>
-  </data>
-  <data name="&gt;&gt;lblProductDescT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductDescT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductDescT.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblProductDesc.Name" xml:space="preserve">
-    <value>lblProductDesc</value>
-  </data>
-  <data name="&gt;&gt;lblProductDesc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductDesc.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductDesc.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pbProductImage.Name" xml:space="preserve">
-    <value>pbProductImage</value>
-  </data>
-  <data name="&gt;&gt;pbProductImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbProductImage.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;pbProductImage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategoryT.Name" xml:space="preserve">
-    <value>lblProductCategoryT</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategoryT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategoryT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategoryT.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategory.Name" xml:space="preserve">
-    <value>lblProductCategory</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategory.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductCategory.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblProductNameT.Name" xml:space="preserve">
-    <value>lblProductNameT</value>
-  </data>
-  <data name="&gt;&gt;lblProductNameT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductNameT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductNameT.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;lblProductIDT.Name" xml:space="preserve">
-    <value>lblProductIDT</value>
-  </data>
-  <data name="&gt;&gt;lblProductIDT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductIDT.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductIDT.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lblProductID.Name" xml:space="preserve">
-    <value>lblProductID</value>
-  </data>
-  <data name="&gt;&gt;lblProductID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductID.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductID.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;lblProductName.Name" xml:space="preserve">
-    <value>lblProductName</value>
-  </data>
-  <data name="&gt;&gt;lblProductName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblProductName.Parent" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;lblProductName.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="gbProductInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 3</value>
-  </data>
-  <data name="gbProductInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 418</value>
-  </data>
-  <data name="gbProductInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="gbProductInfo.Text" xml:space="preserve">
-    <value>Product Info</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Name" xml:space="preserve">
-    <value>gbProductInfo</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.Parent" xml:space="preserve">
-    <value>pnlProduct</value>
-  </data>
-  <data name="&gt;&gt;gbProductInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblProductBarcodeT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -4134,6 +3405,30 @@
   <data name="&gt;&gt;lblProductName.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="gbProductInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 3</value>
+  </data>
+  <data name="gbProductInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 418</value>
+  </data>
+  <data name="gbProductInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="gbProductInfo.Text" xml:space="preserve">
+    <value>Product Info</value>
+  </data>
+  <data name="&gt;&gt;gbProductInfo.Name" xml:space="preserve">
+    <value>gbProductInfo</value>
+  </data>
+  <data name="&gt;&gt;gbProductInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbProductInfo.Parent" xml:space="preserve">
+    <value>pnlProduct</value>
+  </data>
+  <data name="&gt;&gt;gbProductInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnProductAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -4251,6 +3546,24 @@
   <metadata name="cmsProduct.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>135, 17</value>
   </metadata>
+  <data name="editProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
+  </data>
+  <data name="editProductToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit Product</value>
+  </data>
+  <data name="deleteProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
+  </data>
+  <data name="deleteProductToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete Product</value>
+  </data>
+  <data name="duplicateProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
+  </data>
+  <data name="duplicateProductToolStripMenuItem.Text" xml:space="preserve">
+    <value>Duplicate Product</value>
+  </data>
   <data name="cmsProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 70</value>
   </data>
@@ -4281,74 +3594,188 @@
   <data name="&gt;&gt;lvProductList.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="editProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+  <data name="pnlProduct.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="editProductToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edit Product</value>
+  <data name="pnlProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="deleteProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+  <data name="pnlProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
   </data>
-  <data name="deleteProductToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete Product</value>
+  <data name="pnlProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="duplicateProductToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+  <data name="&gt;&gt;pnlProduct.Name" xml:space="preserve">
+    <value>pnlProduct</value>
   </data>
-  <data name="duplicateProductToolStripMenuItem.Text" xml:space="preserve">
-    <value>Duplicate Product</value>
+  <data name="&gt;&gt;pnlProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlProduct.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pnlProduct.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlReport_1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
+  </data>
+  <data name="pnlReport_1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Name" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlReport_3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
+  </data>
+  <data name="pnlReport_3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Name" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlReport_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
+  </data>
+  <data name="pnlReport_2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Name" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlReport.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
+  </data>
+  <data name="pnlReport.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Name" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>736, 421</value>
+  </data>
+  <data name="pnlStock.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Name" xml:space="preserve">
+    <value>pnlStock</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Parent" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Name" xml:space="preserve">
+    <value>scMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.Parent" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>937, 421</value>
+  </data>
+  <data name="scMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="scMain.SplitterWidth" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="scMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;scMain.Name" xml:space="preserve">
+    <value>scMain</value>
+  </data>
+  <data name="&gt;&gt;scMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;scMain.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Name" xml:space="preserve">
-    <value>lblMessage</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblMessage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 27</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="lblMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4406,6 +3833,30 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 27</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="ssBottomCurrency.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>402, 17</value>
@@ -6554,6 +6005,12 @@
   <data name="&gt;&gt;stockProductTotalPrice.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;stockProductTotalLocalPrice.Name" xml:space="preserve">
+    <value>stockProductTotalLocalPrice</value>
+  </data>
+  <data name="&gt;&gt;stockProductTotalLocalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;chReport_2Product.Name" xml:space="preserve">
     <value>chReport_2Product</value>
   </data>
@@ -6636,6 +6093,12 @@
     <value>chReport_1TotalPrice</value>
   </data>
   <data name="&gt;&gt;chReport_1TotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalLocalPrice.Name" xml:space="preserve">
+    <value>chReport_1TotalLocalPrice</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalLocalPrice.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chReport_3Date.Name" xml:space="preserve">

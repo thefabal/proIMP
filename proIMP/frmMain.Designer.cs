@@ -60,6 +60,7 @@
             this.stockProductQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockProductPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockProductTotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.stockProductTotalLocalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.scReport_2 = new System.Windows.Forms.SplitContainer();
             this.lblReport_2Warehouse = new System.Windows.Forms.Label();
             this.cbReport_2Warehouse = new System.Windows.Forms.ComboBox();
@@ -107,6 +108,7 @@
             this.chReport_1Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chReport_1Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chReport_1TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chReport_1TotalLocalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbReport_1OpenReport = new System.Windows.Forms.CheckBox();
             this.btnReport_1Export = new System.Windows.Forms.Button();
             this.scReport_3 = new System.Windows.Forms.SplitContainer();
@@ -171,9 +173,9 @@
             this.tbCountWarehouse = new System.Windows.Forms.TextBox();
             this.lblTotalWarehouse = new System.Windows.Forms.Label();
             this.pnlReport = new System.Windows.Forms.Panel();
+            this.pnlReport_1 = new System.Windows.Forms.Panel();
             this.pnlReport_3 = new System.Windows.Forms.Panel();
             this.pnlReport_2 = new System.Windows.Forms.Panel();
-            this.pnlReport_1 = new System.Windows.Forms.Panel();
             this.pnlStock = new System.Windows.Forms.Panel();
             this.pnlProduct = new System.Windows.Forms.Panel();
             this.btnProductFilterClear = new System.Windows.Forms.Button();
@@ -239,9 +241,9 @@
             this.pnlMenuStock.SuspendLayout();
             this.pnlMenuProduct.SuspendLayout();
             this.pnlReport.SuspendLayout();
+            this.pnlReport_1.SuspendLayout();
             this.pnlReport_3.SuspendLayout();
             this.pnlReport_2.SuspendLayout();
-            this.pnlReport_1.SuspendLayout();
             this.pnlStock.SuspendLayout();
             this.pnlProduct.SuspendLayout();
             this.gbProductInfo.SuspendLayout();
@@ -337,13 +339,17 @@
             this.lvStockFlow.FullRowSelect = true;
             this.lvStockFlow.MultiSelect = false;
             this.lvStockFlow.Name = "lvStockFlow";
+            this.lvStockFlow.OwnerDraw = true;
             this.lvStockFlow.UseCompatibleStateImageBehavior = false;
             this.lvStockFlow.View = System.Windows.Forms.View.Details;
             this.lvStockFlow.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ListViewOrder_ColumnClick);
+            this.lvStockFlow.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listView_DrawColumnHeader);
+            this.lvStockFlow.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listView_DrawItem);
             this.lvStockFlow.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvStockFlow_ItemChecked);
             this.lvStockFlow.SelectedIndexChanged += new System.EventHandler(this.lvStockFlow_SelectedIndexChanged);
             this.lvStockFlow.Enter += new System.EventHandler(this.ListViewFocus_Enter);
             this.lvStockFlow.Leave += new System.EventHandler(this.ListViewFocus_Leave);
+            this.lvStockFlow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listView_MouseMove);
             // 
             // stockFlowType
             // 
@@ -430,16 +436,21 @@
             this.stockProductUnit,
             this.stockProductQuantity,
             this.stockProductPrice,
-            this.stockProductTotalPrice});
+            this.stockProductTotalPrice,
+            this.stockProductTotalLocalPrice});
             this.lvStockProductList.FullRowSelect = true;
             this.lvStockProductList.MultiSelect = false;
             this.lvStockProductList.Name = "lvStockProductList";
+            this.lvStockProductList.OwnerDraw = true;
             this.lvStockProductList.UseCompatibleStateImageBehavior = false;
             this.lvStockProductList.View = System.Windows.Forms.View.Details;
             this.lvStockProductList.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ListViewOrder_ColumnClick);
+            this.lvStockProductList.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listView_DrawColumnHeader);
+            this.lvStockProductList.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listView_DrawItem);
             this.lvStockProductList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvStockProductList_ItemChecked);
             this.lvStockProductList.Enter += new System.EventHandler(this.ListViewFocus_Enter);
             this.lvStockProductList.Leave += new System.EventHandler(this.ListViewFocus_Leave);
+            this.lvStockProductList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listView_MouseMove);
             // 
             // stockProductName
             // 
@@ -464,6 +475,10 @@
             // stockProductTotalPrice
             // 
             resources.ApplyResources(this.stockProductTotalPrice, "stockProductTotalPrice");
+            // 
+            // stockProductTotalLocalPrice
+            // 
+            resources.ApplyResources(this.stockProductTotalLocalPrice, "stockProductTotalLocalPrice");
             // 
             // scReport_2
             // 
@@ -756,7 +771,8 @@
             this.chReport_1Unit,
             this.chReport_1Quantity,
             this.chReport_1Price,
-            this.chReport_1TotalPrice});
+            this.chReport_1TotalPrice,
+            this.chReport_1TotalLocalPrice});
             this.lvReport_1.FullRowSelect = true;
             this.lvReport_1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvReport_1.HideSelection = false;
@@ -796,6 +812,10 @@
             // chReport_1TotalPrice
             // 
             resources.ApplyResources(this.chReport_1TotalPrice, "chReport_1TotalPrice");
+            // 
+            // chReport_1TotalLocalPrice
+            // 
+            resources.ApplyResources(this.chReport_1TotalLocalPrice, "chReport_1TotalLocalPrice");
             // 
             // cbReport_1OpenReport
             // 
@@ -883,6 +903,7 @@
             // 
             // lvReport_3
             // 
+            resources.ApplyResources(this.lvReport_3, "lvReport_3");
             this.lvReport_3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chReport_3Date,
             this.chReport_3CurrencyCode,
@@ -891,7 +912,6 @@
             this.lvReport_3.FullRowSelect = true;
             this.lvReport_3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvReport_3.HideSelection = false;
-            resources.ApplyResources(this.lvReport_3, "lvReport_3");
             this.lvReport_3.MultiSelect = false;
             this.lvReport_3.Name = "lvReport_3";
             this.lvReport_3.UseCompatibleStateImageBehavior = false;
@@ -1074,9 +1094,9 @@
             // 
             // scMain.Panel2
             // 
+            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             this.scMain.Panel2.Controls.Add(this.pnlReport);
             this.scMain.Panel2.Controls.Add(this.pnlStock);
-            this.scMain.Panel2.Controls.Add(this.pnlProduct);
             // 
             // pnlMenuLeft
             // 
@@ -1265,11 +1285,17 @@
             // 
             // pnlReport
             // 
+            this.pnlReport.Controls.Add(this.pnlReport_1);
             this.pnlReport.Controls.Add(this.pnlReport_3);
             this.pnlReport.Controls.Add(this.pnlReport_2);
-            this.pnlReport.Controls.Add(this.pnlReport_1);
             resources.ApplyResources(this.pnlReport, "pnlReport");
             this.pnlReport.Name = "pnlReport";
+            // 
+            // pnlReport_1
+            // 
+            this.pnlReport_1.Controls.Add(this.scReport_1);
+            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
+            this.pnlReport_1.Name = "pnlReport_1";
             // 
             // pnlReport_3
             // 
@@ -1282,12 +1308,6 @@
             this.pnlReport_2.Controls.Add(this.scReport_2);
             resources.ApplyResources(this.pnlReport_2, "pnlReport_2");
             this.pnlReport_2.Name = "pnlReport_2";
-            // 
-            // pnlReport_1
-            // 
-            this.pnlReport_1.Controls.Add(this.scReport_1);
-            resources.ApplyResources(this.pnlReport_1, "pnlReport_1");
-            this.pnlReport_1.Name = "pnlReport_1";
             // 
             // pnlStock
             // 
@@ -1578,9 +1598,9 @@
             this.pnlMenuStock.ResumeLayout(false);
             this.pnlMenuProduct.ResumeLayout(false);
             this.pnlReport.ResumeLayout(false);
+            this.pnlReport_1.ResumeLayout(false);
             this.pnlReport_3.ResumeLayout(false);
             this.pnlReport_2.ResumeLayout(false);
-            this.pnlReport_1.ResumeLayout(false);
             this.pnlStock.ResumeLayout(false);
             this.pnlProduct.ResumeLayout(false);
             this.pnlProduct.PerformLayout();
@@ -1777,6 +1797,8 @@
         private System.Windows.Forms.StatusStrip ssBottomCurrency;
         private System.Windows.Forms.ComboBox cbReport_3Currency;
         private System.Windows.Forms.Label lblReport_3Currency;
+        private System.Windows.Forms.ColumnHeader chReport_1TotalLocalPrice;
+        private System.Windows.Forms.ColumnHeader stockProductTotalLocalPrice;
     }
 }
 

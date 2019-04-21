@@ -53,12 +53,20 @@ namespace proIMP {
         private void btnSave_Click(object sender, EventArgs e) {
             if( tbWarehouseName.Text.Length > 0 ) {
                 try {
-                    SQLiteCommand dbCommand;
+                    SQLiteCommand dbCommand = new SQLiteCommand() {
+                        Connection = frmMain.sqlCon
+                    };
+
                     if( tbWarehouseID.Text.Length == 0 ) {
-                        dbCommand = new SQLiteCommand("INSERT INTO warehouse (warehouse_id, warehouse_name, warehouse_desc) VALUES(NULL, '" + tbWarehouseName.Text.Replace("'", "''") + "', '" + tbWarehouseDesc.Text.Replace("'", "''") + "')", frmMain.sqlCon);
+                        dbCommand.CommandText = "INSERT INTO warehouse (warehouse_name, warehouse_desc) VALUES(@warehouse_name, @warehouse_desc)";
                     } else {
-                        dbCommand = new SQLiteCommand("UPDATE warehouse SET warehouse_name = '" + tbWarehouseName.Text.Replace("'", "''") + "', warehouse_desc = '" + tbWarehouseDesc.Text.Replace("'", "''") + "' WHERE warehouse_id = '" + tbWarehouseID.Text + "'", frmMain.sqlCon);
+                        dbCommand.CommandText = "UPDATE warehouse SET warehouse_name = @warehouse_name, warehouse_desc = @warehouse_desc WHERE warehouse_id = @warehouse_id";
                     }
+
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@warehouse_id", tbWarehouseID.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@warehouse_name", tbWarehouseName.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@warehouse_desc", tbWarehouseDesc.Text ) );
+
                     dbCommand.ExecuteNonQuery();
                 } catch {
                     MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveWarehouse", frmMain.culInfo ) );
@@ -94,17 +102,19 @@ namespace proIMP {
 
         private void btnEdit_Click(object sender, EventArgs e) {
             if( lvWarehouse.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("SELECT warehouse_id, warehouse_name, warehouse_desc FROM warehouse WHERE warehouse_id = '" + lvWarehouse.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT warehouse_id, warehouse_name, warehouse_desc FROM warehouse WHERE warehouse_id = @warehouse_id", frmMain.sqlCon);
+                dbCommand.Parameters.Add( new SQLiteParameter( "@warehouse_id", lvWarehouse.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                while( dbReader.Read() ) {
-                    tbWarehouseID.Text = dbReader[0].ToString();
-                    tbWarehouseName.Text = dbReader[1].ToString();
-                    tbWarehouseDesc.Text = dbReader[2].ToString();
+                if( dbReader.HasRows ) {
+                    dbReader.Read();
+
+                    tbWarehouseID.Text = dbReader[ 0 ].ToString();
+                    tbWarehouseName.Text = dbReader[ 1 ].ToString();
+                    tbWarehouseDesc.Text = dbReader[ 2 ].ToString();
 
                     lvWarehouse.SelectedItems.Clear();
-
-                    break;
                 }
             }
         }
@@ -115,7 +125,9 @@ namespace proIMP {
 
         private void btnDelete_Click(object sender, EventArgs e) {
             if (lvWarehouse.SelectedItems.Count > 0) {
-                SQLiteCommand dbCommand = new SQLiteCommand("DELETE FROM warehouse WHERE warehouse_id = '" + lvWarehouse.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                SQLiteCommand dbCommand = new SQLiteCommand( "DELETE FROM warehouse WHERE warehouse_id = @warehouse_id", frmMain.sqlCon);
+                dbCommand.Parameters.Add( new SQLiteParameter( "@warehouse_id", lvWarehouse.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 dbCommand.ExecuteNonQuery();
 
                 lvWarehouse.SelectedItems.Clear();

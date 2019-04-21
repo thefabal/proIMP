@@ -49,6 +49,7 @@ namespace proIMP {
         public static frmPreferences preferences;
 
         public static settings setting = new settings();
+        public static exchange_rates er = new exchange_rates();
 
         /**
          *  
@@ -62,9 +63,12 @@ namespace proIMP {
          *  2: string
          *  3: date
         **/
-        private Type[] sortProduct = new Type[] { typeof( string ), typeof( int ), typeof( string ), typeof( int ), typeof( double )};
-        private Type[] sortStock = new Type[] { typeof( string ), null, typeof( DateTime ), typeof( string ), typeof( string ), typeof( string ), typeof( double ), null };
-        private Type[] sortStockProduct = new Type[] { typeof( string ), typeof( int ), typeof( string ), typeof( double ), typeof( double ), typeof( double )};
+        private readonly Type[] sortProduct = new Type[] { typeof( string ), typeof( int ), typeof( string ), typeof( int ), typeof( double )};
+        private readonly Type[] sortStock = new Type[] { typeof( string ), null, typeof( DateTime ), typeof( string ), typeof( string ), typeof( string ), typeof( double ), null };
+        private readonly Type[] sortStockProduct = new Type[] { typeof( string ), typeof( int ), typeof( string ), typeof( double ), typeof( double ), typeof( double )};
+
+        readonly Dictionary<string, bool> hot = new Dictionary<string, bool>();
+        readonly System.Reflection.MethodInfo invalidateHeaders;
 
         public frmMain() {
             InitializeComponent();
@@ -81,10 +85,17 @@ namespace proIMP {
             preferences = new frmPreferences( this );
 
             this.MinimumSize = new Size( this.Size.Width, this.Size.Height );
+
+            invalidateHeaders = typeof( ListView ).GetMethod( "InvalidateColumnHeaders", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance );
         }
 
         private void frmMain_Load( object sender, EventArgs e ) {
             lvProductList_SelectedIndexChanged( null, null );
+
+            lvReport_1.Location = new Point( 4, 6 );
+            lvReport_1.Size = new Size( 495, 379 );
+            btnReport_1Export.Location = new Point( 378, 392 );
+            cbReport_1OpenReport.Location = new Point( 240, 396 );
 
             lvReport_2.Location = lvReport_1.Location;
             lvReport_3.Location = lvReport_1.Location;
@@ -225,7 +236,7 @@ namespace proIMP {
             plProductID.Text = resMan.GetString( "plProductID", culInfo );
             plProductCategory.Text = resMan.GetString( "plProductCategory", culInfo );
             plProductStock.Text = resMan.GetString( "plProductStock", culInfo );
-            plProductPrice.Text = resMan.GetString( "plProductPrice", culInfo );
+            plProductPrice.Text = resMan.GetString( "plProductPrice", culInfo ) + " (" + setting.localExchange + ")";
 
             /**
              * Product Info
@@ -255,7 +266,7 @@ namespace proIMP {
             stockFlowSupplier.Text = resMan.GetString( "stockFlowSupplier", culInfo );
             stockFlowDescription.Text = resMan.GetString( "stockFlowDescription", culInfo );
             stockFlowQuantity.Text = resMan.GetString( "stockFlowQuantity", culInfo );
-            stockFlowTotalPrice.Text = resMan.GetString( "stockTotalPrice", culInfo );
+            stockFlowTotalPrice.Text = resMan.GetString( "stockTotalPrice", culInfo ) + " (" + setting.localExchange + ")";
 
             btnStockFlowAdd.Text = resMan.GetString( "btnAdd", culInfo );
             addStockInToolStripMenuItem.Text = btnStockIn.Text;
@@ -268,6 +279,7 @@ namespace proIMP {
             stockProductQuantity.Text = resMan.GetString( "stockProductQuantity", culInfo );
             stockProductPrice.Text = resMan.GetString( "stockProductPrice", culInfo );
             stockProductTotalPrice.Text = resMan.GetString( "stockTotalPrice", culInfo );
+            stockProductTotalLocalPrice.Text = stockProductTotalPrice.Text + " (" + frmMain.setting.localExchange + ")";
 
             btnStockProductAdd.Text = resMan.GetString( "btnAdd", culInfo );
             btnStockProductEdit.Text = resMan.GetString( "btnEdit", culInfo );
@@ -295,6 +307,7 @@ namespace proIMP {
             chReport_1Quantity.Text = stockProductQuantity.Text;
             chReport_1Price.Text = stockProductPrice.Text;
             chReport_1TotalPrice.Text = stockProductTotalPrice.Text;
+            chReport_1TotalLocalPrice.Text = stockProductTotalPrice.Text + "( " + setting.localExchange + " )";
 
             btnReport_1Export.Text = resMan.GetString( "btnReport_1Export", culInfo );
             cbReport_1OpenReport.Text = resMan.GetString( "cbReport_1OpenReport", culInfo );
@@ -420,7 +433,7 @@ namespace proIMP {
         }
 
         private void btnStockIn_Click( object sender, EventArgs e ) {
-            stockin.strStockFlowID = string.Empty;
+            stockin.stockFlowID = string.Empty;
 
             if( stockin.ShowDialog() == DialogResult.OK ) {
 
@@ -430,7 +443,7 @@ namespace proIMP {
         }
 
         private void btnStockOut_Click( object sender, EventArgs e ) {
-            stockout.strStockFlowID = string.Empty;
+            stockout.stockFlowID = string.Empty;
 
             if( stockout.ShowDialog() == DialogResult.OK ) {
 
@@ -684,7 +697,7 @@ namespace proIMP {
         }
 
         private void btnProductAdd_Click( object sender, EventArgs e ) {
-            product.strProductID = string.Empty;
+            product.productID = string.Empty;
             if( product.ShowDialog() == DialogResult.OK ) {
 
             }
@@ -716,6 +729,8 @@ namespace proIMP {
                     deleteProduct( lvProductList.Items[ i ].SubItems[ 1 ].Text );
                 }
             }
+
+            checkDB();
         }
 
         private void deleteProductToolStripMenuItem_Click( object sender, EventArgs e ) {
@@ -754,9 +769,10 @@ namespace proIMP {
                 return;
             }
 
-            string product_id = string.Empty;
             dbCommand.Transaction = sqlCon.BeginTransaction();
             dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + product_name.Replace( "'", "''" ) + " (1)', '" + product_catid + "', '" + product_desc.Replace( "'", "''" ) + "', '" + product_unit + "', '" + product_barcode.Replace( "'", "''" ) + "', '" + product_imageid + "')";
+
+            string product_id;
             try {
                 dbCommand.ExecuteNonQuery();
 
@@ -788,9 +804,9 @@ namespace proIMP {
         private void getProductList( string filter = "" ) {
             SQLiteCommand dbCommand = frmMain.sqlCon.CreateCommand();
             if( filter.Length > 0 ) {
-                dbCommand.CommandText = "SELECT product_id, product_name, category_name, product_count, sflow_price FROM product_list WHERE product_name LIKE '%" + filter + "%' ORDER BY ";
+                dbCommand.CommandText = "SELECT product_id, product_name, category_name, product_count, product_price FROM product_list WHERE product_name LIKE '%" + filter + "%' ORDER BY ";
             } else {
-                dbCommand.CommandText = "SELECT product_id, product_name, category_name, product_count, sflow_price FROM product_list ORDER BY ";
+                dbCommand.CommandText = "SELECT product_id, product_name, category_name, product_count, product_price FROM product_list ORDER BY ";
             }
 
             if( setting.productOrder == 0 ) {
@@ -810,7 +826,7 @@ namespace proIMP {
                         dbReader[ "product_id" ].ToString(),
                         dbReader[ "category_name" ].ToString(),
                         dbReader[ "product_count" ].ToString(),
-                        ( dbReader[ "sflow_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_price" ].ToString() ).ToString( "0.000" ) ) :( "" )
+                        ( dbReader[ "product_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "product_price" ].ToString() ).ToString( "0.000" ) ) :( "" )
                     } );
 
                     lvProductList.Items.Add( lvi );
@@ -823,7 +839,7 @@ namespace proIMP {
         }
 
         private bool editProduct( string strProductID ) {
-            product.strProductID = strProductID;
+            product.productID = strProductID;
             if( product.ShowDialog() == DialogResult.OK ) {
                 return true;
             } else {
@@ -856,25 +872,40 @@ namespace proIMP {
 
         private void lvStockFlow_SelectedIndexChanged( object sender, EventArgs e ) {
             lvStockProductList.Items.Clear();
-            if( lvStockFlow.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT t1.sflow_id, t2.product_name, t2.product_unit, ABS(t1.sflow_quantity) AS sflow_quantity, t1.sflow_price FROM stock_flow AS t1 LEFT JOIN product AS t2 ON t1.sflow_productid = t2.product_id WHERE t1.sflow_sid = '" + lvStockFlow.SelectedItems[ 0 ].SubItems[ 1 ].Text + "' ORDER BY t2.product_name", sqlCon );
-                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                double dQuantity = 0;
-                double dPrice = 0;
-                double dTotalPrice = 0;
+            if( lvStockFlow.SelectedItems.Count > 0 ) {
+                SQLiteCommand dbCommand = new SQLiteCommand( sqlCon );
+                SQLiteDataReader dbReader;
+
+                dbCommand.CommandText = "SELECT t1.sflow_id, t2.product_name, t2.product_unit, ABS(t1.sflow_quantity) AS sflow_quantity, t1.sflow_price, t1.sflow_priceexchange FROM stock_flow AS t1 LEFT JOIN product AS t2 ON t1.sflow_productid = t2.product_id WHERE t1.sflow_sid = @sflow_sid ORDER BY t2.product_name";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_sid", lvStockFlow.SelectedItems[ 0 ].SubItems[ 1 ].Text ) );
+
+                dbReader = dbCommand.ExecuteReader();
+
                 double dGrandPrice = 0;
                 while( dbReader.Read() ) {
-                    dQuantity = Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() );
-                    dPrice = Convert.ToDouble( dbReader[ "sflow_price" ].ToString() );
-                    dTotalPrice = dQuantity * dPrice;
-                    dGrandPrice += dTotalPrice;
+                    double dQuantity = Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() );
+                    double dPrice = Convert.ToDouble( dbReader[ "sflow_price" ].ToString() );
+                    double dTotalPrice = dQuantity * dPrice;
+                    double dTotalLocalPrice = ( dbReader["sflow_priceexchange"].ToString() == setting.localExchange ) ? (dTotalPrice) : (dTotalPrice * er.exchanges[dbReader["sflow_priceexchange"].ToString()].ForexSelling );
 
-                    ListViewItem lvi = new ListViewItem( new string[ ] { dbReader[ "product_name" ].ToString(), dbReader[ "sflow_id" ].ToString(), resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo ), dQuantity.ToString( "0.000" ), dPrice.ToString( "0.000" ), dTotalPrice.ToString( "0.000" ) } );
+                    dGrandPrice += dTotalLocalPrice;
+
+                    ListViewItem lvi = new ListViewItem( 
+                        new string[ ] {
+                            dbReader[ "product_name" ].ToString(),
+                            dbReader[ "sflow_id" ].ToString(),
+                            resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo ),
+                            dQuantity.ToString( "0.000" ),
+                            dPrice.ToString( "0.000" ) + " " + dbReader[ "sflow_priceexchange" ].ToString(),
+                            dTotalPrice.ToString( "0.000" ) + " " + dbReader[ "sflow_priceexchange" ].ToString(),
+                            dTotalLocalPrice.ToString( "0.000" ) + " " + setting.localExchange
+                        } 
+                    );
 
                     lvStockProductList.Items.Add( lvi );
                 }
-                lblGrandTotal.Text = dGrandPrice.ToString( "0.000" );
+                lblGrandTotal.Text = dGrandPrice.ToString( "0.000" ) + " " + setting.localExchange;
 
                 dbReader.Close();
             } else {
@@ -969,6 +1000,7 @@ namespace proIMP {
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
                 lvStockFlow.ItemChecked -= new ItemCheckedEventHandler( lvStockFlow_ItemChecked );
+
                 while( dbReader.Read() ) {
                     ListViewItem lvi = new ListViewItem( new string[ ] {
                         ( dbReader[ "stock_type" ].ToString() == "1" )?( resMan.GetString( "stockFlowStockTypeIn", culInfo ) ):( resMan.GetString( "stockFlowStockTypeOut", culInfo ) ),
@@ -977,12 +1009,13 @@ namespace proIMP {
                         dbReader[ "stock_name" ].ToString(),
                         dbReader[ "stock_desc" ].ToString(),
                         dbReader[ "product_count" ].ToString() + " / " + dbReader[ "product_sum" ].ToString(),
-                        ( dbReader[ "product_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "product_price" ].ToString() ).ToString( "0.000" ) ) :( "" ),
+                        ( dbReader[ "product_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "product_price" ].ToString() ).ToString( "0.000" ) + " " + setting.localExchange ) :( "" ),
                         dbReader[ "stock_type" ].ToString()
                     } );
 
                     lvStockFlow.Items.Add( lvi );
                 }
+
                 lvStockFlow.ItemChecked += new ItemCheckedEventHandler( lvStockFlow_ItemChecked );
                 lvStockFlow_ItemChecked( this, new ItemCheckedEventArgs( new ListViewItem() ) );
             } catch {
@@ -996,12 +1029,12 @@ namespace proIMP {
 
         private void editStockFlow( string strStockID, string strStockType ) {
             if( strStockType == "1" ) {
-                stockin.strStockFlowID = strStockID;
+                stockin.stockFlowID = strStockID;
                 if( stockin.ShowDialog() == DialogResult.OK ) {
 
                 }
             } else if( strStockType == "2" ) {
-                stockout.strStockFlowID = strStockID;
+                stockout.stockFlowID = strStockID;
                 if( stockout.ShowDialog() == DialogResult.OK ) {
 
                 }
@@ -1010,6 +1043,7 @@ namespace proIMP {
 
         private void deleteStockFlow( string strStockID ) {
             SQLiteCommand dbCommand = new SQLiteCommand( "DELETE FROM stock WHERE stock_id = '" + strStockID + "'", sqlCon );
+
             dbCommand.ExecuteNonQuery();
         }
 
@@ -1037,7 +1071,7 @@ namespace proIMP {
         private void btnReport_1Run_Click( object sender, EventArgs e ) {
             string strSQL = string.Empty;
 
-            strSQL += "SELECT sflow_id, stock_date, supplier_name, product_id, product_catid, product_name, product_unit, sflow_quantity, sflow_price, total_price FROM report_product_flow WHERE";
+            strSQL += "SELECT sflow_id, stock_date, supplier_name, product_id, product_catid, product_name, product_unit, sflow_quantity, sflow_price, sflow_exchange, total_price, total_price * forex_selling AS total_localprice FROM report_product_flow WHERE";
 
             /* DateTime filter */
             strSQL += " stock_date BETWEEN '" + dtReport_1From.Value.ToString( "yyyy-MM-dd" ) + "' AND '" + dtReport_1To.Value.ToString( "yyyy-MM-dd" ) + "'";
@@ -1084,6 +1118,8 @@ namespace proIMP {
 
                 lvReport_1.Items.Clear();
                 while( dbReader.Read() ) {
+                    string currency = ( dbReader[ "sflow_exchange" ].GetType() != typeof( DBNull ) ) ?( dbReader[ "sflow_exchange" ].ToString() ) :( "" );
+
                     ListViewItem lvi = new ListViewItem( new string[ ] {
                         dbReader[ "sflow_id" ].ToString(),
                         dbReader[ "stock_date" ].ToString().Substring(0, 10),
@@ -1091,8 +1127,9 @@ namespace proIMP {
                         dbReader[ "product_name" ].ToString(),
                         resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), culInfo ),
                         ( dbReader[ "sflow_quantity" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() ).ToString( "0.000" ) ) :( "" ),
-                        ( dbReader[ "sflow_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_price" ].ToString() ).ToString( "0.000" ) ) :( "" ),
-                        ( dbReader[ "total_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "total_price" ].ToString() ).ToString( "0.000" ) ) :( "" )
+                        ( dbReader[ "sflow_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "sflow_price" ].ToString() ).ToString( "0.00000" ) + " " + currency ) :( "" ),
+                        ( dbReader[ "total_price" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "total_price" ].ToString() ).ToString( "0.000" ) + " " + currency ) :( "" ),
+                        ( dbReader[ "total_localprice" ].GetType() != typeof( DBNull ) ) ?( Convert.ToDouble( dbReader[ "total_localprice" ].ToString() ).ToString( "0.000" ) + " " + setting.localExchange ) :( "" )
                     } );
 
                     lvReport_1.Items.Add( lvi );
@@ -1141,14 +1178,14 @@ namespace proIMP {
                 return;
             }
 
-            string strReportFile = string.Empty;
             SaveFileDialog sfd = new SaveFileDialog() {
                 Filter = "Excel File|*.xlsx",
                 FileName = "ProductFlowReport_" + DateTime.Now.ToString( "yyyyMMdd" ) + ".xlsx"
             };
 
+            string reportFile;
             if( sfd.ShowDialog() == DialogResult.OK ) {
-                strReportFile = sfd.FileName;
+                reportFile = sfd.FileName;
             } else {
                 return;
             }
@@ -1156,8 +1193,8 @@ namespace proIMP {
             ExcelPackage ExcelFile = new ExcelPackage();
             ExcelWorksheet worksheet = ExcelFile.Workbook.Worksheets.Add( "Sheet1" );
 
-            string[ ] strHeader = { resMan.GetString( "lblReportDate", culInfo ), resMan.GetString( "chReport_1Supplier", culInfo ), resMan.GetString( "plProductName", culInfo ), resMan.GetString( "stockProductUnit", culInfo ), resMan.GetString( "stockProductQuantity", culInfo ), resMan.GetString( "plProductPrice", culInfo ), resMan.GetString( "stockFlowTotalPrice", culInfo ) };
-            int[ ] iColumnWidth = { 75, 150, 300, 64, 70, 70, 70 };
+            string[ ] strHeader = { resMan.GetString( "lblReportDate", culInfo ), resMan.GetString( "chReport_1Supplier", culInfo ), resMan.GetString( "plProductName", culInfo ), resMan.GetString( "stockProductUnit", culInfo ), resMan.GetString( "stockProductQuantity", culInfo ), resMan.GetString( "plProductPrice", culInfo ), resMan.GetString( "lblProductCurrency", culInfo ), resMan.GetString( "stockTotalPrice", culInfo ), resMan.GetString( "stockTotalPrice", culInfo ) + "( " + setting.localExchange + " )" };
+            int[ ] iColumnWidth = { 75, 150, 300, 64, 70, 70, 70, 70, 70 };
 
             for( int i = 0; i < strHeader.Length; i++ ) {
                 worksheet.Column( i + 1 ).Width = 1.0 * iColumnWidth[ i ] / 7;
@@ -1166,7 +1203,7 @@ namespace proIMP {
             }
 
             ExcelRange er;
-            er = worksheet.Cells[ "A1:G1" ];
+            er = worksheet.Cells[ "A1:I1" ];
             er.Style.Border.Top.Style = ExcelBorderStyle.Medium;
             er.Style.Border.Left.Style = ExcelBorderStyle.Medium;
             er.Style.Border.Right.Style = ExcelBorderStyle.Medium;
@@ -1189,27 +1226,30 @@ namespace proIMP {
                 worksheet.Cells[ i + 2, 4 ].Value = lvReport_1.Items[ i ].SubItems[ 4 ].Text;
 
                 worksheet.Cells[ i + 2, 5 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 5 ].Text );
-                worksheet.Cells[ i + 2, 6 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 6 ].Text );
-                worksheet.Cells[ i + 2, 7 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 7 ].Text );
+                worksheet.Cells[ i + 2, 6 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 6 ].Text.Substring( 0, lvReport_1.Items[ i ].SubItems[ 6 ].Text.IndexOf( " " ) ) );
+                worksheet.Cells[ i + 2, 7 ].Value = lvReport_1.Items[ i ].SubItems[ 7 ].Text.Substring( lvReport_1.Items[ i ].SubItems[ 7 ].Text.IndexOf(" ") + 1 );
+                worksheet.Cells[ i + 2, 8 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 7 ].Text.Substring( 0, lvReport_1.Items[ i ].SubItems[ 7 ].Text.IndexOf( " " ) ) );
+                worksheet.Cells[ i + 2, 9 ].Value = Convert.ToDouble( lvReport_1.Items[ i ].SubItems[ 8 ].Text.Substring( 0, lvReport_1.Items[ i ].SubItems[ 8 ].Text.IndexOf( " " ) ) );
 
-                dTotalPrice += (double)worksheet.Cells[ i + 2, 7 ].Value;
+                dTotalPrice += (double)worksheet.Cells[ i + 2, 9 ].Value;
             }
 
-            er = worksheet.Cells[ "A2:G" + ( lvReport_1.Items.Count + 1 ) ];
+            er = worksheet.Cells[ "A2:I" + ( lvReport_1.Items.Count + 1 ) ];
             er.Style.Border.Top.Style = ExcelBorderStyle.Thin;
             er.Style.Border.Left.Style = ExcelBorderStyle.Thin;
             er.Style.Border.Right.Style = ExcelBorderStyle.Thin;
             er.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
 
-            worksheet.Cells[ "E2:G" + ( lvReport_1.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.000";
+            worksheet.Cells[ "E2:F" + ( lvReport_1.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.000";
+            worksheet.Cells[ "H2:I" + ( lvReport_1.Items.Count + 1 ) ].Style.Numberformat.Format = "#,##0.000";
 
-            worksheet.Cells[ "E" + ( lvReport_1.Items.Count + 2 ) + ":F" + ( lvReport_1.Items.Count + 2 ) ].Merge = true;
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Value = resMan.GetString( "lblGrandTotalPrice", culInfo ) + " : ";
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Style.Font.Bold = true;
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 5 ].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Value = dTotalPrice;
+            worksheet.Cells[ "G" + ( lvReport_1.Items.Count + 2 ) + ":H" + ( lvReport_1.Items.Count + 2 ) ].Merge = true;
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Value = resMan.GetString( "lblGrandTotalPrice", culInfo ) + " : ";
             worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Style.Font.Bold = true;
-            worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Style.Numberformat.Format = "#,##0.000";
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 7 ].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 9 ].Value = dTotalPrice;
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 9 ].Style.Font.Bold = true;
+            worksheet.Cells[ lvReport_1.Items.Count + 2, 9 ].Style.Numberformat.Format = "#,##0.000";
 
             ExcelFile.Workbook.Properties.Title = "Invertory";
             ExcelFile.Workbook.Properties.Author = "Fatih \"fabal\" BALCI";
@@ -1217,10 +1257,10 @@ namespace proIMP {
             ExcelFile.Workbook.Properties.Company = "proGEDIA";
 
             ExcelFile.Compression = CompressionLevel.BestCompression;
-            ExcelFile.SaveAs( new FileInfo( strReportFile ) );
+            ExcelFile.SaveAs( new FileInfo( reportFile ) );
 
             if( cbReport_1OpenReport.Checked == true ) {
-                System.Diagnostics.Process.Start( strReportFile );
+                System.Diagnostics.Process.Start( reportFile );
             } else {
                 MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
             }
@@ -1301,14 +1341,15 @@ namespace proIMP {
                 return;
             }
 
-            string strReportFile = string.Empty;
             SaveFileDialog sfd = new SaveFileDialog() {
                 Filter = "Excel File|*.xlsx",
                 FileName = "ProductStockReport_" + DateTime.Now.ToString( "yyyyMMdd" ) + ".xlsx"
             };
 
+
+            string reportFile;
             if( sfd.ShowDialog() == DialogResult.OK ) {
-                strReportFile = sfd.FileName;
+                reportFile = sfd.FileName;
             } else {
                 return;
             }
@@ -1362,10 +1403,10 @@ namespace proIMP {
             ExcelFile.Workbook.Properties.Company = "proGEDIA";
 
             ExcelFile.Compression = CompressionLevel.BestCompression;
-            ExcelFile.SaveAs( new FileInfo( strReportFile ) );
+            ExcelFile.SaveAs( new FileInfo( reportFile ) );
 
             if( cbReport_2OpenReport.Checked == true ) {
-                System.Diagnostics.Process.Start( strReportFile );
+                System.Diagnostics.Process.Start( reportFile );
             } else {
                 MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
             }
@@ -1409,14 +1450,15 @@ namespace proIMP {
                 return;
             }
 
-            string strReportFile = string.Empty;
             SaveFileDialog sfd = new SaveFileDialog() {
                 Filter = "Excel File|*.xlsx",
                 FileName = "ExchangeRateReport_" + DateTime.Now.ToString( "yyyyMMdd" ) + ".xlsx"
             };
 
+
+            string reportFile;
             if( sfd.ShowDialog() == DialogResult.OK ) {
-                strReportFile = sfd.FileName;
+                reportFile = sfd.FileName;
             } else {
                 return;
             }
@@ -1470,10 +1512,10 @@ namespace proIMP {
             ExcelFile.Workbook.Properties.Company = "proGEDIA";
 
             ExcelFile.Compression = CompressionLevel.BestCompression;
-            ExcelFile.SaveAs( new FileInfo( strReportFile ) );
+            ExcelFile.SaveAs( new FileInfo( reportFile ) );
 
             if( cbReport_3OpenReport.Checked == true ) {
-                System.Diagnostics.Process.Start( strReportFile );
+                System.Diagnostics.Process.Start( reportFile );
             } else {
                 MessageBox.Show( resMan.GetString( "reportExported", culInfo ) );
             }
@@ -1534,30 +1576,80 @@ namespace proIMP {
             return false;
         }
 
-        private void saveCurrencyExchange( exchange_rates exchanges ) {
-            if( exchanges.exchanges.Length == 0 ) {
+        public void listView_DrawColumnHeader( object sender, DrawListViewColumnHeaderEventArgs e ) {
+            ListView lv = (ListView)sender;
+            if( hot.ContainsKey(lv.Name) == false ) {
+                hot.Add( lv.Name, false );
+            }
+
+            if( e.Header.TextAlign == HorizontalAlignment.Right ) {
+                e.DrawBackground();
+                e.DrawText( TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter );
+
+                if( e.Bounds.Contains( lv.PointToClient( MousePosition ) ) ) {
+                    bool selected = ( e.State & ListViewItemStates.Selected ) != 0;
+
+                    Color solidColor = selected ? Color.FromArgb( 30, Color.FromArgb( 0, 200, 200 ) ) : Color.FromArgb( 30, Color.Aqua );
+                    Color borderColor = selected ? Color.DarkGray : Color.Aqua;
+
+                    e.Graphics.FillRectangle( new SolidBrush( solidColor ), e.Bounds );
+
+                    Rectangle rect = e.Bounds;
+
+                    rect.Width -= 2;
+                    rect.Height -= 2;
+
+                    ControlPaint.DrawBorder( e.Graphics, rect, Color.FromArgb( 40, borderColor ), ButtonBorderStyle.Solid );
+
+                    hot[ lv.Name ] = true;
+                } else
+                    hot[ lv.Name ] = false;
+            } else {
+                e.DrawDefault = true;
+                if( hot[ lv.Name ] ) {
+                    invalidateHeaders.Invoke( lv, null );
+
+                    hot[ lv.Name ] = false;
+                }
+            }
+        }
+
+        public void listView_MouseMove( object sender, MouseEventArgs e ) {
+            invalidateHeaders.Invoke( lvStockProductList, null );
+        }
+
+        public void listView_DrawItem( object sender, DrawListViewItemEventArgs e ) {
+            e.DrawDefault = true;
+        }
+        /**
+         * Exchange related
+         **/
+        private void saveCurrencyExchange( exchange_rates exchanges, bool internal_update = false ) {
+            if( exchanges.exchanges.Count == 0 ) {
                 return;
             } else {
                 if( ssBottomCurrency.InvokeRequired ) {
                     ssBottomCurrency.BeginInvoke( (MethodInvoker)delegate ( ) { saveCurrencyExchange( exchanges ); } );
                 } else {
                     SQLiteCommand dbCommand = new SQLiteCommand( sqlCon ) {
-                        CommandText = "INSERT INTO forex_exchange (currency_date, currency_code, forex_buying, forex_selling) VALUES(@currency_date, @currency_code, @forex_buying, @forex_selling)"
+                        CommandText = "INSERT INTO forex_exchange (currency_date, currency_code, forex_buying, forex_selling) VALUES(@currency_date, @currency_code, @forex_buying, @forex_selling) ON CONFLICT(currency_date, currency_code) DO NOTHING"
                     };
 
-                    for( int i = 0; i < exchanges.exchanges.Length; i++ ) {
+                    foreach( KeyValuePair<string, Currency> entry in exchanges.exchanges ) { 
                         dbCommand.Parameters.Add( new SQLiteParameter( "@currency_date", exchanges.date ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@currency_code", exchanges.exchanges[ i ].Code ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_buying", exchanges.exchanges[ i ].ForexBuying ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_selling", exchanges.exchanges[ i ].ForexSelling ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@currency_code", entry.Key ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_buying", entry.Value.ForexBuying ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@forex_selling", entry.Value.ForexSelling ) );
 
                         dbCommand.ExecuteNonQuery();
                     }
 
-                    setting.exchange_update = DateTime.Now;
-                    saveSettings();
+                    if( internal_update == false ) {
+                        setting.exchange_update = DateTime.Now;
+                        saveSettings();
 
-                    showCurrenctExchange();
+                        showCurrenctExchange();
+                    }
                 }
             }
 
@@ -1565,41 +1657,177 @@ namespace proIMP {
         }
 
         private void showCurrenctExchange( ) {
-            SQLiteCommand dbCommand = new SQLiteCommand( sqlCon );
-            SQLiteDataReader dbReader;
+            SQLiteCommand dbCommand = new SQLiteCommand() {
+                Connection = sqlCon,
+                CommandText = "SELECT t1.currency_code, t1.currency_date, t1.forex_buying, t1.forex_selling FROM forex_exchange AS t1 INNER JOIN (SELECT currency_code, MAX(currency_date) AS currency_date FROM forex_exchange GROUP BY currency_code) AS t2 ON t1.currency_code = t2.currency_code AND t1.currency_date = t2.currency_date"
+            };
 
-            dbCommand.CommandText = "SELECT t1.currency_code, t1.currency_date, t1.forex_buying, t1.forex_selling FROM forex_exchange AS t1 INNER JOIN (SELECT currency_code, MAX(currency_date) AS currency_date FROM forex_exchange GROUP BY currency_code) AS t2 ON t1.currency_code = t2.currency_code AND t1.currency_date = t2.currency_date";
-            dbReader = dbCommand.ExecuteReader();
+            SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+            er = new exchange_rates() {
+                date = DateTime.Now.Date,
+                exchanges = new Dictionary<string, Currency>()
+            };
 
             ssBottomCurrency.Items.Clear();
             while( dbReader.Read() ) {
+                er.exchanges.Add( dbReader[ "currency_code" ].ToString(), new Currency( Convert.ToDouble( dbReader[ "forex_buying" ].ToString() ), Convert.ToDouble( dbReader[ "forex_selling" ].ToString() ) ) );
+
                 ssBottomCurrency.Items.Add( dbReader[ "currency_code" ].ToString() + " : " + dbReader[ "forex_buying" ].ToString() + " TL" );
             }
             dbReader.Close();
         }
 
-        private void getCurrencyExchange( ) {
+        private exchange_rates getCurrencyExchange( DateTime? dt = null ) {
             string[ ] exchange = new string[ ] { "USD", "EUR" };
 
             exchange_rates result = new exchange_rates {
-                exchanges = new Currency[ exchange.Length ]
+                exchanges = new Dictionary<string, Currency>()
             };
 
             System.Xml.XmlDocument document = new System.Xml.XmlDocument();
-            document.Load( "http://www.tcmb.gov.tr/kurlar/today.xml" );
+
+            if( dt == null ) {
+                try {
+                    document.Load( "http://www.tcmb.gov.tr/kurlar/today.xml" );
+                } catch {
+                    return result;
+                }
+            } else {
+                while( true ) {
+                    try {
+                        document.Load( string.Format( "http://www.tcmb.gov.tr/kurlar/{0}{1:D2}/{2:D2}{1:D2}{0}.xml", dt.Value.Year, dt.Value.Month, dt.Value.Day ) );
+
+                        break;
+                    } catch {
+                        dt = dt.Value.AddDays( -1 );
+                    }
+                }
+            }
 
             result.date = Convert.ToDateTime( document.SelectSingleNode( "//Tarih_Date" ).Attributes[ "Tarih" ].Value );
             for( int i = 0; i < exchange.Length; i++ ) {
-                result.exchanges[ i ] = new Currency() {
-                    Code = exchange[ i ],
-                    ForexBuying = Convert.ToDecimal( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteBuying" ).InnerXml ),
-                    ForexSelling = Convert.ToDecimal( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteSelling" ).InnerXml )
+                result.exchanges[ exchange[ i ] ] = new Currency() {
+                    ForexBuying = Convert.ToDouble( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteBuying" ).InnerXml ),
+                    ForexSelling = Convert.ToDouble( document.SelectSingleNode( "Tarih_Date/Currency[@Kod='" + exchange[ i ] + "']/BanknoteSelling" ).InnerXml )
                 };
             }
 
-            saveCurrencyExchange( result );
+            if( dt == null )
+                saveCurrencyExchange( result );
+            else
+                saveCurrencyExchange( result, true );
 
-            return;
+            return result;
+        }
+
+        public exchange_rates getCurrency(DateTime dt) {
+            exchange_rates result;
+
+            SQLiteCommand dbCommand = new SQLiteCommand() {
+                Connection = sqlCon,
+                CommandText = "SELECT currency_code, forex_buying, forex_selling FROM forex_exchange WHERE currency_date = @currency_date"
+            };
+
+            if( dt.DayOfWeek == DayOfWeek.Saturday ) {
+                dt = dt.AddDays( -1 );
+            } else if( dt.DayOfWeek == DayOfWeek.Sunday ) {
+                dt = dt.AddDays( -2 );
+            }
+
+            dbCommand.Parameters.Add( new SQLiteParameter( "@currency_date", dt.ToString("yyyy-MM-dd HH:mm:ss") ) );
+
+            SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+            if( dbReader.HasRows == false ) {
+                result = getCurrencyExchange( dt );
+            } else {
+                dbReader.Close();
+
+                result = new exchange_rates {
+                    date = dt,
+                    exchanges = new Dictionary<string, Currency>()
+                };
+
+                try {
+                    dbReader = dbCommand.ExecuteReader();
+
+                    while( dbReader.Read() ) {
+                        result.exchanges.Add( dbReader[ "currency_code" ].ToString(), new Currency( Convert.ToDouble( dbReader[ "forex_buying" ].ToString() ), Convert.ToDouble( dbReader[ "forex_selling" ].ToString() ) ) );
+                    }
+                } catch( Exception ex ) {
+                    throw new Exception( ex.Message );
+                }
+            }
+            dbReader.Close();
+
+            return result;
+        }
+
+        /**
+         * Common Form Function
+         **/
+        public void getProductList( ComboBox cb ) {
+            try {
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT product_id, product_name, product_unit FROM product ORDER BY product_name", sqlCon );
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                cb.Items.Clear();
+                while( dbReader.Read() ) {
+                    cb.Items.Add( new ProductItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString(), dbReader[ 2 ].ToString() ) );
+                }
+                dbReader.Close();
+            } catch( Exception ex ) {
+                MessageBox.Show( ex.Message );
+            }
+        }
+
+        public void getSupplierList( ComboBox cb, string table ) {
+            try {
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT " + table + "_id AS t_id, " + table + "_name AS t_name FROM " + table + " ORDER BY " + table + "_name", frmMain.sqlCon );
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                cb.Items.Clear();
+                while( dbReader.Read() ) {
+                    cb.Items.Add( new SupplierItem( dbReader[ "t_id" ].ToString(), dbReader[ "t_name" ].ToString() ) );
+                }
+                dbReader.Close();
+            } catch( Exception ex ) {
+                MessageBox.Show( ex.Message );
+            }
+        }
+
+        public void getWarehouseList( ComboBox cb ) {
+            try {
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT warehouse_id, warehouse_name FROM warehouse ORDER BY warehouse_name", frmMain.sqlCon );
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                cb.Items.Clear();
+                while( dbReader.Read() ) {
+                    cb.Items.Add( new WarehouseItem( dbReader[ 0 ].ToString(), dbReader[ 1 ].ToString() ) );
+                }
+                dbReader.Close();
+
+                cb.SelectedIndex = 0;
+            } catch( Exception ex ) {
+                MessageBox.Show( ex.Message );
+            }
+        }
+
+        public void getExchangeList( ComboBox cb ) {
+            try {
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT DISTINCT currency_code FROM forex_exchange ORDER BY currency_code", sqlCon );
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+
+                cb.Items.Clear();
+                cb.Items.Add( "TL" );
+                while( dbReader.Read() ) {
+                    cb.Items.Add( dbReader[ 0 ].ToString() );
+                }
+                dbReader.Close();
+
+                cb.SelectedIndex = 0;
+            } catch( Exception ex ) {
+                MessageBox.Show( ex.Message );
+            }
         }
 
         /**
@@ -1747,7 +1975,12 @@ namespace proIMP {
             imageBytes = Convert.FromBase64String( Encoding.UTF8.GetString( imageBytes ) );
             MemoryStream ms = new MemoryStream( imageBytes, 0, imageBytes.Length );
             ms.Write( imageBytes, 0, imageBytes.Length );
-            return new Bitmap( ms );
+
+            try {
+                return new Bitmap( ms );
+            } catch {
+                return null;
+            }
         }
 
         public static string GetMd5Hash( MD5 md5Hash, string input ) {
@@ -1771,7 +2004,7 @@ namespace proIMP {
 
     public class ListViewItemComparer:System.Collections.IComparer {
         private readonly int col;
-        private Type type;
+        private readonly Type type;
         private readonly SortOrder order;
 
         public ListViewItemComparer() {
@@ -1786,8 +2019,8 @@ namespace proIMP {
         }
 
         public int Compare( object x, object y ) {
-            int returnVal= -1;
 
+            int returnVal;
             switch( type.Name ) {
                 case "Int32":
                     returnVal = Convert.ToInt32( ( ( (ListViewItem)x ).SubItems[ col ].Text == "") ?("0"):( ( (ListViewItem)x ).SubItems[ col ].Text ) ).CompareTo( Convert.ToInt32( ( ( (ListViewItem)y ).SubItems[ col ].Text == "") ?("0"):( ( (ListViewItem)y ).SubItems[ col ].Text ) ) );
@@ -1808,6 +2041,7 @@ namespace proIMP {
 
                 default:
                     MessageBox.Show( type.Name );
+
                     return 0;
             }
             
@@ -1820,6 +2054,7 @@ namespace proIMP {
 
     public class settings {
         public int productOrder { get; set; } = 0;
+        public string localExchange = "TL";
 
         public string language { get; set; } = "en";
         public string database { get; set; } = Path.GetDirectoryName( Application.ExecutablePath ) + "\\db\\database.sqlite";
@@ -1941,12 +2176,20 @@ namespace proIMP {
 
     public class exchange_rates {
         public DateTime date;
-        public Currency[ ] exchanges;
+        public Dictionary<string, Currency> exchanges;
     }
 
     public class Currency {
-        public string Code { get; set; }
-        public decimal ForexBuying { get; set; }
-        public decimal ForexSelling { get; set; }
+        public double ForexBuying { get; set; }
+        public double ForexSelling { get; set; }
+
+        public Currency() {
+
+        }
+
+        public Currency( double ForexBuying, double ForexSelling) {
+            this.ForexBuying = ForexBuying;
+            this.ForexSelling = ForexSelling;
+        }
     }
 }

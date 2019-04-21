@@ -53,12 +53,20 @@ namespace proIMP {
         private void btnSave_Click( object sender, EventArgs e ) {
             if( tbSupplierName.Text.Length > 0 ) {
                 try {
-                    SQLiteCommand dbCommand;
+                    SQLiteCommand dbCommand = new SQLiteCommand() {
+                        Connection = frmMain.sqlCon
+                    };
+
                     if( tbSupplierID.Text.Length == 0 ) {
-                        dbCommand = new SQLiteCommand( "INSERT INTO supplier (supplier_id, supplier_name, supplier_desc) VALUES(NULL, '" + tbSupplierName.Text.Replace( "'", "''" ) + "', '" + tbSupplierDesc.Text.Replace( "'", "''" ) + "')", frmMain.sqlCon );
+                        dbCommand.CommandText = "INSERT INTO supplier (supplier_name, supplier_desc) VALUES(@supplier_name, @supplier_desc)";
                     } else {
-                        dbCommand = new SQLiteCommand( "UPDATE supplier SET supplier_name = '" + tbSupplierName.Text.Replace( "'", "''" ) + "', supplier_desc = '" + tbSupplierDesc.Text.Replace( "'", "''" ) + "' WHERE supplier_id = '" + tbSupplierID.Text + "'", frmMain.sqlCon );
+                        dbCommand.CommandText = "UPDATE supplier SET supplier_name = @supplier_name, supplier_desc = @supplier_desc WHERE supplier_id = @supplier_id";
                     }
+
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@supplier_id", tbSupplierID.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@supplier_name", tbSupplierName.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@supplier_desc", tbSupplierDesc.Text ) );
+
                     dbCommand.ExecuteNonQuery();
                 } catch {
                     MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveSupplier", frmMain.culInfo ) );
@@ -94,17 +102,19 @@ namespace proIMP {
 
         private void btnEdit_Click( object sender, EventArgs e ) {
             if( lvSupplier.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("SELECT supplier_id, supplier_name, supplier_desc FROM supplier WHERE supplier_id = '" + lvSupplier.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                SQLiteCommand dbCommand = new SQLiteCommand( "SELECT supplier_id, supplier_name, supplier_desc FROM supplier WHERE supplier_id = @supplier_id", frmMain.sqlCon);
+                dbCommand.Parameters.Add( new SQLiteParameter( "@supplier_id", lvSupplier.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                while( dbReader.Read() ) {
+                if( dbReader.HasRows ) {
+                    dbReader.Read();
+
                     tbSupplierID.Text = dbReader[ 0 ].ToString();
                     tbSupplierName.Text = dbReader[ 1 ].ToString();
                     tbSupplierDesc.Text = dbReader[ 2 ].ToString();
 
                     lvSupplier.SelectedItems.Clear();
-
-                    break;
                 }
             }
         }
@@ -115,7 +125,9 @@ namespace proIMP {
 
         private void btnDelete_Click( object sender, EventArgs e ) {
             if( lvSupplier.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("DELETE FROM supplier WHERE supplier_id = '" + lvSupplier.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                SQLiteCommand dbCommand = new SQLiteCommand( "DELETE FROM supplier WHERE supplier_id = @supplier_id", frmMain.sqlCon);
+                dbCommand.Parameters.Add( new SQLiteParameter( "@supplier_id", lvSupplier.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 dbCommand.ExecuteNonQuery();
 
                 lvSupplier.SelectedItems.Clear();

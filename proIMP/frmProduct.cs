@@ -16,13 +16,14 @@ using System.Security.Cryptography;
 
 namespace proIMP {
     public partial class frmProduct:Form {
-        public frmMain frmMain;
+        private readonly frmMain frmMain;
+        private SQLiteCommand dbCommand;
 
-        public string strProductID = string.Empty;
+        public string productID = string.Empty;
         public string lastID = string.Empty;
 
-        private string strProductImageID = string.Empty;
-        private string strProductImage = string.Empty;
+        private string productImageID = string.Empty;
+        private string productImage = string.Empty;
 
         public frmProduct( frmMain frmMain ) {
             InitializeComponent();
@@ -32,13 +33,17 @@ namespace proIMP {
         }
 
         private void frmProduct_Load( object sender, EventArgs e ) {
+            productImage = string.Empty;
+
+            dbCommand = new SQLiteCommand() {
+                Connection = frmMain.sqlCon
+            };
+
             switchLanguage();
             getListCategory();
 
-            strProductImage = string.Empty;
-
-            if( strProductID == string.Empty ) {
-                strProductImageID = string.Empty;
+            if( productID == string.Empty ) {
+                productImageID = string.Empty;
 
                 tbProductID.Text = string.Empty;
                 tbProductName.Text = string.Empty;
@@ -52,37 +57,35 @@ namespace proIMP {
                     pbProductImage.Image = Properties.Resources.noimage_en;
                 }
             } else {
-                tbProductID.Text = strProductID;
+                tbProductID.Text = productID;
 
-                SQLiteCommand dbCommand = new SQLiteCommand("SELECT t1.product_id, t1.product_name, t1.product_catid, t3.category_name, t1.product_desc, t1.product_unit, t1.product_barcode, t1.product_imageid, t2.image_binary FROM product AS t1 LEFT JOIN image AS t2 ON t1.product_imageid = t2.image_id LEFT JOIN category AS t3 ON t1.product_catid = t3.category_id WHERE t1.product_id = '" + strProductID + "'", frmMain.sqlCon);
+                dbCommand.CommandText = "SELECT t1.product_id, t1.product_name, t1.product_catid, t3.category_name, t1.product_desc, t1.product_unit, t1.product_barcode, t1.product_imageid, t2.image_binary FROM product AS t1 LEFT JOIN image AS t2 ON t1.product_imageid = t2.image_id LEFT JOIN category AS t3 ON t1.product_catid = t3.category_id WHERE t1.product_id = @product_id";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@product_id", productID ) );
+
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
-                if( dbReader.Read() ) {
+                if( dbReader.HasRows ) {
+                    dbReader.Read();
+
                     tbProductName.Text = dbReader[ "product_name" ].ToString();
                     tbProductDesc.Text = dbReader[ "product_desc" ].ToString();
                     tbProductBarcode.Text = dbReader[ "product_barcode" ].ToString();
 
                     cbProductCategory.SelectedIndex = cbProductCategory.FindStringExact( dbReader[ "category_name" ].ToString() );
                     switch( dbReader[ "product_unit" ].ToString() ) {
-                        case "G":
-                            cbProductUnit.SelectedIndex = 0;
-                            break;
-
-                        case "M":
-                            cbProductUnit.SelectedIndex = 1;
-                            break;
-
-                        case "P":
-                            cbProductUnit.SelectedIndex = 2;
-                            break;
+                        case "G": cbProductUnit.SelectedIndex = 0; break;
+                        case "M": cbProductUnit.SelectedIndex = 1; break;
+                        case "P": cbProductUnit.SelectedIndex = 2; break;
                     }
 
-                    strProductImageID = dbReader[ "product_imageid" ].ToString();
-                    if( strProductImageID.Length == 0 ) {
+                    productImageID = dbReader[ "product_imageid" ].ToString();
+                    if( productImageID.Length == 0 ) {
                         pbProductImage.Image = Properties.Resources.noimage_en;
                     } else {
                         pbProductImage.Image = frmMain.DeserializeImage( (byte[])dbReader[ "image_binary" ] );
                     }
                 }
+
+                dbReader.Close();
             }
         }
 
@@ -122,43 +125,41 @@ namespace proIMP {
                 };
 
                 try {
-                    if( strProductImage.Length > 0 && File.Exists( strProductImage ) ) {
-                        strProductImageID = "";
+                    if( productImage.Length > 0 && File.Exists( productImage ) ) {
+                        productImageID = "";
 
-                        string strImage = frmMain.SerializeImage( strProductImage );
+                        string strImage = frmMain.SerializeImage( productImage );
                         string strMD5 = frmMain.GetMd5Hash(MD5.Create(), strImage);
-                        dbCommand.CommandText = "SELECT image_id FROM image WHERE image_md5 = '" + strMD5 + "'";
+
+                        dbCommand.CommandText = "SELECT image_id FROM image WHERE image_md5 = @image_md5";
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@image_md5", strMD5 ) );
+
                         SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                        while( dbReader.Read() ) {
-                            strProductImageID = dbReader[ 0 ].ToString();
+                        if( dbReader.HasRows ) {
+                            dbReader.Read();
 
-                            break;
+                            productImageID = dbReader[ 0 ].ToString();
                         }
                         dbReader.Close();
 
-                        if( strProductImageID == string.Empty ) {
-                            dbCommand.CommandText = "INSERT INTO image (image_id, image_md5, image_binary) VALUES(NULL, '" + strMD5 + "', '" + strImage + "')";
+                        if( productImageID == string.Empty ) {
+                            dbCommand.CommandText = "INSERT INTO image (image_md5, image_binary) VALUES(@image_md5, @image_binary)";
+                            dbCommand.Parameters.Add( new SQLiteParameter( "@image_md5", strMD5 ) );
+                            dbCommand.Parameters.Add( new SQLiteParameter( "@image_binary", strMD5 ) );
+
                             dbCommand.ExecuteNonQuery();
 
                             dbCommand.CommandText = "SELECT last_insert_rowid()";
-                            strProductImageID = ( (long)dbCommand.ExecuteScalar() ).ToString();
+                            productImageID = ( (long)dbCommand.ExecuteScalar() ).ToString();
                         }
                     }
 
                     string product_unit = string.Empty;
                     switch( cbProductUnit.SelectedIndex ) {
-                        case 0:
-                            product_unit = "G";
-                            break;
-
-                        case 1:
-                            product_unit = "M";
-                            break;
-
-                        case 2:
-                            product_unit = "P";
-                            break;
+                        case 0: product_unit = "G"; break;
+                        case 1: product_unit = "M"; break;
+                        case 2: product_unit = "P"; break;
 
                         default:
                             MessageBox.Show( frmMain.resMan.GetString( "errorProductUnit", frmMain.culInfo ) );
@@ -167,13 +168,28 @@ namespace proIMP {
                     }
 
                     if( tbProductID.Text.Length == 0 ) {
-                        dbCommand.CommandText = "INSERT INTO product (product_id, product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(NULL, '" + tbProductName.Text.Replace( "'", "''" ) + "', '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', '" + tbProductDesc.Text.Replace( "'", "''" ) + "', '" + product_unit + "', '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', '" + strProductImageID + "')";
+                        dbCommand.CommandText = "INSERT INTO product (product_name, product_catid, product_desc, product_unit, product_barcode, product_imageid) VALUES(@product_name, @product_catid, @product_desc, @product_unit, @product_barcode, @product_imageid)";
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_name", tbProductName.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_catid", ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_desc", tbProductDesc.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_unit", product_unit ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_barcode", tbProductBarcode.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_imageid", productImageID ) );
+
                         dbCommand.ExecuteNonQuery();
 
                         dbCommand.CommandText = "SELECT last_insert_rowid()";
                         lastID = ( (long)dbCommand.ExecuteScalar() ).ToString();
                     } else {
-                        dbCommand.CommandText = "UPDATE product SET product_name = '" + tbProductName.Text.Replace( "'", "''" ) + "', product_catid = '" + ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID + "', product_desc = '" + tbProductDesc.Text.Replace( "'", "''" ) + "', product_unit = '" + product_unit + "', product_barcode = '" + tbProductBarcode.Text.Replace( "'", "''" ) + "', product_imageid = '" + strProductImageID + "' WHERE product_id = '" + tbProductID.Text + "'";
+                        dbCommand.CommandText = "UPDATE product SET product_name = @product_name, product_catid = @product_catid, product_desc = @product_desc, product_unit = @product_unit, product_barcode = @product_barcode, product_imageid = @product_imageid WHERE product_id = @product_id";
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_name", tbProductName.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_catid", ( (CategoryItem)cbProductCategory.SelectedItem ).CategoryID ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_desc", tbProductDesc.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_unit", product_unit ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_barcode", tbProductBarcode.Text ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_imageid", productImageID ) );
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@product_id", tbProductID.Text ) );
+
                         dbCommand.ExecuteNonQuery();
                     }
                     dbCommand.Transaction.Commit();
@@ -217,10 +233,10 @@ namespace proIMP {
             };
 
             if( ofdImage.ShowDialog() == DialogResult.OK ) {
-                strProductImage = ofdImage.FileName;
+                productImage = ofdImage.FileName;
 
                 try {
-                    pbProductImage.Image = Image.FromFile( strProductImage );
+                    pbProductImage.Image = Image.FromFile( productImage );
                 } catch(Exception ex) {
                     MessageBox.Show( frmMain.resMan.GetString( "couldNoReadImage", frmMain.culInfo ) + "\r\n\r\n" + ex.Message );
                 }

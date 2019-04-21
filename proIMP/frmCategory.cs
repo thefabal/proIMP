@@ -12,7 +12,8 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmCategory:Form {
-        public frmMain frmMain;
+        private readonly frmMain frmMain;
+        private SQLiteCommand dbCommand;
 
         private long lastID = -1;
 
@@ -32,6 +33,10 @@ namespace proIMP {
 
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+
+            dbCommand = new SQLiteCommand() {
+                Connection = frmMain.sqlCon
+            };
 
             switchLanguage();
             getCategoryList();
@@ -57,12 +62,17 @@ namespace proIMP {
         private void btnSave_Click( object sender, EventArgs e ) {
             if( tbCategoryName.Text.Length > 0 ) {
                 try {
-                    SQLiteCommand dbCommand;
                     if( tbCategoryID.Text.Length == 0 ) {
-                        dbCommand = new SQLiteCommand( "INSERT INTO category (category_id, category_name, category_desc) VALUES(NULL, '" + tbCategoryName.Text.Replace( "'", "''" ) + "', '" + tbCategoryDesc.Text.Replace( "'", "''" ) + "')", frmMain.sqlCon );
+                        dbCommand.CommandText = "INSERT INTO category (category_name, category_desc) VALUES(@category_name, @category_desc)";
                     } else {
-                        dbCommand = new SQLiteCommand( "UPDATE category SET category_name = '" + tbCategoryName.Text.Replace( "'", "''" ) + "', category_desc = '" + tbCategoryDesc.Text.Replace( "'", "''" ) + "' WHERE category_id = '" + tbCategoryID.Text + "'", frmMain.sqlCon );
+                        dbCommand.CommandText = "UPDATE category SET category_name = @category_name, category_desc = @category_desc WHERE category_id = @category_id";
+
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@category_id", tbCategoryID.Text ) );
                     }
+
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@category_name", tbCategoryName.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@category_desc", tbCategoryDesc.Text ) );
+
                     dbCommand.ExecuteNonQuery();
 
                     dbCommand.CommandText = "SELECT last_insert_rowid()";
@@ -102,18 +112,22 @@ namespace proIMP {
 
         private void btnEdit_Click( object sender, EventArgs e ) {
             if( lvCategory.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("SELECT category_id, category_name, category_desc FROM category WHERE category_id = '" + lvCategory.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                dbCommand.CommandText = "SELECT category_id, category_name, category_desc FROM category WHERE category_id = @category_id";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@category_id", lvCategory.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                while( dbReader.Read() ) {
-                    tbCategoryID.Text = dbReader[ 0 ].ToString();
-                    tbCategoryName.Text = dbReader[ 1 ].ToString();
-                    tbCategoryDesc.Text = dbReader[ 2 ].ToString();
+                if( dbReader.HasRows ) {
+                    dbReader.Read();
+
+                    tbCategoryID.Text = dbReader[ "category_id" ].ToString();
+                    tbCategoryName.Text = dbReader[ "category_name" ].ToString();
+                    tbCategoryDesc.Text = dbReader[ "category_desc" ].ToString();
 
                     lvCategory.SelectedItems.Clear();
-
-                    break;
                 }
+
+                dbReader.Close();
             }
         }
 
@@ -123,7 +137,9 @@ namespace proIMP {
 
         private void btnDelete_Click( object sender, EventArgs e ) {
             if( lvCategory.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("DELETE FROM category WHERE category_id = '" + lvCategory.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                dbCommand.CommandText = "DELETE FROM category WHERE category_id = @category_id";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@category_id", lvCategory.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 dbCommand.ExecuteNonQuery();
 
                 lvCategory.SelectedItems.Clear();
@@ -139,15 +155,23 @@ namespace proIMP {
         }
 
         private void getCategoryList() {
-            SQLiteCommand dbCommand = new SQLiteCommand("SELECT category_id, category_name, category_desc FROM category ORDER BY category_name", frmMain.sqlCon);
+            dbCommand.CommandText = "SELECT category_id, category_name, category_desc FROM category ORDER BY category_name";
             SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
             lvCategory.Items.Clear();
             while( dbReader.Read() ) {
-                ListViewItem lvi = new ListViewItem(new string[] { dbReader[0].ToString(), dbReader[1].ToString(), dbReader[2].ToString() });
+                ListViewItem lvi = new ListViewItem(
+                    new string[] {
+                        dbReader[ "category_id" ].ToString(),
+                        dbReader[ "category_name" ].ToString(),
+                        dbReader[ "category_desc" ].ToString()
+                    } 
+                );
 
                 lvCategory.Items.Add( lvi );
             }
+
+            dbReader.Close();
         }
 
         public long getLastID() {

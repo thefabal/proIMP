@@ -13,6 +13,7 @@ using System.Data.SQLite;
 namespace proIMP {
     public partial class frmCustomer:Form {
         public frmMain frmMain;
+        private SQLiteCommand dbCommand;
 
         public frmCustomer( frmMain frmMain ) {
             InitializeComponent();
@@ -28,6 +29,10 @@ namespace proIMP {
 
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+
+            dbCommand = new SQLiteCommand() {
+                Connection = frmMain.sqlCon
+            };
 
             switchLanguage();
             getCustomerList();
@@ -53,12 +58,17 @@ namespace proIMP {
         private void btnSave_Click( object sender, EventArgs e ) {
             if( tbCustomerName.Text.Length > 0 ) {
                 try {
-                    SQLiteCommand dbCommand;
                     if( tbCustomerID.Text.Length == 0 ) {
-                        dbCommand = new SQLiteCommand( "INSERT INTO customer (customer_id, customer_name, customer_desc) VALUES(NULL, '" + tbCustomerName.Text.Replace( "'", "''" ) + "', '" + tbCustomerDesc.Text.Replace( "'", "''" ) + "')", frmMain.sqlCon );
+                        dbCommand.CommandText = "INSERT INTO customer (customer_name, customer_desc) VALUES(@customer_name, @customer_desc)";
                     } else {
-                        dbCommand = new SQLiteCommand( "UPDATE customer SET customer_name = '" + tbCustomerName.Text.Replace( "'", "''" ) + "', customer_desc = '" + tbCustomerDesc.Text.Replace( "'", "''" ) + "' WHERE customer_id = '" + tbCustomerID.Text + "'", frmMain.sqlCon );
+                        dbCommand.CommandText = "UPDATE customer SET customer_name = @customer_name, customer_desc = @customer_desc WHERE customer_id = @customer_id";
+
+                        dbCommand.Parameters.Add( new SQLiteParameter( "@customer_id", tbCustomerID.Text ) );
                     }
+
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@customer_name", tbCustomerName.Text ) );
+                    dbCommand.Parameters.Add( new SQLiteParameter( "@customer_desc", tbCustomerDesc.Text ) );
+
                     dbCommand.ExecuteNonQuery();
                 } catch {
                     MessageBox.Show( frmMain.resMan.GetString( "couldNotSaveCustomer", frmMain.culInfo ) );
@@ -92,18 +102,22 @@ namespace proIMP {
 
         private void btnEdit_Click( object sender, EventArgs e ) {
             if( lvCustomer.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("SELECT customer_id, customer_name, customer_desc FROM customer WHERE customer_id = '" + lvCustomer.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                dbCommand.CommandText = "SELECT customer_id, customer_name, customer_desc FROM customer WHERE customer_id = @customer_id";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@customer_id", lvCustomer.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-                while( dbReader.Read() ) {
-                    tbCustomerID.Text = dbReader[ 0 ].ToString();
-                    tbCustomerName.Text = dbReader[ 1 ].ToString();
-                    tbCustomerDesc.Text = dbReader[ 2 ].ToString();
+                if( dbReader.HasRows ) {
+                    dbReader.Read();
+
+                    tbCustomerID.Text = dbReader[ "customer_id" ].ToString();
+                    tbCustomerName.Text = dbReader[ "customer_name" ].ToString();
+                    tbCustomerDesc.Text = dbReader[ "customer_desc" ].ToString();
 
                     lvCustomer.SelectedItems.Clear();
-
-                    break;
                 }
+
+                dbReader.Close();
             }
         }
 
@@ -113,7 +127,9 @@ namespace proIMP {
 
         private void btnDelete_Click( object sender, EventArgs e ) {
             if( lvCustomer.SelectedItems.Count > 0 ) {
-                SQLiteCommand dbCommand = new SQLiteCommand("DELETE FROM customer WHERE customer_id = '" + lvCustomer.SelectedItems[0].SubItems[0].Text + "'", frmMain.sqlCon);
+                dbCommand.CommandText = "DELETE FROM customer WHERE customer_id = @customer_id";
+                dbCommand.Parameters.Add( new SQLiteParameter( "@customer_id", lvCustomer.SelectedItems[ 0 ].SubItems[ 0 ].Text ) );
+
                 dbCommand.ExecuteNonQuery();
 
                 lvCustomer.SelectedItems.Clear();
@@ -129,15 +145,23 @@ namespace proIMP {
         }
 
         private void getCustomerList() {
-            SQLiteCommand dbCommand = new SQLiteCommand("SELECT customer_id, customer_name, customer_desc FROM customer ORDER BY customer_name", frmMain.sqlCon);
+            dbCommand.CommandText = "SELECT customer_id, customer_name, customer_desc FROM customer ORDER BY customer_name";
             SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
             lvCustomer.Items.Clear();
             while( dbReader.Read() ) {
-                ListViewItem lvi = new ListViewItem(new string[] { dbReader[0].ToString(), dbReader[1].ToString(), dbReader[2].ToString() });
+                ListViewItem lvi = new ListViewItem(
+                    new string[] {
+                        dbReader[ "customer_id" ].ToString(),
+                        dbReader[ "customer_name" ].ToString(),
+                        dbReader[ "customer_desc" ].ToString()
+                    } 
+                );
 
                 lvCustomer.Items.Add( lvi );
             }
+
+            dbReader.Close();
         }
     }
 }
