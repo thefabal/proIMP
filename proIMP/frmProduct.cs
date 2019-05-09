@@ -146,7 +146,7 @@ namespace proIMP {
                         if( productImageID == string.Empty ) {
                             dbCommand.CommandText = "INSERT INTO image (image_md5, image_binary) VALUES(@image_md5, @image_binary)";
                             dbCommand.Parameters.Add( new SQLiteParameter( "@image_md5", strMD5 ) );
-                            dbCommand.Parameters.Add( new SQLiteParameter( "@image_binary", strMD5 ) );
+                            dbCommand.Parameters.Add( new SQLiteParameter( "@image_binary", strImage ) );
 
                             dbCommand.ExecuteNonQuery();
 
