@@ -364,7 +364,7 @@
     <value>Clear</value>
   </data>
   <data name="btnDelete" xml:space="preserve">
-    <value>Sil</value>
+    <value>Delete</value>
   </data>
   <data name="btnSave" xml:space="preserve">
     <value>Save</value>

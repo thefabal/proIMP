@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbReport_2OpenReport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbReport_2OpenReport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReport_2OpenReport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbReport_2OpenReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 419</value>
+  </data>
+  <data name="cbReport_2OpenReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="cbReport_2OpenReport.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="cbReport_2OpenReport.Text" xml:space="preserve">
+    <value>Open Exported Report</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2OpenReport.Name" xml:space="preserve">
+    <value>cbReport_2OpenReport</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2OpenReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2OpenReport.Parent" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2OpenReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnReport_2Export.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnReport_2Export.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_2Export.Location" type="System.Drawing.Point, System.Drawing">
+    <value>667, 415</value>
+  </data>
+  <data name="btnReport_2Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="btnReport_2Export.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnReport_2Export.Text" xml:space="preserve">
+    <value>Export as Excel</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Export.Name" xml:space="preserve">
+    <value>btnReport_2Export</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Export.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Export.Parent" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Export.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvReport_2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chReport_2Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="chReport_2Product.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="chReport_2Category.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="chReport_2Category.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_2Unit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="chReport_2Unit.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="chReport_2StockIn.Text" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="chReport_2StockIn.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="chReport_2StockOut.Text" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
+  <data name="chReport_2StockOut.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="chReport_2TotalStock.Text" xml:space="preserve">
+    <value>Total Stock</value>
+  </data>
+  <data name="chReport_2TotalStock.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="lvReport_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 12</value>
+  </data>
+  <data name="lvReport_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 397</value>
+  </data>
+  <data name="lvReport_2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;lvReport_2.Name" xml:space="preserve">
+    <value>lvReport_2</value>
+  </data>
+  <data name="&gt;&gt;lvReport_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvReport_2.Parent" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;lvReport_2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblReport_2Warehouse.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_2Warehouse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_2Warehouse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 144</value>
+  </data>
+  <data name="lblReport_2Warehouse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="lblReport_2Warehouse.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblReport_2Warehouse.Text" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Warehouse.Name" xml:space="preserve">
+    <value>lblReport_2Warehouse</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Warehouse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Warehouse.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Warehouse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbReport_2Warehouse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 160</value>
+  </data>
+  <data name="cbReport_2Warehouse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_2Warehouse.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Warehouse.Name" xml:space="preserve">
+    <value>cbReport_2Warehouse</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Warehouse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Warehouse.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Warehouse.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label24.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="label24.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;label24.Name" xml:space="preserve">
+    <value>label24</value>
+  </data>
+  <data name="&gt;&gt;label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dtReport_2To.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_2To.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 26</value>
+  </data>
+  <data name="dtReport_2To.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_2To.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2To.Name" xml:space="preserve">
+    <value>dtReport_2To</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2To.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2To.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2To.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dtReport_2From.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_2From.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="dtReport_2From.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_2From.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2From.Name" xml:space="preserve">
+    <value>dtReport_2From</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2From.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2From.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;dtReport_2From.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblReport_2Date.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_2Date.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_2Date.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="lblReport_2Date.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblReport_2Date.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lblReport_2Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Date.Name" xml:space="preserve">
+    <value>lblReport_2Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Date.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Date.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbReport_2Category.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
+  </data>
+  <data name="cbReport_2Category.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_2Category.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Category.Name" xml:space="preserve">
+    <value>cbReport_2Category</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Category.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Category.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblReport_2Category.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_2Category.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_2Category.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
+  <data name="lblReport_2Category.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="lblReport_2Category.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="lblReport_2Category.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Category.Name" xml:space="preserve">
+    <value>lblReport_2Category</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Category.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Category.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnReport_2Run.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_2Run.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 187</value>
+  </data>
+  <data name="btnReport_2Run.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="btnReport_2Run.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="btnReport_2Run.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Run.Name" xml:space="preserve">
+    <value>btnReport_2Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Run.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Run.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnReport_2Run.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblReport_2Product.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_2Product.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_2Product.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 99</value>
+  </data>
+  <data name="lblReport_2Product.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="lblReport_2Product.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblReport_2Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Product.Name" xml:space="preserve">
+    <value>lblReport_2Product</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Product.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblReport_2Product.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cbReport_2Product.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 115</value>
+  </data>
+  <data name="cbReport_2Product.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_2Product.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Product.Name" xml:space="preserve">
+    <value>cbReport_2Product</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Product.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;cbReport_2Product.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 450</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlReport_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="pnlReport_2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Name" xml:space="preserve">
+    <value>pnlReport_2</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbReport_1OpenReport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="cbReport_1OpenReport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReport_1OpenReport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbReport_1OpenReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 419</value>
+  </data>
+  <data name="cbReport_1OpenReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="cbReport_1OpenReport.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="cbReport_1OpenReport.Text" xml:space="preserve">
+    <value>Open Exported Report</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1OpenReport.Name" xml:space="preserve">
+    <value>cbReport_1OpenReport</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1OpenReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1OpenReport.Parent" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1OpenReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnReport_1Export.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnReport_1Export.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_1Export.Location" type="System.Drawing.Point, System.Drawing">
+    <value>667, 415</value>
+  </data>
+  <data name="btnReport_1Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="btnReport_1Export.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="btnReport_1Export.Text" xml:space="preserve">
+    <value>Export as Excel</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Export.Name" xml:space="preserve">
+    <value>btnReport_1Export</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Export.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Export.Parent" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Export.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvReport_1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chReport_1ID.Text" xml:space="preserve">
+    <value>Flow ID</value>
+  </data>
+  <data name="chReport_1ID.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chReport_1Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chReport_1Date.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1Supplier.Text" xml:space="preserve">
+    <value>Supplier / Customer</value>
+  </data>
+  <data name="chReport_1Supplier.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_1Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="chReport_1Product.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <data name="chReport_1Unit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="chReport_1Unit.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="chReport_1Quantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="chReport_1Quantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1Quantity.Width" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="chReport_1Price.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="chReport_1Price.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1Price.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1TotalPrice.Text" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="chReport_1TotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1TotalPrice.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.Text" xml:space="preserve">
+    <value>Total Price (TL)</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="chReport_1TotalLocalPrice.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="lvReport_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 12</value>
+  </data>
+  <data name="lvReport_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 397</value>
+  </data>
+  <data name="lvReport_1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;lvReport_1.Name" xml:space="preserve">
+    <value>lvReport_1</value>
+  </data>
+  <data name="&gt;&gt;lvReport_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvReport_1.Parent" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;lvReport_1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbReport_1Category.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
+  </data>
+  <data name="cbReport_1Category.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_1Category.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Category.Name" xml:space="preserve">
+    <value>cbReport_1Category</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Category.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Category.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblReport_1Category.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_1Category.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_1Category.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
+  <data name="lblReport_1Category.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 13</value>
+  </data>
+  <data name="lblReport_1Category.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="lblReport_1Category.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Category.Name" xml:space="preserve">
+    <value>lblReport_1Category</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Category.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Category.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnReport_1Run.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_1Run.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 276</value>
+  </data>
+  <data name="btnReport_1Run.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="btnReport_1Run.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="btnReport_1Run.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Run.Name" xml:space="preserve">
+    <value>btnReport_1Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Run.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Run.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Run.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbReport_1FlowOut.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReport_1FlowOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbReport_1FlowOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 250</value>
+  </data>
+  <data name="cbReport_1FlowOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="cbReport_1FlowOut.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="cbReport_1FlowOut.Text" xml:space="preserve">
+    <value>Flow Out</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowOut.Name" xml:space="preserve">
+    <value>cbReport_1FlowOut</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowOut.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowOut.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbReport_1FlowIn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReport_1FlowIn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbReport_1FlowIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 250</value>
+  </data>
+  <data name="cbReport_1FlowIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 17</value>
+  </data>
+  <data name="cbReport_1FlowIn.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="cbReport_1FlowIn.Text" xml:space="preserve">
+    <value>Flow In</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowIn.Name" xml:space="preserve">
+    <value>cbReport_1FlowIn</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowIn.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1FlowIn.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblReport_1StockFlowType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_1StockFlowType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_1StockFlowType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 234</value>
+  </data>
+  <data name="lblReport_1StockFlowType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="lblReport_1StockFlowType.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="lblReport_1StockFlowType.Text" xml:space="preserve">
+    <value>Stock Flow Type</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1StockFlowType.Name" xml:space="preserve">
+    <value>lblReport_1StockFlowType</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1StockFlowType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1StockFlowType.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1StockFlowType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbReport_1Customer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 205</value>
+  </data>
+  <data name="cbReport_1Customer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_1Customer.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Customer.Name" xml:space="preserve">
+    <value>cbReport_1Customer</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Customer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Customer.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Customer.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnReport_1Customer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnReport_1Customer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_1Customer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 189</value>
+  </data>
+  <data name="btnReport_1Customer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="btnReport_1Customer.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="btnReport_1Customer.Text" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Customer.Name" xml:space="preserve">
+    <value>btnReport_1Customer</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Customer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Customer.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnReport_1Customer.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cbReport_1Supplier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 160</value>
+  </data>
+  <data name="cbReport_1Supplier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_1Supplier.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Supplier.Name" xml:space="preserve">
+    <value>cbReport_1Supplier</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Supplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Supplier.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Supplier.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblReport_1Supplier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_1Supplier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_1Supplier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 144</value>
+  </data>
+  <data name="lblReport_1Supplier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lblReport_1Supplier.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblReport_1Supplier.Text" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Supplier.Name" xml:space="preserve">
+    <value>lblReport_1Supplier</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Supplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Supplier.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Supplier.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblReport_1Product.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_1Product.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_1Product.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 99</value>
+  </data>
+  <data name="lblReport_1Product.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="lblReport_1Product.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="lblReport_1Product.Text" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Product.Name" xml:space="preserve">
+    <value>lblReport_1Product</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Product.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Product.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="dtReport_1To.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_1To.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 26</value>
+  </data>
+  <data name="dtReport_1To.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_1To.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1To.Name" xml:space="preserve">
+    <value>dtReport_1To</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1To.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1To.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1To.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="dtReport_1From.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_1From.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="dtReport_1From.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_1From.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1From.Name" xml:space="preserve">
+    <value>dtReport_1From</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1From.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1From.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;dtReport_1From.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="cbReport_1Product.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 115</value>
+  </data>
+  <data name="cbReport_1Product.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_1Product.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Product.Name" xml:space="preserve">
+    <value>cbReport_1Product</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Product.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;cbReport_1Product.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblReport_1Date.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_1Date.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_1Date.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="lblReport_1Date.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblReport_1Date.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="lblReport_1Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Date.Name" xml:space="preserve">
+    <value>lblReport_1Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Date.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;lblReport_1Date.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 450</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlReport_1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="pnlReport_1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Name" xml:space="preserve">
+    <value>pnlReport_1</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbReport_3OpenReport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="cbReport_3OpenReport.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbReport_3OpenReport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbReport_3OpenReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 419</value>
+  </data>
+  <data name="cbReport_3OpenReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="cbReport_3OpenReport.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="cbReport_3OpenReport.Text" xml:space="preserve">
+    <value>Open Exported Report</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3OpenReport.Name" xml:space="preserve">
+    <value>cbReport_3OpenReport</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3OpenReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3OpenReport.Parent" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3OpenReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnReport_3Export.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnReport_3Export.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_3Export.Location" type="System.Drawing.Point, System.Drawing">
+    <value>667, 415</value>
+  </data>
+  <data name="btnReport_3Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="btnReport_3Export.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btnReport_3Export.Text" xml:space="preserve">
+    <value>Export as Excel</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Export.Name" xml:space="preserve">
+    <value>btnReport_3Export</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Export.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Export.Parent" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Export.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvReport_3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chReport_3Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="chReport_3Date.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_3CurrencyCode.Text" xml:space="preserve">
+    <value>Currency Code</value>
+  </data>
+  <data name="chReport_3CurrencyCode.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="chReport_3ForexBuying.Text" xml:space="preserve">
+    <value>Forex Buying</value>
+  </data>
+  <data name="chReport_3ForexBuying.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="chReport_3ForexSelling.Text" xml:space="preserve">
+    <value>Forex Selling</value>
+  </data>
+  <data name="chReport_3ForexSelling.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="lvReport_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 12</value>
+  </data>
+  <data name="lvReport_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 397</value>
+  </data>
+  <data name="lvReport_3.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;lvReport_3.Name" xml:space="preserve">
+    <value>lvReport_3</value>
+  </data>
+  <data name="&gt;&gt;lvReport_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvReport_3.Parent" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;lvReport_3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbReport_3Currency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 70</value>
+  </data>
+  <data name="cbReport_3Currency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 21</value>
+  </data>
+  <data name="cbReport_3Currency.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3Currency.Name" xml:space="preserve">
+    <value>cbReport_3Currency</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3Currency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3Currency.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;cbReport_3Currency.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblReport_3Currency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_3Currency.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_3Currency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
+  <data name="lblReport_3Currency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblReport_3Currency.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lblReport_3Currency.Text" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Currency.Name" xml:space="preserve">
+    <value>lblReport_3Currency</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Currency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Currency.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Currency.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 32</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dtReport_3To.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_3To.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 26</value>
+  </data>
+  <data name="dtReport_3To.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_3To.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3To.Name" xml:space="preserve">
+    <value>dtReport_3To</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3To.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3To.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3To.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dtReport_3From.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="dtReport_3From.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="dtReport_3From.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="dtReport_3From.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3From.Name" xml:space="preserve">
+    <value>dtReport_3From</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3From.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3From.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;dtReport_3From.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblReport_3Date.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReport_3Date.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblReport_3Date.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="lblReport_3Date.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="lblReport_3Date.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblReport_3Date.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Date.Name" xml:space="preserve">
+    <value>lblReport_3Date</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Date.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;lblReport_3Date.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnReport_3Run.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnReport_3Run.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 97</value>
+  </data>
+  <data name="btnReport_3Run.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 22</value>
+  </data>
+  <data name="btnReport_3Run.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="btnReport_3Run.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Run.Name" xml:space="preserve">
+    <value>btnReport_3Run</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Run.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Run.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;btnReport_3Run.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 450</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlReport_3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="pnlReport_3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Name" xml:space="preserve">
+    <value>pnlReport_3</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.Parent" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport_3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlReport.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="pnlReport.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Name" xml:space="preserve">
+    <value>pnlReport</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frmChildReport</value>
+  </data>
+  <data name="&gt;&gt;chReport_3Date.Name" xml:space="preserve">
+    <value>chReport_3Date</value>
+  </data>
+  <data name="&gt;&gt;chReport_3Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_3CurrencyCode.Name" xml:space="preserve">
+    <value>chReport_3CurrencyCode</value>
+  </data>
+  <data name="&gt;&gt;chReport_3CurrencyCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_3ForexBuying.Name" xml:space="preserve">
+    <value>chReport_3ForexBuying</value>
+  </data>
+  <data name="&gt;&gt;chReport_3ForexBuying.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_3ForexSelling.Name" xml:space="preserve">
+    <value>chReport_3ForexSelling</value>
+  </data>
+  <data name="&gt;&gt;chReport_3ForexSelling.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Product.Name" xml:space="preserve">
+    <value>chReport_2Product</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Category.Name" xml:space="preserve">
+    <value>chReport_2Category</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Unit.Name" xml:space="preserve">
+    <value>chReport_2Unit</value>
+  </data>
+  <data name="&gt;&gt;chReport_2Unit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2StockIn.Name" xml:space="preserve">
+    <value>chReport_2StockIn</value>
+  </data>
+  <data name="&gt;&gt;chReport_2StockIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2StockOut.Name" xml:space="preserve">
+    <value>chReport_2StockOut</value>
+  </data>
+  <data name="&gt;&gt;chReport_2StockOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_2TotalStock.Name" xml:space="preserve">
+    <value>chReport_2TotalStock</value>
+  </data>
+  <data name="&gt;&gt;chReport_2TotalStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1ID.Name" xml:space="preserve">
+    <value>chReport_1ID</value>
+  </data>
+  <data name="&gt;&gt;chReport_1ID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Date.Name" xml:space="preserve">
+    <value>chReport_1Date</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Date.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Supplier.Name" xml:space="preserve">
+    <value>chReport_1Supplier</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Supplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Product.Name" xml:space="preserve">
+    <value>chReport_1Product</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Product.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Unit.Name" xml:space="preserve">
+    <value>chReport_1Unit</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Unit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Quantity.Name" xml:space="preserve">
+    <value>chReport_1Quantity</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Quantity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Price.Name" xml:space="preserve">
+    <value>chReport_1Price</value>
+  </data>
+  <data name="&gt;&gt;chReport_1Price.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalPrice.Name" xml:space="preserve">
+    <value>chReport_1TotalPrice</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalLocalPrice.Name" xml:space="preserve">
+    <value>chReport_1TotalLocalPrice</value>
+  </data>
+  <data name="&gt;&gt;chReport_1TotalLocalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmChildReports</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

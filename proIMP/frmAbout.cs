@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 
 namespace proIMP {
     public partial class frmAbout:Form {
-        public frmMain frmMain;
-
-        public frmAbout( frmMain frmMain ) {
+        public frmAbout() {
             InitializeComponent();
-
-            this.frmMain = frmMain;
         }
 
         private void frmAbout_Load( object sender, EventArgs e ) {
@@ -26,13 +16,12 @@ namespace proIMP {
             lblBuildTime.Text = GetLinkerTime( Assembly.GetExecutingAssembly().Location ).ToString( "dd.MM.yyyy HH:mm:ss" );
         }
 
-        private void switchLanguage( ) {
-            this.Text = frmMain.resMan.GetString( "frmAbout_Text", frmMain.culInfo );
-            lblProgramName.Text = frmMain.resMan.GetString( "mainForm_Text", frmMain.culInfo );
-            lblAboutAuthor.Text = frmMain.resMan.GetString( "lblAboutAuthor", frmMain.culInfo ) + " :";
-            lblBuildTimeText.Text = frmMain.resMan.GetString( "lblBuildTimeText", frmMain.culInfo ) + " :";
-            lblLicence.Text = frmMain.resMan.GetString( "lblLicence", frmMain.culInfo );
-            btnOK.Text = frmMain.resMan.GetString( "btnOK", frmMain.culInfo );
+        private void labelURL_LinkClicked( object sender, LinkLabelLinkClickedEventArgs e ) {
+            System.Diagnostics.Process.Start( "https://www.progedia.com" );
+        }
+
+        private void btnOK_Click( object sender, EventArgs e ) {
+            this.DialogResult = DialogResult.OK;
         }
 
         public static DateTime GetLinkerTime( string filePath ) {
@@ -48,12 +37,13 @@ namespace proIMP {
             return TimeZoneInfo.ConvertTimeFromUtc( epoch.AddSeconds( secondsSince1970 ), TimeZoneInfo.Local );
         }
 
-        private void labelURL_LinkClicked( object sender, LinkLabelLinkClickedEventArgs e ) {
-            System.Diagnostics.Process.Start( "http://www.progedia.com" );
-        }
-
-        private void btnOK_Click( object sender, EventArgs e ) {
-            this.DialogResult = DialogResult.OK;
+        private void switchLanguage() {
+            this.Text = frmMain.resMan.GetString( "frmAbout_Text", frmMain.culInfo );
+            lblProgramName.Text = frmMain.resMan.GetString( "mainForm_Text", frmMain.culInfo );
+            lblAboutAuthor.Text = frmMain.resMan.GetString( "lblAboutAuthor", frmMain.culInfo ) + " :";
+            lblBuildTimeText.Text = frmMain.resMan.GetString( "lblBuildTimeText", frmMain.culInfo ) + " :";
+            lblLicence.Text = frmMain.resMan.GetString( "lblLicence", frmMain.culInfo );
+            btnOK.Text = frmMain.resMan.GetString( "btnOK", frmMain.culInfo );
         }
     }
 }

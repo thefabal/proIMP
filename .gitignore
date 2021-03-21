@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/proIMP_20210214.rar
+/proIMP_20210128.rar
+/proIMP_20210130.rar

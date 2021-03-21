@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -12,32 +6,29 @@ using System.Threading;
 using System.Data.SQLite;
 
 namespace proIMP {
-    public partial class frmStockFlowIn:Form {
-        public frmMain frmMain;
-        public string stockFlowID = string.Empty;
+    public partial class frmStockFlowIn : Form {
+        private readonly string stockFlowID = string.Empty;
 
         private SQLiteCommand dbCommand;
         private exchange_rates er;
 
-        public frmStockFlowIn( frmMain frmMain ) {
-            this.frmMain = frmMain;         
-
+        public frmStockFlowIn( string stockFlowID = "" ) {
+            this.stockFlowID = stockFlowID;
+            
             InitializeComponent();
         }
 
         private void frmStockFlowIn_Load( object sender, EventArgs e ) {
             switchLanguage();
 
-            dbCommand = new SQLiteCommand() {
-                Connection = frmMain.sqlCon
-            };
+            dbCommand = database.sqlCon.CreateCommand();
 
-            frmMain.getSupplierList( cbStockSupplier, "supplier" );
-            frmMain.getProductList( cbStockProductID );
-            frmMain.getWarehouseList( cbStockProductWarehouse );
-            frmMain.getExchangeList( cbStockProductCurrency );
+            database.getSupplierList( cbStockSupplier, "supplier" );
+            database.getProductList( cbStockProductID );
+            database.getWarehouseList( cbStockProductWarehouse );
+            database.getExchangeList( cbStockProductCurrency );
 
-            er = frmMain.getCurrency( DateTime.Now.Date );
+            er = database.getCurrency( DateTime.Now.Date );
 
             tbStockProductUnit.Text = string.Empty;
             tbStockProductQuantity.Text = string.Empty;
@@ -56,33 +47,37 @@ namespace proIMP {
                 lvStockProductList.CheckBoxes = true;
                 lblProductListNote.Visible = true;
 
-                dbCommand.CommandText = "SELECT t1.stock_type, t1.stock_date, t1.stock_supplier, t2.supplier_name, t1.stock_desc FROM stock AS t1 LEFT JOIN supplier AS t2 ON t1.stock_supplier = t2.supplier_id WHERE t1.stock_id = @stock_id";
-                dbCommand.Parameters.Add( new SQLiteParameter( "@stock_id", stockFlowID ) );
+                dbCommand.CommandText = string.Format(
+                    "SELECT t1.stock_type, t1.stock_date, t1.stock_supplier, t2.supplier_name, t1.stock_desc FROM stock AS t1 LEFT JOIN supplier AS t2 ON t1.stock_supplier = t2.supplier_id WHERE t1.stock_id = '{0}'",
+                    stockFlowID
+                );
 
-                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+                try {
+                    SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+                    if( dbReader.Read() ) {
+                        tbStockDesc.Text = dbReader[ "stock_desc" ].ToString();
+                        dtpStockDate.Value = ( DateTime )dbReader[ "stock_date" ];
+                        cbStockSupplier.SelectedIndex = cbStockSupplier.FindStringExact( dbReader[ "supplier_name" ].ToString() );
 
-                if( dbReader.Read() ) {
-                    tbStockDesc.Text = dbReader[ "stock_desc" ].ToString();
-                    dtpStockDate.Value = (DateTime)dbReader[ "stock_date" ];
-                    cbStockSupplier.SelectedIndex = cbStockSupplier.FindStringExact( dbReader[ "supplier_name" ].ToString() );
+                        dbReader.Close();
+                        dbCommand.CommandText = string.Format(
+                            "SELECT t1.sflow_id, t2.product_name, t3.warehouse_id, t3.warehouse_name, t2.product_unit, ABS(t1.sflow_quantity) AS sflow_quantity, t1.sflow_price, t1.sflow_priceexchange FROM stock_flow AS t1 LEFT JOIN product AS t2 ON t1.sflow_productid = t2.product_id LEFT JOIN warehouse AS t3 ON t1.sflow_warehouseid = t3.warehouse_id WHERE t1.sflow_sid = '{0}' ORDER BY t2.product_name",
+                            stockFlowID
+                        );
 
-                    dbReader.Close();
-                    dbCommand.CommandText = "SELECT t1.sflow_id, t2.product_name, t3.warehouse_id, t3.warehouse_name, t2.product_unit, ABS(t1.sflow_quantity) AS sflow_quantity, t1.sflow_price, t1.sflow_priceexchange FROM stock_flow AS t1 LEFT JOIN product AS t2 ON t1.sflow_productid = t2.product_id LEFT JOIN warehouse AS t3 ON t1.sflow_warehouseid = t3.warehouse_id WHERE t1.sflow_sid = @sflow_sid ORDER BY t2.product_name";
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_sid", stockFlowID ) );
+                        double dGrandPrice = 0;
+                        lvStockProductList.Items.Clear();
 
-                    dbReader = dbCommand.ExecuteReader();
+                        dbReader = dbCommand.ExecuteReader();
+                        while( dbReader.Read() ) {
+                            double dQuantity = Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() );
+                            double dPrice = Convert.ToDouble( dbReader[ "sflow_price" ].ToString() );
+                            double dTotalPrice = dQuantity * dPrice;
+                            double dTotalLocalPrice = dTotalPrice * er.exchanges[ dbReader[ "sflow_priceexchange" ].ToString() ].ForexSelling;
 
-                    double dGrandPrice = 0;
-                    lvStockProductList.Items.Clear();
-                    while( dbReader.Read() ) {
-                        double dQuantity = Convert.ToDouble( dbReader[ "sflow_quantity" ].ToString() );
-                        double dPrice = Convert.ToDouble( dbReader[ "sflow_price" ].ToString() );
-                        double dTotalPrice = dQuantity * dPrice;
-                        double dTotalLocalPrice = dTotalPrice * er.exchanges[ dbReader[ "sflow_priceexchange" ].ToString() ].ForexSelling;
+                            dGrandPrice += dTotalLocalPrice;
 
-                        dGrandPrice += dTotalLocalPrice;
-
-                        ListViewItem lvi = new ListViewItem(
+                            ListViewItem lvi = new ListViewItem(
                             new string[] {
                                 dbReader[ "product_name" ].ToString(),
                                 dbReader[ "sflow_id" ].ToString(),
@@ -90,57 +85,23 @@ namespace proIMP {
                                 dbReader[ "warehouse_name" ].ToString(),
                                 frmMain.resMan.GetString( "unit" + dbReader[ "product_unit" ].ToString(), frmMain.culInfo ),
                                 dQuantity.ToString("0.000"),
-                                dPrice.ToString("0.00000") + " " + dbReader[ "sflow_priceexchange" ].ToString(),
+                                dPrice.ToString("0.000") + " " + dbReader[ "sflow_priceexchange" ].ToString(),
                                 dTotalPrice.ToString( "0.000" ) + " " + dbReader[ "sflow_priceexchange" ].ToString(),
                                 dTotalLocalPrice.ToString( "0.000" ) + " " + frmMain.setting.localExchange
-                            } 
+                            }
                         );
-                        
-                        lvStockProductList.Items.Add( lvi );
+
+                            lvStockProductList.Items.Add( lvi );
+                        }
+                        dbReader.Close();
+                        lblStockGrandTotal.Text = dGrandPrice.ToString( "0.000" ) + " " + frmMain.setting.localExchange;
+
+                        dbCommand.Transaction = database.sqlCon.BeginTransaction();
                     }
+
                     dbReader.Close();
-                    lblStockGrandTotal.Text = dGrandPrice.ToString( "0.000" ) + " " + frmMain.setting.localExchange;
+                } catch {
 
-                    dbCommand.Connection = frmMain.sqlCon;
-                    dbCommand.Transaction = frmMain.sqlCon.BeginTransaction();
-                } else {
-                    dbReader.Close();
-                }
-            }
-        }
-
-        private void switchLanguage( ) {
-            this.Text = frmMain.resMan.GetString( "frmStockFlowIn_Text", frmMain.culInfo );
-
-            lblDate.Text = frmMain.resMan.GetString( "lblDate", frmMain.culInfo ) + " :";
-            lblSupplier.Text = frmMain.resMan.GetString( "lblSupplier", frmMain.culInfo ) + " :";
-            lblDescription.Text = frmMain.resMan.GetString( "lblDescription", frmMain.culInfo ) + " :";
-            lblProductName.Text = frmMain.resMan.GetString( "lblProductName", frmMain.culInfo );
-            lblWarehouse.Text = frmMain.resMan.GetString( "lblWarehouse", frmMain.culInfo );
-            lblProductUnit.Text = frmMain.resMan.GetString( "lblProductUnit", frmMain.culInfo );
-            lblProductQuantity.Text = frmMain.resMan.GetString( "lblProductQuantity", frmMain.culInfo );
-            lblProductCurrency.Text = frmMain.resMan.GetString( "lblProductCurrency", frmMain.culInfo );
-            lblProductPrice.Text = frmMain.resMan.GetString( "lblProductPrice", frmMain.culInfo );
-            btnProductAdd.Text = frmMain.resMan.GetString( "btnAdd", frmMain.culInfo );
-            chProductName.Text = lblProductName.Text;
-            chProductWarehouse.Text = lblWarehouse.Text;
-            chProductUnit.Text = lblProductUnit.Text;
-            chProductQuantity.Text = lblProductQuantity.Text;
-            chProductPrice.Text = lblProductPrice.Text;
-            chProductTotalPrice.Text = frmMain.resMan.GetString( "stockTotalPrice", frmMain.culInfo );
-            chProductTotalLocalPrice.Text = chProductTotalPrice.Text + " (" + frmMain.setting.localExchange + ")";
-            lblProductListNote.Text = frmMain.resMan.GetString( "lblProductListNote", frmMain.culInfo );
-            lblProductLocalPriceNote.Text = frmMain.resMan.GetString( "lblProductLocalPriceNote", frmMain.culInfo );
-            lblGrandTotalPrice.Text = frmMain.resMan.GetString( "lblGrandTotalPrice", frmMain.culInfo );
-
-            btnStockCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
-            btnStockSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
-        }
-
-        private void frmStockFlowIn_FormClosing( object sender, FormClosingEventArgs e ) {
-            if( e.CloseReason == CloseReason.UserClosing ) {
-                if( stockFlowID != string.Empty ) {
-                    this.dbCommand.Transaction.Rollback();
                 }
             }
         }
@@ -149,7 +110,22 @@ namespace proIMP {
             if( cbStockProductID.SelectedIndex == -1 ) {
                 tbStockProductUnit.Text = "";
             } else {
-                tbStockProductUnit.Text = frmMain.resMan.GetString( "unit" + ( (ProductItem)cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductUnit, frmMain.culInfo );
+                tbStockProductUnit.Text = frmMain.resMan.GetString( "unit" + ( ( ProductItem )cbStockProductID.Items[ cbStockProductID.SelectedIndex ] ).ProductUnit, frmMain.culInfo );
+            }
+        }
+
+        private void tbCheckForNumeric_KeyPress( object sender, KeyPressEventArgs e ) {
+            if( ( int )e.KeyChar < 48 || ( int )e.KeyChar > 57 ) {
+                if( e.KeyChar == Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator[ 0 ] ) {
+                    ( ( TextBox )sender ).Text += Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+                    ( ( TextBox )sender ).SelectionStart = ( ( TextBox )sender ).Text.Length;
+                    ( ( TextBox )sender ).SelectionLength = 0;
+                } else if( e.KeyChar == ( char )( 0x08 ) ) {
+                    e.Handled = false;
+
+                    return;
+                }
+                e.Handled = true;
             }
         }
 
@@ -178,7 +154,7 @@ namespace proIMP {
 
             try {
                 double dTotalPrice = dQuantity * dPrice;
-                double dTotalLocalPrice = dTotalPrice * er.exchanges[ (string)cbStockProductCurrency.SelectedItem ].ForexSelling;                
+                double dTotalLocalPrice = dTotalPrice * er.exchanges[ (string)cbStockProductCurrency.SelectedItem ].ForexSelling;
 
                 ListViewItem lvi = new ListViewItem(
                     new string[] {
@@ -188,7 +164,7 @@ namespace proIMP {
                         ( (WarehouseItem)cbStockProductWarehouse.SelectedItem ).WarehouseName,
                         tbStockProductUnit.Text,
                         dQuantity.ToString( "0.000" ),
-                        dPrice.ToString( "0.00000" ) + " " + (string)cbStockProductCurrency.SelectedItem,
+                        dPrice.ToString( "0.000" ) + " " + (string)cbStockProductCurrency.SelectedItem,
                         dTotalPrice.ToString( "0.000" ) + " " + (string)cbStockProductCurrency.SelectedItem,
                         dTotalLocalPrice.ToString( "0.000" ) + " " + frmMain.setting.localExchange
                     }
@@ -197,13 +173,15 @@ namespace proIMP {
                 lvStockProductList.Items.Add( lvi );
 
                 if( stockFlowID != string.Empty ) {
-                    dbCommand.CommandText = "INSERT INTO stock_flow (sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price, sflow_priceexchange) VALUES(@sflow_sid, @sflow_productid, @sflow_warehouseid, @sflow_quantity, @sflow_price, @sflow_priceexchange)";
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_sid", stockFlowID ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_productid", lvi.SubItems[ 1 ].Text ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_warehouseid", lvi.SubItems[ 2 ].Text ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_quantity", dQuantity ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_price", dPrice ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_priceexchange", (string)cbStockProductCurrency.SelectedItem) );
+                    dbCommand.CommandText = string.Format(
+                        "INSERT INTO stock_flow (sflow_sid, sflow_productid, sflow_warehouseid, sflow_quantity, sflow_price, sflow_priceexchange) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
+                        stockFlowID,
+                        lvi.SubItems[ 1 ].Text,
+                        lvi.SubItems[ 2 ].Text,
+                        dQuantity,
+                        dPrice,
+                        ( string )cbStockProductCurrency.SelectedItem
+                    );
 
                     dbCommand.ExecuteNonQuery();
                 }
@@ -217,8 +195,16 @@ namespace proIMP {
                 lblStockGrandTotal.Text = calculateGrandTotal().ToString( "0.000" );
 
                 cbStockProductID.Focus();
-            } catch(Exception ex) {
+            } catch( Exception ex ) {
                 MessageBox.Show( frmMain.resMan.GetString( "unknownError", frmMain.culInfo ) + "\r\n" + ex.Message );
+            }
+        }
+
+        private void frmStockFlowIn_FormClosing( object sender, FormClosingEventArgs e ) {
+            if( e.CloseReason == CloseReason.UserClosing ) {
+                if( stockFlowID != string.Empty ) {
+                    dbCommand.Transaction.Rollback();
+                }
             }
         }
 
@@ -226,17 +212,18 @@ namespace proIMP {
             if( cbStockSupplier.SelectedIndex != -1 ) {
                 if( stockFlowID == string.Empty ) {
                     dbCommand = new SQLiteCommand() {
-                        Connection = frmMain.sqlCon,
-                        Transaction = frmMain.sqlCon.BeginTransaction()
+                        Connection = database.sqlCon,
+                        Transaction = database.sqlCon.BeginTransaction()
                     };
 
                     try {
-                        dbCommand.CommandText = "INSERT INTO stock (stock_type, stock_date, stock_supplier, stock_desc) VALUES(@stock_type, @stock_date, @stock_supplier, @stock_desc)";
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@stock_type", 1 ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@stock_date", dtpStockDate.Value ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@stock_supplier", ( (SupplierItem)cbStockSupplier.SelectedItem ).SupplierID ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@stock_desc", tbStockDesc.Text ) );
-
+                        dbCommand.CommandText = string.Format(
+                            "INSERT INTO stock (stock_type, stock_date, stock_supplier, stock_desc) VALUES('{0}', '{1}', '{2}', '{3}')",
+                            1,
+                            dtpStockDate.Value.ToString( "yyyy-MM-dd" ),
+                            ( ( SupplierItem )cbStockSupplier.SelectedItem ).SupplierID,
+                            tbStockDesc.Text
+                        );
                         dbCommand.ExecuteNonQuery();
 
                         dbCommand.CommandText = "SELECT last_insert_rowid()";
@@ -248,8 +235,8 @@ namespace proIMP {
                             dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_productid", lvStockProductList.Items[ i ].SubItems[ 1 ].Text ) );
                             dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_warehouseid", lvStockProductList.Items[ i ].SubItems[ 2 ].Text ) );
                             dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_quantity", Convert.ToDouble( lvStockProductList.Items[ i ].SubItems[ 5 ].Text ) ) );
-                            dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_price", Convert.ToDouble( lvStockProductList.Items[ i ].SubItems[ 6 ].Text.Substring( 0, lvStockProductList.Items[ i ].SubItems[ 6 ].Text.IndexOf( " " ) ) ) ) );
-                            dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_priceexchange", lvStockProductList.Items[ i ].SubItems[ 6 ].Text.Substring( lvStockProductList.Items[ i ].SubItems[ 6 ].Text.IndexOf( " " ) + 1 ) ) );
+                            dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_price", Convert.ToDouble( lvStockProductList.Items[ i ].SubItems[ 7 ].Text.Substring( 0, lvStockProductList.Items[ i ].SubItems[ 6 ].Text.IndexOf( " " ) ) ) ) );
+                            dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_priceexchange", lvStockProductList.Items[ i ].SubItems[ 7 ].Text.Substring( lvStockProductList.Items[ i ].SubItems[ 7 ].Text.IndexOf( " " ) + 1 ) ) );
 
                             dbCommand.ExecuteNonQuery();
                         }
@@ -270,39 +257,26 @@ namespace proIMP {
                     }
 
                     if( SQL.Length > 0 ) {
-                        dbCommand.CommandText = "DELETE FROM stock_flow WHERE sflow_id IN(@sflow_id) AND sflow_sid = @sflow_sid";
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_id", SQL.Substring( 0, SQL.Length - 1 ) ) );
-                        dbCommand.Parameters.Add( new SQLiteParameter( "@sflow_sid", stockFlowID ) );
-
+                        dbCommand.CommandText = string.Format( 
+                            "DELETE FROM stock_flow WHERE sflow_id IN({1}) AND sflow_sid = '{0}'" ,
+                            stockFlowID,
+                            SQL.Substring( 0, SQL.Length - 1 )
+                        );
                         dbCommand.ExecuteNonQuery();
                     }
 
-                    dbCommand.CommandText = "UPDATE stock SET stock_date = @stock_date, stock_supplier = @stock_supplier, stock_desc = @stock_desc WHERE stock_id = @stock_id";
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@stock_id", stockFlowID ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@stock_date", dtpStockDate.Value ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@stock_supplier", ( (SupplierItem)cbStockSupplier.SelectedItem ).SupplierID ) );
-                    dbCommand.Parameters.Add( new SQLiteParameter( "@stock_desc", tbStockDesc.Text ) );
-
+                    dbCommand.CommandText = string.Format(
+                        "UPDATE stock SET stock_date = '{1}', stock_supplier = '{2}', stock_desc = '{3}' WHERE stock_id = '{0}'",
+                        stockFlowID,
+                        dtpStockDate.Value,
+                        ( ( SupplierItem )cbStockSupplier.SelectedItem ).SupplierID,
+                        tbStockDesc.Text
+                    );
                     dbCommand.ExecuteNonQuery();
                     dbCommand.Transaction.Commit();
                 }
 
                 DialogResult = DialogResult.OK;
-            }
-        }
-
-        private void tbCheckForNumeric_KeyPress( object sender, KeyPressEventArgs e ) {
-            if( (int)e.KeyChar < 48 || (int)e.KeyChar > 57 ) {
-                if( e.KeyChar == Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator[ 0 ] ) {
-                    ( (TextBox)sender ).Text += Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-                    ( (TextBox)sender ).SelectionStart = ( (TextBox)sender ).Text.Length;
-                    ( (TextBox)sender ).SelectionLength = 0;
-                } else if( e.KeyChar == (char)( 0x08 ) ) {
-                    e.Handled = false;
-
-                    return;
-                }
-                e.Handled = true;
             }
         }
 
@@ -330,16 +304,32 @@ namespace proIMP {
             return d;
         }
 
-        private void LvStockProductList_DrawColumnHeader( object sender, DrawListViewColumnHeaderEventArgs e ) {
-            frmMain.listView_DrawColumnHeader( sender, e );
-        }
+        private void switchLanguage() {
+            this.Text = frmMain.resMan.GetString( "frmStockFlowIn_Text", frmMain.culInfo );
 
-        private void LvStockProductList_MouseMove( object sender, MouseEventArgs e ) {
-            frmMain.listView_MouseMove( sender, e );
-        }
+            lblDate.Text = frmMain.resMan.GetString( "lblDate", frmMain.culInfo ) + " :";
+            lblSupplier.Text = frmMain.resMan.GetString( "lblSupplier", frmMain.culInfo ) + " :";
+            lblDescription.Text = frmMain.resMan.GetString( "lblDescription", frmMain.culInfo ) + " :";
+            lblProductName.Text = frmMain.resMan.GetString( "lblProductName", frmMain.culInfo );
+            lblWarehouse.Text = frmMain.resMan.GetString( "lblWarehouse", frmMain.culInfo );
+            lblProductUnit.Text = frmMain.resMan.GetString( "lblProductUnit", frmMain.culInfo );
+            lblProductQuantity.Text = frmMain.resMan.GetString( "lblProductQuantity", frmMain.culInfo );
+            lblProductCurrency.Text = frmMain.resMan.GetString( "lblProductCurrency", frmMain.culInfo );
+            lblProductPrice.Text = frmMain.resMan.GetString( "lblProductPrice", frmMain.culInfo );
+            btnProductAdd.Text = frmMain.resMan.GetString( "btnAdd", frmMain.culInfo );
+            chProductName.Text = lblProductName.Text;
+            chProductWarehouse.Text = lblWarehouse.Text;
+            chProductUnit.Text = lblProductUnit.Text;
+            chProductQuantity.Text = lblProductQuantity.Text;
+            chProductPrice.Text = lblProductPrice.Text;
+            chProductTotalPrice.Text = frmMain.resMan.GetString( "stockTotalPrice", frmMain.culInfo );
+            chProductTotalLocalPrice.Text = chProductTotalPrice.Text + " (" + frmMain.setting.localExchange + ")";
+            lblProductListNote.Text = frmMain.resMan.GetString( "lblProductListNote", frmMain.culInfo );
+            lblProductLocalPriceNote.Text = frmMain.resMan.GetString( "lblProductLocalPriceNote", frmMain.culInfo );
+            lblGrandTotalPrice.Text = frmMain.resMan.GetString( "lblGrandTotalPrice", frmMain.culInfo );
 
-        private void LvStockProductList_DrawItem( object sender, DrawListViewItemEventArgs e ) {
-            frmMain.listView_DrawItem( sender, e );
+            btnStockCancel.Text = frmMain.resMan.GetString( "btnCancel", frmMain.culInfo );
+            btnStockSave.Text = frmMain.resMan.GetString( "btnSave", frmMain.culInfo );
         }
     }
 }

@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="scStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="scStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="scStock.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Name" xml:space="preserve">
+    <value>btnStockFlowAdd</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Name" xml:space="preserve">
+    <value>btnStockFlowEdit</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Name" xml:space="preserve">
+    <value>btnStockFlowDelete</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Name" xml:space="preserve">
+    <value>lvStockFlow</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 191</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>scStock.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scStock.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Name" xml:space="preserve">
+    <value>scStock.Panel1</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.Parent" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Name" xml:space="preserve">
+    <value>lblGrandTotal</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Name" xml:space="preserve">
+    <value>btnStockProductAdd</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Name" xml:space="preserve">
+    <value>btnStockProductEdit</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Name" xml:space="preserve">
+    <value>btnStockProductDelete</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Name" xml:space="preserve">
+    <value>lblGrandTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Name" xml:space="preserve">
+    <value>lvStockProductList</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 258</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>scStock.Panel2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="scStock.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Name" xml:space="preserve">
+    <value>scStock.Panel2</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.Parent" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="scStock.SplitterDistance" type="System.Int32, mscorlib">
+    <value>191</value>
+  </data>
+  <data name="scStock.SplitterWidth" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="scStock.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;scStock.Name" xml:space="preserve">
+    <value>scStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scStock.Parent" xml:space="preserve">
+    <value>pnlStock</value>
+  </data>
+  <data name="&gt;&gt;scStock.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnStockFlowAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockFlowAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockFlowAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>470, 156</value>
+  </data>
+  <data name="btnStockFlowAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockFlowAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnStockFlowAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Name" xml:space="preserve">
+    <value>btnStockFlowAdd</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowAdd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnStockFlowEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockFlowEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockFlowEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>579, 156</value>
+  </data>
+  <data name="btnStockFlowEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockFlowEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnStockFlowEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Name" xml:space="preserve">
+    <value>btnStockFlowEdit</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowEdit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnStockFlowDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockFlowDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockFlowDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 156</value>
+  </data>
+  <data name="btnStockFlowDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockFlowDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnStockFlowDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Name" xml:space="preserve">
+    <value>btnStockFlowDelete</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnStockFlowDelete.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lvStockFlow.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvStockFlow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 19</value>
+  </data>
+  <data name="lvStockFlow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>787, 131</value>
+  </data>
+  <data name="lvStockFlow.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Name" xml:space="preserve">
+    <value>lvStockFlow</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;lvStockFlow.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="stockFlowType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="stockFlowType.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="stockFlowID.Text" xml:space="preserve">
+    <value>Stock Flow ID</value>
+  </data>
+  <data name="stockFlowID.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stockFlowDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="stockFlowDate.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="stockFlowSupplier.Text" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="stockFlowSupplier.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="stockFlowDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="stockFlowDescription.Width" type="System.Int32, mscorlib">
+    <value>225</value>
+  </data>
+  <data name="stockFlowQuantity.Text" xml:space="preserve">
+    <value>Quantity (Total / Product)</value>
+  </data>
+  <data name="stockFlowQuantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockFlowQuantity.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="stockFlowTotalPrice.Text" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="stockFlowTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockFlowTotalPrice.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="stockFlowStockType.Text" xml:space="preserve">
+    <value>stock_type</value>
+  </data>
+  <data name="stockFlowStockType.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblGrandTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblGrandTotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblGrandTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGrandTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>679, 196</value>
+  </data>
+  <data name="lblGrandTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 26</value>
+  </data>
+  <data name="lblGrandTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblGrandTotal.Text" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="lblGrandTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Name" xml:space="preserve">
+    <value>lblGrandTotal</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnStockProductAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockProductAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockProductAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>469, 223</value>
+  </data>
+  <data name="btnStockProductAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockProductAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="btnStockProductAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Name" xml:space="preserve">
+    <value>btnStockProductAdd</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductAdd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnStockProductEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockProductEdit.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnStockProductEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockProductEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>579, 223</value>
+  </data>
+  <data name="btnStockProductEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockProductEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="btnStockProductEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Name" xml:space="preserve">
+    <value>btnStockProductEdit</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductEdit.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnStockProductDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnStockProductDelete.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnStockProductDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnStockProductDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>689, 223</value>
+  </data>
+  <data name="btnStockProductDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="btnStockProductDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btnStockProductDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Name" xml:space="preserve">
+    <value>btnStockProductDelete</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btnStockProductDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblGrandTotalPrice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblGrandTotalPrice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGrandTotalPrice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGrandTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 201</value>
+  </data>
+  <data name="lblGrandTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 13</value>
+  </data>
+  <data name="lblGrandTotalPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblGrandTotalPrice.Text" xml:space="preserve">
+    <value>Grand Total Price :</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Name" xml:space="preserve">
+    <value>lblGrandTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lblGrandTotalPrice.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lvStockProductList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvStockProductList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="lvStockProductList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>787, 174</value>
+  </data>
+  <data name="lvStockProductList.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Name" xml:space="preserve">
+    <value>lvStockProductList</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lvStockProductList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="stockProductName.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="stockProductName.Text" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="stockProductName.Width" type="System.Int32, mscorlib">
+    <value>250</value>
+  </data>
+  <data name="stockProductID.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stockProductID.Text" xml:space="preserve">
+    <value>FlowID</value>
+  </data>
+  <data name="stockProductID.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stockProductUnit.Text" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="stockProductUnit.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="stockProductQuantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="stockProductQuantity.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductQuantity.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="stockProductPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="stockProductPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductPrice.Width" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="stockProductTotalPrice.Text" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="stockProductTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductTotalPrice.Width" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.Text" xml:space="preserve">
+    <value>Total Local Price</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="stockProductTotalLocalPrice.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="pnlStock.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pnlStock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlStock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="pnlStock.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Name" xml:space="preserve">
+    <value>pnlStock</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlStock.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="cmsAddStockFlow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="addStockInToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="addStockInToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stock In</value>
+  </data>
+  <data name="stockOutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="stockOutToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Stock Out</value>
+  </data>
+  <data name="cmsAddStockFlow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 70</value>
+  </data>
+  <data name="&gt;&gt;cmsAddStockFlow.Name" xml:space="preserve">
+    <value>cmsAddStockFlow</value>
+  </data>
+  <data name="&gt;&gt;cmsAddStockFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="&gt;&gt;stockFlowType.Name" xml:space="preserve">
+    <value>stockFlowType</value>
+  </data>
+  <data name="&gt;&gt;stockFlowType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowID.Name" xml:space="preserve">
+    <value>stockFlowID</value>
+  </data>
+  <data name="&gt;&gt;stockFlowID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowDate.Name" xml:space="preserve">
+    <value>stockFlowDate</value>
+  </data>
+  <data name="&gt;&gt;stockFlowDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowSupplier.Name" xml:space="preserve">
+    <value>stockFlowSupplier</value>
+  </data>
+  <data name="&gt;&gt;stockFlowSupplier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowDescription.Name" xml:space="preserve">
+    <value>stockFlowDescription</value>
+  </data>
+  <data name="&gt;&gt;stockFlowDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowQuantity.Name" xml:space="preserve">
+    <value>stockFlowQuantity</value>
+  </data>
+  <data name="&gt;&gt;stockFlowQuantity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowTotalPrice.Name" xml:space="preserve">
+    <value>stockFlowTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;stockFlowTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockFlowStockType.Name" xml:space="preserve">
+    <value>stockFlowStockType</value>
+  </data>
+  <data name="&gt;&gt;stockFlowStockType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductName.Name" xml:space="preserve">
+    <value>stockProductName</value>
+  </data>
+  <data name="&gt;&gt;stockProductName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductID.Name" xml:space="preserve">
+    <value>stockProductID</value>
+  </data>
+  <data name="&gt;&gt;stockProductID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductUnit.Name" xml:space="preserve">
+    <value>stockProductUnit</value>
+  </data>
+  <data name="&gt;&gt;stockProductUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductQuantity.Name" xml:space="preserve">
+    <value>stockProductQuantity</value>
+  </data>
+  <data name="&gt;&gt;stockProductQuantity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductPrice.Name" xml:space="preserve">
+    <value>stockProductPrice</value>
+  </data>
+  <data name="&gt;&gt;stockProductPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductTotalPrice.Name" xml:space="preserve">
+    <value>stockProductTotalPrice</value>
+  </data>
+  <data name="&gt;&gt;stockProductTotalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockProductTotalLocalPrice.Name" xml:space="preserve">
+    <value>stockProductTotalLocalPrice</value>
+  </data>
+  <data name="&gt;&gt;stockProductTotalLocalPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addStockInToolStripMenuItem.Name" xml:space="preserve">
+    <value>addStockInToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;addStockInToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stockOutToolStripMenuItem1.Name" xml:space="preserve">
+    <value>stockOutToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;stockOutToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmChildInventory</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

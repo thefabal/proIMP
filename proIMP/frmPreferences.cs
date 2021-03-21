@@ -13,14 +13,16 @@ using System.Data.SQLite;
 
 namespace proIMP {
     public partial class frmPreferences:Form {
-        private readonly frmMain frmMain;
+        readonly Func<bool> checkDB;
+        readonly Func<bool> connectDB;
 
         public TreeNode previousSelectedNode = null;
 
-        public frmPreferences(frmMain frmMain) {
-            this.frmMain = frmMain;
-
+        public frmPreferences( Func<bool> mainDBConnect, Func<bool> mainDBCheck ) {
             InitializeComponent();
+
+            this.connectDB = mainDBConnect;
+            this.checkDB = mainDBCheck;
         }
 
         private void frmPreferences_Load( object sender, EventArgs e ) {
@@ -94,14 +96,14 @@ namespace proIMP {
 
                     return;
                 } else {
-                    frmMain.sqlCon.Close();
+                    database.sqlCon.Close();
                     if( ofd.FileName.IndexOf( Path.GetDirectoryName( Application.ExecutablePath ) ) == 0 ) {
                         frmMain.setting.database = ofd.FileName.Substring( Path.GetDirectoryName( Application.ExecutablePath ).Length + 1 );
                     } else {
                         frmMain.setting.database = ofd.FileName;
                     }
 
-                    if( frmMain.connectDB() == false ) {
+                    if( connectDB() == false ) {
                         MessageBox.Show( frmMain.resMan.GetString( "errorCouldNotConnectDB", frmMain.culInfo ) );
                     }
 
@@ -121,7 +123,7 @@ namespace proIMP {
 
                     return;
                 } else {
-                    frmMain.sqlCon.Close();
+                    database.sqlCon.Close();
                     SQLiteConnection.CreateFile( sfd.FileName );
                     string database_old = frmMain.setting.database;
                     if( sfd.FileName.IndexOf( Path.GetDirectoryName( Application.ExecutablePath ) ) == 0 ) {
@@ -130,14 +132,14 @@ namespace proIMP {
                         frmMain.setting.database = sfd.FileName;
                     }
 
-                    frmMain.sqlCon = null;
-                    if( frmMain.connectDB() == false ) {
+                    database.sqlCon = null;
+                    if( connectDB() == false ) {
                         frmMain.setting.database = database_old;
 
                         return;
                     }
 
-                    SQLiteCommand dbCommand = new SQLiteCommand( frmMain.sqlCon );
+                    SQLiteCommand dbCommand = new SQLiteCommand( database.sqlCon );
                     try {
                         List<string> sql = new List<string>() {
                             "CREATE TABLE category (category_id INTEGER PRIMARY KEY AUTOINCREMENT, category_name VARCHAR (48) UNIQUE ON CONFLICT IGNORE, category_desc TEXT)",
@@ -171,7 +173,7 @@ namespace proIMP {
                             "CREATE VIEW report_product_flow AS SELECT t4.stock_date, t2.product_id, t2.product_name, t2.product_unit, t3.category_id, t3.category_name, t1.sflow_warehouseid AS warehouse_id, CASE WHEN t4.stock_type = 1 THEN t1.sflow_quantity ELSE 0 END AS product_quantity_in, CASE WHEN t4.stock_type = 2 THEN t1.sflow_quantity ELSE 0 END AS product_quantity_out FROM stock_flow AS t1 INNER JOIN product AS t2 ON t2.product_id = t1.sflow_productid INNER JOIN category AS t3 ON t2.product_catid = t3.category_id INNER JOIN stock AS t4 ON t1.sflow_sid = t4.stock_id"
                         };
 
-                        dbCommand.Transaction = frmMain.sqlCon.BeginTransaction();
+                        dbCommand.Transaction = database.sqlCon.BeginTransaction();
                         foreach(string query in sql) {
                             dbCommand.CommandText = query;
                             dbCommand.ExecuteNonQuery();
@@ -180,7 +182,7 @@ namespace proIMP {
                         dbCommand.Transaction.Commit();
                         tbCurrentDB.Text = frmMain.setting.database;
 
-                        frmMain.checkDB();
+                        checkDB();
                     } catch( Exception ex ) {
                         dbCommand.Transaction.Rollback();
 
@@ -194,31 +196,37 @@ namespace proIMP {
         }
 
         private void btnDatabaseCheck_Click( object sender, EventArgs e ) {
-            SQLiteCommand dbCommand = new SQLiteCommand( "SELECT type, name FROM sqlite_master WHERE type IN('table','view','trigger') AND name NOT IN('sqlite_sequence') ORDER BY type, name", frmMain.sqlCon);
-            SQLiteDataReader dbReader = dbCommand.ExecuteReader();
+            SQLiteCommand dbCommand = database.sqlCon.CreateCommand();
+            dbCommand.CommandText = "SELECT type, name FROM sqlite_master WHERE type IN('table','view','trigger') AND name NOT IN('sqlite_sequence') ORDER BY type, name";
 
-            Dictionary<string, List<string>> db_content = new Dictionary<string, List<string>> {
-                { "table", new List<string>( new string[ ] { "category", "customer", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } ) },
-                { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) },
-                { "trigger", new List<string>( new string[ ] { "stock_afterdelete" } ) }
-            };
+            try {
+                SQLiteDataReader dbReader = dbCommand.ExecuteReader();
 
-            while( dbReader.Read() ) {
-                if( db_content[ dbReader[ "type" ].ToString() ].Contains( dbReader[ "name" ].ToString() ) == false ) { 
+                Dictionary<string, List<string>> db_content = new Dictionary<string, List<string>> {
+                    { "table", new List<string>( new string[ ] { "category", "customer", "forex_exchange", "image", "product", "stock_flow", "stock", "supplier", "warehouse" } ) },
+                    { "view", new List<string>( new string[ ] { "product_list", "report_product_count", "report_product_flow", "stockflow_list" } ) },
+                    { "trigger", new List<string>( new string[ ] { "stock_afterdelete" } ) }
+                };
+
+                while( dbReader.Read() ) {
+                    if( db_content[ dbReader[ "type" ].ToString() ].Contains( dbReader[ "name" ].ToString() ) == false ) {
+                        MessageBox.Show( frmMain.resMan.GetString( "problemCheckDB", frmMain.culInfo ) );
+
+                        return;
+                    } else {
+                        db_content[ dbReader[ "type" ].ToString() ].RemoveAt( db_content[ dbReader[ "type" ].ToString() ].IndexOf( dbReader[ "name" ].ToString() ) );
+                    }
+                }
+
+                if( db_content[ "table" ].Count != 0 || db_content[ "view" ].Count != 0 ) {
                     MessageBox.Show( frmMain.resMan.GetString( "problemCheckDB", frmMain.culInfo ) );
 
                     return;
                 } else {
-                    db_content[ dbReader[ "type" ].ToString() ].RemoveAt( db_content[ dbReader[ "type" ].ToString() ].IndexOf( dbReader[ "name" ].ToString() ) );
+                    MessageBox.Show( frmMain.resMan.GetString( "noProblemCheckDB", frmMain.culInfo ) );
                 }
-            }
+            } catch {
 
-            if( db_content[ "table" ].Count != 0 || db_content[ "view" ].Count != 0 ) {
-                MessageBox.Show( frmMain.resMan.GetString( "problemCheckDB", frmMain.culInfo ) );
-
-                return;
-            } else {
-                MessageBox.Show( frmMain.resMan.GetString( "noProblemCheckDB", frmMain.culInfo ) );
             }
         }
 
@@ -226,17 +234,17 @@ namespace proIMP {
             int numberOfRecords = 0;
 
             SQLiteCommand dbCommand = new SQLiteCommand() {
-                Connection = frmMain.sqlCon
+                Connection = database.sqlCon
             };
 
-            dbCommand.CommandText = (@"DELETE FROM image WHERE image_id IN(SELECT t1.image_id FROM image AS t1 LEFT JOIN product AS t2 ON t1.image_id = t2.product_imageid WHERE t2.product_id IS NULL)");
+            dbCommand.CommandText = "DELETE FROM image WHERE image_id IN(SELECT t1.image_id FROM image AS t1 LEFT JOIN product AS t2 ON t1.image_id = t2.product_imageid WHERE t2.product_id IS NULL)";
             try {
                 numberOfRecords += dbCommand.ExecuteNonQuery();
             } catch {
                 
             }
 
-            dbCommand.CommandText = (@"DELETE FROM stock_flow WHERE sflow_id IN(SELECT t1.sflow_id FROM stock_flow AS t1 LEFT JOIN stock AS t2 ON t1.sflow_sid = t2.stock_id WHERE t2.stock_id IS NULL)");
+            dbCommand.CommandText = "DELETE FROM stock_flow WHERE sflow_id IN(SELECT t1.sflow_id FROM stock_flow AS t1 LEFT JOIN stock AS t2 ON t1.sflow_sid = t2.stock_id WHERE t2.stock_id IS NULL)";
             try {
                 numberOfRecords += dbCommand.ExecuteNonQuery();
             } catch {

@@ -190,18 +190,15 @@
             this.chProductTotalLocalPrice});
             this.lvStockProductList.FullRowSelect = true;
             this.lvStockProductList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvStockProductList.HideSelection = false;
             this.lvStockProductList.Location = new System.Drawing.Point(6, 82);
             this.lvStockProductList.MultiSelect = false;
             this.lvStockProductList.Name = "lvStockProductList";
-            this.lvStockProductList.OwnerDraw = true;
             this.lvStockProductList.Size = new System.Drawing.Size(642, 134);
             this.lvStockProductList.TabIndex = 20;
             this.lvStockProductList.TabStop = false;
             this.lvStockProductList.UseCompatibleStateImageBehavior = false;
             this.lvStockProductList.View = System.Windows.Forms.View.Details;
-            this.lvStockProductList.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.LvStockProductList_DrawColumnHeader);
-            this.lvStockProductList.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.LvStockProductList_DrawItem);
-            this.lvStockProductList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LvStockProductList_MouseMove);
             // 
             // chProductName
             // 
